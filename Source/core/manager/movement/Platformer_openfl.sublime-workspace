@@ -1,0 +1,787 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mo",
+				"movementManager"
+			],
+			[
+				"getK",
+				"getKeyState"
+			],
+			[
+				"key",
+				"keyboardListener	var"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/KeyboardListener.hx",
+			"settings":
+			{
+				"buffer_size": 432,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/entity/Player/Player.hx",
+			"settings":
+			{
+				"buffer_size": 1792,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/GameListener.hx",
+			"settings":
+			{
+				"buffer_size": 186,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/entity/Entity.hx",
+			"settings":
+			{
+				"buffer_size": 1116,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/EntityListener.hx",
+			"settings":
+			{
+				"buffer_size": 145,
+				"line_ending": "Windows",
+				"name": "EntityListener.hx"
+			}
+		},
+		{
+			"file": "MovementManager.hx",
+			"settings":
+			{
+				"buffer_size": 230,
+				"line_ending": "Windows",
+				"name": "MovementManager"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/PlayerListener.hx",
+			"settings":
+			{
+				"buffer_size": 3881,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "PlayerMovementManager.hx",
+			"settings":
+			{
+				"buffer_size": 968,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/entity/Player/PlayerAnimations.hx",
+			"settings":
+			{
+				"buffer_size": 3089,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/display/Animation.hx",
+			"settings":
+			{
+				"buffer_size": 760,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "EntityMovementManager.hx",
+			"settings":
+			{
+				"buffer_size": 237,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/engine/Engine.hx",
+			"settings":
+			{
+				"buffer_size": 1652,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/assests/Variables.hx",
+			"settings":
+			{
+				"buffer_size": 2071,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/game/Game.hx",
+			"settings":
+			{
+				"buffer_size": 729,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 260.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 368.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			" import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/entity/Player/PlayerAnimations.hx",
+		"/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/entity/Player.hx",
+		"/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/data/PlayerAnimations.hx",
+		"/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/display/Window.hx",
+		"/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/KeyboardListener.hx",
+		"/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/GameListener.hx",
+		"/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/KeyboardEvent.hx",
+		"/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/events/KeyboardEvent.hx",
+		"/C/Users/Lars/Documents/Haxe/Project/src/Main.hx",
+		"/C/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/autoexec.cfg",
+		"/C/Users/Lars/Downloads/adrencfg/prac.cfg",
+		"/C/Users/Lars/Documents/wifi password",
+		"/C/Users/Lars/Documents/question.txt",
+		"/C/Users/Lars/Downloads/Castle.2009.S07E23.HDTV.x264-2HD[ettv]/castle.2009.s07e23.hdtv.x264-2hd.nfo",
+		"/C/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/makarot.cfg",
+		"/C/Users/Lars/Downloads/config/config.cfg",
+		"/D/Program Files/Rockstar Games/kr0wnsv2_1.asi",
+		"/C/Users/Lars/AppData/Roaming/.minecraft/versions/NodusLauncher/NodusLauncher.json",
+		"/C/Users/Lars/AppData/Roaming/.minecraft/versions/Metro6.0/Metro6.0.json",
+		"/C/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg/OPCOLORCROSSHAIR.cfg",
+		"/C/Users/Lars/Downloads/Gaylo Onrine/dewrito.json",
+		"/C/Users/Lars/Downloads/0.4.7r2/dewrito.json",
+		"/C/Users/Lars/Downloads/autoexec.cfg",
+		"/C/Users/Lars/Documents/Bazanji - The City lyrics.txt",
+		"/C/Users/Lars/Documents/The Witcher 3/user.settings",
+		"/C/Users/Lars/Downloads/Programs/Adobe Photoshop CC 2014 (v15.2.2) x86-x64 RUS-ENG Update 3 by m0nkrus-=TEAM OS=-{HKRG}/m0nkrus.nfo",
+		"/E/Crack/Alternative/painter.nfo",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/Lars/Downloads/Programs/Adobe Muse CC 2014 1.1.6 (64 bit) (Crack) [ChingLiu]/ChingLiu.Install.Notes.nfo",
+		"/C/Users/Lars/Downloads/Programs/Adobe Illustrator CC 17.0.0 Final Multilanguage [ChingLiu]/ChingLiu.Install.Notes.nfo",
+		"/C/Users/Lars/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 119.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"graphics",
+			"\");new Image(\"",
+			"graphic = ",
+			"render",
+			":",
+			"var ",
+			"else",
+			"noclip",
+			"dev",
+			"developer",
+			"dev",
+			"develop",
+			"z",
+			"buy",
+			"buyammo1",
+			"sens",
+			"jump",
+			"creep",
+			"jump",
+			"sens",
+			"gameinst",
+			"cl_cros",
+			"gapva",
+			"mv",
+			"\"",
+			"chgreen",
+			"i ",
+			"i"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"assests",
+			"",
+			"graphic = Assests.getBitmapData(\"\");",
+			"graphic",
+			"():",
+			"function get",
+			"function ",
+			"function",
+			"",
+			"I ",
+			"I"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/KeyboardListener.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								430,
+								430
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/entity/Player/Player.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1784,
+								1784
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 459.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/GameListener.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								181,
+								181
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/entity/Entity.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1116,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								933,
+								933
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/EntityListener.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 145,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23,
+								23
+							]
+						],
+						"settings":
+						{
+							"auto_name": "EntityListener.hx",
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "MovementManager.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								189,
+								189
+							]
+						],
+						"settings":
+						{
+							"auto_name": "MovementManager",
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/listeners/PlayerListener.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2665,
+								2665
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "PlayerMovementManager.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 968,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								731,
+								731
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/entity/Player/PlayerAnimations.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3089,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								457,
+								457
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/display/Animation.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								579,
+								579
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "EntityMovementManager.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								165,
+								165
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/engine/Engine.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1652,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								533,
+								533
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/assests/Variables.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								581,
+								581
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/C/Users/Lars/Documents/Haxe/Platformer_openfl/Source/core/game/Game.hx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 729,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								502,
+								502
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 176.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Platformer_openfl.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 400.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 190.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
