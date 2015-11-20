@@ -1,4 +1,4 @@
-package core.enigne;
+package core.engine;
 
 import openfl.utils.Timer in OpenFL_Timer;
 import openfl.events.TimerEvent;
@@ -44,14 +44,18 @@ class Engine{
 		if(V.firstRun){
 			V.firstRun = !V.firstRun;
 			start();
-			for(int x= 0; x < entityList.length; x++):Void{//correct
+			var x: Int = 0;
+			while (x < entityList.length){
 				V.entitylist[x].getListener().update();
+				x++;
 			}
 		}
 	}
+	
 	private function newTimer(ms:Int):Void{
 		this.timer = new OpenFl_Timer(ms);
 	}
+	
 	private function startTimer(t:OpenFL_Timer):Void{
 		if(t == null || t.currentCount = 0){
 			newTimer(V.timerMS);

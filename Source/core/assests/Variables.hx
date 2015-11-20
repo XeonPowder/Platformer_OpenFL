@@ -8,33 +8,34 @@ import core.entity.Player in P;
 import core.entity.Entity in E;
 import core.manager.Manager in M;
 
-class Variables{
-
-	public enum STATE{
+ enum STATE{
 		idle;
 		pause;
 		running;
 		stopped;
 	}
-	public enum DIRECTION{
+ enum DIRECTION{
 		NONE;
 		LEFT;
 		RIGHT;
 	}
-
-	public enum KEY{
+ enum KEY{
 		UP = 38;
-		LEFT = 37;
+		LEF T = 37;
 		RIGHT = 39;
 		DOWN = 40;
 		USE = 69;
 		SPACE = 32;
 	}
-	public enum ENDGAMEREASON{
+ enum ENDGAMEREASON{
 		DEATH;
 		QUIT;
 		CRASH;
 	}
+	
+class Variables{
+
+	
 	private var manager:M;
 	private var player:P;
 	private var entityList:Array<Entity>;
@@ -54,9 +55,6 @@ class Variables{
 	private var timerMS:Int;
 	private var framePerMS:Int = timerMS/gameFPS;
 
-	
-	
-	
 	public function getManager():M{
 		return manager;
 	}

@@ -5,7 +5,8 @@ import openfl.display.Stage in GameStage;
 import openfl.events.KeyboardEvent;
 import openfl.events.Event;
 
-class KeyboardListener{
+class KeyboardListener {
+	
 	private function keyDown(e:KeyboardEvent):Void{
 		V.keyStates[e.keyCode] = true;
 	}

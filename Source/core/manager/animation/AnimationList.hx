@@ -1,6 +1,7 @@
 package core.manager.animation;
-
+import core.display.Animation;
 import core.assests.Variables in V;
+
 
 class AnimationList{
 
