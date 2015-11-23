@@ -1,4 +1,4 @@
-package core.engine;
+/*package core.engine;
 
 import openfl.utils.Timer in OpenFL_Timer;
 import openfl.events.TimerEvent;
@@ -8,11 +8,12 @@ import openfl.display.Window in OpenFL_Window;
 
 import core.game.Game in G;
 import core.listeners.KeyboardListener in KL;
-import core.entity.Entity in E;
+import core.entity.Entity in E;*/
+/*
 /*
 Engine class handles all the computations that the game needs to make.
 
-*/
+
 class Engine{
 	//un-used
 	// var timer:OpenFL_Timer;
@@ -24,7 +25,7 @@ class Engine{
 		@param fullscreen: whether to run the game in fullscreen mode, true or false
 		@param stage: the window that we will be filling with entities.
 
-	*/
+	
 	public function new(fps:Int, fullscreen:Bool, openFL_window:OpenFL_Window){
 		//create new keyboard listener and save it in Variables.hx
 		G.getVariables().setKeyboardListener(new KL());
@@ -100,5 +101,42 @@ class Engine{
 		t.stop;
 		t.reset;
 	}
-	*/
+	/
+}*/
+package core2.game.engine;
+
+import core2.game.world.World;
+import core2.game.engine.input.keyboard.KeyboardListener in KL;
+import openfl.events.Event;
+import openfl.events.KeyboardEvent;
+import core2.game.assets.UUID;
+
+class Engine{
+
+	private var world:World;
+	private var keyboardListener:KL;
+
+	public function new(w:World){
+		world = w;
+		keyboardListener = new KL();
+	}
+	public function tick(e:Event):Void{
+		if(e.type == "ENTER_FRAME"){
+			world.getMap().update();
+			world.getPlayer().getPlayerManager().update();
+		}else if(e.type == "KEY_DOWN"){
+			keyboardListener.keyDown(cast(e, KeyboardEvent));
+		}else if(e.type == "KEY_UP"){
+			keyboardListener.keyUp(cast(e, KeyboardEvent));
+		}
+	}
+	public function hashCode():Int{
+		return UUID.randomNum();
+	}
+	public function getKeyboardListener():KL{
+		return keyboardListener;
+	}
+	public function getWorld():World{
+		return world;
+	}
 }

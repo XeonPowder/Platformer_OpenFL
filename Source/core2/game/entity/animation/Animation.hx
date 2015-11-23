@@ -1,14 +1,13 @@
+package core2.game.entity.animation;
 
-package core.display;
-
-import core.entity.Entity;
+import core2.game.entity.Entity;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
-import core.manager.animation.AnimationManager in AM;
-
+import core2.game.entity.animation.managers.AnimationManager in AM;
+import core2.game.assets.UUID;
 
 class Animation{
-	
+	private var animation:Animation;
 	private var frames:Int;
 	private var currentFrame:Int;
 	private var endFrame:Int;
@@ -18,24 +17,26 @@ class Animation{
 	private var previousBitmapData:BitmapData;
 	private var bitmapDataArray:Array<BitmapData>;
 	private var name:String;
-	private var id:String;
+	private var id:Int;
 
 	public function new(b:Bitmap, bd:Array<BitmapData>, animationName:String){
+		animation = this;
 		bitmap = b;
 		bitmapDataArray = bd;
 		frames = bitmapDataArray.length;
 		name = animationName;
+		id = UUID.randomNum();
+	}
+	public function getAnimation():Animation{
+		return animation;
+	}
+	public function hashCode():Int{
+		return id;
 	}
 	public function getName():String{
 		return name;
 	}
-	public function getID():String{
-		return id;
-	}
-	public function setID(s:String):Void{
-		id = s;
-	}
-	public function getNumOfFrames():Int{
+	public function getFrames():Int{
 		return frames;
 	}
 	public function getBitmap():Bitmap{

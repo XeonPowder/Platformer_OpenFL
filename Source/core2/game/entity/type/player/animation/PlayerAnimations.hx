@@ -1,46 +1,95 @@
-package core.entity.player;
+package core2.game.entity.type.player.animation;
 
-import core.manager.animation.PlayerAnimationManager;
-import core.entity.player.Player in P;
-import core.assests.Variables in V;
-import core.display.Animation in AN;
+import core2.game.entity.type.player.Player in P;
+import core2.game.entity.animation.Animation in AN;
 import openfl.display.BitmapData;
 import openfl.Assets in A;
-import core.manager.animation.PlayerAnimationManager in PAM;
-import core.manager.animation.AnimationList in AL;
+import core2.game.entity.type.player.animation.managers.PlayerAnimationManager in PAM;
+import core2.game.entity.animation.AnimationList in AL;
 import haxe.ds.HashMap in HM;
+import core2.game.assets.UUID;
 
 class PlayerAnimations{
 	
 	private var player:P;
 	private var playerAnimationManager:PAM;
 	private var animationList:AL;
+	
+	private var pamHash:Int;
+	private var leftID:Int;
+	private var rightID:Int;
+	private var leftJumpID:Int;
+	private var rightJumpID:Int;
+	private var idleID:Int;
+	private var leftTouchdownID:Int;
+	private var rightTouchdownID:Int;
 
-	private var leftID:String;
-	private var rightID:String;
-	private var leftJumpID:String;
-	private var RightJumpID:String;
-	private var idleID:String;
-	private var leftTouchdownID:String;
-	private var RightTouchdownID:String;
+	private var movingLeftAnimation:AN = null;
+	private var movingLeftAnimationFrames:Int = 0;
+	private var movingLeftJumpingAnimation:AN = null;
+	private var movingLeftJumpingAnimationFrames:Int = 0;
+	private var movingRightAnimation:AN = null;
+	private var movingRightAnimationFrames:Int = 0;
+	private var movingRightJumpingAnimation:AN = null;
+	private var movingRightJumpingAnimationFrames:Int = 0;
+	private var idleAnimation:AN = null;
+	private var idleAnimationFrames:Int = 0;
+	private var leftTouchdownAnimation:AN = null;
+	private var leftTouchdownAnimationFrames:Int = 0;
+	private var rightTouchdownAnimation:AN = null;
+	private var rightTouchdownAnimationFrames:Int = 0;
 
 	public function new(p:P){
 		player = p;
+		createAnimations();
+		createAnimationFrames();
+		generateHashCodes();
 		animationList = compileAnimations();
-		playerAnimationManager = PAM.new(animationList);
+		playerAnimationManager = new PAM();
+		playerAnimationManager.getList().set(animationList, pamHash);
+	}
+	private function generateHashCodes():Void{
+		leftID = movingLeftAnimation.getAnimation().hashCode();
+		rightID = movingRightAnimation.getAnimation().hashCode();
+		leftJumpID = movingLeftJumpingAnimation.getAnimation().hashCode();
+		rightJumpID = movingRightJumpingAnimation.getAnimation().hashCode();
+		idleID = idleAnimation.getAnimation().hashCode();
+		leftTouchdownID = leftTouchdownAnimation.getAnimation().hashCode();
+		rightTouchdownID = rightTouchdownAnimation.getAnimation().hashCode();
+		pamHash = playerAnimationManager.getPlayerAnimationManager().hashCode();
 	}
 	private function compileAnimations():AL{
 		var al:AL = new AL();
-		
-		leftID = al.registerNewAnimation(getLeft(), "left");
-		rightID = al.registerNewAnimation(getRight(), "right");
-		leftJumpID = al.registerNewAnimation(getLeftJump(), "left_jump");
-		rightJumpID = al.registerNewAnimation(getRightJump(), "right_jump");
-		idleID = al.registerNewAnimation(getIdle(), "idle");
-		leftTouchdownID = al.registerNewAnimation(getLeftTouchdown(), "left_touchdown");
-		rightTouchdownID = al.registerNewAnimation(getRightTouchdown(), "right_touchdown");
-		
+		al.getList().set(getLeft(), leftID);
+		al.getList().set(getRight(), rightID);
+		al.getList().set(getLeftJump(), leftJumpID);
+		al.getList().set(getRightJump(), rightJumpID);
+		al.getList().set(getIdle(), idleID);
+		al.getList().set(getLeftTouchdown(), leftTouchdownID);
+		al.getList().set(getRightTouchdown(), rightTouchdownID);
 		return al;
+	}
+	private function createAnimations():Void{
+		movingLeftAnimation = new AN(player.getBitmap(), getMovingLeftBMDArray(), "left");
+		movingLeftJumpingAnimation = new AN(player.getBitmap(), getMovingLeftJumpingBMDArray(), "left_jump");
+		movingRightAnimation = new AN(player.getBitmap(), getMovingRightBMDArray(), "right");
+		movingRightJumpingAnimation = new AN(player.getBitmap(), getMovingRightJumpingBMDArray(), "right_jump");
+		idleAnimation = new AN(player.getBitmap(), getIdleBMDArray(), "idle");
+		leftTouchdownAnimation = new AN(player.getBitmap(), getLeftTouchdownBMDArray(), "left_touchdown");
+		rightTouchdownAnimation = new AN(player.getBitmap(), getRightTouchdownBMDArray(), "right_touchdown");
+		
+	}
+	private function createAnimationFrames():Void{
+		movingLeftAnimationFrames = movingLeftAnimation.getFrames();
+		movingLeftJumpingAnimationFrames = movingLeftJumpingAnimation.getFrames();
+		movingRightAnimationFrames = movingRightAnimation.getFrames();
+		movingRightJumpingAnimationFrames = movingRightJumpingAnimation.getFrames();
+		idleAnimationFrames = idleAnimation.getFrames();
+		leftTouchdownAnimationFrames = leftTouchdownAnimation.getFrames();
+		rightTouchdownAnimationFrames = rightTouchdownAnimation.getFrames();
+	}
+	public function hashCode():Int{
+		return UUID.randomNum();
 	}
 	private var movingLeft_BMD_Array:Array<BitmapData> = 
 	[A.getBitmapData("assests/player/movement/left/left.png"),
@@ -60,9 +109,8 @@ class PlayerAnimations{
 	private function getMovingLeftBMDArray():Array<BitmapData>{
 		return movingLeft_BMD_Array;
 	}
-	private var movingLeftAnimation:A = new AN(player.getBitmap(), PA.getMovingLeftBMDArray(), "left");
-	private var movingLeftAnimationFrames = movingLeftAnimation.getFrames();
-	public function getLeft():A{
+	
+	private function getLeft():AN{
 		return movingLeftAnimation;
 	}
 
@@ -84,10 +132,9 @@ class PlayerAnimations{
 	private function getMovingLeftJumpingBMDArray():Array<BitmapData>{
 		return movingLeft_Jumping_BMD_Array;
 	}
-	private var movingLeftJumpingAnimation:A = new AN(player.getBitmap(), PA.getMovingLeftJumpingBMDArray(), "left_jump");
-	private var movingLeftJumpingAnimationFrames = movingLeftJumpingAnimation.getFrames();
-	private function getLeftJump():A{
-		return moveingLeftJumpingAnimation;
+	
+	private function getLeftJump():AN{
+		return movingLeftJumpingAnimation;
 	}
 
 	private var movingRight_BMD_Array:Array<BitmapData> = 
@@ -108,10 +155,9 @@ class PlayerAnimations{
 	private function getMovingRightBMDArray():Array<BitmapData>{
 		return movingRight_BMD_Array;
 	}
-	private var movingRightAnimation:A = new AN(player.getBitmap(), PA.getMovingRightBMDArray(), "right");
-	private var movingRightAnimationFrames = movingRightAnimation.getFrames();
-	public function getRight():A{
-		return moveingRightAnimation;
+	
+	private function getRight():AN{
+		return movingRightAnimation;
 	}
 
 	private var movingRight_Jumping_BMD_Array:Array<BitmapData> = 
@@ -132,10 +178,9 @@ class PlayerAnimations{
 	private function getMovingRightJumpingBMDArray():Array<BitmapData>{
 		return movingRight_Jumping_BMD_Array;
 	}
-	private var movingRightJumpingAnimation:A = new AN(player.getBitmap(), PA.getMovingRightJumpingBMDArray(), "right_jump");
-	private var movingRightJumpingAnimationFrames = movingRightJumpingAnimation.getFrames();
-	private function getRightJump():A{
-		return moveingRightJumpingAnimation;
+	
+	private function getRightJump():AN{
+		return movingRightJumpingAnimation;
 	}
 
 
@@ -158,9 +203,8 @@ class PlayerAnimations{
 	private function getIdleBMDArray():Array<BitmapData>{
 		return idle_BMD_Array;
 	}
-	private var idleAnimation:A = new AN(player.getBitmap(), PA.getIdleBMDArray(), "idle");
-	private var idleAnimationFrames = idleAnimation.getFrames();
-	private function getIdle():A{
+	
+	private function getIdle():AN{
 		return idleAnimation;
 	}
 
@@ -184,9 +228,8 @@ class PlayerAnimations{
 	private function getLeftTouchdownBMDArray():Array<BitmapData>{
 		return left_Touchdown_BMD_Array;
 	}
-	private var leftTouchdownAnimation:A = new AN(player.getBitmap(), PA.getLeftTouchdownBMDArray(), "left_touchdown");
-	private var leftTouchdownAnimationFrames = leftTouchdownAnimation.getFrames();
-	private function getLeftTouchdown():A{
+	
+	private function getLeftTouchdown():AN{
 		return leftTouchdownAnimation;
 	}
 
@@ -207,12 +250,11 @@ class PlayerAnimations{
 														];
 
 	
-	private function getRightTouchdownArray():Array<BitmapData>{
+	private function getRightTouchdownBMDArray():Array<BitmapData>{
 		return right_Touchdown_BMD_Array;
 	}
-	private var rightTouchdownAnimation:A = new AN(player.getBitmap(), PA.getRightTouchdownBMDArray(), "right_touchdown");
-	private var rightTouchdownAnimationFrames = rightTouchdownAnimation.getFrames();
-	private function getRightTouchdown():A{
+	
+	private function getRightTouchdown():AN{
 		return rightTouchdownAnimation;
 	}
 }

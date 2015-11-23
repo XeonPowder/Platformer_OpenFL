@@ -1,6 +1,6 @@
-package core.listeners;
+package core2.game.entity.listeners;
 
-import core.game.Game in G;
+import core2.game.Game in G;
 
 class EntityListener{
 	public function new(){

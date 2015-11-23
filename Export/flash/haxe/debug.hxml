@@ -11,7 +11,7 @@
 -D openfl-flash
 -D web
 -swf-version 11.2
--swf Export/flash/bin/PlatformerOpenfl.swf
+-swf Export/flash/bin/PlatformerOpenFL.swf
 -swf-header 800:600:30:FFFFFF
 -cp Export/flash/haxe
 -debug

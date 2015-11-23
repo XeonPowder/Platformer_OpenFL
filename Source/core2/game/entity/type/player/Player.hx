@@ -1,68 +1,52 @@
-package core.entity.player;
+package core2.game.entity.type.player;
 
-import core.entity.Entity in E;
-import core.entity.player.PlayerAnimations in PA;
-import core.game.Game in G;
+import core2.game.entity.Entity in E;
+import core2.game.entity.type.player.animation.PlayerAnimations in PA;
+import core2.game.entity.type.player.listeners.PlayerListener in PL;
+import core2.game.entity.type.player.managers.PlayerManager in PM;
+import core2.game.Game in G;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
 import openfl.Assets;
 
-class Player extends Entity{
+class Player extends E{
 
 	private var playerAnimations:PA;
-	private var health:Float;
-	private var level:Int;
-	private var experience:Float;
-	private var experienceCap:Float;
-	private var experienceGained:Float;
-	private var jumpheight:Int;
+    private var playerListener:PL;
+	private var playerManager:PM;
 	private var bitmap:Bitmap;
+    private var game:G;
 
-	public function new(x:Int, y:Int, hx:Int, hy:Int, type:String = "unit", name = G.getVariables().name, experienceGained = 0, playerAnimations:PA = new PA(this), graphic:BitmapData = Assests.getBitmapData("assests/player/movement/idle/idle.png")){
+	public function new(g:G, x:Int, y:Int, hx:Int, hy:Int, name:String, type:String = "unit", experienceGained = 0){
         super(x, y);
-        playerListener = new PL();
+        game = g;
+        graphic = Assets.getBitmapData("assests/player/movement/idle/idle.png");
+        playerAnimations = new PA(this);
+        playerListener = new PL(this, getGame().getEngine().getKeyboardListener());
         setHitbox(hx, hy);
-        bitmapData;
         bitmap = new Bitmap(graphic);
         addChild(bitmap);
-        health = 100.0;
-        experience = 0.0;
-        experienceCap = 100;
-        level = 1;
-        jumpheight = 20;
+        playerManager = new PM(this);  
     }
-    public override function update(){
+    public function update(){
     	playerListener.update();
     }
     public function getPlayerAnimations():PA{
     	return playerAnimations;
     }
-    public function getPlayerHealth():Float{
-    	return health;
-    }
-    public function getPlayerLevel():Int{
-    	return level;
-    }
-    public function getExperience():Float{
-    	return experience;
-    }
-    public function getExperienceCap():Float{
-    	return experienceCap;
-    }
-    public function getExperienceGained():Float{
-    	return experienceGained;
-    }
-    public function getJumpHeight():Int{
-    	return jumpheight;
+    public function getPlayerManager():PM{
+        return playerManager;
     }
     public function getBitmap():Bitmap{
     	return bitmap;
     }
-
-    public function setExperience(e:Int):Void{
-    	experience = e;
+    public function getGame():G{
+        return game;
     }
-    public function setLevel(ll:Int):Void{
-    	level = l;
+    public function getPlayerListener():PL{
+        return playerListener;
     }
+    
+    
+    
 }

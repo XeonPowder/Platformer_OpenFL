@@ -1,122 +1,50 @@
-package core.listeners;
+package core2.game.entity.type.player.listeners;
 
-import core.game.Game in G;
+import core2.game.Game in G;
+import core2.game.entity.type.player.Player in P;
+import core2.game.entity.type.player.managers.PlayerManager in PM;
+import core2.game.engine.input.keyboard.KeyboardListener in KL;
 
-class PlayerListener extends EntityListener{
-	public function new(){
-
+class PlayerListener extends core2.game.entity.listeners.EntityListener{
+	private var player:P;
+	private var pManager:PM;
+	private var keyboardListener:KL;
+	private var keyUP:Int = 38;
+	private var keyDOWN:Int = 40;
+	private var keyLEFT:Int = 37;
+	private var keyRIGHT:Int = 39;
+	public function new(p:P, kl:KL){
+		super();
+		player = p;
+		pManager = p.getPlayerManager();
+		keyboardListener = kl;
 	}
-	public function update(){
+	public override function update(){
 		checkKeyStates();
 		checkDamageRecieved();
 		checkExperienceRecieved();
 		checkLevelUp();
-				if(G.getVariables().getKeyboardListener.getKeyState(37)){
-					
-				}else if(G.getVariables().getKeyboardListener.getKeyState(39)){
-					A.new(bitmap, PA.getMovingRightJumpingBMDArray(), this(Entity));
-					G.getVariables()._DIRECTION = RIGHT;
-					moveBy(2, -1);
-				}else{
-					if(G.getVariables().getDirection() == DIRECTION.LEFT){
-						graphic = Assests.getBitmapData("assests/player/movement/left/left_jump.png");
-	        			moveBy(-2, -1);
-					}else if(G.getVariables().getDirection() == DIRECTION.RIGHT){
-						graphic = Assests.getBitmapData("assests/player/movement/right/right_jump.png");
-						moveBy(2, -1);
-					}
-
-				}
-			}else{
-				if(G.getVariables().getKeyboardListener.getKeyState(37)){
-					graphic = Assests.getBitmapData("assests/player/movement/left/left_fall.png");
-					G.getVariables()._DIRECTION = LEFT;
-					moveBy(-2, 1);
-				}else if(G.getVariables().getKeyboardListener.getKeyState(39)){
-					graphic = Assests.getBitmapData("assests/player/movement/right/right_fall.png");
-					G.getVariables()._DIRECTION = RIGHT;
-					moveBy(2, 1);
-				}else{
-					if(G.getVariables().getDirection() == DIRECTION.LEFT){
-						graphic = Assests.getBitmapData("assests/player/movement/left/left_fall.png");
-						moveBy(-2, 1);
-					}else if(G.getVariables().getDirection() == DIRECTION.RIGHT){
-						graphic = Assests.getBitmapData("assests/player/movement/right/right_fall.png");
-						moveBy(2, 1);
-					}
-				}
-			}
-		}else if(counter >= jumptime){
-        	currentlyJumping = !currentlyJumping;
-        	if(G.getVariables().getKeyboardListener.getKeyState(37)){
-				graphic = Assests.getBitmapData("assests/player/movement/left/left_touchdown.png");
-			}else if(G.getVariables().getKeyboardListener.getKeyState(39)){
-				graphic = Assests.getBitmapData("assests/player/movement/right/right_touchdown.png");
-			}else{
-				if(G.getVariables().getDirection() == DIRECTION.LEFT){
-					graphic = Assests.getBitmapData("assests/player/movement/left/left_touchdown.png");
-				}else if(G.getVariables().getDirection() == DIRECTION.RIGHT){
-					graphic = Assests.getBitmapData("assests/player/movement/right/right_touchdown.png");
-				}
-			}
-			G.getVariables()._DIRECTION = NONE;
-        	counter = 0;
-        }
-	    counter++;	
 	}
-	public function checkKeyStates(){
-		var jump:Bool = G.getVariables().getKeyboardListener.getKeyState(G.getVariables().keyUP);
-		var duck:Bool = G.getVariables().getKeyboardListener.getKeyState(G.getVariables().keyDOWN);
-		var left:Bool = G.getVariables().getKeyboardListener.getKeyState(G.getVariables().keyLEFT);
-		var right:Bool = G.getVariables().getKeyboardListener.getKeyState(G.getVariables().keyRIGHT);
+	public function checkKeyStates():Void{
+		var jump:Bool = keyboardListener.getKeyState(keyUP);
+		var duck:Bool = keyboardListener.getKeyState(keyDOWN);
+		var left:Bool = keyboardListener.getKeyState(keyLEFT);
+		var right:Bool = keyboardListener.getKeyState(keyRIGHT);
 
-		if(jump){
-			if(!G.getVariables().player.movementManager.isAirborn()){
-				G.getVariables().player.momvementManager.jump(0, 0);
-			}
-		}
-		if(left){
-			if(!G.getVariables().player.movememntManager.isAirborn()){
-				G.getVariables().player.movementManager.left();
-			}else{
-				G.getVariables().player.movementManager.aLeft();
-			}
-		}
-		if(right){
-			if(!G.getVariables().player.movememntManager.isAirborn()){
-				G.getVariables().player.movementManager.right();
-			}else{
-				G.getVariables().player.movementManager.aRight();
-			}
-		}
-		if(duck){
-			if(!G.getVariables().player.movememntManager.isAirborn()){
-				G.getVariables().player.movementManager.duck();
-			}else{
-				G.getVariables().player.movementManager.aDuck();
-			}
-		}else if(!duck){
-			if(!G.getVariables().player.movementManager.isAirborn() && G.getVariables().player.movementManager.isDucked()){
-				G.getVariables().player.movementManager.unduck();
-			}else if(G.getVariables().player.movementManager.isAirborn()){
-				G.getVariables().player.movementManager.aUnduck();
-			}
-		}
 	}
 	public function checkDamageRecieved(){
-		G.getVariables().player.setHealth(G.getVariables().player.getHealth() - G.getVariables().player.getDamageGivenToPlayer());
-		if(G.getVariables().player.health <= 0){
-			G.getVariables().game.stop(G.getVariables().ENDGAMEREASON.death);
+		pManager.setHealth(pManager.getHealth() - pManager.getDamageGivenToPlayer());
+		if(pManager.getHealth() <= 0){
+			//player.getGame().stop();
 		}
 	}
-	public function checkExperienceGained(){
-		G.getVariables().player.getExperience() += G.getVariables().player.getExperienceGained();
+	public function checkExperienceRecieved():Void{
+		pManager.setExperience(pManager.getExperienceGained());
 	}
-	public function checkLevelUp(){
-		if(G.getVariables().player.getExperience() == G.getVariables().player.getExperienceCap()){
-			G.getVariables().player.setExperience(0.0);
-			G.getVariables().player.levelUp();
-			G.getVariables().player.setLevel(G.getVariables().player.getLevel() + 1);
+	public function checkLevelUp():Void{
+		if(pManager.getExperience() == pManager.getExperienceCap()){
+			pManager.setExperience(0);
+			pManager.levelUp();
 		}
 	}
 }

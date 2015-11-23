@@ -1,7 +1,6 @@
-package core.manager.movement;
+package core2.game.entity.movement.managers;
 
-import core.assests.Variables in V;
-import core.entity.Entity in E;
+import core2.game.entity.Entity in E;
 
 class EntityMovementManager{
 	private var entity:E;

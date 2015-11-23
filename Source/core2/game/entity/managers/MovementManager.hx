@@ -1,7 +1,6 @@
-package core.movement;
+package core2.game.entity.managers;
 
-import core.assests.Variables in V;
-import core.manager.Manager in M;
+import core2.game.managers.Manager in M;
 import openfl.display.Sprite in S;
 
 class MovementManager extends M{
@@ -13,6 +12,5 @@ class MovementManager extends M{
 	public moveBy(x:Int, y:Int){
 		sprite.x += x;
 		sprite.y += y;
-	}
-	private function registerMovementManager(s:Sprite, id:)
+	})
 }

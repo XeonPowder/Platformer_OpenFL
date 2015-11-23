@@ -1,4 +1,4 @@
-package core.assests;
+package core2.game.assets;
 
 class GameState{
 	

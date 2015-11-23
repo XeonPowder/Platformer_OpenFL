@@ -90,11 +90,11 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "111",
+			build: "173",
 			company: "Company Name",
-			file: "PlatformerOpenfl",
+			file: "PlatformerOpenFL",
 			fps: 30,
-			name: "PlatformerOpenfl",
+			name: "PlatformerOpenFL",
 			orientation: "",
 			packageName: "com.sample.platformeropenfl",
 			version: "1.0.0",
@@ -112,7 +112,7 @@ class ApplicationMain {
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
-					title: "PlatformerOpenfl",
+					title: "PlatformerOpenFL",
 					vsync: false,
 					width: 800,
 					x: null,

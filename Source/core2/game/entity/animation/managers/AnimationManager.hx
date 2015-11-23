@@ -1,21 +1,21 @@
-package core.manager.animation;
+package core2.game.entity.animation.managers;
 
-import core.game.Game in G;
-import core.display.Animation in A;
+import core2.game.entity.animation.Animation in A;
 import haxe.ds.HashMap in HM;
+import core2.game.assets.UUID;
 
 class AnimationManager{
 
-	private var animationManager:HM<A, String>;
-	private var animationID:String;
-
+	private var list:HM<A, Int>;
+	private var animationManager:AnimationManager;
 	public function new():Void{
-		animationManager = new HM<A, String>();
-		animationID = registerManager(animationManager);
+		list = new HM<A, Int>();
+		animationManager = this;
 	}
-	public function registerNewAnimation(a:A):String{
-		id = G.getVariables().manager.generateNewID(4);
-		animationManager.set(a, id);
-		return animationID;
+	public function getAnimationManager():AnimationManager{
+		return animationManager;
+	}
+	public function getList():HM<A, Int>{
+		return list;
 	}
 }

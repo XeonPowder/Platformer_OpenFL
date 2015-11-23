@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	
-	<meta title="PlatformerOpenfl" package="com.sample.platformeropenfl" version="1.0.0" company="Company Name" />
-	<app main="Main" path="Export" file="PlatformerOpenfl" />
+	<meta title="PlatformerOpenFL" package="com.sample.platformeropenfl" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="PlatformerOpenFL" />
 	
 	<source path="Source" />
 	

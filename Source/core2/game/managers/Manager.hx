@@ -1,23 +1,16 @@
-package core.manager;
+package core2.game.managers;
 
-import core.assests.UUID in UUID;
+import core2.game.assets.UUID in UUID;
 import haxe.ds.HashMap in HM;
 
 class Manager{
 	
-	private var id:String;
-	private var manager:HM<Manager, String>;
+	private var manager:Manager;
 
 	public function new():Void{
-		manager = new HM<Manager, String>();
+		manager = this;
 	}
-	public function registerNewManager(m:Manager, id:String):String{
-		manager.set(m, id);
-	}
-	public function getID():String{
-		return id;
-	}
-	public function generateNewID(size:Int):Void{
-		id = UUID.random(size);
+	public function getManager():Manager{
+		return manager;
 	}
 }
