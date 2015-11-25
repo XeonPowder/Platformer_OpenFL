@@ -44,20 +44,20 @@ namespace game{
 
 Void GameStage_obj::__construct(::core2::game::Game g,::core2::game::GameWindow gw)
 {
-HX_STACK_FRAME("core2.game.GameStage","new",0x374bb45d,"core2.game.GameStage.new","core2/game/GameStage.hx",10,0x2dea3213)
+HX_STACK_FRAME("core2.game.GameStage","new",0x374bb45d,"core2.game.GameStage.new","core2/game/GameStage.hx",11,0x2dea3213)
 HX_STACK_THIS(this)
 HX_STACK_ARG(g,"g")
 HX_STACK_ARG(gw,"gw")
 {
-	HX_STACK_LINE(11)
-	::core2::game::GameWindow tmp = gw;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(11)
-	super::__construct(tmp,null());
 	HX_STACK_LINE(12)
-	this->game = g;
+	::core2::game::GameWindow tmp = gw;		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(12)
+	super::__construct(tmp,null());
 	HX_STACK_LINE(13)
-	this->gameWindow = gw;
+	this->game = g;
 	HX_STACK_LINE(14)
+	this->gameWindow = gw;
+	HX_STACK_LINE(15)
 	this->gameStage = hx::ObjectPtr<OBJ_>(this);
 }
 ;
@@ -78,9 +78,9 @@ Dynamic GameStage_obj::__Create(hx::DynamicArray inArgs)
 	return _result_;}
 
 ::core2::game::GameStage GameStage_obj::getGameStage( ){
-	HX_STACK_FRAME("core2.game.GameStage","getGameStage",0x8c892a59,"core2.game.GameStage.getGameStage","core2/game/GameStage.hx",17,0x2dea3213)
+	HX_STACK_FRAME("core2.game.GameStage","getGameStage",0x8c892a59,"core2.game.GameStage.getGameStage","core2/game/GameStage.hx",18,0x2dea3213)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(17)
+	HX_STACK_LINE(18)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -88,11 +88,11 @@ Dynamic GameStage_obj::__Create(hx::DynamicArray inArgs)
 HX_DEFINE_DYNAMIC_FUNC0(GameStage_obj,getGameStage,return )
 
 ::core2::game::GameWindow GameStage_obj::getGameWindow( ){
-	HX_STACK_FRAME("core2.game.GameStage","getGameWindow",0xb8167bf5,"core2.game.GameStage.getGameWindow","core2/game/GameStage.hx",19,0x2dea3213)
+	HX_STACK_FRAME("core2.game.GameStage","getGameWindow",0xb8167bf5,"core2.game.GameStage.getGameWindow","core2/game/GameStage.hx",20,0x2dea3213)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(20)
+	HX_STACK_LINE(21)
 	::core2::game::GameWindow tmp = this->gameWindow;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(20)
+	HX_STACK_LINE(21)
 	return tmp;
 }
 

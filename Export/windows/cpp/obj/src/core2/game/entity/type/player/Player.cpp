@@ -90,43 +90,39 @@ int experienceGained = __o_experienceGained.Default(0);
 	HX_STACK_LINE(22)
 	this->game = g;
 	HX_STACK_LINE(23)
-	::openfl::display::BitmapData tmp2 = ::openfl::Assets_obj::getBitmapData(HX_HCSTRING("assests/player/movement/idle/idle.png","\x17","\xca","\x42","\x4a"),null());		HX_STACK_VAR(tmp2,"tmp2");
+	::openfl::display::BitmapData tmp2 = ::openfl::Assets_obj::getBitmapData(HX_HCSTRING("Assets/Sprites/player/movement/right/right.png","\x25","\x76","\x8c","\x86"),null());		HX_STACK_VAR(tmp2,"tmp2");
 	HX_STACK_LINE(23)
 	this->graphic = tmp2;
-	HX_STACK_LINE(24)
-	::core2::game::entity::type::player::animation::PlayerAnimations tmp3 = ::core2::game::entity::type::player::animation::PlayerAnimations_obj::__new(hx::ObjectPtr<OBJ_>(this));		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(24)
-	this->playerAnimations = tmp3;
 	HX_STACK_LINE(25)
-	::core2::game::Game tmp4 = this->getGame();		HX_STACK_VAR(tmp4,"tmp4");
+	::core2::game::Game tmp3 = this->getGame();		HX_STACK_VAR(tmp3,"tmp3");
 	HX_STACK_LINE(25)
-	::core2::game::engine::Engine tmp5 = tmp4->getEngine();		HX_STACK_VAR(tmp5,"tmp5");
+	::core2::game::engine::Engine tmp4 = tmp3->getEngine();		HX_STACK_VAR(tmp4,"tmp4");
 	HX_STACK_LINE(25)
-	::core2::game::engine::input::keyboard::KeyboardListener tmp6 = tmp5->getKeyboardListener();		HX_STACK_VAR(tmp6,"tmp6");
+	::core2::game::engine::input::keyboard::KeyboardListener tmp5 = tmp4->getKeyboardListener();		HX_STACK_VAR(tmp5,"tmp5");
 	HX_STACK_LINE(25)
-	::core2::game::entity::type::player::listeners::PlayerListener tmp7 = ::core2::game::entity::type::player::listeners::PlayerListener_obj::__new(hx::ObjectPtr<OBJ_>(this),tmp6);		HX_STACK_VAR(tmp7,"tmp7");
+	::core2::game::entity::type::player::listeners::PlayerListener tmp6 = ::core2::game::entity::type::player::listeners::PlayerListener_obj::__new(hx::ObjectPtr<OBJ_>(this),tmp5);		HX_STACK_VAR(tmp6,"tmp6");
 	HX_STACK_LINE(25)
-	this->playerListener = tmp7;
+	this->playerListener = tmp6;
 	HX_STACK_LINE(26)
-	int tmp8 = hx;		HX_STACK_VAR(tmp8,"tmp8");
+	int tmp7 = hx;		HX_STACK_VAR(tmp7,"tmp7");
 	HX_STACK_LINE(26)
-	int tmp9 = hy;		HX_STACK_VAR(tmp9,"tmp9");
+	int tmp8 = hy;		HX_STACK_VAR(tmp8,"tmp8");
 	HX_STACK_LINE(26)
-	this->setHitbox(tmp8,tmp9);
+	this->setHitbox(tmp7,tmp8);
 	HX_STACK_LINE(27)
-	::openfl::display::BitmapData tmp10 = this->graphic;		HX_STACK_VAR(tmp10,"tmp10");
+	::openfl::display::BitmapData tmp9 = this->graphic;		HX_STACK_VAR(tmp9,"tmp9");
 	HX_STACK_LINE(27)
-	::openfl::display::Bitmap tmp11 = ::openfl::display::Bitmap_obj::__new(tmp10,null(),null());		HX_STACK_VAR(tmp11,"tmp11");
+	::openfl::display::Bitmap tmp10 = ::openfl::display::Bitmap_obj::__new(tmp9,null(),null());		HX_STACK_VAR(tmp10,"tmp10");
 	HX_STACK_LINE(27)
-	this->bitmap = tmp11;
+	this->bitmap = tmp10;
 	HX_STACK_LINE(28)
-	::openfl::display::Bitmap tmp12 = this->bitmap;		HX_STACK_VAR(tmp12,"tmp12");
+	::openfl::display::Bitmap tmp11 = this->bitmap;		HX_STACK_VAR(tmp11,"tmp11");
 	HX_STACK_LINE(28)
-	this->addChild(tmp12);
+	this->addChild(tmp11);
 	HX_STACK_LINE(29)
-	::core2::game::entity::type::player::managers::PlayerManager tmp13 = ::core2::game::entity::type::player::managers::PlayerManager_obj::__new(hx::ObjectPtr<OBJ_>(this));		HX_STACK_VAR(tmp13,"tmp13");
+	::core2::game::entity::type::player::managers::PlayerManager tmp12 = ::core2::game::entity::type::player::managers::PlayerManager_obj::__new(hx::ObjectPtr<OBJ_>(this));		HX_STACK_VAR(tmp12,"tmp12");
 	HX_STACK_LINE(29)
-	this->playerManager = tmp13;
+	this->playerManager = tmp12;
 }
 ;
 	return null();

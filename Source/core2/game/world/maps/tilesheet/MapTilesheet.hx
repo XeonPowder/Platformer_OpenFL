@@ -1,5 +1,8 @@
 package core2.game.world.maps.tilesheet;
 
+
+import sys.io.File in File;
+import sys.FileSystem in FS;
 import core2.game.display.BMD in BMD;
 import openfl.display.Tilesheet in TS;
 import core2.game.world.maps.tilesheet.managers.MapTilesheetManager in MTSM;
@@ -14,6 +17,7 @@ import core2.game.assets.UUID;
 class MapTilesheet extends TS{
 	
 	private var nameArray:Array<String>;
+	private var tileArray:Array<Tile>;
 	private var mapTilesheet:Array<Array<Int>>;
 	private var mapLayout:ML;
 	private var mapTilesheetManager:MTSM;
@@ -22,10 +26,18 @@ class MapTilesheet extends TS{
 	private var m:Map;
 	private var bitmapData:BMD;
 	private var id:Int;
+	private var nameArrayFromFile:Bool;
+	private var tileDataArray:Array<Float>;
+	private var width:Int;
+	private var height:Int;
 
-	public function new(map:Map, bmd:BMD, mapName:String, registerMapTilesheet:Bool = true){
-		super(bmd);
+	public function new(map:Map, w:Int, h:Int, bmd:BMD, mapName:String, registerMapTilesheet:Bool = true){
+		super(bmd.getData());
 		m = map;
+		var arX:Int = m.getAspectRatioX();
+		var arY:Int = m.getAspectRatioY();
+		width = w;
+		height = h;
 		bitmapData = bmd;
 		tileManager = new TM();
 		mapLayoutManager = new MLM();
@@ -33,51 +45,57 @@ class MapTilesheet extends TS{
 		if(registerMapTilesheet){
 			m.getMapTilesheetManager().getList().set(this, mapName);
 		}
-		nameArray = generateNameArray(mapName+"NameArray.txt");
-		mapLayout = new ML(map, mapLayoutManager, bmd, mapName, generateTiles(nameArray));
+		nameArray = new Array<String>();
+		nameArray = generateNameArray("assets/maps/"+mapName+"/NameArray.txt");
+		tileArray = new Array<Tile>();
+		tileArray = generateTiles(nameArray, tileManager, bitmapData, width, height);
+		mapLayout = new ML(map, this, mapLayoutManager, bmd, mapName, width, height, tileArray);
+		mapTilesheet = new Array<Array<Int>>();
 		mapTilesheet = mapLayout.getLayout();
+		trace(mapTilesheet);
+		tileDataArray = new Array<Float>();
+		tileDataArray = generateTileDataArray(m, mapTilesheet, bitmapData, 0, 0, 0, width, height, arX, arY, new Array<Float>());
 	}
 	public function hashCode():Int{
 		return id;
 	}
 	public function generateNameArray(fName:String):Array<String>{
 		var array:Array<String> = new Array<String>();
-		var fin = sys.io.File.read(fName, false);
-		var x:Int = 0;
-		try{
-			while(fin.readLine() != null){
-				array[x] = fin.readLine();
-				x++;
+		nameArrayFromFile = false;
+		if(FS.exists(fName)){
+			var fin = File.read(fName, false);
+			var x:Int = 0;
+			try{
+				while(true){
+					array[x] = fin.readLine();
+					x++;
+				}
+			}catch(e:haxe.io.Eof){
 			}
-		}catch(e:haxe.io.Eof){
-			return null;
+			nameArrayFromFile = true;
 		}
 		return array;
 	}
-	public function generateTiles(a:Array<String>):Array<Tile>{
+	public function generateTiles(a:Array<String>, tm:TM, bmd:BMD, w:Int, h:Int):Array<Tile>{
 		var arX:Int = m.getAspectRatioX();
 		var arY:Int = m.getAspectRatioY();
-		var xTo:Int = Std.int(bitmapData.width/arX);
-		var yTo:Int = Std.int(bitmapData.height/arY);
-		var tileArray:Array<Tile> = new Array<Tile>();
+		var xTo:Int = Std.int(w/arX);//Std.int(bitmapData.getWidth()/arX);
+		var yTo:Int = Std.int(h/arY);//Std.int(bitmapData.getHeight()/arY);
+		var f_tileArray:Array<Tile> = new Array<Tile>();
 		var z:Int = 0;
 		for(x in 0 ... xTo){
 			for(y in 0 ... yTo){
 				var tileID:Int = addTileRect(new Rectangle(x*arX, y*arY, arX, arY));
-				if(a[z] == null){
-					var tileName:String = "";
-					while(tileName == null){
-						Sys.print("Enter Tilename: ");
-						tileName = Sys.stdin().readLine();
-					}
-					tileArray[tileArray.length] = new Tile(tileManager, tileName, tileID);
+				if(a[z] != null){
+					var tileName:String = new String("x:"+x+" y:"+y);
+					f_tileArray[z] = new Tile(tm, tileName, tileID);
 				}else{
-					tileArray[tileArray.length] = new Tile(tileManager, a[z], tileID);
+					f_tileArray[z] = new Tile(tm, a[z], tileID);
 				}
 				z++;
 			}
 		}
-		return tileArray;
+		return f_tileArray;
 	}
 	public function getMapLayout():ML{
 		return mapLayout;
@@ -86,19 +104,25 @@ class MapTilesheet extends TS{
 		return this;
 	}
 	public function getTileData():Array<Float>{
-		return generateTileDataArray();
-	}
-	private function generateTileDataArray():Array<Float>{
-		var tileDataArray:Array<Float> = new Array<Float>();
-		var arX:Int = m.getAspectRatioX();
-		var arY:Int = m.getAspectRatioY();
-		var xTo:Int = Std.int(bitmapData.width/arX);
-		var yTo:Int = Std.int(bitmapData.height/arY);
-		for(x in 0 ... xTo){
-			for(y in 0 ... yTo){
-				tileDataArray = tileDataArray.concat([x*arX, y*arY, mapTilesheet[x][y]]);
-			}
-		}
 		return tileDataArray;
 	}
+	public function getTileArray():Array<Tile>{
+		return tileArray;
+	}
+	private function generateTileDataArray(m:Map, mts:Array<Array<Int>>, bmd:BMD, x:Int, y:Int, z:Int, w:Int, h:Int, arX:Int, arY:Int, a:Array<Float>):Array<Float>{
+		if(x > Std.int(w/arX)){//bitmapData.getWidth()/arX){
+			x = 0;
+			y++;
+		}
+		if(y > Std.int(h/arY)){//bitmapData.getHeight()/arY){
+			y = 0;
+		}
+		if(z < arY*arX){
+			trace(mts[x][y]);
+			a.concat([x*arX, y*arY, mts[x][y]]);
+			generateTileDataArray(m, mts, bmd, x+1, y, z+1, w, h, arX, arY, a);
+		}
+		return a;
+	}
+
 }

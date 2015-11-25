@@ -1,5 +1,8 @@
 #include <hxcpp.h>
 
+#ifndef INCLUDED_pgr_dconsole_ALIAS_TYPE
+#include <pgr/dconsole/ALIAS_TYPE.h>
+#endif
 #ifndef INCLUDED_openfl_text_TextFormatAlign
 #include <openfl/text/TextFormatAlign.h>
 #endif
@@ -153,6 +156,24 @@
 #ifndef INCLUDED_lime_audio_AudioContext
 #include <lime/audio/AudioContext.h>
 #endif
+#ifndef INCLUDED_hscript_Token
+#include <hscript/Token.h>
+#endif
+#ifndef INCLUDED_hscript__Interp_Stop
+#include <hscript/_Interp/Stop.h>
+#endif
+#ifndef INCLUDED_hscript_Error
+#include <hscript/Error.h>
+#endif
+#ifndef INCLUDED_hscript_CType
+#include <hscript/CType.h>
+#endif
+#ifndef INCLUDED_hscript_Expr
+#include <hscript/Expr.h>
+#endif
+#ifndef INCLUDED_hscript_Const
+#include <hscript/Const.h>
+#endif
 #ifndef INCLUDED_haxe_zip_FlushMode
 #include <haxe/zip/FlushMode.h>
 #endif
@@ -173,6 +194,18 @@
 #endif
 #ifndef INCLUDED_sys_FileSystem
 #include <sys/FileSystem.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_DConsole
+#include <pgr/dconsole/DConsole.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_DCThemes
+#include <pgr/dconsole/DCThemes.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_DCProfiler
+#include <pgr/dconsole/DCProfiler.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_DC
+#include <pgr/dconsole/DC.h>
 #endif
 #ifndef INCLUDED_openfl_ui_Keyboard
 #include <openfl/ui/Keyboard.h>
@@ -480,6 +513,9 @@
 #ifndef INCLUDED_lime_Assets
 #include <lime/Assets.h>
 #endif
+#ifndef INCLUDED_hscript_Parser
+#include <hscript/Parser.h>
+#endif
 #ifndef INCLUDED_haxe_zip_Uncompress
 #include <haxe/zip/Uncompress.h>
 #endif
@@ -509,6 +545,39 @@
 #endif
 #ifndef INCLUDED_EReg
 #include <EReg.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_ui_DCOpenflInterface
+#include <pgr/dconsole/ui/DCOpenflInterface.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_ui_DCEmtpyInterface
+#include <pgr/dconsole/ui/DCEmtpyInterface.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_ui_DCInterface
+#include <pgr/dconsole/ui/DCInterface.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_input_DCOpenflInput
+#include <pgr/dconsole/input/DCOpenflInput.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_input_DCEmptyInput
+#include <pgr/dconsole/input/DCEmptyInput.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_input_DCInput
+#include <pgr/dconsole/input/DCInput.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_DCUtil
+#include <pgr/dconsole/DCUtil.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_SampleHistory
+#include <pgr/dconsole/SampleHistory.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_DCMonitor
+#include <pgr/dconsole/DCMonitor.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_DCInterp
+#include <pgr/dconsole/DCInterp.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_DCCommands
+#include <pgr/dconsole/DCCommands.h>
 #endif
 #ifndef INCLUDED_openfl_ui_GameInputControl
 #include <openfl/ui/GameInputControl.h>
@@ -1158,14 +1227,26 @@
 #ifndef INCLUDED_lime_AssetCache
 #include <lime/AssetCache.h>
 #endif
+#ifndef INCLUDED_hscript_Interp
+#include <hscript/Interp.h>
+#endif
+#ifndef INCLUDED_haxe_io_StringInput
+#include <haxe/io/StringInput.h>
+#endif
 #ifndef INCLUDED_haxe_io_Path
 #include <haxe/io/Path.h>
 #endif
 #ifndef INCLUDED_haxe_io_Eof
 #include <haxe/io/Eof.h>
 #endif
+#ifndef INCLUDED_haxe_io_BytesOutput
+#include <haxe/io/BytesOutput.h>
+#endif
 #ifndef INCLUDED_haxe_io_Output
 #include <haxe/io/Output.h>
+#endif
+#ifndef INCLUDED_haxe_io_BytesInput
+#include <haxe/io/BytesInput.h>
 #endif
 #ifndef INCLUDED_haxe_io_Input
 #include <haxe/io/Input.h>
@@ -1179,6 +1260,9 @@
 #ifndef INCLUDED_haxe_format_JsonParser
 #include <haxe/format/JsonParser.h>
 #endif
+#ifndef INCLUDED_haxe_ds__GenericStack_GenericStackIterator_hscript_Token
+#include <haxe/ds/_GenericStack/GenericStackIterator_hscript_Token.h>
+#endif
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
@@ -1190,6 +1274,12 @@
 #endif
 #ifndef INCLUDED_haxe_ds__HashMap_HashMapData
 #include <haxe/ds/_HashMap/HashMapData.h>
+#endif
+#ifndef INCLUDED_haxe_ds_GenericStack_hscript_Token
+#include <haxe/ds/GenericStack_hscript_Token.h>
+#endif
+#ifndef INCLUDED_haxe_ds_GenericCell_hscript_Token
+#include <haxe/ds/GenericCell_hscript_Token.h>
 #endif
 #ifndef INCLUDED_haxe_crypto_Md5
 #include <haxe/crypto/Md5.h>
@@ -1356,6 +1446,9 @@
 #ifndef INCLUDED_Lambda
 #include <Lambda.h>
 #endif
+#ifndef INCLUDED_IntIterator
+#include <IntIterator.h>
+#endif
 #ifndef INCLUDED_cpp_Lib
 #include <cpp/Lib.h>
 #endif
@@ -1384,6 +1477,7 @@ void __boot_all()
 {
 __files__boot();
 hx::RegisterResources( hx::GetResources() );
+::pgr::dconsole::ALIAS_TYPE_obj::__register();
 ::openfl::text::TextFormatAlign_obj::__register();
 ::openfl::text::TextFieldType_obj::__register();
 ::openfl::text::TextFieldAutoSize_obj::__register();
@@ -1435,6 +1529,12 @@ hx::RegisterResources( hx::GetResources() );
 ::lime::graphics::ImageType_obj::__register();
 ::lime::graphics::ImageChannel_obj::__register();
 ::lime::audio::AudioContext_obj::__register();
+::hscript::Token_obj::__register();
+::hscript::_Interp::Stop_obj::__register();
+::hscript::Error_obj::__register();
+::hscript::CType_obj::__register();
+::hscript::Expr_obj::__register();
+::hscript::Const_obj::__register();
 ::haxe::zip::FlushMode_obj::__register();
 ::haxe::io::Error_obj::__register();
 ::haxe::StackItem_obj::__register();
@@ -1442,6 +1542,10 @@ hx::RegisterResources( hx::GetResources() );
 ::sys::io::FileInput_obj::__register();
 ::sys::io::File_obj::__register();
 ::sys::FileSystem_obj::__register();
+::pgr::dconsole::DConsole_obj::__register();
+::pgr::dconsole::DCThemes_obj::__register();
+::pgr::dconsole::DCProfiler_obj::__register();
+::pgr::dconsole::DC_obj::__register();
 ::openfl::ui::Keyboard_obj::__register();
 ::openfl::ui::GameInputDevice_obj::__register();
 ::openfl::ui::GameInput_obj::__register();
@@ -1544,6 +1648,7 @@ hx::RegisterResources( hx::GetResources() );
 ::lime::_backend::native::NativeMouse_obj::__register();
 ::lime::_backend::native::NativeApplication_obj::__register();
 ::lime::Assets_obj::__register();
+::hscript::Parser_obj::__register();
 ::haxe::zip::Uncompress_obj::__register();
 ::haxe::zip::Compress_obj::__register();
 ::haxe::Unserializer_obj::__register();
@@ -1554,6 +1659,17 @@ hx::RegisterResources( hx::GetResources() );
 ::Sys_obj::__register();
 ::openfl::display::DisplayObject_obj::__register();
 ::EReg_obj::__register();
+::pgr::dconsole::ui::DCOpenflInterface_obj::__register();
+::pgr::dconsole::ui::DCEmtpyInterface_obj::__register();
+::pgr::dconsole::ui::DCInterface_obj::__register();
+::pgr::dconsole::input::DCOpenflInput_obj::__register();
+::pgr::dconsole::input::DCEmptyInput_obj::__register();
+::pgr::dconsole::input::DCInput_obj::__register();
+::pgr::dconsole::DCUtil_obj::__register();
+::pgr::dconsole::SampleHistory_obj::__register();
+::pgr::dconsole::DCMonitor_obj::__register();
+::pgr::dconsole::DCInterp_obj::__register();
+::pgr::dconsole::DCCommands_obj::__register();
 ::openfl::ui::GameInputControl_obj::__register();
 ::openfl::text::TextLineMetrics_obj::__register();
 ::openfl::text::TextFormat_obj::__register();
@@ -1770,17 +1886,24 @@ hx::RegisterResources( hx::GetResources() );
 ::lime::_backend::native::_NativeApplication::ApplicationEventInfo_obj::__register();
 ::lime::app::Event_Void_Void_obj::__register();
 ::lime::AssetCache_obj::__register();
+::hscript::Interp_obj::__register();
+::haxe::io::StringInput_obj::__register();
 ::haxe::io::Path_obj::__register();
 ::haxe::io::Eof_obj::__register();
+::haxe::io::BytesOutput_obj::__register();
 ::haxe::io::Output_obj::__register();
+::haxe::io::BytesInput_obj::__register();
 ::haxe::io::Input_obj::__register();
 ::haxe::io::BytesBuffer_obj::__register();
 ::haxe::io::Bytes_obj::__register();
 ::haxe::format::JsonParser_obj::__register();
+::haxe::ds::_GenericStack::GenericStackIterator_hscript_Token_obj::__register();
 ::haxe::ds::StringMap_obj::__register();
 ::haxe::ds::ObjectMap_obj::__register();
 ::haxe::ds::IntMap_obj::__register();
 ::haxe::ds::_HashMap::HashMapData_obj::__register();
+::haxe::ds::GenericStack_hscript_Token_obj::__register();
+::haxe::ds::GenericCell_hscript_Token_obj::__register();
 ::haxe::crypto::Md5_obj::__register();
 ::haxe::crypto::BaseCode_obj::__register();
 ::haxe::IMap_obj::__register();
@@ -1836,6 +1959,7 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::events::IEventDispatcher_obj::__register();
 ::List_obj::__register();
 ::Lambda_obj::__register();
+::IntIterator_obj::__register();
 ::cpp::Lib_obj::__register();
 ::DefaultAssetLibrary_obj::__register();
 ::lime::AssetLibrary_obj::__register();
@@ -1843,6 +1967,7 @@ hx::RegisterResources( hx::GetResources() );
 ::DocumentClass_obj::__register();
 ::Main_obj::__register();
 ::ApplicationMain_obj::__register();
+::pgr::dconsole::ALIAS_TYPE_obj::__boot();
 ::openfl::text::TextFormatAlign_obj::__boot();
 ::openfl::text::TextFieldType_obj::__boot();
 ::openfl::text::TextFieldAutoSize_obj::__boot();
@@ -1894,6 +2019,12 @@ hx::RegisterResources( hx::GetResources() );
 ::lime::graphics::ImageType_obj::__boot();
 ::lime::graphics::ImageChannel_obj::__boot();
 ::lime::audio::AudioContext_obj::__boot();
+::hscript::Token_obj::__boot();
+::hscript::_Interp::Stop_obj::__boot();
+::hscript::Error_obj::__boot();
+::hscript::CType_obj::__boot();
+::hscript::Expr_obj::__boot();
+::hscript::Const_obj::__boot();
 ::haxe::zip::FlushMode_obj::__boot();
 ::haxe::io::Error_obj::__boot();
 ::haxe::StackItem_obj::__boot();
@@ -1909,6 +2040,7 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::Unserializer_obj::__boot();
 ::haxe::zip::Compress_obj::__boot();
 ::haxe::zip::Uncompress_obj::__boot();
+::hscript::Parser_obj::__boot();
 ::lime::Assets_obj::__boot();
 ::lime::_backend::native::NativeApplication_obj::__boot();
 ::lime::_backend::native::NativeMouse_obj::__boot();
@@ -2011,6 +2143,10 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::ui::GameInput_obj::__boot();
 ::openfl::ui::GameInputDevice_obj::__boot();
 ::openfl::ui::Keyboard_obj::__boot();
+::pgr::dconsole::DC_obj::__boot();
+::pgr::dconsole::DCProfiler_obj::__boot();
+::pgr::dconsole::DCThemes_obj::__boot();
+::pgr::dconsole::DConsole_obj::__boot();
 ::sys::FileSystem_obj::__boot();
 ::sys::io::File_obj::__boot();
 ::sys::io::FileInput_obj::__boot();

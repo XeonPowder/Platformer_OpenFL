@@ -114,6 +114,26 @@ Dynamic Reflect_obj::getProperty( Dynamic o,::String field){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Reflect_obj,getProperty,return )
 
+Void Reflect_obj::setProperty( Dynamic o,::String field,Dynamic value){
+{
+		HX_STACK_FRAME("Reflect","setProperty",0x6d99a846,"Reflect.setProperty","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Reflect.hx",41,0x487b3827)
+		HX_STACK_ARG(o,"o")
+		HX_STACK_ARG(field,"field")
+		HX_STACK_ARG(value,"value")
+		HX_STACK_LINE(42)
+		bool tmp = (o != null());		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(42)
+		if ((tmp)){
+			HX_STACK_LINE(43)
+			o->__SetField(field,value,hx::paccAlways);
+		}
+	}
+return null();
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC3(Reflect_obj,setProperty,(void))
+
 Dynamic Reflect_obj::callMethod( Dynamic o,Dynamic func,cpp::ArrayBase args){
 	HX_STACK_FRAME("Reflect","callMethod",0xb49e52d0,"Reflect.callMethod","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Reflect.hx",46,0x487b3827)
 	HX_STACK_ARG(o,"o")
@@ -387,6 +407,7 @@ bool Reflect_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Pro
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getProperty") ) { outValue = getProperty_dyn(); return true;  }
+		if (HX_FIELD_EQ(inName,"setProperty") ) { outValue = setProperty_dyn(); return true;  }
 		if (HX_FIELD_EQ(inName,"deleteField") ) { outValue = deleteField_dyn(); return true;  }
 		if (HX_FIELD_EQ(inName,"makeVarArgs") ) { outValue = makeVarArgs_dyn(); return true;  }
 		break;
@@ -419,6 +440,7 @@ static ::String sStaticFields[] = {
 	HX_HCSTRING("field","\xba","\x94","\x93","\x00"),
 	HX_HCSTRING("setField","\xb8","\xfd","\xc7","\x0e"),
 	HX_HCSTRING("getProperty","\x0b","\x0b","\x2c","\xd2"),
+	HX_HCSTRING("setProperty","\x17","\x12","\x99","\xdc"),
 	HX_HCSTRING("callMethod","\x1f","\xce","\x8a","\x34"),
 	HX_HCSTRING("fields","\x79","\x8e","\x8e","\x80"),
 	HX_HCSTRING("isFunction","\x22","\xbd","\x01","\x8f"),

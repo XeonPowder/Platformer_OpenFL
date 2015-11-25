@@ -143,8 +143,6 @@ int Stdout_obj::readBytes( ::haxe::io::Bytes str,int pos,int len){
 }
 
 
-HX_DEFINE_DYNAMIC_FUNC3(Stdout_obj,readBytes,return )
-
 Dynamic Stdout_obj::_stdout_read;
 
 Dynamic Stdout_obj::_stderr_read;

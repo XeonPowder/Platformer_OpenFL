@@ -16,12 +16,16 @@ class World{
 	private var mapManager:MM;
 	private var game:G;
 	private var player:P;
-	public function new(g:G, s:GameStage, aspectratiox:Int, aspectratioy:Int){
+	private var width:Int;
+	private var height:Int;
+	public function new(g:G, w:Int, h:Int, s:GameStage, aspectratiox:Int, aspectratioy:Int){
 		game = g;
+		width = w;
+		height = h;
 		windowStage = s;
 		window = windowStage.getGameWindow();
 		mapManager = new MM();
-		newMap("NewWorld", aspectratiox, aspectratioy);
+		map = new Map(this, width, height, mapManager, aspectratiox, aspectratioy, "NewWorld");
 		windowStage.addChild(map);
 		windowStage.addEventListener(E.ENTER_FRAME, getGame().getEngine().tick);
 		windowStage.addEventListener(KE.KEY_DOWN, getGame().getEngine().tick);
@@ -42,9 +46,6 @@ class World{
 	}
 	public function getMapManager(){
 		return mapManager;
-	}
-	private function newMap(mapName:String, ax:Int, ay:Int):Void{
-		map = new Map(mapManager, ax, ay, mapName);
 	}
 	public function getGame():G{
 		return game;

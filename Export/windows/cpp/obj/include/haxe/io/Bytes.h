@@ -55,6 +55,12 @@ class HXCPP_CLASS_ATTRIBUTES  Bytes_obj : public hx::Object{
 		virtual Void setFloat( int pos,Float v);
 		Dynamic setFloat_dyn();
 
+		virtual ::String getString( int pos,int len);
+		Dynamic getString_dyn();
+
+		virtual ::String toString( );
+		Dynamic toString_dyn();
+
 };
 
 } // end namespace haxe

@@ -4944,4784 +4944,6 @@ HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_Int16Array,retur
 
 HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_UInt16Array,return )
 
-::lime::utils::ArrayBufferView ArrayBufferView_obj::subarray_lime_utils_UInt32Array( int begin,Dynamic end){
-	HX_STACK_FRAME("lime.utils.ArrayBufferView","subarray_lime_utils_UInt32Array",0xcbd26328,"lime.utils.ArrayBufferView.subarray_lime_utils_UInt32Array","lime/utils/ArrayBufferView.hx",160,0xb543acf8)
-	HX_STACK_THIS(this)
-	HX_STACK_ARG(begin,"begin")
-	HX_STACK_ARG(end,"end")
-	HX_STACK_LINE(162)
-	bool tmp = (end == null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(162)
-	if ((tmp)){
-		HX_STACK_LINE(162)
-		Dynamic tmp1 = end;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(162)
-		int tmp2 = this->length;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(162)
-		(tmp1 == tmp2);
-	}
-	HX_STACK_LINE(163)
-	int tmp1 = (end - begin);		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(163)
-	int len = tmp1;		HX_STACK_VAR(len,"len");
-	HX_STACK_LINE(164)
-	int tmp2 = begin;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(164)
-	int tmp3 = this->bytesPerElement;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(164)
-	int tmp4 = (tmp2 * tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(164)
-	int byte_offset = tmp4;		HX_STACK_VAR(byte_offset,"byte_offset");
-	HX_STACK_LINE(167)
-	::lime::utils::ArrayBufferView tmp5;		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(167)
-	{
-		HX_STACK_LINE(167)
-		int tmp6 = this->type;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(167)
-		int _g = tmp6;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(167)
-		int tmp7 = _g;		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(167)
-		switch( (int)(tmp7)){
-			case (int)1: {
-				HX_STACK_LINE(170)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(170)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(170)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(170)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(170)
-				if ((tmp9)){
-					HX_STACK_LINE(170)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)1);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(170)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(170)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(170)
-					if ((tmp10)){
-						HX_STACK_LINE(170)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(170)
-						{
-							HX_STACK_LINE(170)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(170)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(170)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(170)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(170)
-							_this->length = tmp13;
-							HX_STACK_LINE(170)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(170)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(170)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(170)
-							{
-								HX_STACK_LINE(170)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(170)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(170)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(170)
-								this2 = tmp17;
-								HX_STACK_LINE(170)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(170)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(170)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(170)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(170)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(170)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(170)
-						if ((tmp11)){
-							HX_STACK_LINE(170)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(170)
-							{
-								HX_STACK_LINE(170)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(170)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(170)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(170)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(170)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(170)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(170)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(170)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(170)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(170)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(170)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(170)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(170)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(170)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(170)
-								if ((tmp20)){
-									HX_STACK_LINE(170)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(170)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(170)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(170)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(170)
-									{
-										HX_STACK_LINE(170)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(170)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(170)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(170)
-										this2 = tmp24;
-										HX_STACK_LINE(170)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(170)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(170)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(170)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(170)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(170)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(170)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(170)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(170)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(170)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(170)
-								_this->length = srcLength;
-								HX_STACK_LINE(170)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(170)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(170)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(170)
-							if ((tmp12)){
-								HX_STACK_LINE(170)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(170)
-								{
-									HX_STACK_LINE(170)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(170)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(170)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(170)
-									if ((tmp15)){
-										HX_STACK_LINE(170)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(170)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(170)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(170)
-									if ((tmp17)){
-										HX_STACK_LINE(170)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(170)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(170)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(170)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(170)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(170)
-									if ((tmp18)){
-										HX_STACK_LINE(170)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(170)
-										newByteLength = tmp19;
-										HX_STACK_LINE(170)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(170)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(170)
-										if ((tmp21)){
-											HX_STACK_LINE(170)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(170)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(170)
-										if ((tmp22)){
-											HX_STACK_LINE(170)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(170)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(170)
-										newByteLength = tmp19;
-										HX_STACK_LINE(170)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(170)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(170)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(170)
-										if ((tmp21)){
-											HX_STACK_LINE(170)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(170)
-									_this->buffer = buffer;
-									HX_STACK_LINE(170)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(170)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(170)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(170)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(170)
-									_this->length = tmp20;
-									HX_STACK_LINE(170)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(170)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(170)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int8Array","\x40","\x53","\xda","\x77"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(170)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)2: {
-				HX_STACK_LINE(173)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(173)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(173)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(173)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(173)
-				if ((tmp9)){
-					HX_STACK_LINE(173)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)2);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(173)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(173)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(173)
-					if ((tmp10)){
-						HX_STACK_LINE(173)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(173)
-						{
-							HX_STACK_LINE(173)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(173)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(173)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(173)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(173)
-							_this->length = tmp13;
-							HX_STACK_LINE(173)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(173)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(173)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(173)
-							{
-								HX_STACK_LINE(173)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(173)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(173)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(173)
-								this2 = tmp17;
-								HX_STACK_LINE(173)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(173)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(173)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(173)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(173)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(173)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(173)
-						if ((tmp11)){
-							HX_STACK_LINE(173)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(173)
-							{
-								HX_STACK_LINE(173)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(173)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(173)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(173)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(173)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(173)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(173)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(173)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(173)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(173)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(173)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(173)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(173)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(173)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(173)
-								if ((tmp20)){
-									HX_STACK_LINE(173)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(173)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(173)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(173)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(173)
-									{
-										HX_STACK_LINE(173)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(173)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(173)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(173)
-										this2 = tmp24;
-										HX_STACK_LINE(173)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(173)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(173)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(173)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(173)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(173)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(173)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(173)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(173)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(173)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(173)
-								_this->length = srcLength;
-								HX_STACK_LINE(173)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(173)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(173)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(173)
-							if ((tmp12)){
-								HX_STACK_LINE(173)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(173)
-								{
-									HX_STACK_LINE(173)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(173)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(173)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(173)
-									if ((tmp15)){
-										HX_STACK_LINE(173)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(173)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(173)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(173)
-									if ((tmp17)){
-										HX_STACK_LINE(173)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(173)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(173)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(173)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(173)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(173)
-									if ((tmp18)){
-										HX_STACK_LINE(173)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(173)
-										newByteLength = tmp19;
-										HX_STACK_LINE(173)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(173)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(173)
-										if ((tmp21)){
-											HX_STACK_LINE(173)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(173)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(173)
-										if ((tmp22)){
-											HX_STACK_LINE(173)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(173)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(173)
-										newByteLength = tmp19;
-										HX_STACK_LINE(173)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(173)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(173)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(173)
-										if ((tmp21)){
-											HX_STACK_LINE(173)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(173)
-									_this->buffer = buffer;
-									HX_STACK_LINE(173)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(173)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(173)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(173)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(173)
-									_this->length = tmp20;
-									HX_STACK_LINE(173)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(173)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(173)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int16Array","\x95","\xb2","\x95","\xa7"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(173)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)3: {
-				HX_STACK_LINE(176)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(176)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(176)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(176)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(176)
-				if ((tmp9)){
-					HX_STACK_LINE(176)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)3);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(176)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(176)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(176)
-					if ((tmp10)){
-						HX_STACK_LINE(176)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(176)
-						{
-							HX_STACK_LINE(176)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(176)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(176)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(176)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(176)
-							_this->length = tmp13;
-							HX_STACK_LINE(176)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(176)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(176)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(176)
-							{
-								HX_STACK_LINE(176)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(176)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(176)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(176)
-								this2 = tmp17;
-								HX_STACK_LINE(176)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(176)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(176)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(176)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(176)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(176)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(176)
-						if ((tmp11)){
-							HX_STACK_LINE(176)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(176)
-							{
-								HX_STACK_LINE(176)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(176)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(176)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(176)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(176)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(176)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(176)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(176)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(176)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(176)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(176)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(176)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(176)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(176)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(176)
-								if ((tmp20)){
-									HX_STACK_LINE(176)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(176)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(176)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(176)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(176)
-									{
-										HX_STACK_LINE(176)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(176)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(176)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(176)
-										this2 = tmp24;
-										HX_STACK_LINE(176)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(176)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(176)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(176)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(176)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(176)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(176)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(176)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(176)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(176)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(176)
-								_this->length = srcLength;
-								HX_STACK_LINE(176)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(176)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(176)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(176)
-							if ((tmp12)){
-								HX_STACK_LINE(176)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(176)
-								{
-									HX_STACK_LINE(176)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(176)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(176)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(176)
-									if ((tmp15)){
-										HX_STACK_LINE(176)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(176)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(176)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(176)
-									if ((tmp17)){
-										HX_STACK_LINE(176)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(176)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(176)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(176)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(176)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(176)
-									if ((tmp18)){
-										HX_STACK_LINE(176)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(176)
-										newByteLength = tmp19;
-										HX_STACK_LINE(176)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(176)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(176)
-										if ((tmp21)){
-											HX_STACK_LINE(176)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(176)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(176)
-										if ((tmp22)){
-											HX_STACK_LINE(176)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(176)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(176)
-										newByteLength = tmp19;
-										HX_STACK_LINE(176)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(176)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(176)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(176)
-										if ((tmp21)){
-											HX_STACK_LINE(176)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(176)
-									_this->buffer = buffer;
-									HX_STACK_LINE(176)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(176)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(176)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(176)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(176)
-									_this->length = tmp20;
-									HX_STACK_LINE(176)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(176)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(176)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int32Array","\x9b","\x2e","\x53","\x61"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(176)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)4: {
-				HX_STACK_LINE(179)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(179)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(179)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(179)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(179)
-				if ((tmp9)){
-					HX_STACK_LINE(179)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)4);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(179)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(179)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(179)
-					if ((tmp10)){
-						HX_STACK_LINE(179)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(179)
-						{
-							HX_STACK_LINE(179)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(179)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(179)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(179)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(179)
-							_this->length = tmp13;
-							HX_STACK_LINE(179)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(179)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(179)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(179)
-							{
-								HX_STACK_LINE(179)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(179)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(179)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(179)
-								this2 = tmp17;
-								HX_STACK_LINE(179)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(179)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(179)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(179)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(179)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(179)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(179)
-						if ((tmp11)){
-							HX_STACK_LINE(179)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(179)
-							{
-								HX_STACK_LINE(179)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(179)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(179)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(179)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(179)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(179)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(179)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(179)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(179)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(179)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(179)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(179)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(179)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(179)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(179)
-								if ((tmp20)){
-									HX_STACK_LINE(179)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(179)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(179)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(179)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(179)
-									{
-										HX_STACK_LINE(179)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(179)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(179)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(179)
-										this2 = tmp24;
-										HX_STACK_LINE(179)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(179)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(179)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(179)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(179)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(179)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(179)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(179)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(179)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(179)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(179)
-								_this->length = srcLength;
-								HX_STACK_LINE(179)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(179)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(179)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(179)
-							if ((tmp12)){
-								HX_STACK_LINE(179)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(179)
-								{
-									HX_STACK_LINE(179)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(179)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(179)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(179)
-									if ((tmp15)){
-										HX_STACK_LINE(179)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(179)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(179)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(179)
-									if ((tmp17)){
-										HX_STACK_LINE(179)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(179)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(179)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(179)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(179)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(179)
-									if ((tmp18)){
-										HX_STACK_LINE(179)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(179)
-										newByteLength = tmp19;
-										HX_STACK_LINE(179)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(179)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(179)
-										if ((tmp21)){
-											HX_STACK_LINE(179)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(179)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(179)
-										if ((tmp22)){
-											HX_STACK_LINE(179)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(179)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(179)
-										newByteLength = tmp19;
-										HX_STACK_LINE(179)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(179)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(179)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(179)
-										if ((tmp21)){
-											HX_STACK_LINE(179)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(179)
-									_this->buffer = buffer;
-									HX_STACK_LINE(179)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(179)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(179)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(179)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(179)
-									_this->length = tmp20;
-									HX_STACK_LINE(179)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(179)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(179)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint8Array","\x8b","\x64","\x02","\xe4"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(179)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)5: {
-				HX_STACK_LINE(182)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(182)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(182)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(182)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(182)
-				if ((tmp9)){
-					HX_STACK_LINE(182)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)5);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(182)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(182)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(182)
-					if ((tmp10)){
-						HX_STACK_LINE(182)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(182)
-						{
-							HX_STACK_LINE(182)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(182)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(182)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(182)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(182)
-							_this->length = tmp13;
-							HX_STACK_LINE(182)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(182)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(182)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(182)
-							{
-								HX_STACK_LINE(182)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(182)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(182)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(182)
-								this2 = tmp17;
-								HX_STACK_LINE(182)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(182)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(182)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(182)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(182)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(182)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(182)
-						if ((tmp11)){
-							HX_STACK_LINE(182)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(182)
-							{
-								HX_STACK_LINE(182)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(182)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(182)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(182)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(182)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(182)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(182)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(182)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(182)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(182)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(182)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(182)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(182)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(182)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(182)
-								if ((tmp20)){
-									HX_STACK_LINE(182)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(182)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(182)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(182)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(182)
-									{
-										HX_STACK_LINE(182)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(182)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(182)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(182)
-										this2 = tmp24;
-										HX_STACK_LINE(182)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(182)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(182)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(182)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(182)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(182)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(182)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(182)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(182)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(182)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(182)
-								_this->length = srcLength;
-								HX_STACK_LINE(182)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(182)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(182)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(182)
-							if ((tmp12)){
-								HX_STACK_LINE(182)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(182)
-								{
-									HX_STACK_LINE(182)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(182)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(182)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(182)
-									if ((tmp15)){
-										HX_STACK_LINE(182)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(182)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(182)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(182)
-									if ((tmp17)){
-										HX_STACK_LINE(182)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(182)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(182)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(182)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(182)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(182)
-									if ((tmp18)){
-										HX_STACK_LINE(182)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(182)
-										newByteLength = tmp19;
-										HX_STACK_LINE(182)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(182)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(182)
-										if ((tmp21)){
-											HX_STACK_LINE(182)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(182)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(182)
-										if ((tmp22)){
-											HX_STACK_LINE(182)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(182)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(182)
-										newByteLength = tmp19;
-										HX_STACK_LINE(182)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(182)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(182)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(182)
-										if ((tmp21)){
-											HX_STACK_LINE(182)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(182)
-									_this->buffer = buffer;
-									HX_STACK_LINE(182)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(182)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(182)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(182)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(182)
-									_this->length = tmp20;
-									HX_STACK_LINE(182)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(182)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(182)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint8ClampedArray","\x6d","\x2a","\x7c","\xf9"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(182)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)6: {
-				HX_STACK_LINE(185)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(185)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(185)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(185)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(185)
-				if ((tmp9)){
-					HX_STACK_LINE(185)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)6);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(185)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(185)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(185)
-					if ((tmp10)){
-						HX_STACK_LINE(185)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(185)
-						{
-							HX_STACK_LINE(185)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(185)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(185)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(185)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(185)
-							_this->length = tmp13;
-							HX_STACK_LINE(185)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(185)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(185)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(185)
-							{
-								HX_STACK_LINE(185)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(185)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(185)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(185)
-								this2 = tmp17;
-								HX_STACK_LINE(185)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(185)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(185)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(185)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(185)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(185)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(185)
-						if ((tmp11)){
-							HX_STACK_LINE(185)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(185)
-							{
-								HX_STACK_LINE(185)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(185)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(185)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(185)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(185)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(185)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(185)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(185)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(185)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(185)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(185)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(185)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(185)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(185)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(185)
-								if ((tmp20)){
-									HX_STACK_LINE(185)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(185)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(185)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(185)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(185)
-									{
-										HX_STACK_LINE(185)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(185)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(185)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(185)
-										this2 = tmp24;
-										HX_STACK_LINE(185)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(185)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(185)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(185)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(185)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(185)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(185)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(185)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(185)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(185)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(185)
-								_this->length = srcLength;
-								HX_STACK_LINE(185)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(185)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(185)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(185)
-							if ((tmp12)){
-								HX_STACK_LINE(185)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(185)
-								{
-									HX_STACK_LINE(185)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(185)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(185)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(185)
-									if ((tmp15)){
-										HX_STACK_LINE(185)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(185)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(185)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(185)
-									if ((tmp17)){
-										HX_STACK_LINE(185)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(185)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(185)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(185)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(185)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(185)
-									if ((tmp18)){
-										HX_STACK_LINE(185)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(185)
-										newByteLength = tmp19;
-										HX_STACK_LINE(185)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(185)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(185)
-										if ((tmp21)){
-											HX_STACK_LINE(185)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(185)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(185)
-										if ((tmp22)){
-											HX_STACK_LINE(185)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(185)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(185)
-										newByteLength = tmp19;
-										HX_STACK_LINE(185)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(185)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(185)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(185)
-										if ((tmp21)){
-											HX_STACK_LINE(185)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(185)
-									_this->buffer = buffer;
-									HX_STACK_LINE(185)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(185)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(185)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(185)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(185)
-									_this->length = tmp20;
-									HX_STACK_LINE(185)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(185)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(185)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint16Array","\xea","\xc2","\x7c","\xde"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(185)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)7: {
-				HX_STACK_LINE(188)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(188)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(188)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(188)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(188)
-				if ((tmp9)){
-					HX_STACK_LINE(188)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)7);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(188)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(188)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(188)
-					if ((tmp10)){
-						HX_STACK_LINE(188)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(188)
-						{
-							HX_STACK_LINE(188)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(188)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(188)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(188)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(188)
-							_this->length = tmp13;
-							HX_STACK_LINE(188)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(188)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(188)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(188)
-							{
-								HX_STACK_LINE(188)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(188)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(188)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(188)
-								this2 = tmp17;
-								HX_STACK_LINE(188)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(188)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(188)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(188)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(188)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(188)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(188)
-						if ((tmp11)){
-							HX_STACK_LINE(188)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(188)
-							{
-								HX_STACK_LINE(188)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(188)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(188)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(188)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(188)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(188)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(188)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(188)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(188)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(188)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(188)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(188)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(188)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(188)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(188)
-								if ((tmp20)){
-									HX_STACK_LINE(188)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(188)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(188)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(188)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(188)
-									{
-										HX_STACK_LINE(188)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(188)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(188)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(188)
-										this2 = tmp24;
-										HX_STACK_LINE(188)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(188)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(188)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(188)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(188)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(188)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(188)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(188)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(188)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(188)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(188)
-								_this->length = srcLength;
-								HX_STACK_LINE(188)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(188)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(188)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(188)
-							if ((tmp12)){
-								HX_STACK_LINE(188)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(188)
-								{
-									HX_STACK_LINE(188)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(188)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(188)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(188)
-									if ((tmp15)){
-										HX_STACK_LINE(188)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(188)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(188)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(188)
-									if ((tmp17)){
-										HX_STACK_LINE(188)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(188)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(188)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(188)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(188)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(188)
-									if ((tmp18)){
-										HX_STACK_LINE(188)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(188)
-										newByteLength = tmp19;
-										HX_STACK_LINE(188)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(188)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(188)
-										if ((tmp21)){
-											HX_STACK_LINE(188)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(188)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(188)
-										if ((tmp22)){
-											HX_STACK_LINE(188)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(188)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(188)
-										newByteLength = tmp19;
-										HX_STACK_LINE(188)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(188)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(188)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(188)
-										if ((tmp21)){
-											HX_STACK_LINE(188)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(188)
-									_this->buffer = buffer;
-									HX_STACK_LINE(188)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(188)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(188)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(188)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(188)
-									_this->length = tmp20;
-									HX_STACK_LINE(188)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(188)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(188)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint32Array","\xf0","\x3e","\x3a","\x98"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(188)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)8: {
-				HX_STACK_LINE(191)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(191)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(191)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(191)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(191)
-				if ((tmp9)){
-					HX_STACK_LINE(191)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)8);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(191)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(191)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(191)
-					if ((tmp10)){
-						HX_STACK_LINE(191)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(191)
-						{
-							HX_STACK_LINE(191)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(191)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(191)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(191)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(191)
-							_this->length = tmp13;
-							HX_STACK_LINE(191)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(191)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(191)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(191)
-							{
-								HX_STACK_LINE(191)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(191)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(191)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(191)
-								this2 = tmp17;
-								HX_STACK_LINE(191)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(191)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(191)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(191)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(191)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(191)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(191)
-						if ((tmp11)){
-							HX_STACK_LINE(191)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(191)
-							{
-								HX_STACK_LINE(191)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(191)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(191)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(191)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(191)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(191)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(191)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(191)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(191)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(191)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(191)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(191)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(191)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(191)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(191)
-								if ((tmp20)){
-									HX_STACK_LINE(191)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(191)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(191)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(191)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(191)
-									{
-										HX_STACK_LINE(191)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(191)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(191)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(191)
-										this2 = tmp24;
-										HX_STACK_LINE(191)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(191)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(191)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(191)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(191)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(191)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(191)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(191)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(191)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(191)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(191)
-								_this->length = srcLength;
-								HX_STACK_LINE(191)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(191)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(191)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(191)
-							if ((tmp12)){
-								HX_STACK_LINE(191)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(191)
-								{
-									HX_STACK_LINE(191)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(191)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(191)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(191)
-									if ((tmp15)){
-										HX_STACK_LINE(191)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(191)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(191)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(191)
-									if ((tmp17)){
-										HX_STACK_LINE(191)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(191)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(191)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(191)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(191)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(191)
-									if ((tmp18)){
-										HX_STACK_LINE(191)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(191)
-										newByteLength = tmp19;
-										HX_STACK_LINE(191)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(191)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(191)
-										if ((tmp21)){
-											HX_STACK_LINE(191)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(191)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(191)
-										if ((tmp22)){
-											HX_STACK_LINE(191)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(191)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(191)
-										newByteLength = tmp19;
-										HX_STACK_LINE(191)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(191)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(191)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(191)
-										if ((tmp21)){
-											HX_STACK_LINE(191)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(191)
-									_this->buffer = buffer;
-									HX_STACK_LINE(191)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(191)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(191)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(191)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(191)
-									_this->length = tmp20;
-									HX_STACK_LINE(191)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(191)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(191)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Float32Array","\x8e","\xc1","\xf4","\xd4"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(191)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)9: {
-				HX_STACK_LINE(194)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(194)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(194)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(194)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(194)
-				if ((tmp9)){
-					HX_STACK_LINE(194)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)9);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(194)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(194)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(194)
-					if ((tmp10)){
-						HX_STACK_LINE(194)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(194)
-						{
-							HX_STACK_LINE(194)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(194)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(194)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(194)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(194)
-							_this->length = tmp13;
-							HX_STACK_LINE(194)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(194)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(194)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(194)
-							{
-								HX_STACK_LINE(194)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(194)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(194)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(194)
-								this2 = tmp17;
-								HX_STACK_LINE(194)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(194)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(194)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(194)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(194)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(194)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(194)
-						if ((tmp11)){
-							HX_STACK_LINE(194)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(194)
-							{
-								HX_STACK_LINE(194)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(194)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(194)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(194)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(194)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(194)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(194)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(194)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(194)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(194)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(194)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(194)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(194)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(194)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(194)
-								if ((tmp20)){
-									HX_STACK_LINE(194)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(194)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(194)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(194)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(194)
-									{
-										HX_STACK_LINE(194)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(194)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(194)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(194)
-										this2 = tmp24;
-										HX_STACK_LINE(194)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(194)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(194)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(194)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(194)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(194)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(194)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(194)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(194)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(194)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(194)
-								_this->length = srcLength;
-								HX_STACK_LINE(194)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(194)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(194)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(194)
-							if ((tmp12)){
-								HX_STACK_LINE(194)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(194)
-								{
-									HX_STACK_LINE(194)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(194)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(194)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(194)
-									if ((tmp15)){
-										HX_STACK_LINE(194)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(194)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(194)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(194)
-									if ((tmp17)){
-										HX_STACK_LINE(194)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(194)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(194)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(194)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(194)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(194)
-									if ((tmp18)){
-										HX_STACK_LINE(194)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(194)
-										newByteLength = tmp19;
-										HX_STACK_LINE(194)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(194)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(194)
-										if ((tmp21)){
-											HX_STACK_LINE(194)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(194)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(194)
-										if ((tmp22)){
-											HX_STACK_LINE(194)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(194)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(194)
-										newByteLength = tmp19;
-										HX_STACK_LINE(194)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(194)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(194)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(194)
-										if ((tmp21)){
-											HX_STACK_LINE(194)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(194)
-									_this->buffer = buffer;
-									HX_STACK_LINE(194)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(194)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(194)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(194)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(194)
-									_this->length = tmp20;
-									HX_STACK_LINE(194)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(194)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(194)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Float64Array","\x8f","\xde","\x6b","\x1e"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(194)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)0: {
-				HX_STACK_LINE(197)
-				HX_STACK_DO_THROW(HX_HCSTRING("subarray on a blank ArrayBufferView","\x39","\x87","\xfd","\x19"));
-			}
-			;break;
-		}
-	}
-	HX_STACK_LINE(167)
-	::lime::utils::ArrayBufferView view = tmp5;		HX_STACK_VAR(view,"view");
-	HX_STACK_LINE(200)
-	::lime::utils::ArrayBufferView tmp6 = view;		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(200)
-	return tmp6;
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_UInt32Array,return )
-
-::lime::utils::ArrayBufferView ArrayBufferView_obj::subarray_lime_utils_UInt8Array( int begin,Dynamic end){
-	HX_STACK_FRAME("lime.utils.ArrayBufferView","subarray_lime_utils_UInt8Array",0xa88baf53,"lime.utils.ArrayBufferView.subarray_lime_utils_UInt8Array","lime/utils/ArrayBufferView.hx",160,0xb543acf8)
-	HX_STACK_THIS(this)
-	HX_STACK_ARG(begin,"begin")
-	HX_STACK_ARG(end,"end")
-	HX_STACK_LINE(162)
-	bool tmp = (end == null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(162)
-	if ((tmp)){
-		HX_STACK_LINE(162)
-		Dynamic tmp1 = end;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(162)
-		int tmp2 = this->length;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(162)
-		(tmp1 == tmp2);
-	}
-	HX_STACK_LINE(163)
-	int tmp1 = (end - begin);		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(163)
-	int len = tmp1;		HX_STACK_VAR(len,"len");
-	HX_STACK_LINE(164)
-	int tmp2 = begin;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(164)
-	int tmp3 = this->bytesPerElement;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(164)
-	int tmp4 = (tmp2 * tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(164)
-	int byte_offset = tmp4;		HX_STACK_VAR(byte_offset,"byte_offset");
-	HX_STACK_LINE(167)
-	::lime::utils::ArrayBufferView tmp5;		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(167)
-	{
-		HX_STACK_LINE(167)
-		int tmp6 = this->type;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(167)
-		int _g = tmp6;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(167)
-		int tmp7 = _g;		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(167)
-		switch( (int)(tmp7)){
-			case (int)1: {
-				HX_STACK_LINE(170)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(170)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(170)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(170)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(170)
-				if ((tmp9)){
-					HX_STACK_LINE(170)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)1);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(170)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(170)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(170)
-					if ((tmp10)){
-						HX_STACK_LINE(170)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(170)
-						{
-							HX_STACK_LINE(170)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(170)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(170)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(170)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(170)
-							_this->length = tmp13;
-							HX_STACK_LINE(170)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(170)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(170)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(170)
-							{
-								HX_STACK_LINE(170)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(170)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(170)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(170)
-								this2 = tmp17;
-								HX_STACK_LINE(170)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(170)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(170)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(170)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(170)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(170)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(170)
-						if ((tmp11)){
-							HX_STACK_LINE(170)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(170)
-							{
-								HX_STACK_LINE(170)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(170)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(170)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(170)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(170)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(170)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(170)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(170)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(170)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(170)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(170)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(170)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(170)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(170)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(170)
-								if ((tmp20)){
-									HX_STACK_LINE(170)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(170)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(170)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(170)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(170)
-									{
-										HX_STACK_LINE(170)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(170)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(170)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(170)
-										this2 = tmp24;
-										HX_STACK_LINE(170)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(170)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(170)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(170)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(170)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(170)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(170)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(170)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(170)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(170)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(170)
-								_this->length = srcLength;
-								HX_STACK_LINE(170)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(170)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(170)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(170)
-							if ((tmp12)){
-								HX_STACK_LINE(170)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(170)
-								{
-									HX_STACK_LINE(170)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(170)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(170)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(170)
-									if ((tmp15)){
-										HX_STACK_LINE(170)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(170)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(170)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(170)
-									if ((tmp17)){
-										HX_STACK_LINE(170)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(170)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(170)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(170)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(170)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(170)
-									if ((tmp18)){
-										HX_STACK_LINE(170)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(170)
-										newByteLength = tmp19;
-										HX_STACK_LINE(170)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(170)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(170)
-										if ((tmp21)){
-											HX_STACK_LINE(170)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(170)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(170)
-										if ((tmp22)){
-											HX_STACK_LINE(170)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(170)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(170)
-										newByteLength = tmp19;
-										HX_STACK_LINE(170)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(170)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(170)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(170)
-										if ((tmp21)){
-											HX_STACK_LINE(170)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(170)
-									_this->buffer = buffer;
-									HX_STACK_LINE(170)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(170)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(170)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(170)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(170)
-									_this->length = tmp20;
-									HX_STACK_LINE(170)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(170)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(170)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int8Array","\x40","\x53","\xda","\x77"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(170)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)2: {
-				HX_STACK_LINE(173)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(173)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(173)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(173)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(173)
-				if ((tmp9)){
-					HX_STACK_LINE(173)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)2);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(173)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(173)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(173)
-					if ((tmp10)){
-						HX_STACK_LINE(173)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(173)
-						{
-							HX_STACK_LINE(173)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(173)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(173)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(173)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(173)
-							_this->length = tmp13;
-							HX_STACK_LINE(173)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(173)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(173)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(173)
-							{
-								HX_STACK_LINE(173)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(173)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(173)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(173)
-								this2 = tmp17;
-								HX_STACK_LINE(173)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(173)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(173)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(173)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(173)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(173)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(173)
-						if ((tmp11)){
-							HX_STACK_LINE(173)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(173)
-							{
-								HX_STACK_LINE(173)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(173)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(173)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(173)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(173)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(173)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(173)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(173)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(173)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(173)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(173)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(173)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(173)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(173)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(173)
-								if ((tmp20)){
-									HX_STACK_LINE(173)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(173)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(173)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(173)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(173)
-									{
-										HX_STACK_LINE(173)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(173)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(173)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(173)
-										this2 = tmp24;
-										HX_STACK_LINE(173)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(173)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(173)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(173)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(173)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(173)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(173)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(173)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(173)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(173)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(173)
-								_this->length = srcLength;
-								HX_STACK_LINE(173)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(173)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(173)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(173)
-							if ((tmp12)){
-								HX_STACK_LINE(173)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(173)
-								{
-									HX_STACK_LINE(173)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(173)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(173)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(173)
-									if ((tmp15)){
-										HX_STACK_LINE(173)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(173)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(173)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(173)
-									if ((tmp17)){
-										HX_STACK_LINE(173)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(173)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(173)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(173)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(173)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(173)
-									if ((tmp18)){
-										HX_STACK_LINE(173)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(173)
-										newByteLength = tmp19;
-										HX_STACK_LINE(173)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(173)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(173)
-										if ((tmp21)){
-											HX_STACK_LINE(173)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(173)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(173)
-										if ((tmp22)){
-											HX_STACK_LINE(173)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(173)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(173)
-										newByteLength = tmp19;
-										HX_STACK_LINE(173)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(173)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(173)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(173)
-										if ((tmp21)){
-											HX_STACK_LINE(173)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(173)
-									_this->buffer = buffer;
-									HX_STACK_LINE(173)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(173)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(173)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(173)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(173)
-									_this->length = tmp20;
-									HX_STACK_LINE(173)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(173)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(173)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int16Array","\x95","\xb2","\x95","\xa7"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(173)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)3: {
-				HX_STACK_LINE(176)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(176)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(176)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(176)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(176)
-				if ((tmp9)){
-					HX_STACK_LINE(176)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)3);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(176)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(176)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(176)
-					if ((tmp10)){
-						HX_STACK_LINE(176)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(176)
-						{
-							HX_STACK_LINE(176)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(176)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(176)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(176)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(176)
-							_this->length = tmp13;
-							HX_STACK_LINE(176)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(176)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(176)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(176)
-							{
-								HX_STACK_LINE(176)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(176)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(176)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(176)
-								this2 = tmp17;
-								HX_STACK_LINE(176)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(176)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(176)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(176)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(176)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(176)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(176)
-						if ((tmp11)){
-							HX_STACK_LINE(176)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(176)
-							{
-								HX_STACK_LINE(176)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(176)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(176)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(176)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(176)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(176)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(176)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(176)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(176)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(176)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(176)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(176)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(176)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(176)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(176)
-								if ((tmp20)){
-									HX_STACK_LINE(176)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(176)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(176)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(176)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(176)
-									{
-										HX_STACK_LINE(176)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(176)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(176)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(176)
-										this2 = tmp24;
-										HX_STACK_LINE(176)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(176)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(176)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(176)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(176)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(176)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(176)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(176)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(176)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(176)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(176)
-								_this->length = srcLength;
-								HX_STACK_LINE(176)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(176)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(176)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(176)
-							if ((tmp12)){
-								HX_STACK_LINE(176)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(176)
-								{
-									HX_STACK_LINE(176)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(176)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(176)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(176)
-									if ((tmp15)){
-										HX_STACK_LINE(176)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(176)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(176)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(176)
-									if ((tmp17)){
-										HX_STACK_LINE(176)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(176)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(176)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(176)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(176)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(176)
-									if ((tmp18)){
-										HX_STACK_LINE(176)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(176)
-										newByteLength = tmp19;
-										HX_STACK_LINE(176)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(176)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(176)
-										if ((tmp21)){
-											HX_STACK_LINE(176)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(176)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(176)
-										if ((tmp22)){
-											HX_STACK_LINE(176)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(176)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(176)
-										newByteLength = tmp19;
-										HX_STACK_LINE(176)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(176)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(176)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(176)
-										if ((tmp21)){
-											HX_STACK_LINE(176)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(176)
-									_this->buffer = buffer;
-									HX_STACK_LINE(176)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(176)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(176)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(176)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(176)
-									_this->length = tmp20;
-									HX_STACK_LINE(176)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(176)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(176)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int32Array","\x9b","\x2e","\x53","\x61"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(176)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)4: {
-				HX_STACK_LINE(179)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(179)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(179)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(179)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(179)
-				if ((tmp9)){
-					HX_STACK_LINE(179)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)4);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(179)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(179)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(179)
-					if ((tmp10)){
-						HX_STACK_LINE(179)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(179)
-						{
-							HX_STACK_LINE(179)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(179)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(179)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(179)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(179)
-							_this->length = tmp13;
-							HX_STACK_LINE(179)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(179)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(179)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(179)
-							{
-								HX_STACK_LINE(179)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(179)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(179)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(179)
-								this2 = tmp17;
-								HX_STACK_LINE(179)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(179)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(179)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(179)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(179)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(179)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(179)
-						if ((tmp11)){
-							HX_STACK_LINE(179)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(179)
-							{
-								HX_STACK_LINE(179)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(179)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(179)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(179)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(179)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(179)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(179)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(179)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(179)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(179)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(179)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(179)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(179)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(179)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(179)
-								if ((tmp20)){
-									HX_STACK_LINE(179)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(179)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(179)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(179)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(179)
-									{
-										HX_STACK_LINE(179)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(179)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(179)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(179)
-										this2 = tmp24;
-										HX_STACK_LINE(179)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(179)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(179)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(179)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(179)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(179)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(179)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(179)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(179)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(179)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(179)
-								_this->length = srcLength;
-								HX_STACK_LINE(179)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(179)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(179)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(179)
-							if ((tmp12)){
-								HX_STACK_LINE(179)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(179)
-								{
-									HX_STACK_LINE(179)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(179)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(179)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(179)
-									if ((tmp15)){
-										HX_STACK_LINE(179)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(179)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(179)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(179)
-									if ((tmp17)){
-										HX_STACK_LINE(179)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(179)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(179)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(179)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(179)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(179)
-									if ((tmp18)){
-										HX_STACK_LINE(179)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(179)
-										newByteLength = tmp19;
-										HX_STACK_LINE(179)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(179)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(179)
-										if ((tmp21)){
-											HX_STACK_LINE(179)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(179)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(179)
-										if ((tmp22)){
-											HX_STACK_LINE(179)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(179)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(179)
-										newByteLength = tmp19;
-										HX_STACK_LINE(179)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(179)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(179)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(179)
-										if ((tmp21)){
-											HX_STACK_LINE(179)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(179)
-									_this->buffer = buffer;
-									HX_STACK_LINE(179)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(179)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(179)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(179)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(179)
-									_this->length = tmp20;
-									HX_STACK_LINE(179)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(179)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(179)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint8Array","\x8b","\x64","\x02","\xe4"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(179)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)5: {
-				HX_STACK_LINE(182)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(182)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(182)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(182)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(182)
-				if ((tmp9)){
-					HX_STACK_LINE(182)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)5);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(182)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(182)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(182)
-					if ((tmp10)){
-						HX_STACK_LINE(182)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(182)
-						{
-							HX_STACK_LINE(182)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(182)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(182)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(182)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(182)
-							_this->length = tmp13;
-							HX_STACK_LINE(182)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(182)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(182)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(182)
-							{
-								HX_STACK_LINE(182)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(182)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(182)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(182)
-								this2 = tmp17;
-								HX_STACK_LINE(182)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(182)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(182)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(182)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(182)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(182)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(182)
-						if ((tmp11)){
-							HX_STACK_LINE(182)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(182)
-							{
-								HX_STACK_LINE(182)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(182)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(182)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(182)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(182)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(182)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(182)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(182)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(182)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(182)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(182)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(182)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(182)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(182)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(182)
-								if ((tmp20)){
-									HX_STACK_LINE(182)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(182)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(182)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(182)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(182)
-									{
-										HX_STACK_LINE(182)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(182)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(182)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(182)
-										this2 = tmp24;
-										HX_STACK_LINE(182)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(182)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(182)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(182)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(182)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(182)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(182)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(182)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(182)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(182)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(182)
-								_this->length = srcLength;
-								HX_STACK_LINE(182)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(182)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(182)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(182)
-							if ((tmp12)){
-								HX_STACK_LINE(182)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(182)
-								{
-									HX_STACK_LINE(182)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(182)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(182)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(182)
-									if ((tmp15)){
-										HX_STACK_LINE(182)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(182)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(182)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(182)
-									if ((tmp17)){
-										HX_STACK_LINE(182)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(182)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(182)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(182)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(182)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(182)
-									if ((tmp18)){
-										HX_STACK_LINE(182)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(182)
-										newByteLength = tmp19;
-										HX_STACK_LINE(182)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(182)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(182)
-										if ((tmp21)){
-											HX_STACK_LINE(182)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(182)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(182)
-										if ((tmp22)){
-											HX_STACK_LINE(182)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(182)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(182)
-										newByteLength = tmp19;
-										HX_STACK_LINE(182)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(182)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(182)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(182)
-										if ((tmp21)){
-											HX_STACK_LINE(182)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(182)
-									_this->buffer = buffer;
-									HX_STACK_LINE(182)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(182)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(182)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(182)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(182)
-									_this->length = tmp20;
-									HX_STACK_LINE(182)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(182)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(182)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint8ClampedArray","\x6d","\x2a","\x7c","\xf9"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(182)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)6: {
-				HX_STACK_LINE(185)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(185)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(185)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(185)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(185)
-				if ((tmp9)){
-					HX_STACK_LINE(185)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)6);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(185)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(185)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(185)
-					if ((tmp10)){
-						HX_STACK_LINE(185)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(185)
-						{
-							HX_STACK_LINE(185)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(185)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(185)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(185)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(185)
-							_this->length = tmp13;
-							HX_STACK_LINE(185)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(185)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(185)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(185)
-							{
-								HX_STACK_LINE(185)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(185)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(185)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(185)
-								this2 = tmp17;
-								HX_STACK_LINE(185)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(185)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(185)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(185)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(185)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(185)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(185)
-						if ((tmp11)){
-							HX_STACK_LINE(185)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(185)
-							{
-								HX_STACK_LINE(185)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(185)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(185)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(185)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(185)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(185)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(185)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(185)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(185)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(185)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(185)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(185)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(185)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(185)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(185)
-								if ((tmp20)){
-									HX_STACK_LINE(185)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(185)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(185)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(185)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(185)
-									{
-										HX_STACK_LINE(185)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(185)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(185)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(185)
-										this2 = tmp24;
-										HX_STACK_LINE(185)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(185)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(185)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(185)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(185)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(185)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(185)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(185)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(185)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(185)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(185)
-								_this->length = srcLength;
-								HX_STACK_LINE(185)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(185)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(185)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(185)
-							if ((tmp12)){
-								HX_STACK_LINE(185)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(185)
-								{
-									HX_STACK_LINE(185)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(185)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(185)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(185)
-									if ((tmp15)){
-										HX_STACK_LINE(185)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(185)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(185)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(185)
-									if ((tmp17)){
-										HX_STACK_LINE(185)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(185)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(185)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(185)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(185)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(185)
-									if ((tmp18)){
-										HX_STACK_LINE(185)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(185)
-										newByteLength = tmp19;
-										HX_STACK_LINE(185)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(185)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(185)
-										if ((tmp21)){
-											HX_STACK_LINE(185)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(185)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(185)
-										if ((tmp22)){
-											HX_STACK_LINE(185)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(185)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(185)
-										newByteLength = tmp19;
-										HX_STACK_LINE(185)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(185)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(185)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(185)
-										if ((tmp21)){
-											HX_STACK_LINE(185)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(185)
-									_this->buffer = buffer;
-									HX_STACK_LINE(185)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(185)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(185)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(185)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(185)
-									_this->length = tmp20;
-									HX_STACK_LINE(185)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(185)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(185)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint16Array","\xea","\xc2","\x7c","\xde"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(185)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)7: {
-				HX_STACK_LINE(188)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(188)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(188)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(188)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(188)
-				if ((tmp9)){
-					HX_STACK_LINE(188)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)7);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(188)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(188)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(188)
-					if ((tmp10)){
-						HX_STACK_LINE(188)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(188)
-						{
-							HX_STACK_LINE(188)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(188)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(188)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(188)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(188)
-							_this->length = tmp13;
-							HX_STACK_LINE(188)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(188)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(188)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(188)
-							{
-								HX_STACK_LINE(188)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(188)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(188)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(188)
-								this2 = tmp17;
-								HX_STACK_LINE(188)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(188)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(188)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(188)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(188)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(188)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(188)
-						if ((tmp11)){
-							HX_STACK_LINE(188)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(188)
-							{
-								HX_STACK_LINE(188)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(188)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(188)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(188)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(188)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(188)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(188)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(188)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(188)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(188)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(188)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(188)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(188)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(188)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(188)
-								if ((tmp20)){
-									HX_STACK_LINE(188)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(188)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(188)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(188)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(188)
-									{
-										HX_STACK_LINE(188)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(188)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(188)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(188)
-										this2 = tmp24;
-										HX_STACK_LINE(188)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(188)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(188)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(188)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(188)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(188)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(188)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(188)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(188)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(188)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(188)
-								_this->length = srcLength;
-								HX_STACK_LINE(188)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(188)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(188)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(188)
-							if ((tmp12)){
-								HX_STACK_LINE(188)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(188)
-								{
-									HX_STACK_LINE(188)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(188)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(188)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(188)
-									if ((tmp15)){
-										HX_STACK_LINE(188)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(188)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(188)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(188)
-									if ((tmp17)){
-										HX_STACK_LINE(188)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(188)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(188)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(188)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(188)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(188)
-									if ((tmp18)){
-										HX_STACK_LINE(188)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(188)
-										newByteLength = tmp19;
-										HX_STACK_LINE(188)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(188)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(188)
-										if ((tmp21)){
-											HX_STACK_LINE(188)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(188)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(188)
-										if ((tmp22)){
-											HX_STACK_LINE(188)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(188)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(188)
-										newByteLength = tmp19;
-										HX_STACK_LINE(188)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(188)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(188)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(188)
-										if ((tmp21)){
-											HX_STACK_LINE(188)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(188)
-									_this->buffer = buffer;
-									HX_STACK_LINE(188)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(188)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(188)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(188)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(188)
-									_this->length = tmp20;
-									HX_STACK_LINE(188)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(188)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(188)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint32Array","\xf0","\x3e","\x3a","\x98"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(188)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)8: {
-				HX_STACK_LINE(191)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(191)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(191)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(191)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(191)
-				if ((tmp9)){
-					HX_STACK_LINE(191)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)8);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(191)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(191)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(191)
-					if ((tmp10)){
-						HX_STACK_LINE(191)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(191)
-						{
-							HX_STACK_LINE(191)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(191)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(191)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(191)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(191)
-							_this->length = tmp13;
-							HX_STACK_LINE(191)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(191)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(191)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(191)
-							{
-								HX_STACK_LINE(191)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(191)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(191)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(191)
-								this2 = tmp17;
-								HX_STACK_LINE(191)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(191)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(191)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(191)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(191)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(191)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(191)
-						if ((tmp11)){
-							HX_STACK_LINE(191)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(191)
-							{
-								HX_STACK_LINE(191)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(191)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(191)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(191)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(191)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(191)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(191)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(191)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(191)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(191)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(191)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(191)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(191)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(191)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(191)
-								if ((tmp20)){
-									HX_STACK_LINE(191)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(191)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(191)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(191)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(191)
-									{
-										HX_STACK_LINE(191)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(191)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(191)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(191)
-										this2 = tmp24;
-										HX_STACK_LINE(191)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(191)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(191)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(191)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(191)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(191)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(191)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(191)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(191)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(191)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(191)
-								_this->length = srcLength;
-								HX_STACK_LINE(191)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(191)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(191)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(191)
-							if ((tmp12)){
-								HX_STACK_LINE(191)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(191)
-								{
-									HX_STACK_LINE(191)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(191)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(191)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(191)
-									if ((tmp15)){
-										HX_STACK_LINE(191)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(191)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(191)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(191)
-									if ((tmp17)){
-										HX_STACK_LINE(191)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(191)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(191)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(191)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(191)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(191)
-									if ((tmp18)){
-										HX_STACK_LINE(191)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(191)
-										newByteLength = tmp19;
-										HX_STACK_LINE(191)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(191)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(191)
-										if ((tmp21)){
-											HX_STACK_LINE(191)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(191)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(191)
-										if ((tmp22)){
-											HX_STACK_LINE(191)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(191)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(191)
-										newByteLength = tmp19;
-										HX_STACK_LINE(191)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(191)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(191)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(191)
-										if ((tmp21)){
-											HX_STACK_LINE(191)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(191)
-									_this->buffer = buffer;
-									HX_STACK_LINE(191)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(191)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(191)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(191)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(191)
-									_this->length = tmp20;
-									HX_STACK_LINE(191)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(191)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(191)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Float32Array","\x8e","\xc1","\xf4","\xd4"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(191)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)9: {
-				HX_STACK_LINE(194)
-				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(194)
-				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
-				HX_STACK_LINE(194)
-				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
-				HX_STACK_LINE(194)
-				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(194)
-				if ((tmp9)){
-					HX_STACK_LINE(194)
-					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)9);		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(194)
-					this1 = tmp10;
-				}
-				else{
-					HX_STACK_LINE(194)
-					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
-					HX_STACK_LINE(194)
-					if ((tmp10)){
-						HX_STACK_LINE(194)
-						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(194)
-						{
-							HX_STACK_LINE(194)
-							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(194)
-							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(194)
-							_this->byteOffset = (int)0;
-							HX_STACK_LINE(194)
-							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(194)
-							_this->length = tmp13;
-							HX_STACK_LINE(194)
-							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(194)
-							_this->byteLength = tmp14;
-							HX_STACK_LINE(194)
-							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(194)
-							{
-								HX_STACK_LINE(194)
-								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-								HX_STACK_LINE(194)
-								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(194)
-								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(194)
-								this2 = tmp17;
-								HX_STACK_LINE(194)
-								tmp15 = this2;
-							}
-							HX_STACK_LINE(194)
-							_this->buffer = tmp15;
-							HX_STACK_LINE(194)
-							_this->copyFromArray(((Array< Float >)(null())),null());
-							HX_STACK_LINE(194)
-							tmp11 = _this;
-						}
-						HX_STACK_LINE(194)
-						this1 = tmp11;
-					}
-					else{
-						HX_STACK_LINE(194)
-						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
-						HX_STACK_LINE(194)
-						if ((tmp11)){
-							HX_STACK_LINE(194)
-							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(194)
-							{
-								HX_STACK_LINE(194)
-								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(194)
-								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
-								HX_STACK_LINE(194)
-								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
-								HX_STACK_LINE(194)
-								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
-								HX_STACK_LINE(194)
-								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
-								HX_STACK_LINE(194)
-								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
-								HX_STACK_LINE(194)
-								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
-								HX_STACK_LINE(194)
-								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
-								HX_STACK_LINE(194)
-								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
-								HX_STACK_LINE(194)
-								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
-								HX_STACK_LINE(194)
-								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-								HX_STACK_LINE(194)
-								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
-								HX_STACK_LINE(194)
-								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
-								HX_STACK_LINE(194)
-								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-								HX_STACK_LINE(194)
-								if ((tmp20)){
-									HX_STACK_LINE(194)
-									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
-									HX_STACK_LINE(194)
-									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
-									HX_STACK_LINE(194)
-									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
-									HX_STACK_LINE(194)
-									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
-									HX_STACK_LINE(194)
-									{
-										HX_STACK_LINE(194)
-										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
-										HX_STACK_LINE(194)
-										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
-										HX_STACK_LINE(194)
-										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
-										HX_STACK_LINE(194)
-										this2 = tmp24;
-										HX_STACK_LINE(194)
-										tmp22 = this2;
-									}
-									HX_STACK_LINE(194)
-									_this->buffer = tmp22;
-									HX_STACK_LINE(194)
-									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
-									HX_STACK_LINE(194)
-									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
-									HX_STACK_LINE(194)
-									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
-									HX_STACK_LINE(194)
-									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
-								}
-								else{
-									HX_STACK_LINE(194)
-									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
-								}
-								HX_STACK_LINE(194)
-								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
-								HX_STACK_LINE(194)
-								_this->byteLength = tmp21;
-								HX_STACK_LINE(194)
-								_this->byteOffset = (int)0;
-								HX_STACK_LINE(194)
-								_this->length = srcLength;
-								HX_STACK_LINE(194)
-								tmp12 = _this;
-							}
-							HX_STACK_LINE(194)
-							this1 = tmp12;
-						}
-						else{
-							HX_STACK_LINE(194)
-							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(194)
-							if ((tmp12)){
-								HX_STACK_LINE(194)
-								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
-								HX_STACK_LINE(194)
-								{
-									HX_STACK_LINE(194)
-									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp14,"tmp14");
-									HX_STACK_LINE(194)
-									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
-									HX_STACK_LINE(194)
-									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
-									HX_STACK_LINE(194)
-									if ((tmp15)){
-										HX_STACK_LINE(194)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(194)
-									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
-									HX_STACK_LINE(194)
-									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
-									HX_STACK_LINE(194)
-									if ((tmp17)){
-										HX_STACK_LINE(194)
-										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-									}
-									HX_STACK_LINE(194)
-									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
-									HX_STACK_LINE(194)
-									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
-									HX_STACK_LINE(194)
-									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
-									HX_STACK_LINE(194)
-									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
-									HX_STACK_LINE(194)
-									if ((tmp18)){
-										HX_STACK_LINE(194)
-										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(194)
-										newByteLength = tmp19;
-										HX_STACK_LINE(194)
-										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(194)
-										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(194)
-										if ((tmp21)){
-											HX_STACK_LINE(194)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-										HX_STACK_LINE(194)
-										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
-										HX_STACK_LINE(194)
-										if ((tmp22)){
-											HX_STACK_LINE(194)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									else{
-										HX_STACK_LINE(194)
-										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
-										HX_STACK_LINE(194)
-										newByteLength = tmp19;
-										HX_STACK_LINE(194)
-										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
-										HX_STACK_LINE(194)
-										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
-										HX_STACK_LINE(194)
-										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
-										HX_STACK_LINE(194)
-										if ((tmp21)){
-											HX_STACK_LINE(194)
-											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
-										}
-									}
-									HX_STACK_LINE(194)
-									_this->buffer = buffer;
-									HX_STACK_LINE(194)
-									_this->byteOffset = byte_offset;
-									HX_STACK_LINE(194)
-									_this->byteLength = newByteLength;
-									HX_STACK_LINE(194)
-									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
-									HX_STACK_LINE(194)
-									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
-									HX_STACK_LINE(194)
-									_this->length = tmp20;
-									HX_STACK_LINE(194)
-									tmp13 = _this;
-								}
-								HX_STACK_LINE(194)
-								this1 = tmp13;
-							}
-							else{
-								HX_STACK_LINE(194)
-								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Float64Array","\x8f","\xde","\x6b","\x1e"));
-							}
-						}
-					}
-				}
-				HX_STACK_LINE(194)
-				tmp5 = this1;
-			}
-			;break;
-			case (int)0: {
-				HX_STACK_LINE(197)
-				HX_STACK_DO_THROW(HX_HCSTRING("subarray on a blank ArrayBufferView","\x39","\x87","\xfd","\x19"));
-			}
-			;break;
-		}
-	}
-	HX_STACK_LINE(167)
-	::lime::utils::ArrayBufferView view = tmp5;		HX_STACK_VAR(view,"view");
-	HX_STACK_LINE(200)
-	::lime::utils::ArrayBufferView tmp6 = view;		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(200)
-	return tmp6;
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_UInt8Array,return )
-
 ::lime::utils::ArrayBufferView ArrayBufferView_obj::subarray_lime_utils_Int32Array( int begin,Dynamic end){
 	HX_STACK_FRAME("lime.utils.ArrayBufferView","subarray_lime_utils_Int32Array",0x84099983,"lime.utils.ArrayBufferView.subarray_lime_utils_Int32Array","lime/utils/ArrayBufferView.hx",160,0xb543acf8)
 	HX_STACK_THIS(this)
@@ -12111,6 +7333,2395 @@ HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_UInt8Array,retur
 
 HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_Int32Array,return )
 
+::lime::utils::ArrayBufferView ArrayBufferView_obj::subarray_lime_utils_UInt32Array( int begin,Dynamic end){
+	HX_STACK_FRAME("lime.utils.ArrayBufferView","subarray_lime_utils_UInt32Array",0xcbd26328,"lime.utils.ArrayBufferView.subarray_lime_utils_UInt32Array","lime/utils/ArrayBufferView.hx",160,0xb543acf8)
+	HX_STACK_THIS(this)
+	HX_STACK_ARG(begin,"begin")
+	HX_STACK_ARG(end,"end")
+	HX_STACK_LINE(162)
+	bool tmp = (end == null());		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(162)
+	if ((tmp)){
+		HX_STACK_LINE(162)
+		Dynamic tmp1 = end;		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(162)
+		int tmp2 = this->length;		HX_STACK_VAR(tmp2,"tmp2");
+		HX_STACK_LINE(162)
+		(tmp1 == tmp2);
+	}
+	HX_STACK_LINE(163)
+	int tmp1 = (end - begin);		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(163)
+	int len = tmp1;		HX_STACK_VAR(len,"len");
+	HX_STACK_LINE(164)
+	int tmp2 = begin;		HX_STACK_VAR(tmp2,"tmp2");
+	HX_STACK_LINE(164)
+	int tmp3 = this->bytesPerElement;		HX_STACK_VAR(tmp3,"tmp3");
+	HX_STACK_LINE(164)
+	int tmp4 = (tmp2 * tmp3);		HX_STACK_VAR(tmp4,"tmp4");
+	HX_STACK_LINE(164)
+	int byte_offset = tmp4;		HX_STACK_VAR(byte_offset,"byte_offset");
+	HX_STACK_LINE(167)
+	::lime::utils::ArrayBufferView tmp5;		HX_STACK_VAR(tmp5,"tmp5");
+	HX_STACK_LINE(167)
+	{
+		HX_STACK_LINE(167)
+		int tmp6 = this->type;		HX_STACK_VAR(tmp6,"tmp6");
+		HX_STACK_LINE(167)
+		int _g = tmp6;		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(167)
+		int tmp7 = _g;		HX_STACK_VAR(tmp7,"tmp7");
+		HX_STACK_LINE(167)
+		switch( (int)(tmp7)){
+			case (int)1: {
+				HX_STACK_LINE(170)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(170)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(170)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(170)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(170)
+				if ((tmp9)){
+					HX_STACK_LINE(170)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)1);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(170)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(170)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(170)
+					if ((tmp10)){
+						HX_STACK_LINE(170)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(170)
+						{
+							HX_STACK_LINE(170)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(170)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(170)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(170)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(170)
+							_this->length = tmp13;
+							HX_STACK_LINE(170)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(170)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(170)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(170)
+							{
+								HX_STACK_LINE(170)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(170)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(170)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(170)
+								this2 = tmp17;
+								HX_STACK_LINE(170)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(170)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(170)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(170)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(170)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(170)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(170)
+						if ((tmp11)){
+							HX_STACK_LINE(170)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(170)
+							{
+								HX_STACK_LINE(170)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(170)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(170)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(170)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(170)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(170)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(170)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(170)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(170)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(170)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(170)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(170)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(170)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(170)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(170)
+								if ((tmp20)){
+									HX_STACK_LINE(170)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(170)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(170)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(170)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(170)
+									{
+										HX_STACK_LINE(170)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(170)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(170)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(170)
+										this2 = tmp24;
+										HX_STACK_LINE(170)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(170)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(170)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(170)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(170)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(170)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(170)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(170)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(170)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(170)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(170)
+								_this->length = srcLength;
+								HX_STACK_LINE(170)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(170)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(170)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(170)
+							if ((tmp12)){
+								HX_STACK_LINE(170)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(170)
+								{
+									HX_STACK_LINE(170)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(170)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(170)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(170)
+									if ((tmp15)){
+										HX_STACK_LINE(170)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(170)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(170)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(170)
+									if ((tmp17)){
+										HX_STACK_LINE(170)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(170)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(170)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(170)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(170)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(170)
+									if ((tmp18)){
+										HX_STACK_LINE(170)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(170)
+										newByteLength = tmp19;
+										HX_STACK_LINE(170)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(170)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(170)
+										if ((tmp21)){
+											HX_STACK_LINE(170)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(170)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(170)
+										if ((tmp22)){
+											HX_STACK_LINE(170)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(170)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(170)
+										newByteLength = tmp19;
+										HX_STACK_LINE(170)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(170)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(170)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(170)
+										if ((tmp21)){
+											HX_STACK_LINE(170)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(170)
+									_this->buffer = buffer;
+									HX_STACK_LINE(170)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(170)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(170)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(170)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(170)
+									_this->length = tmp20;
+									HX_STACK_LINE(170)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(170)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(170)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int8Array","\x40","\x53","\xda","\x77"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(170)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)2: {
+				HX_STACK_LINE(173)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(173)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(173)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(173)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(173)
+				if ((tmp9)){
+					HX_STACK_LINE(173)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)2);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(173)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(173)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(173)
+					if ((tmp10)){
+						HX_STACK_LINE(173)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(173)
+						{
+							HX_STACK_LINE(173)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(173)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(173)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(173)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(173)
+							_this->length = tmp13;
+							HX_STACK_LINE(173)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(173)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(173)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(173)
+							{
+								HX_STACK_LINE(173)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(173)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(173)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(173)
+								this2 = tmp17;
+								HX_STACK_LINE(173)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(173)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(173)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(173)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(173)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(173)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(173)
+						if ((tmp11)){
+							HX_STACK_LINE(173)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(173)
+							{
+								HX_STACK_LINE(173)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(173)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(173)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(173)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(173)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(173)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(173)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(173)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(173)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(173)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(173)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(173)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(173)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(173)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(173)
+								if ((tmp20)){
+									HX_STACK_LINE(173)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(173)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(173)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(173)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(173)
+									{
+										HX_STACK_LINE(173)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(173)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(173)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(173)
+										this2 = tmp24;
+										HX_STACK_LINE(173)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(173)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(173)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(173)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(173)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(173)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(173)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(173)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(173)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(173)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(173)
+								_this->length = srcLength;
+								HX_STACK_LINE(173)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(173)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(173)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(173)
+							if ((tmp12)){
+								HX_STACK_LINE(173)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(173)
+								{
+									HX_STACK_LINE(173)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(173)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(173)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(173)
+									if ((tmp15)){
+										HX_STACK_LINE(173)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(173)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(173)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(173)
+									if ((tmp17)){
+										HX_STACK_LINE(173)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(173)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(173)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(173)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(173)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(173)
+									if ((tmp18)){
+										HX_STACK_LINE(173)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(173)
+										newByteLength = tmp19;
+										HX_STACK_LINE(173)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(173)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(173)
+										if ((tmp21)){
+											HX_STACK_LINE(173)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(173)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(173)
+										if ((tmp22)){
+											HX_STACK_LINE(173)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(173)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(173)
+										newByteLength = tmp19;
+										HX_STACK_LINE(173)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(173)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(173)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(173)
+										if ((tmp21)){
+											HX_STACK_LINE(173)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(173)
+									_this->buffer = buffer;
+									HX_STACK_LINE(173)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(173)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(173)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(173)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(173)
+									_this->length = tmp20;
+									HX_STACK_LINE(173)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(173)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(173)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int16Array","\x95","\xb2","\x95","\xa7"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(173)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)3: {
+				HX_STACK_LINE(176)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(176)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(176)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(176)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(176)
+				if ((tmp9)){
+					HX_STACK_LINE(176)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)3);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(176)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(176)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(176)
+					if ((tmp10)){
+						HX_STACK_LINE(176)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(176)
+						{
+							HX_STACK_LINE(176)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(176)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(176)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(176)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(176)
+							_this->length = tmp13;
+							HX_STACK_LINE(176)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(176)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(176)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(176)
+							{
+								HX_STACK_LINE(176)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(176)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(176)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(176)
+								this2 = tmp17;
+								HX_STACK_LINE(176)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(176)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(176)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(176)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(176)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(176)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(176)
+						if ((tmp11)){
+							HX_STACK_LINE(176)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(176)
+							{
+								HX_STACK_LINE(176)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(176)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(176)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(176)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(176)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(176)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(176)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(176)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(176)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(176)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(176)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(176)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(176)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(176)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(176)
+								if ((tmp20)){
+									HX_STACK_LINE(176)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(176)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(176)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(176)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(176)
+									{
+										HX_STACK_LINE(176)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(176)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(176)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(176)
+										this2 = tmp24;
+										HX_STACK_LINE(176)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(176)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(176)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(176)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(176)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(176)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(176)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(176)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(176)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(176)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(176)
+								_this->length = srcLength;
+								HX_STACK_LINE(176)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(176)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(176)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(176)
+							if ((tmp12)){
+								HX_STACK_LINE(176)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(176)
+								{
+									HX_STACK_LINE(176)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(176)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(176)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(176)
+									if ((tmp15)){
+										HX_STACK_LINE(176)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(176)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(176)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(176)
+									if ((tmp17)){
+										HX_STACK_LINE(176)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(176)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(176)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(176)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(176)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(176)
+									if ((tmp18)){
+										HX_STACK_LINE(176)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(176)
+										newByteLength = tmp19;
+										HX_STACK_LINE(176)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(176)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(176)
+										if ((tmp21)){
+											HX_STACK_LINE(176)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(176)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(176)
+										if ((tmp22)){
+											HX_STACK_LINE(176)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(176)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(176)
+										newByteLength = tmp19;
+										HX_STACK_LINE(176)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(176)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(176)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(176)
+										if ((tmp21)){
+											HX_STACK_LINE(176)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(176)
+									_this->buffer = buffer;
+									HX_STACK_LINE(176)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(176)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(176)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(176)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(176)
+									_this->length = tmp20;
+									HX_STACK_LINE(176)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(176)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(176)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int32Array","\x9b","\x2e","\x53","\x61"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(176)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)4: {
+				HX_STACK_LINE(179)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(179)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(179)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(179)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(179)
+				if ((tmp9)){
+					HX_STACK_LINE(179)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)4);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(179)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(179)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(179)
+					if ((tmp10)){
+						HX_STACK_LINE(179)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(179)
+						{
+							HX_STACK_LINE(179)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(179)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(179)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(179)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(179)
+							_this->length = tmp13;
+							HX_STACK_LINE(179)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(179)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(179)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(179)
+							{
+								HX_STACK_LINE(179)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(179)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(179)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(179)
+								this2 = tmp17;
+								HX_STACK_LINE(179)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(179)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(179)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(179)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(179)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(179)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(179)
+						if ((tmp11)){
+							HX_STACK_LINE(179)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(179)
+							{
+								HX_STACK_LINE(179)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(179)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(179)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(179)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(179)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(179)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(179)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(179)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(179)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(179)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(179)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(179)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(179)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(179)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(179)
+								if ((tmp20)){
+									HX_STACK_LINE(179)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(179)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(179)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(179)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(179)
+									{
+										HX_STACK_LINE(179)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(179)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(179)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(179)
+										this2 = tmp24;
+										HX_STACK_LINE(179)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(179)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(179)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(179)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(179)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(179)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(179)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(179)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(179)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(179)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(179)
+								_this->length = srcLength;
+								HX_STACK_LINE(179)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(179)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(179)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(179)
+							if ((tmp12)){
+								HX_STACK_LINE(179)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(179)
+								{
+									HX_STACK_LINE(179)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(179)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(179)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(179)
+									if ((tmp15)){
+										HX_STACK_LINE(179)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(179)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(179)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(179)
+									if ((tmp17)){
+										HX_STACK_LINE(179)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(179)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(179)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(179)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(179)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(179)
+									if ((tmp18)){
+										HX_STACK_LINE(179)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(179)
+										newByteLength = tmp19;
+										HX_STACK_LINE(179)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(179)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(179)
+										if ((tmp21)){
+											HX_STACK_LINE(179)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(179)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(179)
+										if ((tmp22)){
+											HX_STACK_LINE(179)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(179)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(179)
+										newByteLength = tmp19;
+										HX_STACK_LINE(179)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(179)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(179)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(179)
+										if ((tmp21)){
+											HX_STACK_LINE(179)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(179)
+									_this->buffer = buffer;
+									HX_STACK_LINE(179)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(179)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(179)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(179)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(179)
+									_this->length = tmp20;
+									HX_STACK_LINE(179)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(179)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(179)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint8Array","\x8b","\x64","\x02","\xe4"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(179)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)5: {
+				HX_STACK_LINE(182)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(182)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(182)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(182)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(182)
+				if ((tmp9)){
+					HX_STACK_LINE(182)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)5);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(182)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(182)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(182)
+					if ((tmp10)){
+						HX_STACK_LINE(182)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(182)
+						{
+							HX_STACK_LINE(182)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(182)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(182)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(182)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(182)
+							_this->length = tmp13;
+							HX_STACK_LINE(182)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(182)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(182)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(182)
+							{
+								HX_STACK_LINE(182)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(182)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(182)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(182)
+								this2 = tmp17;
+								HX_STACK_LINE(182)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(182)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(182)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(182)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(182)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(182)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(182)
+						if ((tmp11)){
+							HX_STACK_LINE(182)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(182)
+							{
+								HX_STACK_LINE(182)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(182)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(182)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(182)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(182)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(182)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(182)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(182)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(182)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(182)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(182)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(182)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(182)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(182)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(182)
+								if ((tmp20)){
+									HX_STACK_LINE(182)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(182)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(182)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(182)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(182)
+									{
+										HX_STACK_LINE(182)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(182)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(182)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(182)
+										this2 = tmp24;
+										HX_STACK_LINE(182)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(182)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(182)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(182)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(182)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(182)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(182)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(182)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(182)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(182)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(182)
+								_this->length = srcLength;
+								HX_STACK_LINE(182)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(182)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(182)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(182)
+							if ((tmp12)){
+								HX_STACK_LINE(182)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(182)
+								{
+									HX_STACK_LINE(182)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(182)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(182)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(182)
+									if ((tmp15)){
+										HX_STACK_LINE(182)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(182)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(182)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(182)
+									if ((tmp17)){
+										HX_STACK_LINE(182)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(182)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(182)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(182)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(182)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(182)
+									if ((tmp18)){
+										HX_STACK_LINE(182)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(182)
+										newByteLength = tmp19;
+										HX_STACK_LINE(182)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(182)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(182)
+										if ((tmp21)){
+											HX_STACK_LINE(182)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(182)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(182)
+										if ((tmp22)){
+											HX_STACK_LINE(182)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(182)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(182)
+										newByteLength = tmp19;
+										HX_STACK_LINE(182)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(182)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(182)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(182)
+										if ((tmp21)){
+											HX_STACK_LINE(182)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(182)
+									_this->buffer = buffer;
+									HX_STACK_LINE(182)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(182)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(182)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(182)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(182)
+									_this->length = tmp20;
+									HX_STACK_LINE(182)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(182)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(182)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint8ClampedArray","\x6d","\x2a","\x7c","\xf9"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(182)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)6: {
+				HX_STACK_LINE(185)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(185)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(185)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(185)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(185)
+				if ((tmp9)){
+					HX_STACK_LINE(185)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)6);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(185)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(185)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(185)
+					if ((tmp10)){
+						HX_STACK_LINE(185)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(185)
+						{
+							HX_STACK_LINE(185)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(185)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(185)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(185)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(185)
+							_this->length = tmp13;
+							HX_STACK_LINE(185)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(185)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(185)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(185)
+							{
+								HX_STACK_LINE(185)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(185)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(185)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(185)
+								this2 = tmp17;
+								HX_STACK_LINE(185)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(185)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(185)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(185)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(185)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(185)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(185)
+						if ((tmp11)){
+							HX_STACK_LINE(185)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(185)
+							{
+								HX_STACK_LINE(185)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(185)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(185)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(185)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(185)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(185)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(185)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(185)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(185)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(185)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(185)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(185)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(185)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(185)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(185)
+								if ((tmp20)){
+									HX_STACK_LINE(185)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(185)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(185)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(185)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(185)
+									{
+										HX_STACK_LINE(185)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(185)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(185)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(185)
+										this2 = tmp24;
+										HX_STACK_LINE(185)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(185)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(185)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(185)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(185)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(185)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(185)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(185)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(185)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(185)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(185)
+								_this->length = srcLength;
+								HX_STACK_LINE(185)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(185)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(185)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(185)
+							if ((tmp12)){
+								HX_STACK_LINE(185)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(185)
+								{
+									HX_STACK_LINE(185)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(185)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(185)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(185)
+									if ((tmp15)){
+										HX_STACK_LINE(185)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(185)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(185)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(185)
+									if ((tmp17)){
+										HX_STACK_LINE(185)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(185)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(185)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(185)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(185)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(185)
+									if ((tmp18)){
+										HX_STACK_LINE(185)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(185)
+										newByteLength = tmp19;
+										HX_STACK_LINE(185)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(185)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(185)
+										if ((tmp21)){
+											HX_STACK_LINE(185)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(185)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(185)
+										if ((tmp22)){
+											HX_STACK_LINE(185)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(185)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(185)
+										newByteLength = tmp19;
+										HX_STACK_LINE(185)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(185)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(185)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(185)
+										if ((tmp21)){
+											HX_STACK_LINE(185)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(185)
+									_this->buffer = buffer;
+									HX_STACK_LINE(185)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(185)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(185)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(185)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(185)
+									_this->length = tmp20;
+									HX_STACK_LINE(185)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(185)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(185)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint16Array","\xea","\xc2","\x7c","\xde"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(185)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)7: {
+				HX_STACK_LINE(188)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(188)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(188)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(188)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(188)
+				if ((tmp9)){
+					HX_STACK_LINE(188)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)7);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(188)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(188)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(188)
+					if ((tmp10)){
+						HX_STACK_LINE(188)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(188)
+						{
+							HX_STACK_LINE(188)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(188)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(188)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(188)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(188)
+							_this->length = tmp13;
+							HX_STACK_LINE(188)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(188)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(188)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(188)
+							{
+								HX_STACK_LINE(188)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(188)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(188)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(188)
+								this2 = tmp17;
+								HX_STACK_LINE(188)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(188)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(188)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(188)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(188)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(188)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(188)
+						if ((tmp11)){
+							HX_STACK_LINE(188)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(188)
+							{
+								HX_STACK_LINE(188)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(188)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(188)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(188)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(188)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(188)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(188)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(188)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(188)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(188)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(188)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(188)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(188)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(188)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(188)
+								if ((tmp20)){
+									HX_STACK_LINE(188)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(188)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(188)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(188)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(188)
+									{
+										HX_STACK_LINE(188)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(188)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(188)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(188)
+										this2 = tmp24;
+										HX_STACK_LINE(188)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(188)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(188)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(188)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(188)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(188)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(188)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(188)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(188)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(188)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(188)
+								_this->length = srcLength;
+								HX_STACK_LINE(188)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(188)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(188)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(188)
+							if ((tmp12)){
+								HX_STACK_LINE(188)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(188)
+								{
+									HX_STACK_LINE(188)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(188)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(188)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(188)
+									if ((tmp15)){
+										HX_STACK_LINE(188)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(188)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(188)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(188)
+									if ((tmp17)){
+										HX_STACK_LINE(188)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(188)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(188)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(188)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(188)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(188)
+									if ((tmp18)){
+										HX_STACK_LINE(188)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(188)
+										newByteLength = tmp19;
+										HX_STACK_LINE(188)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(188)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(188)
+										if ((tmp21)){
+											HX_STACK_LINE(188)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(188)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(188)
+										if ((tmp22)){
+											HX_STACK_LINE(188)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(188)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(188)
+										newByteLength = tmp19;
+										HX_STACK_LINE(188)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(188)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(188)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(188)
+										if ((tmp21)){
+											HX_STACK_LINE(188)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(188)
+									_this->buffer = buffer;
+									HX_STACK_LINE(188)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(188)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(188)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(188)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(188)
+									_this->length = tmp20;
+									HX_STACK_LINE(188)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(188)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(188)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint32Array","\xf0","\x3e","\x3a","\x98"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(188)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)8: {
+				HX_STACK_LINE(191)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(191)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(191)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(191)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(191)
+				if ((tmp9)){
+					HX_STACK_LINE(191)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)8);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(191)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(191)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(191)
+					if ((tmp10)){
+						HX_STACK_LINE(191)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(191)
+						{
+							HX_STACK_LINE(191)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(191)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(191)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(191)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(191)
+							_this->length = tmp13;
+							HX_STACK_LINE(191)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(191)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(191)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(191)
+							{
+								HX_STACK_LINE(191)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(191)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(191)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(191)
+								this2 = tmp17;
+								HX_STACK_LINE(191)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(191)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(191)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(191)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(191)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(191)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(191)
+						if ((tmp11)){
+							HX_STACK_LINE(191)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(191)
+							{
+								HX_STACK_LINE(191)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(191)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(191)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(191)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(191)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(191)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(191)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(191)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(191)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(191)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(191)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(191)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(191)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(191)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(191)
+								if ((tmp20)){
+									HX_STACK_LINE(191)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(191)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(191)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(191)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(191)
+									{
+										HX_STACK_LINE(191)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(191)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(191)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(191)
+										this2 = tmp24;
+										HX_STACK_LINE(191)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(191)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(191)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(191)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(191)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(191)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(191)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(191)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(191)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(191)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(191)
+								_this->length = srcLength;
+								HX_STACK_LINE(191)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(191)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(191)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(191)
+							if ((tmp12)){
+								HX_STACK_LINE(191)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(191)
+								{
+									HX_STACK_LINE(191)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(191)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(191)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(191)
+									if ((tmp15)){
+										HX_STACK_LINE(191)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(191)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(191)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(191)
+									if ((tmp17)){
+										HX_STACK_LINE(191)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(191)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(191)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(191)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(191)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(191)
+									if ((tmp18)){
+										HX_STACK_LINE(191)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(191)
+										newByteLength = tmp19;
+										HX_STACK_LINE(191)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(191)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(191)
+										if ((tmp21)){
+											HX_STACK_LINE(191)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(191)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(191)
+										if ((tmp22)){
+											HX_STACK_LINE(191)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(191)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(191)
+										newByteLength = tmp19;
+										HX_STACK_LINE(191)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(191)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(191)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(191)
+										if ((tmp21)){
+											HX_STACK_LINE(191)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(191)
+									_this->buffer = buffer;
+									HX_STACK_LINE(191)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(191)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(191)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(191)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(191)
+									_this->length = tmp20;
+									HX_STACK_LINE(191)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(191)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(191)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Float32Array","\x8e","\xc1","\xf4","\xd4"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(191)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)9: {
+				HX_STACK_LINE(194)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(194)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(194)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(194)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(194)
+				if ((tmp9)){
+					HX_STACK_LINE(194)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)9);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(194)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(194)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(194)
+					if ((tmp10)){
+						HX_STACK_LINE(194)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(194)
+						{
+							HX_STACK_LINE(194)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(194)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(194)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(194)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(194)
+							_this->length = tmp13;
+							HX_STACK_LINE(194)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(194)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(194)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(194)
+							{
+								HX_STACK_LINE(194)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(194)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(194)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(194)
+								this2 = tmp17;
+								HX_STACK_LINE(194)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(194)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(194)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(194)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(194)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(194)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(194)
+						if ((tmp11)){
+							HX_STACK_LINE(194)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(194)
+							{
+								HX_STACK_LINE(194)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(194)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(194)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(194)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(194)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(194)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(194)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(194)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(194)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(194)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(194)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(194)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(194)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(194)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(194)
+								if ((tmp20)){
+									HX_STACK_LINE(194)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(194)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(194)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(194)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(194)
+									{
+										HX_STACK_LINE(194)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(194)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(194)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(194)
+										this2 = tmp24;
+										HX_STACK_LINE(194)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(194)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(194)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(194)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(194)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(194)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(194)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(194)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(194)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(194)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(194)
+								_this->length = srcLength;
+								HX_STACK_LINE(194)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(194)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(194)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(194)
+							if ((tmp12)){
+								HX_STACK_LINE(194)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(194)
+								{
+									HX_STACK_LINE(194)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(194)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(194)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(194)
+									if ((tmp15)){
+										HX_STACK_LINE(194)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(194)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(194)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(194)
+									if ((tmp17)){
+										HX_STACK_LINE(194)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(194)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(194)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(194)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(194)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(194)
+									if ((tmp18)){
+										HX_STACK_LINE(194)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(194)
+										newByteLength = tmp19;
+										HX_STACK_LINE(194)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(194)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(194)
+										if ((tmp21)){
+											HX_STACK_LINE(194)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(194)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(194)
+										if ((tmp22)){
+											HX_STACK_LINE(194)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(194)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(194)
+										newByteLength = tmp19;
+										HX_STACK_LINE(194)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(194)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(194)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(194)
+										if ((tmp21)){
+											HX_STACK_LINE(194)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(194)
+									_this->buffer = buffer;
+									HX_STACK_LINE(194)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(194)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(194)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(194)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(194)
+									_this->length = tmp20;
+									HX_STACK_LINE(194)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(194)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(194)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Float64Array","\x8f","\xde","\x6b","\x1e"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(194)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)0: {
+				HX_STACK_LINE(197)
+				HX_STACK_DO_THROW(HX_HCSTRING("subarray on a blank ArrayBufferView","\x39","\x87","\xfd","\x19"));
+			}
+			;break;
+		}
+	}
+	HX_STACK_LINE(167)
+	::lime::utils::ArrayBufferView view = tmp5;		HX_STACK_VAR(view,"view");
+	HX_STACK_LINE(200)
+	::lime::utils::ArrayBufferView tmp6 = view;		HX_STACK_VAR(tmp6,"tmp6");
+	HX_STACK_LINE(200)
+	return tmp6;
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_UInt32Array,return )
+
 ::lime::utils::ArrayBufferView ArrayBufferView_obj::subarray_lime_utils_Float32Array( int begin,Dynamic end){
 	HX_STACK_FRAME("lime.utils.ArrayBufferView","subarray_lime_utils_Float32Array",0xe249b676,"lime.utils.ArrayBufferView.subarray_lime_utils_Float32Array","lime/utils/ArrayBufferView.hx",160,0xb543acf8)
 	HX_STACK_THIS(this)
@@ -14499,6 +12110,2395 @@ HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_Int32Array,retur
 
 
 HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_Float32Array,return )
+
+::lime::utils::ArrayBufferView ArrayBufferView_obj::subarray_lime_utils_UInt8Array( int begin,Dynamic end){
+	HX_STACK_FRAME("lime.utils.ArrayBufferView","subarray_lime_utils_UInt8Array",0xa88baf53,"lime.utils.ArrayBufferView.subarray_lime_utils_UInt8Array","lime/utils/ArrayBufferView.hx",160,0xb543acf8)
+	HX_STACK_THIS(this)
+	HX_STACK_ARG(begin,"begin")
+	HX_STACK_ARG(end,"end")
+	HX_STACK_LINE(162)
+	bool tmp = (end == null());		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(162)
+	if ((tmp)){
+		HX_STACK_LINE(162)
+		Dynamic tmp1 = end;		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(162)
+		int tmp2 = this->length;		HX_STACK_VAR(tmp2,"tmp2");
+		HX_STACK_LINE(162)
+		(tmp1 == tmp2);
+	}
+	HX_STACK_LINE(163)
+	int tmp1 = (end - begin);		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(163)
+	int len = tmp1;		HX_STACK_VAR(len,"len");
+	HX_STACK_LINE(164)
+	int tmp2 = begin;		HX_STACK_VAR(tmp2,"tmp2");
+	HX_STACK_LINE(164)
+	int tmp3 = this->bytesPerElement;		HX_STACK_VAR(tmp3,"tmp3");
+	HX_STACK_LINE(164)
+	int tmp4 = (tmp2 * tmp3);		HX_STACK_VAR(tmp4,"tmp4");
+	HX_STACK_LINE(164)
+	int byte_offset = tmp4;		HX_STACK_VAR(byte_offset,"byte_offset");
+	HX_STACK_LINE(167)
+	::lime::utils::ArrayBufferView tmp5;		HX_STACK_VAR(tmp5,"tmp5");
+	HX_STACK_LINE(167)
+	{
+		HX_STACK_LINE(167)
+		int tmp6 = this->type;		HX_STACK_VAR(tmp6,"tmp6");
+		HX_STACK_LINE(167)
+		int _g = tmp6;		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(167)
+		int tmp7 = _g;		HX_STACK_VAR(tmp7,"tmp7");
+		HX_STACK_LINE(167)
+		switch( (int)(tmp7)){
+			case (int)1: {
+				HX_STACK_LINE(170)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(170)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(170)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(170)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(170)
+				if ((tmp9)){
+					HX_STACK_LINE(170)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)1);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(170)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(170)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(170)
+					if ((tmp10)){
+						HX_STACK_LINE(170)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(170)
+						{
+							HX_STACK_LINE(170)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(170)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(170)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(170)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(170)
+							_this->length = tmp13;
+							HX_STACK_LINE(170)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(170)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(170)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(170)
+							{
+								HX_STACK_LINE(170)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(170)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(170)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(170)
+								this2 = tmp17;
+								HX_STACK_LINE(170)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(170)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(170)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(170)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(170)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(170)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(170)
+						if ((tmp11)){
+							HX_STACK_LINE(170)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(170)
+							{
+								HX_STACK_LINE(170)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(170)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(170)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(170)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(170)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(170)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(170)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(170)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(170)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(170)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(170)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(170)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(170)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(170)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(170)
+								if ((tmp20)){
+									HX_STACK_LINE(170)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(170)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(170)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(170)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(170)
+									{
+										HX_STACK_LINE(170)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(170)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(170)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(170)
+										this2 = tmp24;
+										HX_STACK_LINE(170)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(170)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(170)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(170)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(170)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(170)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(170)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(170)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(170)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(170)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(170)
+								_this->length = srcLength;
+								HX_STACK_LINE(170)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(170)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(170)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(170)
+							if ((tmp12)){
+								HX_STACK_LINE(170)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(170)
+								{
+									HX_STACK_LINE(170)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)1);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(170)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(170)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(170)
+									if ((tmp15)){
+										HX_STACK_LINE(170)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(170)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(170)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(170)
+									if ((tmp17)){
+										HX_STACK_LINE(170)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(170)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(170)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(170)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(170)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(170)
+									if ((tmp18)){
+										HX_STACK_LINE(170)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(170)
+										newByteLength = tmp19;
+										HX_STACK_LINE(170)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(170)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(170)
+										if ((tmp21)){
+											HX_STACK_LINE(170)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(170)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(170)
+										if ((tmp22)){
+											HX_STACK_LINE(170)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(170)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(170)
+										newByteLength = tmp19;
+										HX_STACK_LINE(170)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(170)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(170)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(170)
+										if ((tmp21)){
+											HX_STACK_LINE(170)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(170)
+									_this->buffer = buffer;
+									HX_STACK_LINE(170)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(170)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(170)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(170)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(170)
+									_this->length = tmp20;
+									HX_STACK_LINE(170)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(170)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(170)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int8Array","\x40","\x53","\xda","\x77"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(170)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)2: {
+				HX_STACK_LINE(173)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(173)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(173)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(173)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(173)
+				if ((tmp9)){
+					HX_STACK_LINE(173)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)2);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(173)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(173)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(173)
+					if ((tmp10)){
+						HX_STACK_LINE(173)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(173)
+						{
+							HX_STACK_LINE(173)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(173)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(173)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(173)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(173)
+							_this->length = tmp13;
+							HX_STACK_LINE(173)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(173)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(173)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(173)
+							{
+								HX_STACK_LINE(173)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(173)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(173)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(173)
+								this2 = tmp17;
+								HX_STACK_LINE(173)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(173)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(173)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(173)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(173)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(173)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(173)
+						if ((tmp11)){
+							HX_STACK_LINE(173)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(173)
+							{
+								HX_STACK_LINE(173)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(173)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(173)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(173)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(173)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(173)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(173)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(173)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(173)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(173)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(173)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(173)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(173)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(173)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(173)
+								if ((tmp20)){
+									HX_STACK_LINE(173)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(173)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(173)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(173)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(173)
+									{
+										HX_STACK_LINE(173)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(173)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(173)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(173)
+										this2 = tmp24;
+										HX_STACK_LINE(173)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(173)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(173)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(173)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(173)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(173)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(173)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(173)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(173)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(173)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(173)
+								_this->length = srcLength;
+								HX_STACK_LINE(173)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(173)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(173)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(173)
+							if ((tmp12)){
+								HX_STACK_LINE(173)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(173)
+								{
+									HX_STACK_LINE(173)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)2);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(173)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(173)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(173)
+									if ((tmp15)){
+										HX_STACK_LINE(173)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(173)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(173)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(173)
+									if ((tmp17)){
+										HX_STACK_LINE(173)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(173)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(173)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(173)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(173)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(173)
+									if ((tmp18)){
+										HX_STACK_LINE(173)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(173)
+										newByteLength = tmp19;
+										HX_STACK_LINE(173)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(173)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(173)
+										if ((tmp21)){
+											HX_STACK_LINE(173)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(173)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(173)
+										if ((tmp22)){
+											HX_STACK_LINE(173)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(173)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(173)
+										newByteLength = tmp19;
+										HX_STACK_LINE(173)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(173)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(173)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(173)
+										if ((tmp21)){
+											HX_STACK_LINE(173)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(173)
+									_this->buffer = buffer;
+									HX_STACK_LINE(173)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(173)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(173)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(173)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(173)
+									_this->length = tmp20;
+									HX_STACK_LINE(173)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(173)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(173)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int16Array","\x95","\xb2","\x95","\xa7"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(173)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)3: {
+				HX_STACK_LINE(176)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(176)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(176)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(176)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(176)
+				if ((tmp9)){
+					HX_STACK_LINE(176)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)3);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(176)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(176)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(176)
+					if ((tmp10)){
+						HX_STACK_LINE(176)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(176)
+						{
+							HX_STACK_LINE(176)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(176)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(176)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(176)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(176)
+							_this->length = tmp13;
+							HX_STACK_LINE(176)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(176)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(176)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(176)
+							{
+								HX_STACK_LINE(176)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(176)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(176)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(176)
+								this2 = tmp17;
+								HX_STACK_LINE(176)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(176)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(176)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(176)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(176)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(176)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(176)
+						if ((tmp11)){
+							HX_STACK_LINE(176)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(176)
+							{
+								HX_STACK_LINE(176)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(176)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(176)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(176)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(176)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(176)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(176)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(176)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(176)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(176)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(176)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(176)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(176)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(176)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(176)
+								if ((tmp20)){
+									HX_STACK_LINE(176)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(176)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(176)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(176)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(176)
+									{
+										HX_STACK_LINE(176)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(176)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(176)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(176)
+										this2 = tmp24;
+										HX_STACK_LINE(176)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(176)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(176)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(176)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(176)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(176)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(176)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(176)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(176)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(176)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(176)
+								_this->length = srcLength;
+								HX_STACK_LINE(176)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(176)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(176)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(176)
+							if ((tmp12)){
+								HX_STACK_LINE(176)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(176)
+								{
+									HX_STACK_LINE(176)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)3);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(176)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(176)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(176)
+									if ((tmp15)){
+										HX_STACK_LINE(176)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(176)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(176)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(176)
+									if ((tmp17)){
+										HX_STACK_LINE(176)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(176)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(176)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(176)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(176)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(176)
+									if ((tmp18)){
+										HX_STACK_LINE(176)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(176)
+										newByteLength = tmp19;
+										HX_STACK_LINE(176)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(176)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(176)
+										if ((tmp21)){
+											HX_STACK_LINE(176)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(176)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(176)
+										if ((tmp22)){
+											HX_STACK_LINE(176)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(176)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(176)
+										newByteLength = tmp19;
+										HX_STACK_LINE(176)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(176)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(176)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(176)
+										if ((tmp21)){
+											HX_STACK_LINE(176)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(176)
+									_this->buffer = buffer;
+									HX_STACK_LINE(176)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(176)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(176)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(176)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(176)
+									_this->length = tmp20;
+									HX_STACK_LINE(176)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(176)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(176)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Int32Array","\x9b","\x2e","\x53","\x61"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(176)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)4: {
+				HX_STACK_LINE(179)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(179)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(179)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(179)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(179)
+				if ((tmp9)){
+					HX_STACK_LINE(179)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)4);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(179)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(179)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(179)
+					if ((tmp10)){
+						HX_STACK_LINE(179)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(179)
+						{
+							HX_STACK_LINE(179)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(179)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(179)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(179)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(179)
+							_this->length = tmp13;
+							HX_STACK_LINE(179)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(179)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(179)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(179)
+							{
+								HX_STACK_LINE(179)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(179)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(179)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(179)
+								this2 = tmp17;
+								HX_STACK_LINE(179)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(179)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(179)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(179)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(179)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(179)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(179)
+						if ((tmp11)){
+							HX_STACK_LINE(179)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(179)
+							{
+								HX_STACK_LINE(179)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(179)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(179)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(179)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(179)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(179)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(179)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(179)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(179)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(179)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(179)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(179)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(179)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(179)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(179)
+								if ((tmp20)){
+									HX_STACK_LINE(179)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(179)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(179)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(179)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(179)
+									{
+										HX_STACK_LINE(179)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(179)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(179)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(179)
+										this2 = tmp24;
+										HX_STACK_LINE(179)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(179)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(179)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(179)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(179)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(179)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(179)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(179)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(179)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(179)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(179)
+								_this->length = srcLength;
+								HX_STACK_LINE(179)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(179)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(179)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(179)
+							if ((tmp12)){
+								HX_STACK_LINE(179)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(179)
+								{
+									HX_STACK_LINE(179)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)4);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(179)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(179)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(179)
+									if ((tmp15)){
+										HX_STACK_LINE(179)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(179)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(179)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(179)
+									if ((tmp17)){
+										HX_STACK_LINE(179)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(179)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(179)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(179)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(179)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(179)
+									if ((tmp18)){
+										HX_STACK_LINE(179)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(179)
+										newByteLength = tmp19;
+										HX_STACK_LINE(179)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(179)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(179)
+										if ((tmp21)){
+											HX_STACK_LINE(179)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(179)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(179)
+										if ((tmp22)){
+											HX_STACK_LINE(179)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(179)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(179)
+										newByteLength = tmp19;
+										HX_STACK_LINE(179)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(179)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(179)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(179)
+										if ((tmp21)){
+											HX_STACK_LINE(179)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(179)
+									_this->buffer = buffer;
+									HX_STACK_LINE(179)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(179)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(179)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(179)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(179)
+									_this->length = tmp20;
+									HX_STACK_LINE(179)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(179)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(179)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint8Array","\x8b","\x64","\x02","\xe4"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(179)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)5: {
+				HX_STACK_LINE(182)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(182)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(182)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(182)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(182)
+				if ((tmp9)){
+					HX_STACK_LINE(182)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)5);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(182)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(182)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(182)
+					if ((tmp10)){
+						HX_STACK_LINE(182)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(182)
+						{
+							HX_STACK_LINE(182)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(182)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(182)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(182)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(182)
+							_this->length = tmp13;
+							HX_STACK_LINE(182)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(182)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(182)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(182)
+							{
+								HX_STACK_LINE(182)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(182)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(182)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(182)
+								this2 = tmp17;
+								HX_STACK_LINE(182)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(182)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(182)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(182)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(182)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(182)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(182)
+						if ((tmp11)){
+							HX_STACK_LINE(182)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(182)
+							{
+								HX_STACK_LINE(182)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(182)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(182)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(182)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(182)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(182)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(182)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(182)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(182)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(182)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(182)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(182)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(182)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(182)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(182)
+								if ((tmp20)){
+									HX_STACK_LINE(182)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(182)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(182)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(182)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(182)
+									{
+										HX_STACK_LINE(182)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(182)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(182)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(182)
+										this2 = tmp24;
+										HX_STACK_LINE(182)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(182)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(182)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(182)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(182)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(182)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(182)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(182)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(182)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(182)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(182)
+								_this->length = srcLength;
+								HX_STACK_LINE(182)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(182)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(182)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(182)
+							if ((tmp12)){
+								HX_STACK_LINE(182)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(182)
+								{
+									HX_STACK_LINE(182)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)5);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(182)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(182)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(182)
+									if ((tmp15)){
+										HX_STACK_LINE(182)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(182)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(182)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(182)
+									if ((tmp17)){
+										HX_STACK_LINE(182)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(182)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(182)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(182)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(182)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(182)
+									if ((tmp18)){
+										HX_STACK_LINE(182)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(182)
+										newByteLength = tmp19;
+										HX_STACK_LINE(182)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(182)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(182)
+										if ((tmp21)){
+											HX_STACK_LINE(182)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(182)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(182)
+										if ((tmp22)){
+											HX_STACK_LINE(182)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(182)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(182)
+										newByteLength = tmp19;
+										HX_STACK_LINE(182)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(182)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(182)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(182)
+										if ((tmp21)){
+											HX_STACK_LINE(182)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(182)
+									_this->buffer = buffer;
+									HX_STACK_LINE(182)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(182)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(182)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(182)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(182)
+									_this->length = tmp20;
+									HX_STACK_LINE(182)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(182)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(182)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint8ClampedArray","\x6d","\x2a","\x7c","\xf9"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(182)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)6: {
+				HX_STACK_LINE(185)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(185)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(185)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(185)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(185)
+				if ((tmp9)){
+					HX_STACK_LINE(185)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)6);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(185)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(185)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(185)
+					if ((tmp10)){
+						HX_STACK_LINE(185)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(185)
+						{
+							HX_STACK_LINE(185)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(185)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(185)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(185)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(185)
+							_this->length = tmp13;
+							HX_STACK_LINE(185)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(185)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(185)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(185)
+							{
+								HX_STACK_LINE(185)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(185)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(185)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(185)
+								this2 = tmp17;
+								HX_STACK_LINE(185)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(185)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(185)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(185)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(185)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(185)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(185)
+						if ((tmp11)){
+							HX_STACK_LINE(185)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(185)
+							{
+								HX_STACK_LINE(185)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(185)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(185)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(185)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(185)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(185)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(185)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(185)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(185)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(185)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(185)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(185)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(185)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(185)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(185)
+								if ((tmp20)){
+									HX_STACK_LINE(185)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(185)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(185)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(185)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(185)
+									{
+										HX_STACK_LINE(185)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(185)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(185)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(185)
+										this2 = tmp24;
+										HX_STACK_LINE(185)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(185)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(185)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(185)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(185)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(185)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(185)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(185)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(185)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(185)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(185)
+								_this->length = srcLength;
+								HX_STACK_LINE(185)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(185)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(185)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(185)
+							if ((tmp12)){
+								HX_STACK_LINE(185)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(185)
+								{
+									HX_STACK_LINE(185)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)6);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(185)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(185)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(185)
+									if ((tmp15)){
+										HX_STACK_LINE(185)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(185)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(185)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(185)
+									if ((tmp17)){
+										HX_STACK_LINE(185)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(185)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(185)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(185)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(185)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(185)
+									if ((tmp18)){
+										HX_STACK_LINE(185)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(185)
+										newByteLength = tmp19;
+										HX_STACK_LINE(185)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(185)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(185)
+										if ((tmp21)){
+											HX_STACK_LINE(185)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(185)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(185)
+										if ((tmp22)){
+											HX_STACK_LINE(185)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(185)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(185)
+										newByteLength = tmp19;
+										HX_STACK_LINE(185)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(185)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(185)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(185)
+										if ((tmp21)){
+											HX_STACK_LINE(185)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(185)
+									_this->buffer = buffer;
+									HX_STACK_LINE(185)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(185)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(185)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(185)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(185)
+									_this->length = tmp20;
+									HX_STACK_LINE(185)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(185)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(185)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint16Array","\xea","\xc2","\x7c","\xde"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(185)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)7: {
+				HX_STACK_LINE(188)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(188)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(188)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(188)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(188)
+				if ((tmp9)){
+					HX_STACK_LINE(188)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)7);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(188)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(188)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(188)
+					if ((tmp10)){
+						HX_STACK_LINE(188)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(188)
+						{
+							HX_STACK_LINE(188)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(188)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(188)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(188)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(188)
+							_this->length = tmp13;
+							HX_STACK_LINE(188)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(188)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(188)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(188)
+							{
+								HX_STACK_LINE(188)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(188)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(188)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(188)
+								this2 = tmp17;
+								HX_STACK_LINE(188)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(188)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(188)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(188)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(188)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(188)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(188)
+						if ((tmp11)){
+							HX_STACK_LINE(188)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(188)
+							{
+								HX_STACK_LINE(188)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(188)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(188)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(188)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(188)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(188)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(188)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(188)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(188)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(188)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(188)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(188)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(188)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(188)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(188)
+								if ((tmp20)){
+									HX_STACK_LINE(188)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(188)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(188)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(188)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(188)
+									{
+										HX_STACK_LINE(188)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(188)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(188)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(188)
+										this2 = tmp24;
+										HX_STACK_LINE(188)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(188)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(188)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(188)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(188)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(188)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(188)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(188)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(188)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(188)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(188)
+								_this->length = srcLength;
+								HX_STACK_LINE(188)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(188)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(188)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(188)
+							if ((tmp12)){
+								HX_STACK_LINE(188)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(188)
+								{
+									HX_STACK_LINE(188)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)7);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(188)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(188)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(188)
+									if ((tmp15)){
+										HX_STACK_LINE(188)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(188)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(188)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(188)
+									if ((tmp17)){
+										HX_STACK_LINE(188)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(188)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(188)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(188)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(188)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(188)
+									if ((tmp18)){
+										HX_STACK_LINE(188)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(188)
+										newByteLength = tmp19;
+										HX_STACK_LINE(188)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(188)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(188)
+										if ((tmp21)){
+											HX_STACK_LINE(188)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(188)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(188)
+										if ((tmp22)){
+											HX_STACK_LINE(188)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(188)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(188)
+										newByteLength = tmp19;
+										HX_STACK_LINE(188)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(188)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(188)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(188)
+										if ((tmp21)){
+											HX_STACK_LINE(188)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(188)
+									_this->buffer = buffer;
+									HX_STACK_LINE(188)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(188)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(188)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(188)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(188)
+									_this->length = tmp20;
+									HX_STACK_LINE(188)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(188)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(188)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Uint32Array","\xf0","\x3e","\x3a","\x98"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(188)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)8: {
+				HX_STACK_LINE(191)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(191)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(191)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(191)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(191)
+				if ((tmp9)){
+					HX_STACK_LINE(191)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)8);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(191)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(191)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(191)
+					if ((tmp10)){
+						HX_STACK_LINE(191)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(191)
+						{
+							HX_STACK_LINE(191)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(191)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(191)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(191)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(191)
+							_this->length = tmp13;
+							HX_STACK_LINE(191)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(191)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(191)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(191)
+							{
+								HX_STACK_LINE(191)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(191)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(191)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(191)
+								this2 = tmp17;
+								HX_STACK_LINE(191)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(191)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(191)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(191)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(191)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(191)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(191)
+						if ((tmp11)){
+							HX_STACK_LINE(191)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(191)
+							{
+								HX_STACK_LINE(191)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(191)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(191)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(191)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(191)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(191)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(191)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(191)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(191)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(191)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(191)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(191)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(191)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(191)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(191)
+								if ((tmp20)){
+									HX_STACK_LINE(191)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(191)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(191)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(191)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(191)
+									{
+										HX_STACK_LINE(191)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(191)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(191)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(191)
+										this2 = tmp24;
+										HX_STACK_LINE(191)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(191)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(191)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(191)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(191)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(191)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(191)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(191)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(191)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(191)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(191)
+								_this->length = srcLength;
+								HX_STACK_LINE(191)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(191)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(191)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(191)
+							if ((tmp12)){
+								HX_STACK_LINE(191)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(191)
+								{
+									HX_STACK_LINE(191)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)8);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(191)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(191)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(191)
+									if ((tmp15)){
+										HX_STACK_LINE(191)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(191)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(191)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(191)
+									if ((tmp17)){
+										HX_STACK_LINE(191)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(191)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(191)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(191)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(191)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(191)
+									if ((tmp18)){
+										HX_STACK_LINE(191)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(191)
+										newByteLength = tmp19;
+										HX_STACK_LINE(191)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(191)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(191)
+										if ((tmp21)){
+											HX_STACK_LINE(191)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(191)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(191)
+										if ((tmp22)){
+											HX_STACK_LINE(191)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(191)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(191)
+										newByteLength = tmp19;
+										HX_STACK_LINE(191)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(191)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(191)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(191)
+										if ((tmp21)){
+											HX_STACK_LINE(191)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(191)
+									_this->buffer = buffer;
+									HX_STACK_LINE(191)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(191)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(191)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(191)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(191)
+									_this->length = tmp20;
+									HX_STACK_LINE(191)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(191)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(191)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Float32Array","\x8e","\xc1","\xf4","\xd4"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(191)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)9: {
+				HX_STACK_LINE(194)
+				::haxe::io::Bytes tmp8 = this->buffer;		HX_STACK_VAR(tmp8,"tmp8");
+				HX_STACK_LINE(194)
+				::haxe::io::Bytes buffer = tmp8;		HX_STACK_VAR(buffer,"buffer");
+				HX_STACK_LINE(194)
+				::lime::utils::ArrayBufferView this1;		HX_STACK_VAR(this1,"this1");
+				HX_STACK_LINE(194)
+				bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
+				HX_STACK_LINE(194)
+				if ((tmp9)){
+					HX_STACK_LINE(194)
+					::lime::utils::ArrayBufferView tmp10 = ::lime::utils::ArrayBufferView_obj::__new(null(),(int)9);		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(194)
+					this1 = tmp10;
+				}
+				else{
+					HX_STACK_LINE(194)
+					bool tmp10 = false;		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(194)
+					if ((tmp10)){
+						HX_STACK_LINE(194)
+						::lime::utils::ArrayBufferView tmp11;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(194)
+						{
+							HX_STACK_LINE(194)
+							::lime::utils::ArrayBufferView tmp12 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(194)
+							::lime::utils::ArrayBufferView _this = tmp12;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(194)
+							_this->byteOffset = (int)0;
+							HX_STACK_LINE(194)
+							int tmp13 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(194)
+							_this->length = tmp13;
+							HX_STACK_LINE(194)
+							int tmp14 = (_this->length * _this->bytesPerElement);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(194)
+							_this->byteLength = tmp14;
+							HX_STACK_LINE(194)
+							::haxe::io::Bytes tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(194)
+							{
+								HX_STACK_LINE(194)
+								::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+								HX_STACK_LINE(194)
+								int tmp16 = _this->byteLength;		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(194)
+								::haxe::io::Bytes tmp17 = ::haxe::io::Bytes_obj::alloc(tmp16);		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(194)
+								this2 = tmp17;
+								HX_STACK_LINE(194)
+								tmp15 = this2;
+							}
+							HX_STACK_LINE(194)
+							_this->buffer = tmp15;
+							HX_STACK_LINE(194)
+							_this->copyFromArray(((Array< Float >)(null())),null());
+							HX_STACK_LINE(194)
+							tmp11 = _this;
+						}
+						HX_STACK_LINE(194)
+						this1 = tmp11;
+					}
+					else{
+						HX_STACK_LINE(194)
+						bool tmp11 = false;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(194)
+						if ((tmp11)){
+							HX_STACK_LINE(194)
+							::lime::utils::ArrayBufferView tmp12;		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(194)
+							{
+								HX_STACK_LINE(194)
+								::lime::utils::ArrayBufferView tmp13 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(194)
+								::lime::utils::ArrayBufferView _this = tmp13;		HX_STACK_VAR(_this,"_this");
+								HX_STACK_LINE(194)
+								::haxe::io::Bytes tmp14 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp14,"tmp14");
+								HX_STACK_LINE(194)
+								::haxe::io::Bytes srcData = tmp14;		HX_STACK_VAR(srcData,"srcData");
+								HX_STACK_LINE(194)
+								int tmp15 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp15,"tmp15");
+								HX_STACK_LINE(194)
+								int srcLength = tmp15;		HX_STACK_VAR(srcLength,"srcLength");
+								HX_STACK_LINE(194)
+								int tmp16 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp16,"tmp16");
+								HX_STACK_LINE(194)
+								int srcByteOffset = tmp16;		HX_STACK_VAR(srcByteOffset,"srcByteOffset");
+								HX_STACK_LINE(194)
+								int tmp17 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp17,"tmp17");
+								HX_STACK_LINE(194)
+								int srcElementSize = tmp17;		HX_STACK_VAR(srcElementSize,"srcElementSize");
+								HX_STACK_LINE(194)
+								int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+								HX_STACK_LINE(194)
+								int tmp18 = hx::Throw(HX_CSTRING("Invalid field access on null object"));		HX_STACK_VAR(tmp18,"tmp18");
+								HX_STACK_LINE(194)
+								int tmp19 = _this->type;		HX_STACK_VAR(tmp19,"tmp19");
+								HX_STACK_LINE(194)
+								bool tmp20 = (tmp18 == tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+								HX_STACK_LINE(194)
+								if ((tmp20)){
+									HX_STACK_LINE(194)
+									int srcLength1 = srcData->length;		HX_STACK_VAR(srcLength1,"srcLength1");
+									HX_STACK_LINE(194)
+									int tmp21 = (srcLength1 - srcByteOffset);		HX_STACK_VAR(tmp21,"tmp21");
+									HX_STACK_LINE(194)
+									int cloneLength = tmp21;		HX_STACK_VAR(cloneLength,"cloneLength");
+									HX_STACK_LINE(194)
+									::haxe::io::Bytes tmp22;		HX_STACK_VAR(tmp22,"tmp22");
+									HX_STACK_LINE(194)
+									{
+										HX_STACK_LINE(194)
+										::haxe::io::Bytes this2;		HX_STACK_VAR(this2,"this2");
+										HX_STACK_LINE(194)
+										int tmp23 = cloneLength;		HX_STACK_VAR(tmp23,"tmp23");
+										HX_STACK_LINE(194)
+										::haxe::io::Bytes tmp24 = ::haxe::io::Bytes_obj::alloc(tmp23);		HX_STACK_VAR(tmp24,"tmp24");
+										HX_STACK_LINE(194)
+										this2 = tmp24;
+										HX_STACK_LINE(194)
+										tmp22 = this2;
+									}
+									HX_STACK_LINE(194)
+									_this->buffer = tmp22;
+									HX_STACK_LINE(194)
+									::haxe::io::Bytes tmp23 = srcData;		HX_STACK_VAR(tmp23,"tmp23");
+									HX_STACK_LINE(194)
+									int tmp24 = srcByteOffset;		HX_STACK_VAR(tmp24,"tmp24");
+									HX_STACK_LINE(194)
+									int tmp25 = cloneLength;		HX_STACK_VAR(tmp25,"tmp25");
+									HX_STACK_LINE(194)
+									_this->buffer->blit((int)0,tmp23,tmp24,tmp25);
+								}
+								else{
+									HX_STACK_LINE(194)
+									HX_STACK_DO_THROW(HX_HCSTRING("unimplemented","\x09","\x2f","\x74","\xb4"));
+								}
+								HX_STACK_LINE(194)
+								int tmp21 = (_this->bytesPerElement * srcLength);		HX_STACK_VAR(tmp21,"tmp21");
+								HX_STACK_LINE(194)
+								_this->byteLength = tmp21;
+								HX_STACK_LINE(194)
+								_this->byteOffset = (int)0;
+								HX_STACK_LINE(194)
+								_this->length = srcLength;
+								HX_STACK_LINE(194)
+								tmp12 = _this;
+							}
+							HX_STACK_LINE(194)
+							this1 = tmp12;
+						}
+						else{
+							HX_STACK_LINE(194)
+							bool tmp12 = (buffer != null());		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(194)
+							if ((tmp12)){
+								HX_STACK_LINE(194)
+								::lime::utils::ArrayBufferView tmp13;		HX_STACK_VAR(tmp13,"tmp13");
+								HX_STACK_LINE(194)
+								{
+									HX_STACK_LINE(194)
+									::lime::utils::ArrayBufferView tmp14 = ::lime::utils::ArrayBufferView_obj::__new((int)0,(int)9);		HX_STACK_VAR(tmp14,"tmp14");
+									HX_STACK_LINE(194)
+									::lime::utils::ArrayBufferView _this = tmp14;		HX_STACK_VAR(_this,"_this");
+									HX_STACK_LINE(194)
+									bool tmp15 = (byte_offset < (int)0);		HX_STACK_VAR(tmp15,"tmp15");
+									HX_STACK_LINE(194)
+									if ((tmp15)){
+										HX_STACK_LINE(194)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(194)
+									int tmp16 = hx::Mod(byte_offset,_this->bytesPerElement);		HX_STACK_VAR(tmp16,"tmp16");
+									HX_STACK_LINE(194)
+									bool tmp17 = (tmp16 != (int)0);		HX_STACK_VAR(tmp17,"tmp17");
+									HX_STACK_LINE(194)
+									if ((tmp17)){
+										HX_STACK_LINE(194)
+										HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+									}
+									HX_STACK_LINE(194)
+									int bufferByteLength = buffer->length;		HX_STACK_VAR(bufferByteLength,"bufferByteLength");
+									HX_STACK_LINE(194)
+									int elementSize = _this->bytesPerElement;		HX_STACK_VAR(elementSize,"elementSize");
+									HX_STACK_LINE(194)
+									int newByteLength = bufferByteLength;		HX_STACK_VAR(newByteLength,"newByteLength");
+									HX_STACK_LINE(194)
+									bool tmp18 = (len == null());		HX_STACK_VAR(tmp18,"tmp18");
+									HX_STACK_LINE(194)
+									if ((tmp18)){
+										HX_STACK_LINE(194)
+										int tmp19 = (bufferByteLength - byte_offset);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(194)
+										newByteLength = tmp19;
+										HX_STACK_LINE(194)
+										int tmp20 = hx::Mod(bufferByteLength,_this->bytesPerElement);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(194)
+										bool tmp21 = (tmp20 != (int)0);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(194)
+										if ((tmp21)){
+											HX_STACK_LINE(194)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+										HX_STACK_LINE(194)
+										bool tmp22 = (newByteLength < (int)0);		HX_STACK_VAR(tmp22,"tmp22");
+										HX_STACK_LINE(194)
+										if ((tmp22)){
+											HX_STACK_LINE(194)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									else{
+										HX_STACK_LINE(194)
+										int tmp19 = (len * _this->bytesPerElement);		HX_STACK_VAR(tmp19,"tmp19");
+										HX_STACK_LINE(194)
+										newByteLength = tmp19;
+										HX_STACK_LINE(194)
+										int tmp20 = (byte_offset + newByteLength);		HX_STACK_VAR(tmp20,"tmp20");
+										HX_STACK_LINE(194)
+										int newRange = tmp20;		HX_STACK_VAR(newRange,"newRange");
+										HX_STACK_LINE(194)
+										bool tmp21 = (newRange > bufferByteLength);		HX_STACK_VAR(tmp21,"tmp21");
+										HX_STACK_LINE(194)
+										if ((tmp21)){
+											HX_STACK_LINE(194)
+											HX_STACK_DO_THROW(::lime::utils::TAError_obj::RangeError);
+										}
+									}
+									HX_STACK_LINE(194)
+									_this->buffer = buffer;
+									HX_STACK_LINE(194)
+									_this->byteOffset = byte_offset;
+									HX_STACK_LINE(194)
+									_this->byteLength = newByteLength;
+									HX_STACK_LINE(194)
+									Float tmp19 = (Float(newByteLength) / Float(_this->bytesPerElement));		HX_STACK_VAR(tmp19,"tmp19");
+									HX_STACK_LINE(194)
+									int tmp20 = ::Std_obj::_int(tmp19);		HX_STACK_VAR(tmp20,"tmp20");
+									HX_STACK_LINE(194)
+									_this->length = tmp20;
+									HX_STACK_LINE(194)
+									tmp13 = _this;
+								}
+								HX_STACK_LINE(194)
+								this1 = tmp13;
+							}
+							else{
+								HX_STACK_LINE(194)
+								HX_STACK_DO_THROW(HX_HCSTRING("Invalid constructor arguments for Float64Array","\x8f","\xde","\x6b","\x1e"));
+							}
+						}
+					}
+				}
+				HX_STACK_LINE(194)
+				tmp5 = this1;
+			}
+			;break;
+			case (int)0: {
+				HX_STACK_LINE(197)
+				HX_STACK_DO_THROW(HX_HCSTRING("subarray on a blank ArrayBufferView","\x39","\x87","\xfd","\x19"));
+			}
+			;break;
+		}
+	}
+	HX_STACK_LINE(167)
+	::lime::utils::ArrayBufferView view = tmp5;		HX_STACK_VAR(view,"view");
+	HX_STACK_LINE(200)
+	::lime::utils::ArrayBufferView tmp6 = view;		HX_STACK_VAR(tmp6,"tmp6");
+	HX_STACK_LINE(200)
+	return tmp6;
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC2(ArrayBufferView_obj,subarray_lime_utils_UInt8Array,return )
 
 ::lime::utils::ArrayBufferView ArrayBufferView_obj::subarray_lime_utils_Int8Array( int begin,Dynamic end){
 	HX_STACK_FRAME("lime.utils.ArrayBufferView","subarray_lime_utils_Int8Array",0x5ec0bd58,"lime.utils.ArrayBufferView.subarray_lime_utils_Int8Array","lime/utils/ArrayBufferView.hx",160,0xb543acf8)
@@ -22712,8 +22712,8 @@ Dynamic ArrayBufferView_obj::__Field(const ::String &inName,hx::PropertyAccess i
 		break;
 	case 30:
 		if (HX_FIELD_EQ(inName,"subarray_lime_utils_Int16Array") ) { return subarray_lime_utils_Int16Array_dyn(); }
-		if (HX_FIELD_EQ(inName,"subarray_lime_utils_UInt8Array") ) { return subarray_lime_utils_UInt8Array_dyn(); }
 		if (HX_FIELD_EQ(inName,"subarray_lime_utils_Int32Array") ) { return subarray_lime_utils_Int32Array_dyn(); }
+		if (HX_FIELD_EQ(inName,"subarray_lime_utils_UInt8Array") ) { return subarray_lime_utils_UInt8Array_dyn(); }
 		break;
 	case 31:
 		if (HX_FIELD_EQ(inName,"subarray_lime_utils_UInt16Array") ) { return subarray_lime_utils_UInt16Array_dyn(); }
@@ -22776,10 +22776,10 @@ static hx::StaticInfo *sStaticStorageInfo = 0;
 static ::String sMemberFields[] = {
 	HX_HCSTRING("subarray_lime_utils_Int16Array","\xd7","\x8d","\x80","\xc2"),
 	HX_HCSTRING("subarray_lime_utils_UInt16Array","\x88","\xc5","\xc2","\x47"),
-	HX_HCSTRING("subarray_lime_utils_UInt32Array","\x8e","\x41","\x80","\x01"),
-	HX_HCSTRING("subarray_lime_utils_UInt8Array","\xad","\x1f","\xc0","\xa0"),
 	HX_HCSTRING("subarray_lime_utils_Int32Array","\xdd","\x09","\x3e","\x7c"),
+	HX_HCSTRING("subarray_lime_utils_UInt32Array","\x8e","\x41","\x80","\x01"),
 	HX_HCSTRING("subarray_lime_utils_Float32Array","\x50","\x71","\xbe","\xa4"),
+	HX_HCSTRING("subarray_lime_utils_UInt8Array","\xad","\x1f","\xc0","\xa0"),
 	HX_HCSTRING("subarray_lime_utils_Int8Array","\x3e","\x16","\xba","\x20"),
 	HX_HCSTRING("subarray_lime_utils_UInt8ClampedArray","\x8b","\xf7","\x6e","\x70"),
 	HX_HCSTRING("subarray_lime_utils_Float64Array","\x51","\x8e","\x35","\xee"),

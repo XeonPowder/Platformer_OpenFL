@@ -246,7 +246,7 @@ Void Event_Int_Void_obj::dispatch( int a){
 			}
 			HX_STACK_LINE(141)
 			Dynamic tmp2 = listeners->__GetItem(i);		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(23)
+			HX_STACK_LINE(36)
 			int tmp3 = a;		HX_STACK_VAR(tmp3,"tmp3");
 			HX_STACK_LINE(141)
 			tmp2(tmp3).Cast< Void >();

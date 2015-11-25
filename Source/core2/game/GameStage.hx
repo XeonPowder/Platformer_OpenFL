@@ -2,8 +2,9 @@ package core2.game;
 
 import core2.game.GameWindow in GW;
 import core2.game.Game in G;
+import openfl.display.Stage in Stage;
 
-class GameStage extends openfl.display.Stage{
+class GameStage extends Stage{
 	private var gameWindow:GW;
 	private var gameStage:GameStage;
 	private var game:G;

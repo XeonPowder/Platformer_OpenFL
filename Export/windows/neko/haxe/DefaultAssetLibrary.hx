@@ -53,15 +53,81 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (openfl && !flash)
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if flash
 		
+		path.set ("assets/maps/NewWorld/16x9.png", "assets/maps/NewWorld/16x9.png");
+		type.set ("assets/maps/NewWorld/16x9.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/movement/left/left.png", "assets/Sprites/player/movement/left/left.png");
+		type.set ("assets/Sprites/player/movement/left/left.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/movement/left/left_fall.png", "assets/Sprites/player/movement/left/left_fall.png");
+		type.set ("assets/Sprites/player/movement/left/left_fall.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/movement/left/left_jump.png", "assets/Sprites/player/movement/left/left_jump.png");
+		type.set ("assets/Sprites/player/movement/left/left_jump.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/movement/left/left_touchdown.png", "assets/Sprites/player/movement/left/left_touchdown.png");
+		type.set ("assets/Sprites/player/movement/left/left_touchdown.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/movement/right/right.png", "assets/Sprites/player/movement/right/right.png");
+		type.set ("assets/Sprites/player/movement/right/right.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/movement/right/right_fall.png", "assets/Sprites/player/movement/right/right_fall.png");
+		type.set ("assets/Sprites/player/movement/right/right_fall.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/movement/right/right_jump.png", "assets/Sprites/player/movement/right/right_jump.png");
+		type.set ("assets/Sprites/player/movement/right/right_jump.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/movement/right/right_touchdown.png", "assets/Sprites/player/movement/right/right_touchdown.png");
+		type.set ("assets/Sprites/player/movement/right/right_touchdown.png", AssetType.IMAGE);
+		path.set ("assets/Sprites/player/player.psd", "assets/Sprites/player/player.psd");
+		type.set ("assets/Sprites/player/player.psd", AssetType.BINARY);
+		path.set ("assets/Sprites/player/player2.psd", "assets/Sprites/player/player2.psd");
+		type.set ("assets/Sprites/player/player2.psd", AssetType.BINARY);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "assets/maps/NewWorld/16x9.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/left/left.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/left/left_fall.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/left/left_jump.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/left/left_touchdown.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/right/right.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/right/right_fall.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/right/right_jump.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/right/right_touchdown.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/player.psd";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
+		id = "assets/Sprites/player/player2.psd";
+		path.set (id, id);
+		type.set (id, AssetType.BINARY);
 		
 		
 		var assetsPrefix = null;
@@ -79,6 +145,17 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		
 		
 		if (useManifest) {
@@ -799,7 +876,29 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #elseif html5
+
+
+
+
+
+
+
+
+
+
+
 
 
 

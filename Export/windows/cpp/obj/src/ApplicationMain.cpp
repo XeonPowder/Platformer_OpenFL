@@ -239,7 +239,7 @@ Void ApplicationMain_obj::main( ){
 				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","ApplicationMain.hx",91,0x0780ded5)
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
-					__result->Add(HX_HCSTRING("build","\x2e","\xdb","\xea","\xba") , HX_HCSTRING("246","\x34","\x1e","\x26","\x00"),false);
+					__result->Add(HX_HCSTRING("build","\x2e","\xdb","\xea","\xba") , HX_HCSTRING("266","\xf2","\x1f","\x26","\x00"),false);
 					__result->Add(HX_HCSTRING("company","\x3d","\x15","\x69","\x83") , HX_HCSTRING("Company Name","\x4e","\x48","\x0d","\xcb"),false);
 					__result->Add(HX_HCSTRING("file","\x7c","\xce","\xbb","\x43") , HX_HCSTRING("PlatformerOpenFL","\xb0","\x9d","\x61","\x68"),false);
 					__result->Add(HX_HCSTRING("fps","\xe9","\xc7","\x4d","\x00") , (int)30,false);

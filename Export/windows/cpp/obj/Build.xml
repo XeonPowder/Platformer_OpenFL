@@ -11,6 +11,7 @@
   </file>
   <file name="src/sys/io/FileInput.cpp">
    <depend name="include/cpp/Lib.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/haxe/io/Eof.h"/>
    <depend name="include/haxe/io/Error.h"/>
    <depend name="include/haxe/io/Input.h"/>
@@ -29,6 +30,169 @@
    <depend name="include/Date.h"/>
    <depend name="include/cpp/Lib.h"/>
    <depend name="include/sys/FileSystem.h"/>
+  </file>
+  <file name="src/pgr/dconsole/ui/DCOpenflInterface.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/Sys.h"/>
+   <depend name="include/lime/app/IModule.h"/>
+   <depend name="include/openfl/Lib.h"/>
+   <depend name="include/openfl/display/CapsStyle.h"/>
+   <depend name="include/openfl/display/DisplayObject.h"/>
+   <depend name="include/openfl/display/DisplayObjectContainer.h"/>
+   <depend name="include/openfl/display/Graphics.h"/>
+   <depend name="include/openfl/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/display/InteractiveObject.h"/>
+   <depend name="include/openfl/display/JointStyle.h"/>
+   <depend name="include/openfl/display/LineScaleMode.h"/>
+   <depend name="include/openfl/display/MovieClip.h"/>
+   <depend name="include/openfl/display/Sprite.h"/>
+   <depend name="include/openfl/display/Stage.h"/>
+   <depend name="include/openfl/events/Event.h"/>
+   <depend name="include/openfl/events/EventDispatcher.h"/>
+   <depend name="include/openfl/events/IEventDispatcher.h"/>
+   <depend name="include/openfl/text/TextField.h"/>
+   <depend name="include/openfl/text/TextFieldType.h"/>
+   <depend name="include/openfl/text/TextFormat.h"/>
+   <depend name="include/openfl/text/TextFormatAlign.h"/>
+   <depend name="include/pgr/dconsole/DC.h"/>
+   <depend name="include/pgr/dconsole/DCThemes.h"/>
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/ui/DCInterface.h"/>
+   <depend name="include/pgr/dconsole/ui/DCOpenflInterface.h"/>
+  </file>
+  <file name="src/pgr/dconsole/ui/DCEmtpyInterface.cpp">
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/ui/DCEmtpyInterface.h"/>
+   <depend name="include/pgr/dconsole/ui/DCInterface.h"/>
+  </file>
+  <file name="src/pgr/dconsole/ui/DCInterface.cpp">
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/ui/DCInterface.h"/>
+  </file>
+  <file name="src/pgr/dconsole/input/DCOpenflInput.cpp">
+   <depend name="include/lime/app/IModule.h"/>
+   <depend name="include/openfl/Lib.h"/>
+   <depend name="include/openfl/display/DisplayObject.h"/>
+   <depend name="include/openfl/display/DisplayObjectContainer.h"/>
+   <depend name="include/openfl/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/display/InteractiveObject.h"/>
+   <depend name="include/openfl/display/MovieClip.h"/>
+   <depend name="include/openfl/display/Sprite.h"/>
+   <depend name="include/openfl/display/Stage.h"/>
+   <depend name="include/openfl/events/Event.h"/>
+   <depend name="include/openfl/events/EventDispatcher.h"/>
+   <depend name="include/openfl/events/IEventDispatcher.h"/>
+   <depend name="include/openfl/events/KeyboardEvent.h"/>
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/input/DCInput.h"/>
+   <depend name="include/pgr/dconsole/input/DCOpenflInput.h"/>
+  </file>
+  <file name="src/pgr/dconsole/input/DCEmptyInput.cpp">
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/input/DCEmptyInput.h"/>
+   <depend name="include/pgr/dconsole/input/DCInput.h"/>
+  </file>
+  <file name="src/pgr/dconsole/input/DCInput.cpp">
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/input/DCInput.h"/>
+  </file>
+  <file name="src/pgr/dconsole/DConsole.cpp">
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/openfl/display/DisplayObject.h"/>
+   <depend name="include/openfl/display/DisplayObjectContainer.h"/>
+   <depend name="include/openfl/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/display/InteractiveObject.h"/>
+   <depend name="include/openfl/display/Sprite.h"/>
+   <depend name="include/openfl/events/EventDispatcher.h"/>
+   <depend name="include/openfl/events/IEventDispatcher.h"/>
+   <depend name="include/pgr/dconsole/DCCommands.h"/>
+   <depend name="include/pgr/dconsole/DCMonitor.h"/>
+   <depend name="include/pgr/dconsole/DCProfiler.h"/>
+   <depend name="include/pgr/dconsole/DCThemes.h"/>
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/input/DCInput.h"/>
+   <depend name="include/pgr/dconsole/input/DCOpenflInput.h"/>
+   <depend name="include/pgr/dconsole/ui/DCInterface.h"/>
+   <depend name="include/pgr/dconsole/ui/DCOpenflInterface.h"/>
+  </file>
+  <file name="src/pgr/dconsole/DCUtil.cpp">
+   <depend name="include/EReg.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/pgr/dconsole/ALIAS_TYPE.h"/>
+   <depend name="include/pgr/dconsole/DCCommands.h"/>
+   <depend name="include/pgr/dconsole/DCUtil.h"/>
+  </file>
+  <file name="src/pgr/dconsole/ALIAS_TYPE.cpp">
+   <depend name="include/pgr/dconsole/ALIAS_TYPE.h"/>
+  </file>
+  <file name="src/pgr/dconsole/DCThemes.cpp">
+   <depend name="include/pgr/dconsole/DCThemes.h"/>
+  </file>
+  <file name="src/pgr/dconsole/SampleHistory.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/pgr/dconsole/SampleHistory.h"/>
+  </file>
+  <file name="src/pgr/dconsole/DCProfiler.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/StringTools.h"/>
+   <depend name="include/haxe/Timer.h"/>
+   <depend name="include/pgr/dconsole/DC.h"/>
+   <depend name="include/pgr/dconsole/DCProfiler.h"/>
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/SampleHistory.h"/>
+   <depend name="include/pgr/dconsole/ui/DCInterface.h"/>
+  </file>
+  <file name="src/pgr/dconsole/DCMonitor.cpp">
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/Timer.h"/>
+   <depend name="include/pgr/dconsole/DCMonitor.h"/>
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/ui/DCInterface.h"/>
+  </file>
+  <file name="src/pgr/dconsole/DCInterp.cpp">
+   <depend name="include/Reflect.h"/>
+   <depend name="include/hscript/Error.h"/>
+   <depend name="include/hscript/Interp.h"/>
+   <depend name="include/pgr/dconsole/DCInterp.h"/>
+  </file>
+  <file name="src/pgr/dconsole/DCCommands.cpp">
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/StringTools.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/CallStack.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/StackItem.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/hscript/Expr.h"/>
+   <depend name="include/hscript/Interp.h"/>
+   <depend name="include/hscript/Parser.h"/>
+   <depend name="include/pgr/dconsole/ALIAS_TYPE.h"/>
+   <depend name="include/pgr/dconsole/DCCommands.h"/>
+   <depend name="include/pgr/dconsole/DCInterp.h"/>
+   <depend name="include/pgr/dconsole/DCUtil.h"/>
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+  </file>
+  <file name="src/pgr/dconsole/DC.cpp">
+   <depend name="include/openfl/display/DisplayObject.h"/>
+   <depend name="include/openfl/display/DisplayObjectContainer.h"/>
+   <depend name="include/openfl/display/IBitmapDrawable.h"/>
+   <depend name="include/openfl/display/InteractiveObject.h"/>
+   <depend name="include/openfl/display/Sprite.h"/>
+   <depend name="include/openfl/events/EventDispatcher.h"/>
+   <depend name="include/openfl/events/IEventDispatcher.h"/>
+   <depend name="include/pgr/dconsole/DC.h"/>
+   <depend name="include/pgr/dconsole/DCCommands.h"/>
+   <depend name="include/pgr/dconsole/DCMonitor.h"/>
+   <depend name="include/pgr/dconsole/DCProfiler.h"/>
+   <depend name="include/pgr/dconsole/DCThemes.h"/>
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/input/DCInput.h"/>
+   <depend name="include/pgr/dconsole/input/DCOpenflInput.h"/>
+   <depend name="include/pgr/dconsole/ui/DCInterface.h"/>
+   <depend name="include/pgr/dconsole/ui/DCOpenflInterface.h"/>
   </file>
   <file name="src/openfl/ui/Keyboard.cpp">
    <depend name="include/openfl/ui/Keyboard.h"/>
@@ -3107,6 +3271,62 @@
    <depend name="include/haxe/ds/StringMap.h"/>
    <depend name="include/lime/AssetCache.h"/>
   </file>
+  <file name="src/hscript/Parser.cpp">
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/GenericCell_hscript_Token.h"/>
+   <depend name="include/haxe/ds/GenericStack_hscript_Token.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesInput.h"/>
+   <depend name="include/haxe/io/BytesOutput.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/haxe/io/StringInput.h"/>
+   <depend name="include/hscript/CType.h"/>
+   <depend name="include/hscript/Const.h"/>
+   <depend name="include/hscript/Error.h"/>
+   <depend name="include/hscript/Expr.h"/>
+   <depend name="include/hscript/Parser.h"/>
+   <depend name="include/hscript/Token.h"/>
+  </file>
+  <file name="src/hscript/Token.cpp">
+   <depend name="include/hscript/Const.h"/>
+   <depend name="include/hscript/Token.h"/>
+  </file>
+  <file name="src/hscript/Interp.cpp">
+   <depend name="include/IntIterator.h"/>
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/Log.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/hscript/CType.h"/>
+   <depend name="include/hscript/Const.h"/>
+   <depend name="include/hscript/Error.h"/>
+   <depend name="include/hscript/Expr.h"/>
+   <depend name="include/hscript/Interp.h"/>
+   <depend name="include/hscript/_Interp/Stop.h"/>
+  </file>
+  <file name="src/hscript/_Interp/Stop.cpp">
+   <depend name="include/hscript/_Interp/Stop.h"/>
+  </file>
+  <file name="src/hscript/Error.cpp">
+   <depend name="include/hscript/Error.h"/>
+  </file>
+  <file name="src/hscript/CType.cpp">
+   <depend name="include/hscript/CType.h"/>
+  </file>
+  <file name="src/hscript/Expr.cpp">
+   <depend name="include/hscript/CType.h"/>
+   <depend name="include/hscript/Const.h"/>
+   <depend name="include/hscript/Expr.h"/>
+  </file>
+  <file name="src/hscript/Const.cpp">
+   <depend name="include/hscript/Const.h"/>
+  </file>
   <file name="src/haxe/zip/Uncompress.cpp">
    <depend name="include/cpp/Lib.h"/>
    <depend name="include/haxe/io/Bytes.h"/>
@@ -3125,6 +3345,12 @@
    <depend name="include/haxe/zip/Compress.h"/>
    <depend name="include/haxe/zip/FlushMode.h"/>
   </file>
+  <file name="src/haxe/io/StringInput.cpp">
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesInput.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/StringInput.h"/>
+  </file>
   <file name="src/haxe/io/Path.cpp">
    <depend name="include/haxe/io/Path.h"/>
   </file>
@@ -3134,14 +3360,30 @@
   <file name="src/haxe/io/Eof.cpp">
    <depend name="include/haxe/io/Eof.h"/>
   </file>
+  <file name="src/haxe/io/BytesOutput.cpp">
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+   <depend name="include/haxe/io/BytesOutput.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+  </file>
   <file name="src/haxe/io/Output.cpp">
    <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/haxe/io/Error.h"/>
    <depend name="include/haxe/io/Output.h"/>
   </file>
+  <file name="src/haxe/io/BytesInput.cpp">
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesInput.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+  </file>
   <file name="src/haxe/io/Input.cpp">
    <depend name="include/StringBuf.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
    <depend name="include/haxe/io/Input.h"/>
   </file>
   <file name="src/haxe/io/BytesBuffer.cpp">
@@ -3157,6 +3399,11 @@
    <depend name="include/Std.h"/>
    <depend name="include/StringBuf.h"/>
    <depend name="include/haxe/format/JsonParser.h"/>
+  </file>
+  <file name="src/haxe/ds/_GenericStack/GenericStackIterator_hscript_Token.cpp">
+   <depend name="include/haxe/ds/GenericCell_hscript_Token.h"/>
+   <depend name="include/haxe/ds/_GenericStack/GenericStackIterator_hscript_Token.h"/>
+   <depend name="include/hscript/Token.h"/>
   </file>
   <file name="src/haxe/ds/StringMap.cpp">
    <depend name="include/haxe/IMap.h"/>
@@ -3174,6 +3421,16 @@
    <depend name="include/haxe/IMap.h"/>
    <depend name="include/haxe/ds/IntMap.h"/>
    <depend name="include/haxe/ds/_HashMap/HashMapData.h"/>
+  </file>
+  <file name="src/haxe/ds/GenericStack_hscript_Token.cpp">
+   <depend name="include/haxe/ds/GenericCell_hscript_Token.h"/>
+   <depend name="include/haxe/ds/GenericStack_hscript_Token.h"/>
+   <depend name="include/haxe/ds/_GenericStack/GenericStackIterator_hscript_Token.h"/>
+   <depend name="include/hscript/Token.h"/>
+  </file>
+  <file name="src/haxe/ds/GenericCell_hscript_Token.cpp">
+   <depend name="include/haxe/ds/GenericCell_hscript_Token.h"/>
+   <depend name="include/hscript/Token.h"/>
   </file>
   <file name="src/haxe/crypto/Md5.cpp">
    <depend name="include/haxe/crypto/Md5.h"/>
@@ -3726,6 +3983,7 @@
    <depend name="include/lime/ui/Window.h"/>
   </file>
   <file name="src/core2/game/Game.cpp">
+   <depend name="include/Main.h"/>
    <depend name="include/core2/game/Game.h"/>
    <depend name="include/core2/game/GameStage.h"/>
    <depend name="include/core2/game/GameWindow.h"/>
@@ -3743,6 +4001,9 @@
    <depend name="include/openfl/display/Window.h"/>
    <depend name="include/openfl/events/EventDispatcher.h"/>
    <depend name="include/openfl/events/IEventDispatcher.h"/>
+   <depend name="include/pgr/dconsole/DC.h"/>
+   <depend name="include/pgr/dconsole/input/DCInput.h"/>
+   <depend name="include/pgr/dconsole/ui/DCInterface.h"/>
   </file>
   <file name="src/Type.cpp">
    <depend name="include/Reflect.h"/>
@@ -3915,6 +4176,9 @@
   <file name="src/Lambda.cpp">
    <depend name="include/Lambda.h"/>
   </file>
+  <file name="src/IntIterator.cpp">
+   <depend name="include/IntIterator.h"/>
+  </file>
   <file name="src/EReg.cpp">
    <depend name="include/EReg.h"/>
    <depend name="include/Std.h"/>
@@ -4006,6 +4270,7 @@
    <depend name="include/openfl/events/IEventDispatcher.h"/>
   </file>
   <file name="src/__boot__.cpp">
+   <depend name="include/pgr/dconsole/ALIAS_TYPE.h"/>
    <depend name="include/openfl/text/TextFormatAlign.h"/>
    <depend name="include/openfl/text/TextFieldType.h"/>
    <depend name="include/openfl/text/TextFieldAutoSize.h"/>
@@ -4057,6 +4322,12 @@
    <depend name="include/lime/graphics/ImageType.h"/>
    <depend name="include/lime/graphics/ImageChannel.h"/>
    <depend name="include/lime/audio/AudioContext.h"/>
+   <depend name="include/hscript/Token.h"/>
+   <depend name="include/hscript/_Interp/Stop.h"/>
+   <depend name="include/hscript/Error.h"/>
+   <depend name="include/hscript/CType.h"/>
+   <depend name="include/hscript/Expr.h"/>
+   <depend name="include/hscript/Const.h"/>
    <depend name="include/haxe/zip/FlushMode.h"/>
    <depend name="include/haxe/io/Error.h"/>
    <depend name="include/haxe/StackItem.h"/>
@@ -4064,6 +4335,10 @@
    <depend name="include/sys/io/FileInput.h"/>
    <depend name="include/sys/io/File.h"/>
    <depend name="include/sys/FileSystem.h"/>
+   <depend name="include/pgr/dconsole/DConsole.h"/>
+   <depend name="include/pgr/dconsole/DCThemes.h"/>
+   <depend name="include/pgr/dconsole/DCProfiler.h"/>
+   <depend name="include/pgr/dconsole/DC.h"/>
    <depend name="include/openfl/ui/Keyboard.h"/>
    <depend name="include/openfl/ui/GameInputDevice.h"/>
    <depend name="include/openfl/ui/GameInput.h"/>
@@ -4166,6 +4441,7 @@
    <depend name="include/lime/_backend/native/NativeMouse.h"/>
    <depend name="include/lime/_backend/native/NativeApplication.h"/>
    <depend name="include/lime/Assets.h"/>
+   <depend name="include/hscript/Parser.h"/>
    <depend name="include/haxe/zip/Uncompress.h"/>
    <depend name="include/haxe/zip/Compress.h"/>
    <depend name="include/haxe/Unserializer.h"/>

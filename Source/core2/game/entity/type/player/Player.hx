@@ -20,8 +20,8 @@ class Player extends E{
 	public function new(g:G, x:Int, y:Int, hx:Int, hy:Int, name:String, type:String = "unit", experienceGained = 0){
         super(x, y);
         game = g;
-        graphic = Assets.getBitmapData("assests/player/movement/idle/idle.png");
-        playerAnimations = new PA(this);
+        graphic = Assets.getBitmapData("Assets/Sprites/player/movement/right/right.png");
+        //playerAnimations = new PA(this);
         playerListener = new PL(this, getGame().getEngine().getKeyboardListener());
         setHitbox(hx, hy);
         bitmap = new Bitmap(graphic);

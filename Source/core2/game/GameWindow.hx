@@ -9,6 +9,8 @@ class GameWindow extends openfl.display.Window{
 		super();
 		game = g;
 		gameWindow = this;
+		width = g.getHeight();
+		height = g.getWidth();
 	}
 	public function getGameWindow():GameWindow{
 		return gameWindow;

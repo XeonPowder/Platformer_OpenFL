@@ -61,6 +61,40 @@ Dynamic EReg_obj::__Create(hx::DynamicArray inArgs)
 	_result_->__construct(inArgs[0],inArgs[1]);
 	return _result_;}
 
+bool EReg_obj::match( ::String s){
+	HX_STACK_FRAME("EReg","match",0x18fda1a6,"EReg.match","C:\\HaxeToolkit\\haxe\\std/cpp/_std/EReg.hx",36,0xa4513ee9)
+	HX_STACK_THIS(this)
+	HX_STACK_ARG(s,"s")
+	HX_STACK_LINE(37)
+	Dynamic tmp = this->r;		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(37)
+	::String tmp1 = s;		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(37)
+	int tmp2 = s.length;		HX_STACK_VAR(tmp2,"tmp2");
+	HX_STACK_LINE(37)
+	Dynamic tmp3 = ::EReg_obj::regexp_match(tmp,tmp1,(int)0,tmp2);		HX_STACK_VAR(tmp3,"tmp3");
+	HX_STACK_LINE(37)
+	bool p = tmp3;		HX_STACK_VAR(p,"p");
+	HX_STACK_LINE(38)
+	bool tmp4 = p;		HX_STACK_VAR(tmp4,"tmp4");
+	HX_STACK_LINE(38)
+	if ((tmp4)){
+		HX_STACK_LINE(39)
+		this->last = s;
+	}
+	else{
+		HX_STACK_LINE(41)
+		this->last = null();
+	}
+	HX_STACK_LINE(42)
+	bool tmp5 = p;		HX_STACK_VAR(tmp5,"tmp5");
+	HX_STACK_LINE(42)
+	return tmp5;
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(EReg_obj,match,return )
+
 ::String EReg_obj::replace( ::String s,::String by){
 	HX_STACK_FRAME("EReg","replace",0xae923ad5,"EReg.replace","C:\\HaxeToolkit\\haxe\\std/cpp/_std/EReg.hx",98,0xa4513ee9)
 	HX_STACK_THIS(this)
@@ -358,6 +392,7 @@ void EReg_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(EReg);
 	HX_MARK_MEMBER_NAME(r,"r");
+	HX_MARK_MEMBER_NAME(last,"last");
 	HX_MARK_MEMBER_NAME(global,"global");
 	HX_MARK_END_CLASS();
 }
@@ -365,6 +400,7 @@ void EReg_obj::__Mark(HX_MARK_PARAMS)
 void EReg_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(r,"r");
+	HX_VISIT_MEMBER_NAME(last,"last");
 	HX_VISIT_MEMBER_NAME(global,"global");
 }
 
@@ -373,6 +409,12 @@ Dynamic EReg_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 	switch(inName.length) {
 	case 1:
 		if (HX_FIELD_EQ(inName,"r") ) { return r; }
+		break;
+	case 4:
+		if (HX_FIELD_EQ(inName,"last") ) { return last; }
+		break;
+	case 5:
+		if (HX_FIELD_EQ(inName,"match") ) { return match_dyn(); }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"global") ) { return global; }
@@ -402,6 +444,9 @@ Dynamic EReg_obj::__SetField(const ::String &inName,const Dynamic &inValue,hx::P
 	case 1:
 		if (HX_FIELD_EQ(inName,"r") ) { r=inValue.Cast< Dynamic >(); return inValue; }
 		break;
+	case 4:
+		if (HX_FIELD_EQ(inName,"last") ) { last=inValue.Cast< ::String >(); return inValue; }
+		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"global") ) { global=inValue.Cast< bool >(); return inValue; }
 	}
@@ -424,6 +469,7 @@ bool EReg_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::PropertyA
 void EReg_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_HCSTRING("r","\x72","\x00","\x00","\x00"));
+	outFields->push(HX_HCSTRING("last","\x56","\x0a","\xad","\x47"));
 	outFields->push(HX_HCSTRING("global","\x63","\x31","\xb2","\xa7"));
 	super::__GetFields(outFields);
 };
@@ -431,6 +477,7 @@ void EReg_obj::__GetFields(Array< ::String> &outFields)
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(EReg_obj,r),HX_HCSTRING("r","\x72","\x00","\x00","\x00")},
+	{hx::fsString,(int)offsetof(EReg_obj,last),HX_HCSTRING("last","\x56","\x0a","\xad","\x47")},
 	{hx::fsBool,(int)offsetof(EReg_obj,global),HX_HCSTRING("global","\x63","\x31","\xb2","\xa7")},
 	{ hx::fsUnknown, 0, null()}
 };
@@ -444,7 +491,9 @@ static hx::StaticInfo sStaticStorageInfo[] = {
 
 static ::String sMemberFields[] = {
 	HX_HCSTRING("r","\x72","\x00","\x00","\x00"),
+	HX_HCSTRING("last","\x56","\x0a","\xad","\x47"),
 	HX_HCSTRING("global","\x63","\x31","\xb2","\xa7"),
+	HX_HCSTRING("match","\x45","\x49","\x23","\x03"),
 	HX_HCSTRING("replace","\x34","\x48","\x28","\xab"),
 	::String(null()) };
 

@@ -7,7 +7,7 @@
 	<source path="Source" />
 	
 	<haxelib name="openfl" />
-	
+	<haxelib name="dconsole" source="haxelib" />
 	<assets path="Assets" rename="assets" />
 	
 </project>

@@ -40,6 +40,9 @@ class HXCPP_CLASS_ATTRIBUTES  Reflect_obj : public hx::Object{
 		static Dynamic getProperty( Dynamic o,::String field);
 		static Dynamic getProperty_dyn();
 
+		static Void setProperty( Dynamic o,::String field,Dynamic value);
+		static Dynamic setProperty_dyn();
+
 		static Dynamic callMethod( Dynamic o,Dynamic func,cpp::ArrayBase args);
 		static Dynamic callMethod_dyn();
 

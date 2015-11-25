@@ -1,5 +1,8 @@
 #include <hxcpp.h>
 
+#ifndef INCLUDED_Main
+#include <Main.h>
+#endif
 #ifndef INCLUDED_core2_game_Game
 #include <core2/game/Game.h>
 #endif
@@ -51,6 +54,15 @@
 #ifndef INCLUDED_openfl_events_IEventDispatcher
 #include <openfl/events/IEventDispatcher.h>
 #endif
+#ifndef INCLUDED_pgr_dconsole_DC
+#include <pgr/dconsole/DC.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_input_DCInput
+#include <pgr/dconsole/input/DCInput.h>
+#endif
+#ifndef INCLUDED_pgr_dconsole_ui_DCInterface
+#include <pgr/dconsole/ui/DCInterface.h>
+#endif
 namespace core2{
 namespace game{
 
@@ -65,46 +77,54 @@ HX_STACK_ARG(playerName,"playerName")
 	HX_STACK_LINE(19)
 	this->game = hx::ObjectPtr<OBJ_>(this);
 	HX_STACK_LINE(20)
+	::pgr::dconsole::DC_obj::init(null(),null(),null(),null(),null());
+	HX_STACK_LINE(21)
+	::pgr::dconsole::DC_obj::log(HX_HCSTRING("test","\x52","\xc8","\xf9","\x4c"),null());
+	HX_STACK_LINE(22)
+	::pgr::dconsole::DC_obj::registerObject(hx::ObjectPtr<OBJ_>(this),HX_HCSTRING("console","\x57","\xeb","\xd5","\x18"));
+	HX_STACK_LINE(23)
+	::pgr::dconsole::DC_obj::registerClass(hx::ClassOf< ::Main >(),HX_HCSTRING("main","\x39","\x38","\x56","\x48"));
+	HX_STACK_LINE(24)
 	::core2::game::managers::Manager tmp = ::core2::game::managers::Manager_obj::__new();		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(20)
+	HX_STACK_LINE(24)
 	this->manager = tmp;
-	HX_STACK_LINE(21)
+	HX_STACK_LINE(25)
 	Dynamic tmp1 = this->aspectRatio;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(21)
+	HX_STACK_LINE(25)
 	tmp1->__FieldRef(HX_HCSTRING("x","\x78","\x00","\x00","\x00")) = aRX;
-	HX_STACK_LINE(22)
+	HX_STACK_LINE(26)
 	Dynamic tmp2 = this->aspectRatio;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(22)
+	HX_STACK_LINE(26)
 	tmp2->__FieldRef(HX_HCSTRING("y","\x79","\x00","\x00","\x00")) = aRY;
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	::core2::game::Game tmp3 = this->game;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	::core2::game::Game tmp4 = this->game;		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	::core2::game::Game tmp5 = this->game;		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	::core2::game::GameWindow tmp6 = ::core2::game::GameWindow_obj::__new(tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	::core2::game::GameStage tmp7 = ::core2::game::GameStage_obj::__new(tmp4,tmp6);		HX_STACK_VAR(tmp7,"tmp7");
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	int tmp8 = aRX;		HX_STACK_VAR(tmp8,"tmp8");
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	int tmp9 = aRY;		HX_STACK_VAR(tmp9,"tmp9");
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	::core2::game::world::World tmp10 = ::core2::game::world::World_obj::__new(tmp3,tmp7,tmp8,tmp9);		HX_STACK_VAR(tmp10,"tmp10");
-	HX_STACK_LINE(23)
+	HX_STACK_LINE(27)
 	this->world = tmp10;
-	HX_STACK_LINE(24)
+	HX_STACK_LINE(28)
 	::core2::game::world::World tmp11 = this->world;		HX_STACK_VAR(tmp11,"tmp11");
-	HX_STACK_LINE(24)
+	HX_STACK_LINE(28)
 	::String tmp12 = playerName;		HX_STACK_VAR(tmp12,"tmp12");
-	HX_STACK_LINE(24)
+	HX_STACK_LINE(28)
 	tmp11->newPlayer(tmp12);
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	::core2::game::world::World tmp13 = this->world;		HX_STACK_VAR(tmp13,"tmp13");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	::core2::game::engine::Engine tmp14 = ::core2::game::engine::Engine_obj::__new(tmp13);		HX_STACK_VAR(tmp14,"tmp14");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	this->engine = tmp14;
 }
 ;
@@ -125,11 +145,11 @@ Dynamic Game_obj::__Create(hx::DynamicArray inArgs)
 	return _result_;}
 
 int Game_obj::hashCode( ){
-	HX_STACK_FRAME("core2.game.Game","hashCode",0xa0687c16,"core2.game.Game.hashCode","core2/game/Game.hx",27,0x6b6e3c6b)
+	HX_STACK_FRAME("core2.game.Game","hashCode",0xa0687c16,"core2.game.Game.hashCode","core2/game/Game.hx",31,0x6b6e3c6b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(28)
+	HX_STACK_LINE(32)
 	int tmp = ::core2::game::assets::UUID_obj::randomNum(null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(28)
+	HX_STACK_LINE(32)
 	return tmp;
 }
 
@@ -137,13 +157,13 @@ int Game_obj::hashCode( ){
 HX_DEFINE_DYNAMIC_FUNC0(Game_obj,hashCode,return )
 
 int Game_obj::getAspectRatioX( ){
-	HX_STACK_FRAME("core2.game.Game","getAspectRatioX",0xdfe8dc00,"core2.game.Game.getAspectRatioX","core2/game/Game.hx",30,0x6b6e3c6b)
+	HX_STACK_FRAME("core2.game.Game","getAspectRatioX",0xdfe8dc00,"core2.game.Game.getAspectRatioX","core2/game/Game.hx",34,0x6b6e3c6b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(31)
+	HX_STACK_LINE(35)
 	Dynamic tmp = this->aspectRatio;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(31)
+	HX_STACK_LINE(35)
 	int tmp1 = tmp->__Field(HX_HCSTRING("x","\x78","\x00","\x00","\x00"), hx::paccDynamic );		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(31)
+	HX_STACK_LINE(35)
 	return tmp1;
 }
 
@@ -151,13 +171,13 @@ int Game_obj::getAspectRatioX( ){
 HX_DEFINE_DYNAMIC_FUNC0(Game_obj,getAspectRatioX,return )
 
 int Game_obj::getAspectRatioY( ){
-	HX_STACK_FRAME("core2.game.Game","getAspectRatioY",0xdfe8dc01,"core2.game.Game.getAspectRatioY","core2/game/Game.hx",33,0x6b6e3c6b)
+	HX_STACK_FRAME("core2.game.Game","getAspectRatioY",0xdfe8dc01,"core2.game.Game.getAspectRatioY","core2/game/Game.hx",37,0x6b6e3c6b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(34)
+	HX_STACK_LINE(38)
 	Dynamic tmp = this->aspectRatio;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(34)
+	HX_STACK_LINE(38)
 	int tmp1 = tmp->__Field(HX_HCSTRING("y","\x79","\x00","\x00","\x00"), hx::paccDynamic );		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(34)
+	HX_STACK_LINE(38)
 	return tmp1;
 }
 
@@ -165,11 +185,11 @@ int Game_obj::getAspectRatioY( ){
 HX_DEFINE_DYNAMIC_FUNC0(Game_obj,getAspectRatioY,return )
 
 ::core2::game::Game Game_obj::getGame( ){
-	HX_STACK_FRAME("core2.game.Game","getGame",0x76d98c0d,"core2.game.Game.getGame","core2/game/Game.hx",36,0x6b6e3c6b)
+	HX_STACK_FRAME("core2.game.Game","getGame",0x76d98c0d,"core2.game.Game.getGame","core2/game/Game.hx",40,0x6b6e3c6b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(37)
+	HX_STACK_LINE(41)
 	::core2::game::Game tmp = this->game;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(37)
+	HX_STACK_LINE(41)
 	return tmp;
 }
 
@@ -177,11 +197,11 @@ HX_DEFINE_DYNAMIC_FUNC0(Game_obj,getAspectRatioY,return )
 HX_DEFINE_DYNAMIC_FUNC0(Game_obj,getGame,return )
 
 ::core2::game::world::World Game_obj::getWorld( ){
-	HX_STACK_FRAME("core2.game.Game","getWorld",0xc72f15d7,"core2.game.Game.getWorld","core2/game/Game.hx",39,0x6b6e3c6b)
+	HX_STACK_FRAME("core2.game.Game","getWorld",0xc72f15d7,"core2.game.Game.getWorld","core2/game/Game.hx",43,0x6b6e3c6b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(40)
+	HX_STACK_LINE(44)
 	::core2::game::world::World tmp = this->world;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(40)
+	HX_STACK_LINE(44)
 	return tmp;
 }
 
@@ -189,11 +209,11 @@ HX_DEFINE_DYNAMIC_FUNC0(Game_obj,getGame,return )
 HX_DEFINE_DYNAMIC_FUNC0(Game_obj,getWorld,return )
 
 ::core2::game::engine::Engine Game_obj::getEngine( ){
-	HX_STACK_FRAME("core2.game.Game","getEngine",0xb4e95c9d,"core2.game.Game.getEngine","core2/game/Game.hx",42,0x6b6e3c6b)
+	HX_STACK_FRAME("core2.game.Game","getEngine",0xb4e95c9d,"core2.game.Game.getEngine","core2/game/Game.hx",46,0x6b6e3c6b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(43)
+	HX_STACK_LINE(47)
 	::core2::game::engine::Engine tmp = this->engine;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(43)
+	HX_STACK_LINE(47)
 	return tmp;
 }
 

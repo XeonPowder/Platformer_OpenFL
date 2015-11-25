@@ -8,6 +8,7 @@
 #ifndef INCLUDED_haxe_io_Input
 #include <haxe/io/Input.h>
 #endif
+HX_DECLARE_CLASS2(haxe,io,Bytes)
 HX_DECLARE_CLASS2(haxe,io,Input)
 HX_DECLARE_CLASS2(sys,io,FileInput)
 namespace sys{
@@ -41,12 +42,16 @@ class HXCPP_CLASS_ATTRIBUTES  FileInput_obj : public ::haxe::io::Input_obj{
 		::String __ToString() const { return HX_HCSTRING("FileInput","\xce","\x43","\x18","\x62"); }
 
 		static void __boot();
+		static Dynamic file_read;
+		static Dynamic &file_read_dyn() { return file_read;}
 		static Dynamic file_read_char;
 		static Dynamic &file_read_char_dyn() { return file_read_char;}
 		static Dynamic file_close;
 		static Dynamic &file_close_dyn() { return file_close;}
 		Dynamic __f;
 		virtual int readByte( );
+
+		virtual int readBytes( ::haxe::io::Bytes s,int p,int l);
 
 		virtual Void close( );
 

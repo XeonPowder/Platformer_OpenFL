@@ -35,11 +35,11 @@ Dynamic Main_obj::__Create(hx::DynamicArray inArgs)
 	return _result_;}
 
 ::core2::game::Game Main_obj::getGame( ){
-	HX_STACK_FRAME("Main","getGame",0x7b130a93,"Main.getGame","Main.hx",16,0x087e5c05)
+	HX_STACK_FRAME("Main","getGame",0x7b130a93,"Main.getGame","Main.hx",18,0x087e5c05)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(17)
+	HX_STACK_LINE(19)
 	::core2::game::Game tmp = this->game;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(17)
+	HX_STACK_LINE(19)
 	return tmp;
 }
 
@@ -48,30 +48,30 @@ HX_DEFINE_DYNAMIC_FUNC0(Main_obj,getGame,return )
 
 Void Main_obj::main( ){
 {
-		HX_STACK_FRAME("Main","main",0xed0e206e,"Main.main","Main.hx",7,0x087e5c05)
-		HX_STACK_LINE(8)
+		HX_STACK_FRAME("Main","main",0xed0e206e,"Main.main","Main.hx",8,0x087e5c05)
+		HX_STACK_LINE(10)
 		::String pName = HX_HCSTRING("NewPlayer","\xc1","\x97","\x3c","\x97");		HX_STACK_VAR(pName,"pName");
-		HX_STACK_LINE(9)
-		::Sys_obj::print(HX_HCSTRING("Enter Player's name: ","\x1c","\xc2","\x11","\xf3"));
-		HX_STACK_LINE(10)
-		::haxe::io::Input tmp = ::Sys_obj::_stdin();		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(10)
-		::String tmp1 = tmp->readLine();		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(10)
-		pName = tmp1;
 		HX_STACK_LINE(11)
-		int arX = (int)16;		HX_STACK_VAR(arX,"arX");
+		::Sys_obj::print(HX_HCSTRING("Enter Player's name: ","\x1c","\xc2","\x11","\xf3"));
 		HX_STACK_LINE(12)
+		::haxe::io::Input tmp = ::Sys_obj::_stdin();		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(12)
+		::String tmp1 = tmp->readLine();		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(12)
+		pName = tmp1;
+		HX_STACK_LINE(13)
+		int arX = (int)16;		HX_STACK_VAR(arX,"arX");
+		HX_STACK_LINE(14)
 		int arY = (int)9;		HX_STACK_VAR(arY,"arY");
-		HX_STACK_LINE(13)
+		HX_STACK_LINE(15)
 		::core2::game::Game tmp2 = ::core2::game::Game_obj::__new(arX,arY,pName);		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(13)
+		HX_STACK_LINE(15)
 		::core2::game::Game game = tmp2;		HX_STACK_VAR(game,"game");
-		HX_STACK_LINE(14)
+		HX_STACK_LINE(16)
 		::String tmp3 = (HX_HCSTRING("Name: ","\xd1","\x81","\x0d","\x52") + pName);		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(14)
-		Dynamic tmp4 = hx::SourceInfo(HX_HCSTRING("Main.hx","\x05","\x5c","\x7e","\x08"),14,HX_HCSTRING("Main","\x59","\x64","\x2f","\x33"),HX_HCSTRING("main","\x39","\x38","\x56","\x48"));		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(14)
+		HX_STACK_LINE(16)
+		Dynamic tmp4 = hx::SourceInfo(HX_HCSTRING("Main.hx","\x05","\x5c","\x7e","\x08"),16,HX_HCSTRING("Main","\x59","\x64","\x2f","\x33"),HX_HCSTRING("main","\x39","\x38","\x56","\x48"));		HX_STACK_VAR(tmp4,"tmp4");
+		HX_STACK_LINE(16)
 		::haxe::Log_obj::trace(tmp3,tmp4);
 	}
 return null();
