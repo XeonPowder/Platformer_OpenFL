@@ -9,6 +9,7 @@
 #include <openfl/display/Sprite.h>
 #endif
 HX_DECLARE_CLASS3(core2,game,display,BMD)
+HX_DECLARE_CLASS3(core2,game,world,World)
 HX_DECLARE_CLASS4(core2,game,world,maps,Map)
 HX_DECLARE_CLASS5(core2,game,world,maps,managers,MapManager)
 HX_DECLARE_CLASS6(core2,game,world,maps,tile,managers,TileBitmapDataManager)
@@ -34,12 +35,12 @@ class HXCPP_CLASS_ATTRIBUTES  Map_obj : public ::openfl::display::Sprite_obj{
 		typedef ::openfl::display::Sprite_obj super;
 		typedef Map_obj OBJ_;
 		Map_obj();
-		Void __construct(::core2::game::world::maps::managers::MapManager mm,int ax,int ay,::String mn,hx::Null< bool >  __o_registerMap);
+		Void __construct(::core2::game::world::World w,int ww,int wh,::core2::game::world::maps::managers::MapManager mm,int ax,int ay,::String mn,hx::Null< bool >  __o_registerMap);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="core2.game.world.maps.Map")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
-		static hx::ObjectPtr< Map_obj > __new(::core2::game::world::maps::managers::MapManager mm,int ax,int ay,::String mn,hx::Null< bool >  __o_registerMap);
+		static hx::ObjectPtr< Map_obj > __new(::core2::game::world::World w,int ww,int wh,::core2::game::world::maps::managers::MapManager mm,int ax,int ay,::String mn,hx::Null< bool >  __o_registerMap);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~Map_obj();
@@ -53,19 +54,22 @@ class HXCPP_CLASS_ATTRIBUTES  Map_obj : public ::openfl::display::Sprite_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("Map","\x7c","\xc2","\x3a","\x00"); }
 
-		Array< ::Dynamic > map;
 		::String mapName;
 		::openfl::display::Sprite mapTilesheetCanvas;
 		::core2::game::world::maps::tilesheet::MapTilesheet mapTilesheet;
 		::core2::game::world::maps::tilesheet::managers::MapTilesheetManager mapTilesheetManager;
 		::core2::game::world::maps::tile::managers::TileBitmapDataManager tileBitmapDataManager;
 		::core2::game::display::BMD tileBMD;
+		::openfl::display::BitmapData openFLBMDtileBMD;
 		int aspectRatioX;
 		int aspectRatioY;
 		::core2::game::world::maps::managers::MapManager mapManager;
 		int mmHash;
 		int mtsmHash;
 		int tbmdmHash;
+		::core2::game::world::World world;
+		int wwidth;
+		int wheight;
 		virtual int hashCode( );
 		Dynamic hashCode_dyn();
 
@@ -95,6 +99,9 @@ class HXCPP_CLASS_ATTRIBUTES  Map_obj : public ::openfl::display::Sprite_obj{
 
 		virtual ::String getMapName( );
 		Dynamic getMapName_dyn();
+
+		virtual ::core2::game::world::World getWorld( );
+		Dynamic getWorld_dyn();
 
 };
 

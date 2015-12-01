@@ -53,15 +53,106 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (openfl && !flash)
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		#end
 		
 		#if flash
 		
+		className.set ("assets/maps/NewWorld/16x9.png", __ASSET__assets_maps_newworld_16x9_png);
+		type.set ("assets/maps/NewWorld/16x9.png", AssetType.IMAGE);
+		className.set ("assets/maps/NewWorld/NameArray.txt", __ASSET__assets_maps_newworld_namearray_txt);
+		type.set ("assets/maps/NewWorld/NameArray.txt", AssetType.TEXT);
+		className.set ("assets/maps/test/test_tilesheet.png", __ASSET__assets_maps_test_test_tilesheet_png);
+		type.set ("assets/maps/test/test_tilesheet.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/movement/left/left.png", __ASSET__assets_sprites_player_movement_left_left_png);
+		type.set ("assets/Sprites/player/movement/left/left.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/movement/left/left_fall.png", __ASSET__assets_sprites_player_movement_left_left_fall_png);
+		type.set ("assets/Sprites/player/movement/left/left_fall.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/movement/left/left_jump.png", __ASSET__assets_sprites_player_movement_left_left_jump_png);
+		type.set ("assets/Sprites/player/movement/left/left_jump.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/movement/left/left_touchdown.png", __ASSET__assets_sprites_player_movement_left_left_touchdown_png);
+		type.set ("assets/Sprites/player/movement/left/left_touchdown.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/movement/right/right.png", __ASSET__assets_sprites_player_movement_right_right_png);
+		type.set ("assets/Sprites/player/movement/right/right.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/movement/right/right_fall.png", __ASSET__assets_sprites_player_movement_right_right_fall_png);
+		type.set ("assets/Sprites/player/movement/right/right_fall.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/movement/right/right_jump.png", __ASSET__assets_sprites_player_movement_right_right_jump_png);
+		type.set ("assets/Sprites/player/movement/right/right_jump.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/movement/right/right_touchdown.png", __ASSET__assets_sprites_player_movement_right_right_touchdown_png);
+		type.set ("assets/Sprites/player/movement/right/right_touchdown.png", AssetType.IMAGE);
+		className.set ("assets/Sprites/player/player.psd", __ASSET__assets_sprites_player_player_psd);
+		type.set ("assets/Sprites/player/player.psd", AssetType.BINARY);
+		className.set ("assets/Sprites/player/player2.psd", __ASSET__assets_sprites_player_player2_psd);
+		type.set ("assets/Sprites/player/player2.psd", AssetType.BINARY);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "assets/maps/NewWorld/16x9.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/maps/NewWorld/NameArray.txt";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "assets/maps/test/test_tilesheet.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/left/left.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/left/left_fall.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/left/left_jump.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/left/left_touchdown.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/right/right.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/right/right_fall.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/right/right_jump.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/movement/right/right_touchdown.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Sprites/player/player.psd";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
+		id = "assets/Sprites/player/player2.psd";
+		path.set (id, id);
+		
+		type.set (id, AssetType.BINARY);
 		
 		
 		var assetsPrefix = null;
@@ -79,6 +170,45 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		
+		className.set ("assets/maps/NewWorld/16x9.png", __ASSET__assets_maps_newworld_16x9_png);
+		type.set ("assets/maps/NewWorld/16x9.png", AssetType.IMAGE);
+		
+		className.set ("assets/maps/NewWorld/NameArray.txt", __ASSET__assets_maps_newworld_namearray_txt);
+		type.set ("assets/maps/NewWorld/NameArray.txt", AssetType.TEXT);
+		
+		className.set ("assets/maps/test/test_tilesheet.png", __ASSET__assets_maps_test_test_tilesheet_png);
+		type.set ("assets/maps/test/test_tilesheet.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/movement/left/left.png", __ASSET__assets_sprites_player_movement_left_left_png);
+		type.set ("assets/Sprites/player/movement/left/left.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/movement/left/left_fall.png", __ASSET__assets_sprites_player_movement_left_left_fall_png);
+		type.set ("assets/Sprites/player/movement/left/left_fall.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/movement/left/left_jump.png", __ASSET__assets_sprites_player_movement_left_left_jump_png);
+		type.set ("assets/Sprites/player/movement/left/left_jump.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/movement/left/left_touchdown.png", __ASSET__assets_sprites_player_movement_left_left_touchdown_png);
+		type.set ("assets/Sprites/player/movement/left/left_touchdown.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/movement/right/right.png", __ASSET__assets_sprites_player_movement_right_right_png);
+		type.set ("assets/Sprites/player/movement/right/right.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/movement/right/right_fall.png", __ASSET__assets_sprites_player_movement_right_right_fall_png);
+		type.set ("assets/Sprites/player/movement/right/right_fall.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/movement/right/right_jump.png", __ASSET__assets_sprites_player_movement_right_right_jump_png);
+		type.set ("assets/Sprites/player/movement/right/right_jump.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/movement/right/right_touchdown.png", __ASSET__assets_sprites_player_movement_right_right_touchdown_png);
+		type.set ("assets/Sprites/player/movement/right/right_touchdown.png", AssetType.IMAGE);
+		
+		className.set ("assets/Sprites/player/player.psd", __ASSET__assets_sprites_player_player_psd);
+		type.set ("assets/Sprites/player/player.psd", AssetType.BINARY);
+		
+		className.set ("assets/Sprites/player/player2.psd", __ASSET__assets_sprites_player_player2_psd);
+		type.set ("assets/Sprites/player/player2.psd", AssetType.BINARY);
 		
 		
 		if (useManifest) {
@@ -797,9 +927,35 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
+@:keep @:bind #if display private #end class __ASSET__assets_maps_newworld_16x9_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_maps_newworld_namearray_txt extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_maps_test_test_tilesheet_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_movement_left_left_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_movement_left_left_fall_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_movement_left_left_jump_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_movement_left_left_touchdown_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_movement_right_right_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_movement_right_right_fall_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_movement_right_right_jump_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_movement_right_right_touchdown_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_player_psd extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_sprites_player_player2_psd extends flash.utils.ByteArray { }
 
 
 #elseif html5
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -810,6 +966,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux || cpp)
 
 
+@:image("Assets/maps/NewWorld/16x9.png") #if display private #end class __ASSET__assets_maps_newworld_16x9_png extends lime.graphics.Image {}
+@:file("Assets/maps/NewWorld/NameArray.txt") #if display private #end class __ASSET__assets_maps_newworld_namearray_txt extends lime.utils.ByteArray {}
+@:image("Assets/maps/test/test_tilesheet.png") #if display private #end class __ASSET__assets_maps_test_test_tilesheet_png extends lime.graphics.Image {}
+@:image("Assets/Sprites/player/movement/left/left.png") #if display private #end class __ASSET__assets_sprites_player_movement_left_left_png extends lime.graphics.Image {}
+@:image("Assets/Sprites/player/movement/left/left_fall.png") #if display private #end class __ASSET__assets_sprites_player_movement_left_left_fall_png extends lime.graphics.Image {}
+@:image("Assets/Sprites/player/movement/left/left_jump.png") #if display private #end class __ASSET__assets_sprites_player_movement_left_left_jump_png extends lime.graphics.Image {}
+@:image("Assets/Sprites/player/movement/left/left_touchdown.png") #if display private #end class __ASSET__assets_sprites_player_movement_left_left_touchdown_png extends lime.graphics.Image {}
+@:image("Assets/Sprites/player/movement/right/right.png") #if display private #end class __ASSET__assets_sprites_player_movement_right_right_png extends lime.graphics.Image {}
+@:image("Assets/Sprites/player/movement/right/right_fall.png") #if display private #end class __ASSET__assets_sprites_player_movement_right_right_fall_png extends lime.graphics.Image {}
+@:image("Assets/Sprites/player/movement/right/right_jump.png") #if display private #end class __ASSET__assets_sprites_player_movement_right_right_jump_png extends lime.graphics.Image {}
+@:image("Assets/Sprites/player/movement/right/right_touchdown.png") #if display private #end class __ASSET__assets_sprites_player_movement_right_right_touchdown_png extends lime.graphics.Image {}
+@:file("Assets/Sprites/player/player.psd") #if display private #end class __ASSET__assets_sprites_player_player_psd extends lime.utils.ByteArray {}
+@:file("Assets/Sprites/player/player2.psd") #if display private #end class __ASSET__assets_sprites_player_player2_psd extends lime.utils.ByteArray {}
 
 
 

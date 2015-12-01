@@ -6,8 +6,11 @@
 #ifndef INCLUDED_core2_game_world_maps_layout_managers_MapLayoutManager
 #include <core2/game/world/maps/layout/managers/MapLayoutManager.h>
 #endif
-#ifndef INCLUDED_haxe_ds__HashMap_HashMapData
-#include <haxe/ds/_HashMap/HashMapData.h>
+#ifndef INCLUDED_haxe_IMap
+#include <haxe/IMap.h>
+#endif
+#ifndef INCLUDED_haxe_ds_ObjectMap
+#include <haxe/ds/ObjectMap.h>
 #endif
 namespace core2{
 namespace game{
@@ -22,7 +25,7 @@ HX_STACK_FRAME("core2.game.world.maps.layout.managers.MapLayoutManager","new",0x
 HX_STACK_THIS(this)
 {
 	HX_STACK_LINE(12)
-	::haxe::ds::_HashMap::HashMapData tmp = ::haxe::ds::_HashMap::HashMapData_obj::__new();		HX_STACK_VAR(tmp,"tmp");
+	::haxe::ds::ObjectMap tmp = ::haxe::ds::ObjectMap_obj::__new();		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(12)
 	this->list = tmp;
 	HX_STACK_LINE(13)
@@ -57,11 +60,11 @@ Dynamic MapLayoutManager_obj::__Create(hx::DynamicArray inArgs)
 
 HX_DEFINE_DYNAMIC_FUNC0(MapLayoutManager_obj,getMapLayoutManager,return )
 
-::haxe::ds::_HashMap::HashMapData MapLayoutManager_obj::getList( ){
+::haxe::ds::ObjectMap MapLayoutManager_obj::getList( ){
 	HX_STACK_FRAME("core2.game.world.maps.layout.managers.MapLayoutManager","getList",0x5696a1eb,"core2.game.world.maps.layout.managers.MapLayoutManager.getList","core2/game/world/maps/layout/managers/MapLayoutManager.hx",18,0x35742cb9)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(19)
-	::haxe::ds::_HashMap::HashMapData tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
+	::haxe::ds::ObjectMap tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(19)
 	return tmp;
 }
@@ -125,7 +128,7 @@ Dynamic MapLayoutManager_obj::__SetField(const ::String &inName,const Dynamic &i
 {
 	switch(inName.length) {
 	case 4:
-		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::_HashMap::HashMapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::ObjectMap >(); return inValue; }
 		break;
 	case 16:
 		if (HX_FIELD_EQ(inName,"mapLayoutManager") ) { mapLayoutManager=inValue.Cast< ::core2::game::world::maps::layout::managers::MapLayoutManager >(); return inValue; }
@@ -143,7 +146,7 @@ void MapLayoutManager_obj::__GetFields(Array< ::String> &outFields)
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*::core2::game::world::maps::layout::managers::MapLayoutManager*/ ,(int)offsetof(MapLayoutManager_obj,mapLayoutManager),HX_HCSTRING("mapLayoutManager","\xa7","\x68","\x09","\x8b")},
-	{hx::fsObject /*::haxe::ds::_HashMap::HashMapData*/ ,(int)offsetof(MapLayoutManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
+	{hx::fsObject /*::haxe::ds::ObjectMap*/ ,(int)offsetof(MapLayoutManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *sStaticStorageInfo = 0;

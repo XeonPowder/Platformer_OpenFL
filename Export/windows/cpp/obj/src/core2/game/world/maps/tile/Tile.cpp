@@ -15,11 +15,8 @@
 #ifndef INCLUDED_haxe_IMap
 #include <haxe/IMap.h>
 #endif
-#ifndef INCLUDED_haxe_ds_IntMap
-#include <haxe/ds/IntMap.h>
-#endif
-#ifndef INCLUDED_haxe_ds__HashMap_HashMapData
-#include <haxe/ds/_HashMap/HashMapData.h>
+#ifndef INCLUDED_haxe_ds_ObjectMap
+#include <haxe/ds/ObjectMap.h>
 #endif
 namespace core2{
 namespace game{
@@ -54,23 +51,11 @@ bool registerTile = __o_registerTile.Default(true);
 		HX_STACK_LINE(17)
 		::core2::game::world::maps::tile::managers::TileManager tmp2 = tm->getTileManager();		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(17)
-		::haxe::ds::_HashMap::HashMapData tmp3 = tmp2->getList();		HX_STACK_VAR(tmp3,"tmp3");
+		::haxe::ds::ObjectMap tmp3 = tmp2->getList();		HX_STACK_VAR(tmp3,"tmp3");
 		HX_STACK_LINE(17)
-		::haxe::ds::_HashMap::HashMapData this1 = tmp3;		HX_STACK_VAR(this1,"this1");
+		int tmp4 = this->tileID;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(17)
-		::haxe::ds::IntMap tmp4 = this1->keys;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(17)
-		int tmp5 = this->hashCode();		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(17)
-		tmp4->set(tmp5,hx::ObjectPtr<OBJ_>(this));
-		HX_STACK_LINE(17)
-		::haxe::ds::IntMap tmp6 = this1->values;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(17)
-		int tmp7 = this->hashCode();		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(17)
-		int tmp8 = this->tileID;		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(17)
-		tmp6->set(tmp7,tmp8);
+		tmp3->set(hx::ObjectPtr<OBJ_>(this),tmp4);
 	}
 	else{
 		HX_STACK_LINE(19)

@@ -16,6 +16,8 @@ class AssetData {
 		
 		if (!initialized) {
 			
+			path.set ("assets/maps/NewWorld/16x9.png", "assets/maps/NewWorld/16x9.png");
+			type.set ("assets/maps/NewWorld/16x9.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/Sprites/player/movement/left/left.png", "assets/Sprites/player/movement/left/left.png");
 			type.set ("assets/Sprites/player/movement/left/left.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/Sprites/player/movement/left/left_fall.png", "assets/Sprites/player/movement/left/left_fall.png");

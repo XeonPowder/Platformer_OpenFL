@@ -27,6 +27,14 @@ HX_STACK_ARG(g,"g")
 	this->game = g;
 	HX_STACK_LINE(11)
 	this->gameWindow = hx::ObjectPtr<OBJ_>(this);
+	HX_STACK_LINE(12)
+	int tmp = g->getHeight();		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(12)
+	this->set_width(tmp);
+	HX_STACK_LINE(13)
+	int tmp1 = g->getWidth();		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(13)
+	this->set_height(tmp1);
 }
 ;
 	return null();
@@ -46,11 +54,11 @@ Dynamic GameWindow_obj::__Create(hx::DynamicArray inArgs)
 	return _result_;}
 
 ::core2::game::GameWindow GameWindow_obj::getGameWindow( ){
-	HX_STACK_FRAME("core2.game.GameWindow","getGameWindow",0xff42b02d,"core2.game.GameWindow.getGameWindow","core2/game/GameWindow.hx",13,0xb1379e1b)
+	HX_STACK_FRAME("core2.game.GameWindow","getGameWindow",0xff42b02d,"core2.game.GameWindow.getGameWindow","core2/game/GameWindow.hx",15,0xb1379e1b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(16)
 	::core2::game::GameWindow tmp = this->gameWindow;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(16)
 	return tmp;
 }
 

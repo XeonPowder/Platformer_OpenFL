@@ -3,8 +3,11 @@
 #ifndef INCLUDED_core2_game_world_maps_tilesheet_managers_MapTilesheetManager
 #include <core2/game/world/maps/tilesheet/managers/MapTilesheetManager.h>
 #endif
-#ifndef INCLUDED_haxe_ds__HashMap_HashMapData
-#include <haxe/ds/_HashMap/HashMapData.h>
+#ifndef INCLUDED_haxe_IMap
+#include <haxe/IMap.h>
+#endif
+#ifndef INCLUDED_haxe_ds_StringMap
+#include <haxe/ds/StringMap.h>
 #endif
 namespace core2{
 namespace game{
@@ -19,7 +22,7 @@ HX_STACK_FRAME("core2.game.world.maps.tilesheet.managers.MapTilesheetManager","n
 HX_STACK_THIS(this)
 {
 	HX_STACK_LINE(10)
-	::haxe::ds::_HashMap::HashMapData tmp = ::haxe::ds::_HashMap::HashMapData_obj::__new();		HX_STACK_VAR(tmp,"tmp");
+	::haxe::ds::StringMap tmp = ::haxe::ds::StringMap_obj::__new();		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(10)
 	this->list = tmp;
 	HX_STACK_LINE(11)
@@ -54,11 +57,11 @@ Dynamic MapTilesheetManager_obj::__Create(hx::DynamicArray inArgs)
 
 HX_DEFINE_DYNAMIC_FUNC0(MapTilesheetManager_obj,getMapTilesheetManager,return )
 
-::haxe::ds::_HashMap::HashMapData MapTilesheetManager_obj::getList( ){
+::haxe::ds::StringMap MapTilesheetManager_obj::getList( ){
 	HX_STACK_FRAME("core2.game.world.maps.tilesheet.managers.MapTilesheetManager","getList",0x7aa5de8d,"core2.game.world.maps.tilesheet.managers.MapTilesheetManager.getList","core2/game/world/maps/tilesheet/managers/MapTilesheetManager.hx",16,0xeb749f17)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(17)
-	::haxe::ds::_HashMap::HashMapData tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
+	::haxe::ds::StringMap tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(17)
 	return tmp;
 }
@@ -107,7 +110,7 @@ Dynamic MapTilesheetManager_obj::__SetField(const ::String &inName,const Dynamic
 {
 	switch(inName.length) {
 	case 4:
-		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::_HashMap::HashMapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::StringMap >(); return inValue; }
 		break;
 	case 19:
 		if (HX_FIELD_EQ(inName,"mapTilesheetManager") ) { mapTilesheetManager=inValue.Cast< ::core2::game::world::maps::tilesheet::managers::MapTilesheetManager >(); return inValue; }
@@ -124,7 +127,7 @@ void MapTilesheetManager_obj::__GetFields(Array< ::String> &outFields)
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::haxe::ds::_HashMap::HashMapData*/ ,(int)offsetof(MapTilesheetManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
+	{hx::fsObject /*::haxe::ds::StringMap*/ ,(int)offsetof(MapTilesheetManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
 	{hx::fsObject /*::core2::game::world::maps::tilesheet::managers::MapTilesheetManager*/ ,(int)offsetof(MapTilesheetManager_obj,mapTilesheetManager),HX_HCSTRING("mapTilesheetManager","\x78","\xb0","\x15","\x4c")},
 	{ hx::fsUnknown, 0, null()}
 };

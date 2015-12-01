@@ -3,8 +3,11 @@
 #ifndef INCLUDED_core2_game_world_maps_managers_MapManager
 #include <core2/game/world/maps/managers/MapManager.h>
 #endif
-#ifndef INCLUDED_haxe_ds__HashMap_HashMapData
-#include <haxe/ds/_HashMap/HashMapData.h>
+#ifndef INCLUDED_haxe_IMap
+#include <haxe/IMap.h>
+#endif
+#ifndef INCLUDED_haxe_ds_StringMap
+#include <haxe/ds/StringMap.h>
 #endif
 namespace core2{
 namespace game{
@@ -14,13 +17,15 @@ namespace managers{
 
 Void MapManager_obj::__construct()
 {
-HX_STACK_FRAME("core2.game.world.maps.managers.MapManager","new",0xff6978d1,"core2.game.world.maps.managers.MapManager.new","core2/game/world/maps/managers/MapManager.hx",8,0x90ce3b1e)
+HX_STACK_FRAME("core2.game.world.maps.managers.MapManager","new",0xff6978d1,"core2.game.world.maps.managers.MapManager.new","core2/game/world/maps/managers/MapManager.hx",9,0x90ce3b1e)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(9)
-	::haxe::ds::_HashMap::HashMapData tmp = ::haxe::ds::_HashMap::HashMapData_obj::__new();		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(9)
-	this->manager = tmp;
+	HX_STACK_LINE(10)
+	::haxe::ds::StringMap tmp = ::haxe::ds::StringMap_obj::__new();		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(10)
+	this->list = tmp;
+	HX_STACK_LINE(11)
+	this->manager = hx::ObjectPtr<OBJ_>(this);
 }
 ;
 	return null();
@@ -40,21 +45,23 @@ Dynamic MapManager_obj::__Create(hx::DynamicArray inArgs)
 	return _result_;}
 
 ::core2::game::world::maps::managers::MapManager MapManager_obj::getManager( ){
-	HX_STACK_FRAME("core2.game.world.maps.managers.MapManager","getManager",0xfad6d026,"core2.game.world.maps.managers.MapManager.getManager","core2/game/world/maps/managers/MapManager.hx",12,0x90ce3b1e)
+	HX_STACK_FRAME("core2.game.world.maps.managers.MapManager","getManager",0xfad6d026,"core2.game.world.maps.managers.MapManager.getManager","core2/game/world/maps/managers/MapManager.hx",13,0x90ce3b1e)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(12)
-	return hx::ObjectPtr<OBJ_>(this);
+	HX_STACK_LINE(14)
+	::core2::game::world::maps::managers::MapManager tmp = this->manager;		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(14)
+	return tmp;
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC0(MapManager_obj,getManager,return )
 
-::haxe::ds::_HashMap::HashMapData MapManager_obj::getMapManager( ){
-	HX_STACK_FRAME("core2.game.world.maps.managers.MapManager","getMapManager",0x74a9d718,"core2.game.world.maps.managers.MapManager.getMapManager","core2/game/world/maps/managers/MapManager.hx",14,0x90ce3b1e)
+::haxe::ds::StringMap MapManager_obj::getMapManager( ){
+	HX_STACK_FRAME("core2.game.world.maps.managers.MapManager","getMapManager",0x74a9d718,"core2.game.world.maps.managers.MapManager.getMapManager","core2/game/world/maps/managers/MapManager.hx",16,0x90ce3b1e)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(15)
-	::haxe::ds::_HashMap::HashMapData tmp = this->manager;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(15)
+	HX_STACK_LINE(17)
+	::haxe::ds::StringMap tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(17)
 	return tmp;
 }
 
@@ -69,18 +76,23 @@ MapManager_obj::MapManager_obj()
 void MapManager_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(MapManager);
+	HX_MARK_MEMBER_NAME(list,"list");
 	HX_MARK_MEMBER_NAME(manager,"manager");
 	HX_MARK_END_CLASS();
 }
 
 void MapManager_obj::__Visit(HX_VISIT_PARAMS)
 {
+	HX_VISIT_MEMBER_NAME(list,"list");
 	HX_VISIT_MEMBER_NAME(manager,"manager");
 }
 
 Dynamic MapManager_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
+	case 4:
+		if (HX_FIELD_EQ(inName,"list") ) { return list; }
+		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"manager") ) { return manager; }
 		break;
@@ -96,27 +108,33 @@ Dynamic MapManager_obj::__Field(const ::String &inName,hx::PropertyAccess inCall
 Dynamic MapManager_obj::__SetField(const ::String &inName,const Dynamic &inValue,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
+	case 4:
+		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::StringMap >(); return inValue; }
+		break;
 	case 7:
-		if (HX_FIELD_EQ(inName,"manager") ) { manager=inValue.Cast< ::haxe::ds::_HashMap::HashMapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"manager") ) { manager=inValue.Cast< ::core2::game::world::maps::managers::MapManager >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
 
 void MapManager_obj::__GetFields(Array< ::String> &outFields)
 {
+	outFields->push(HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"));
 	outFields->push(HX_HCSTRING("manager","\x6d","\x92","\xc1","\x13"));
 	super::__GetFields(outFields);
 };
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::haxe::ds::_HashMap::HashMapData*/ ,(int)offsetof(MapManager_obj,manager),HX_HCSTRING("manager","\x6d","\x92","\xc1","\x13")},
+	{hx::fsObject /*::haxe::ds::StringMap*/ ,(int)offsetof(MapManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
+	{hx::fsObject /*::core2::game::world::maps::managers::MapManager*/ ,(int)offsetof(MapManager_obj,manager),HX_HCSTRING("manager","\x6d","\x92","\xc1","\x13")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *sStaticStorageInfo = 0;
 #endif
 
 static ::String sMemberFields[] = {
+	HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"),
 	HX_HCSTRING("manager","\x6d","\x92","\xc1","\x13"),
 	HX_HCSTRING("getManager","\x77","\x18","\x23","\x63"),
 	HX_HCSTRING("getMapManager","\x67","\xd7","\xc4","\x10"),

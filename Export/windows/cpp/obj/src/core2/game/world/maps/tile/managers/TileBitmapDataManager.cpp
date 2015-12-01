@@ -3,8 +3,11 @@
 #ifndef INCLUDED_core2_game_world_maps_tile_managers_TileBitmapDataManager
 #include <core2/game/world/maps/tile/managers/TileBitmapDataManager.h>
 #endif
-#ifndef INCLUDED_haxe_ds__HashMap_HashMapData
-#include <haxe/ds/_HashMap/HashMapData.h>
+#ifndef INCLUDED_haxe_IMap
+#include <haxe/IMap.h>
+#endif
+#ifndef INCLUDED_haxe_ds_StringMap
+#include <haxe/ds/StringMap.h>
 #endif
 namespace core2{
 namespace game{
@@ -19,7 +22,7 @@ HX_STACK_FRAME("core2.game.world.maps.tile.managers.TileBitmapDataManager","new"
 HX_STACK_THIS(this)
 {
 	HX_STACK_LINE(12)
-	::haxe::ds::_HashMap::HashMapData tmp = ::haxe::ds::_HashMap::HashMapData_obj::__new();		HX_STACK_VAR(tmp,"tmp");
+	::haxe::ds::StringMap tmp = ::haxe::ds::StringMap_obj::__new();		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(12)
 	this->list = tmp;
 	HX_STACK_LINE(13)
@@ -54,11 +57,11 @@ Dynamic TileBitmapDataManager_obj::__Create(hx::DynamicArray inArgs)
 
 HX_DEFINE_DYNAMIC_FUNC0(TileBitmapDataManager_obj,getTileBitmapDataManager,return )
 
-::haxe::ds::_HashMap::HashMapData TileBitmapDataManager_obj::getList( ){
+::haxe::ds::StringMap TileBitmapDataManager_obj::getList( ){
 	HX_STACK_FRAME("core2.game.world.maps.tile.managers.TileBitmapDataManager","getList",0x0555f76a,"core2.game.world.maps.tile.managers.TileBitmapDataManager.getList","core2/game/world/maps/tile/managers/TileBitmapDataManager.hx",18,0x8522a35a)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(19)
-	::haxe::ds::_HashMap::HashMapData tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
+	::haxe::ds::StringMap tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(19)
 	return tmp;
 }
@@ -107,7 +110,7 @@ Dynamic TileBitmapDataManager_obj::__SetField(const ::String &inName,const Dynam
 {
 	switch(inName.length) {
 	case 4:
-		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::_HashMap::HashMapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::StringMap >(); return inValue; }
 		break;
 	case 21:
 		if (HX_FIELD_EQ(inName,"tileBitmapDataManager") ) { tileBitmapDataManager=inValue.Cast< ::core2::game::world::maps::tile::managers::TileBitmapDataManager >(); return inValue; }
@@ -124,7 +127,7 @@ void TileBitmapDataManager_obj::__GetFields(Array< ::String> &outFields)
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::haxe::ds::_HashMap::HashMapData*/ ,(int)offsetof(TileBitmapDataManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
+	{hx::fsObject /*::haxe::ds::StringMap*/ ,(int)offsetof(TileBitmapDataManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
 	{hx::fsObject /*::core2::game::world::maps::tile::managers::TileBitmapDataManager*/ ,(int)offsetof(TileBitmapDataManager_obj,tileBitmapDataManager),HX_HCSTRING("tileBitmapDataManager","\xa6","\x9e","\xe0","\x2a")},
 	{ hx::fsUnknown, 0, null()}
 };

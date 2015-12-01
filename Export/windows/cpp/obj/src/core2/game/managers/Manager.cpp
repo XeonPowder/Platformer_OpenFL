@@ -9,10 +9,10 @@ namespace managers{
 
 Void Manager_obj::__construct()
 {
-HX_STACK_FRAME("core2.game.managers.Manager","new",0xaf7dd478,"core2.game.managers.Manager.new","core2/game/managers/Manager.hx",11,0x71a6acd9)
+HX_STACK_FRAME("core2.game.managers.Manager","new",0xaf7dd478,"core2.game.managers.Manager.new","core2/game/managers/Manager.hx",8,0x71a6acd9)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(11)
+	HX_STACK_LINE(8)
 	this->manager = hx::ObjectPtr<OBJ_>(this);
 }
 ;
@@ -33,11 +33,11 @@ Dynamic Manager_obj::__Create(hx::DynamicArray inArgs)
 	return _result_;}
 
 ::core2::game::managers::Manager Manager_obj::getManager( ){
-	HX_STACK_FRAME("core2.game.managers.Manager","getManager",0x73bc475f,"core2.game.managers.Manager.getManager","core2/game/managers/Manager.hx",13,0x71a6acd9)
+	HX_STACK_FRAME("core2.game.managers.Manager","getManager",0x73bc475f,"core2.game.managers.Manager.getManager","core2/game/managers/Manager.hx",10,0x71a6acd9)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(11)
 	::core2::game::managers::Manager tmp = this->manager;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(11)
 	return tmp;
 }
 

@@ -13,12 +13,13 @@ import core2.game.world.maps.layout.managers.MapLayoutManager in MLM;
 import core2.game.world.maps.tile.managers.TileManager in TM;
 import openfl.geom.Rectangle in Rectangle;
 import core2.game.assets.UUID;
+import haxe.ds.IntMap in IMap;
 
 class MapTilesheet extends TS{
 	
 	private var nameArray:Array<String>;
 	private var tileArray:Array<Tile>;
-	private var mapTilesheet:Array<Array<Int>>;
+	private var mapTilesheet:IMap<Int>;
 	private var mapLayout:ML;
 	private var mapTilesheetManager:MTSM;
 	private var tileManager:TM;
@@ -39,19 +40,20 @@ class MapTilesheet extends TS{
 		width = w;
 		height = h;
 		bitmapData = bmd;
-		tileManager = new TM();
-		mapLayoutManager = new MLM();
+		//tileManager = new TM();
+		//mapLayoutManager = new MLM();
 		id = UUID.randomNum();
 		if(registerMapTilesheet){
-			m.getMapTilesheetManager().getList().set(this, mapName);
+			//m.getMapTilesheetManager().getList().set(mapName, this);
 		}
 		nameArray = new Array<String>();
 		nameArray = generateNameArray("assets/maps/"+mapName+"/NameArray.txt");
 		tileArray = new Array<Tile>();
-		tileArray = generateTiles(nameArray, tileManager, bitmapData, width, height);
+		tileArray = generateTiles(nameArray, bitmapData, width, height);
 		mapLayout = new ML(map, this, mapLayoutManager, bmd, mapName, width, height, tileArray);
-		mapTilesheet = new Array<Array<Int>>();
+		mapTilesheet = new IMap<Int>();
 		mapTilesheet = mapLayout.getLayout();
+
 		trace(mapTilesheet);
 		tileDataArray = new Array<Float>();
 		tileDataArray = generateTileDataArray(m, mapTilesheet, bitmapData, 0, 0, 0, width, height, arX, arY, new Array<Float>());
@@ -74,9 +76,11 @@ class MapTilesheet extends TS{
 			}
 			nameArrayFromFile = true;
 		}
+		trace(array);
 		return array;
 	}
-	public function generateTiles(a:Array<String>, tm:TM, bmd:BMD, w:Int, h:Int):Array<Tile>{
+	public function generateTiles(a:Array<String>, bmd:BMD, w:Int, h:Int):Array<Tile>{
+		bmd = Assets.getBitmapData(new String("assets/maps/"+mn+"/"+ar+".png")
 		var arX:Int = m.getAspectRatioX();
 		var arY:Int = m.getAspectRatioY();
 		var xTo:Int = Std.int(w/arX);//Std.int(bitmapData.getWidth()/arX);
@@ -88,13 +92,14 @@ class MapTilesheet extends TS{
 				var tileID:Int = addTileRect(new Rectangle(x*arX, y*arY, arX, arY));
 				if(a[z] != null){
 					var tileName:String = new String("x:"+x+" y:"+y);
-					f_tileArray[z] = new Tile(tm, tileName, tileID);
+					f_tileArray[z] = new Tile(tileName, tileID);
 				}else{
-					f_tileArray[z] = new Tile(tm, a[z], tileID);
+					f_tileArray[z] = new Tile(a[z], tileID);
 				}
 				z++;
 			}
 		}
+		trace(f_tileArray);
 		return f_tileArray;
 	}
 	public function getMapLayout():ML{
@@ -109,7 +114,35 @@ class MapTilesheet extends TS{
 	public function getTileArray():Array<Tile>{
 		return tileArray;
 	}
-	private function generateTileDataArray(m:Map, mts:Array<Array<Int>>, bmd:BMD, x:Int, y:Int, z:Int, w:Int, h:Int, arX:Int, arY:Int, a:Array<Float>):Array<Float>{
+	private function generateTileDataArray(m:Map, mts:IMap<Int>, bmd:BMD, x:Int, y:Int, z:Int, w:Int, h:Int, arX:Int, arY:Int, a:Array<Float>):Array<Float>{
+		var x:Int = 0;
+		var y:Int = 0;
+		var z:Int = 0;
+		while(y < Std.int(getHeight()/arY)){
+			if(z >= arY*arX){
+				trace(a);
+				return a;
+			}
+			while(x < Std.int(getWidth()/arX)){
+				if(z >= arY*arX){
+					trace(a);
+					return a;
+				}
+				a.set((x+(y*x)), ta[z].getTileID());
+				z++;
+				x++;
+			}
+			if(x >= Std.int(getWidth()/arX)){
+				x = 0;
+			}
+			y++;
+			if(y >= Std.int(getHeight()/arY)){
+				y = 0;
+			}
+		}
+		trace(a);
+		return a;
+		
 		if(x > Std.int(w/arX)){//bitmapData.getWidth()/arX){
 			x = 0;
 			y++;
@@ -117,11 +150,12 @@ class MapTilesheet extends TS{
 		if(y > Std.int(h/arY)){//bitmapData.getHeight()/arY){
 			y = 0;
 		}
+		trace(mts);
 		if(z < arY*arX){
-			trace(mts[x][y]);
-			a.concat([x*arX, y*arY, mts[x][y]]);
-			generateTileDataArray(m, mts, bmd, x+1, y, z+1, w, h, arX, arY, a);
+			a.concat([x*arX, y*arY, mts.get(z)]);
+			a = generateTileDataArray(m, mts, bmd, x+1, y, z+1, w, h, arX, arY, a);
 		}
+		trace(a);
 		return a;
 	}
 

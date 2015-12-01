@@ -1,17 +1,19 @@
 package core2.game.world.maps.managers;
 
-import haxe.ds.HashMap in HM;
+import haxe.ds.StringMap in SMap;
 import core2.game.world.maps.Map in Map;
 
 class MapManager {
-	private var manager:HM<Map, Int>;
+	private var list:SMap<Map>;
+	private var manager:MapManager;
 	public function new(){
-		manager = new HM<Map, Int>();
+		list = new SMap<Map>();
+		manager = this;
 	}
 	public function getManager():MapManager{
-		return this;
-	}
-	public function getMapManager():HM<Map, Int>{
 		return manager;
+	}
+	public function getMapManager():SMap<Map>{
+		return list;
 	}
 }

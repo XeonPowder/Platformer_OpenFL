@@ -39,7 +39,7 @@ class HXCPP_CLASS_ATTRIBUTES  KeyboardListener_obj : public hx::Object{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("KeyboardListener","\x5b","\xd4","\x9f","\x49"); }
 
-		Dynamic keyStates;
+		Array< bool > keys;
 		virtual Void keyDown( ::openfl::events::KeyboardEvent e);
 		Dynamic keyDown_dyn();
 

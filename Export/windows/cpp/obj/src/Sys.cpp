@@ -83,17 +83,6 @@ Array< ::String > Sys_obj::args( ){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC0(Sys_obj,args,return )
 
-::String Sys_obj::systemName( ){
-	HX_STACK_FRAME("Sys","systemName",0xbea5b6bb,"Sys.systemName","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",80,0x57bbb657)
-	HX_STACK_LINE(81)
-	::String tmp = ::Sys_obj::sys_string();		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(81)
-	return tmp;
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC0(Sys_obj,systemName,return )
-
 Void Sys_obj::exit( int code){
 {
 		HX_STACK_FRAME("Sys","exit",0xed97463f,"Sys.exit","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",109,0x57bbb657)
@@ -106,8 +95,6 @@ return null();
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Sys_obj,exit,(void))
-
-Dynamic Sys_obj::sys_string;
 
 Dynamic Sys_obj::file_stdin;
 
@@ -131,8 +118,6 @@ bool Sys_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Propert
 		if (HX_FIELD_EQ(inName,"println") ) { outValue = println_dyn(); return true;  }
 		break;
 	case 10:
-		if (HX_FIELD_EQ(inName,"systemName") ) { outValue = systemName_dyn(); return true;  }
-		if (HX_FIELD_EQ(inName,"sys_string") ) { outValue = sys_string; return true;  }
 		if (HX_FIELD_EQ(inName,"file_stdin") ) { outValue = file_stdin; return true;  }
 	}
 	return false;
@@ -142,7 +127,6 @@ bool Sys_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::PropertyAc
 {
 	switch(inName.length) {
 	case 10:
-		if (HX_FIELD_EQ(inName,"sys_string") ) { sys_string=ioValue.Cast< Dynamic >(); return true; }
 		if (HX_FIELD_EQ(inName,"file_stdin") ) { file_stdin=ioValue.Cast< Dynamic >(); return true; }
 	}
 	return false;
@@ -151,7 +135,6 @@ bool Sys_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::PropertyAc
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo *sMemberStorageInfo = 0;
 static hx::StaticInfo sStaticStorageInfo[] = {
-	{hx::fsObject /*Dynamic*/ ,(void *) &Sys_obj::sys_string,HX_HCSTRING("sys_string","\x03","\xf9","\xde","\x46")},
 	{hx::fsObject /*Dynamic*/ ,(void *) &Sys_obj::file_stdin,HX_HCSTRING("file_stdin","\x05","\xce","\xe4","\x2b")},
 	{ hx::fsUnknown, 0, null()}
 };
@@ -159,14 +142,12 @@ static hx::StaticInfo sStaticStorageInfo[] = {
 
 static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(Sys_obj::__mClass,"__mClass");
-	HX_MARK_MEMBER_NAME(Sys_obj::sys_string,"sys_string");
 	HX_MARK_MEMBER_NAME(Sys_obj::file_stdin,"file_stdin");
 };
 
 #ifdef HXCPP_VISIT_ALLOCS
 static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(Sys_obj::__mClass,"__mClass");
-	HX_VISIT_MEMBER_NAME(Sys_obj::sys_string,"sys_string");
 	HX_VISIT_MEMBER_NAME(Sys_obj::file_stdin,"file_stdin");
 };
 
@@ -179,9 +160,7 @@ static ::String sStaticFields[] = {
 	HX_HCSTRING("println","\xef","\xdb","\x33","\x84"),
 	HX_HCSTRING("stdin","\x48","\xb3","\x0d","\x84"),
 	HX_HCSTRING("args","\x5d","\x8d","\x74","\x40"),
-	HX_HCSTRING("systemName","\xda","\xd8","\x82","\xf7"),
 	HX_HCSTRING("exit","\x1e","\xf7","\x1d","\x43"),
-	HX_HCSTRING("sys_string","\x03","\xf9","\xde","\x46"),
 	HX_HCSTRING("file_stdin","\x05","\xce","\xe4","\x2b"),
 	::String(null()) };
 
@@ -212,7 +191,6 @@ void Sys_obj::__register()
 
 void Sys_obj::__boot()
 {
-	sys_string= ::cpp::Lib_obj::load(HX_HCSTRING("std","\xa3","\xa8","\x57","\x00"),HX_HCSTRING("sys_string","\x03","\xf9","\xde","\x46"),(int)0);
 	file_stdin= ::cpp::Lib_obj::load(HX_HCSTRING("std","\xa3","\xa8","\x57","\x00"),HX_HCSTRING("file_stdin","\x05","\xce","\xe4","\x2b"),(int)0);
 }
 

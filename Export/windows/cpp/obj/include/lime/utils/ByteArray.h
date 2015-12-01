@@ -158,6 +158,7 @@ class HXCPP_CLASS_ATTRIBUTES  ByteArray_obj : public ::haxe::io::Bytes_obj{
 		Dynamic ThrowEOFi_dyn();
 
 		virtual ::String toString( );
+		Dynamic toString_dyn();
 
 		virtual Void uncompress( ::lime::utils::CompressionAlgorithm algorithm);
 		Dynamic uncompress_dyn();

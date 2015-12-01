@@ -1,0 +1,15 @@
+HXCPP_M32=1
+desktop=1
+haxe3=1
+haxe_ver=3.201
+hxcpp=3.2.193
+hxcpp_api_level=321
+nme=5.5.7
+nme5=1
+nme_install_tool=1
+nme_ver=5.5.7
+no_console=1
+openfl=2.1.6
+openfl_legacy=1
+windows=1
+hxcpp=C:\HaxeToolkit\haxe\lib/hxcpp/3,2,193/

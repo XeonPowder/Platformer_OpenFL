@@ -30,6 +30,58 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("assets/maps/NewWorld/16x9.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/maps/NewWorld/NameArray.txt");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
+		urls.push ("assets/maps/test/test_tilesheet.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/movement/left/left.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/movement/left/left_fall.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/movement/left/left_jump.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/movement/left/left_touchdown.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/movement/right/right.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/movement/right/right_fall.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/movement/right/right_jump.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/movement/right/right_touchdown.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Sprites/player/player.psd");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
+		urls.push ("assets/Sprites/player/player2.psd");
+		types.push (lime.Assets.AssetType.BINARY);
+		
+		
 		
 		if (config.assetsPrefix != null) {
 			
@@ -90,7 +142,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "258",
+			build: "563",
 			company: "Company Name",
 			file: "PlatformerOpenFL",
 			fps: 30,

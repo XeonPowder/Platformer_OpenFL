@@ -8,6 +8,7 @@
 HX_DECLARE_CLASS2(core2,game,Game)
 HX_DECLARE_CLASS2(core2,game,GameStage)
 HX_DECLARE_CLASS2(core2,game,GameWindow)
+HX_DECLARE_CLASS3(core2,game,engine,Engine)
 HX_DECLARE_CLASS3(core2,game,entity,Entity)
 HX_DECLARE_CLASS5(core2,game,entity,type,player,Player)
 HX_DECLARE_CLASS3(core2,game,world,World)
@@ -34,12 +35,12 @@ class HXCPP_CLASS_ATTRIBUTES  World_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef World_obj OBJ_;
 		World_obj();
-		Void __construct(::core2::game::Game g,::core2::game::GameStage s,int aspectratiox,int aspectratioy);
+		Void __construct(::core2::game::Game g,int w,int h,::core2::game::GameStage s,int aspectratiox,int aspectratioy);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="core2.game.world.World")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
-		static hx::ObjectPtr< World_obj > __new(::core2::game::Game g,::core2::game::GameStage s,int aspectratiox,int aspectratioy);
+		static hx::ObjectPtr< World_obj > __new(::core2::game::Game g,int w,int h,::core2::game::GameStage s,int aspectratiox,int aspectratioy);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~World_obj();
@@ -59,6 +60,9 @@ class HXCPP_CLASS_ATTRIBUTES  World_obj : public hx::Object{
 		::core2::game::world::maps::managers::MapManager mapManager;
 		::core2::game::Game game;
 		::core2::game::entity::type::player::Player player;
+		int width;
+		int height;
+		::core2::game::engine::Engine engine;
 		virtual int hashCode( );
 		Dynamic hashCode_dyn();
 
@@ -74,9 +78,6 @@ class HXCPP_CLASS_ATTRIBUTES  World_obj : public hx::Object{
 		virtual ::core2::game::world::maps::managers::MapManager getMapManager( );
 		Dynamic getMapManager_dyn();
 
-		virtual Void newMap( ::String mapName,int ax,int ay);
-		Dynamic newMap_dyn();
-
 		virtual ::core2::game::Game getGame( );
 		Dynamic getGame_dyn();
 
@@ -85,6 +86,9 @@ class HXCPP_CLASS_ATTRIBUTES  World_obj : public hx::Object{
 
 		virtual Void newPlayer( ::String name);
 		Dynamic newPlayer_dyn();
+
+		virtual ::core2::game::engine::Engine getEngine( );
+		Dynamic getEngine_dyn();
 
 };
 

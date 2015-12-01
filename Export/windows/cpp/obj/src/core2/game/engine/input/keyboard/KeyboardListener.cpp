@@ -20,10 +20,8 @@ Void KeyboardListener_obj::__construct()
 HX_STACK_FRAME("core2.game.engine.input.keyboard.KeyboardListener","new",0xd9d4fe65,"core2.game.engine.input.keyboard.KeyboardListener.new","core2/game/engine/input/keyboard/KeyboardListener.hx",9,0x2bc386ac)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(10)
-	Dynamic tmp = this->keyStates;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(10)
-	tmp->__FieldRef(HX_HCSTRING("keys","\xf4","\xe1","\x06","\x47")) = Array_obj< bool >::__new();
+	HX_STACK_LINE(9)
+	this->keys = Array_obj< bool >::__new();
 }
 ;
 	return null();
@@ -47,10 +45,8 @@ Void KeyboardListener_obj::keyDown( ::openfl::events::KeyboardEvent e){
 		HX_STACK_FRAME("core2.game.engine.input.keyboard.KeyboardListener","keyDown",0x19f87e26,"core2.game.engine.input.keyboard.KeyboardListener.keyDown","core2/game/engine/input/keyboard/KeyboardListener.hx",12,0x2bc386ac)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(e,"e")
-		HX_STACK_LINE(13)
-		Dynamic tmp = this->keyStates;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(13)
-		hx::IndexRef((tmp->__Field(HX_HCSTRING("keys","\xf4","\xe1","\x06","\x47"), hx::paccDynamic )).mPtr,e->keyCode) = true;
+		HX_STACK_LINE(12)
+		this->keys[e->keyCode] = true;
 	}
 return null();
 }
@@ -63,10 +59,8 @@ Void KeyboardListener_obj::keyUp( ::openfl::events::KeyboardEvent e){
 		HX_STACK_FRAME("core2.game.engine.input.keyboard.KeyboardListener","keyUp",0xfdab331f,"core2.game.engine.input.keyboard.KeyboardListener.keyUp","core2/game/engine/input/keyboard/KeyboardListener.hx",15,0x2bc386ac)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(e,"e")
-		HX_STACK_LINE(16)
-		Dynamic tmp = this->keyStates;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(16)
-		hx::IndexRef((tmp->__Field(HX_HCSTRING("keys","\xf4","\xe1","\x06","\x47"), hx::paccDynamic )).mPtr,e->keyCode) = false;
+		HX_STACK_LINE(15)
+		this->keys[e->keyCode] = false;
 	}
 return null();
 }
@@ -75,24 +69,22 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC1(KeyboardListener_obj,keyUp,(void))
 
 bool KeyboardListener_obj::getKeyState( int x){
-	HX_STACK_FRAME("core2.game.engine.input.keyboard.KeyboardListener","getKeyState",0x307f19ad,"core2.game.engine.input.keyboard.KeyboardListener.getKeyState","core2/game/engine/input/keyboard/KeyboardListener.hx",18,0x2bc386ac)
+	HX_STACK_FRAME("core2.game.engine.input.keyboard.KeyboardListener","getKeyState",0x307f19ad,"core2.game.engine.input.keyboard.KeyboardListener.getKeyState","core2/game/engine/input/keyboard/KeyboardListener.hx",17,0x2bc386ac)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(x,"x")
-	HX_STACK_LINE(19)
-	Dynamic tmp = this->keyStates;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(19)
-	bool tmp1 = tmp->__Field(HX_HCSTRING("keys","\xf4","\xe1","\x06","\x47"), hx::paccDynamic )->__GetItem(x);		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(19)
-	return tmp1;
+	HX_STACK_LINE(18)
+	bool tmp = this->keys->__get(x);		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(18)
+	return tmp;
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC1(KeyboardListener_obj,getKeyState,return )
 
 ::core2::game::engine::input::keyboard::KeyboardListener KeyboardListener_obj::getKeyboardListener( ){
-	HX_STACK_FRAME("core2.game.engine.input.keyboard.KeyboardListener","getKeyboardListener",0xf3cba8f6,"core2.game.engine.input.keyboard.KeyboardListener.getKeyboardListener","core2/game/engine/input/keyboard/KeyboardListener.hx",22,0x2bc386ac)
+	HX_STACK_FRAME("core2.game.engine.input.keyboard.KeyboardListener","getKeyboardListener",0xf3cba8f6,"core2.game.engine.input.keyboard.KeyboardListener.getKeyboardListener","core2/game/engine/input/keyboard/KeyboardListener.hx",21,0x2bc386ac)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(22)
+	HX_STACK_LINE(21)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -107,26 +99,26 @@ KeyboardListener_obj::KeyboardListener_obj()
 void KeyboardListener_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(KeyboardListener);
-	HX_MARK_MEMBER_NAME(keyStates,"keyStates");
+	HX_MARK_MEMBER_NAME(keys,"keys");
 	HX_MARK_END_CLASS();
 }
 
 void KeyboardListener_obj::__Visit(HX_VISIT_PARAMS)
 {
-	HX_VISIT_MEMBER_NAME(keyStates,"keyStates");
+	HX_VISIT_MEMBER_NAME(keys,"keys");
 }
 
 Dynamic KeyboardListener_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
+	case 4:
+		if (HX_FIELD_EQ(inName,"keys") ) { return keys; }
+		break;
 	case 5:
 		if (HX_FIELD_EQ(inName,"keyUp") ) { return keyUp_dyn(); }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"keyDown") ) { return keyDown_dyn(); }
-		break;
-	case 9:
-		if (HX_FIELD_EQ(inName,"keyStates") ) { return keyStates; }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getKeyState") ) { return getKeyState_dyn(); }
@@ -140,28 +132,28 @@ Dynamic KeyboardListener_obj::__Field(const ::String &inName,hx::PropertyAccess 
 Dynamic KeyboardListener_obj::__SetField(const ::String &inName,const Dynamic &inValue,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
-	case 9:
-		if (HX_FIELD_EQ(inName,"keyStates") ) { keyStates=inValue.Cast< Dynamic >(); return inValue; }
+	case 4:
+		if (HX_FIELD_EQ(inName,"keys") ) { keys=inValue.Cast< Array< bool > >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
 
 void KeyboardListener_obj::__GetFields(Array< ::String> &outFields)
 {
-	outFields->push(HX_HCSTRING("keyStates","\x41","\x58","\x03","\x9e"));
+	outFields->push(HX_HCSTRING("keys","\xf4","\xe1","\x06","\x47"));
 	super::__GetFields(outFields);
 };
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*Dynamic*/ ,(int)offsetof(KeyboardListener_obj,keyStates),HX_HCSTRING("keyStates","\x41","\x58","\x03","\x9e")},
+	{hx::fsObject /*Array< bool >*/ ,(int)offsetof(KeyboardListener_obj,keys),HX_HCSTRING("keys","\xf4","\xe1","\x06","\x47")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *sStaticStorageInfo = 0;
 #endif
 
 static ::String sMemberFields[] = {
-	HX_HCSTRING("keyStates","\x41","\x58","\x03","\x9e"),
+	HX_HCSTRING("keys","\xf4","\xe1","\x06","\x47"),
 	HX_HCSTRING("keyDown","\xa1","\x69","\x47","\x9c"),
 	HX_HCSTRING("keyUp","\xda","\xb9","\xfe","\xde"),
 	HX_HCSTRING("getKeyState","\xa8","\xde","\x68","\xee"),

@@ -6,7 +6,8 @@
 #endif
 
 HX_DECLARE_CLASS6(core2,game,world,maps,layout,managers,MapLayoutManager)
-HX_DECLARE_CLASS3(haxe,ds,_HashMap,HashMapData)
+HX_DECLARE_CLASS1(haxe,IMap)
+HX_DECLARE_CLASS2(haxe,ds,ObjectMap)
 namespace core2{
 namespace game{
 namespace world{
@@ -40,11 +41,11 @@ class HXCPP_CLASS_ATTRIBUTES  MapLayoutManager_obj : public hx::Object{
 		::String __ToString() const { return HX_HCSTRING("MapLayoutManager","\xc7","\x44","\x04","\xa5"); }
 
 		::core2::game::world::maps::layout::managers::MapLayoutManager mapLayoutManager;
-		::haxe::ds::_HashMap::HashMapData list;
+		::haxe::ds::ObjectMap list;
 		virtual ::core2::game::world::maps::layout::managers::MapLayoutManager getMapLayoutManager( );
 		Dynamic getMapLayoutManager_dyn();
 
-		virtual ::haxe::ds::_HashMap::HashMapData getList( );
+		virtual ::haxe::ds::ObjectMap getList( );
 		Dynamic getList_dyn();
 
 		virtual int hashCode( );

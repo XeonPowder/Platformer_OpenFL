@@ -7,11 +7,10 @@ import core2.game.world.maps.layout.managers.MapLayoutManager in MLM;
 import core2.game.world.maps.tilesheet.MapTilesheet in MTS;
 import core2.game.world.maps.Map in Map;
 import core2.game.assets.UUID;
+import haxe.ds.IntMap in IMap;
 
 class MapLayout {
-
-	private var layout:Array<Array<Int>>;
-	private var tlayout:Array<Array<Int>>;
+	private var layout:IMap<Int>;
 	private var nameArray:Array<String>;
 	private var bitmapData:BMD;
 	private var tileManager:TM;
@@ -29,20 +28,19 @@ class MapLayout {
 		bitmapData = bmd;
 		mapTilesheet = mts;
 		ta = mapTilesheet.getTileArray();
-		layout = new Array<Array<Int>>();
-		tlayout = new Array<Array<Int>>();
+		layout = new IMap<Int>();
 		var arX:Int = m.getAspectRatioX();
 		var arY:Int = m.getAspectRatioY();
-		layout = generateLayout(ta, 0, 0, 0, arX, arY, tlayout, new Array<Int>());
+		layout = gLayout(ta, 0, 0, arX, arY);
 		if(registerMapLayout){
-			mapLayoutManager.getMapLayoutManager().getList().set(this, m.getMapName()+"Layout");
+			//mapLayoutManager.getMapLayoutManager().getList().set(m.getMapName()+"Layout", this);
 		}else{
 			Sys.println("Map: "+mName+"Layout was not added to the MapLayoutManager.");
 		}
 	}
 	public function hashCode():Int{
 		return UUID.randomNum();
-	}
+	}/*
 	public function generateLayout(tArray:Array<Tile>, x:Int, y:Int, z:Int, arX:Int, arY:Int, a:Array<Array<Int>>, line:Array<Int>):Array<Array<Int>>{
 		if(x > Std.int(getWidth()/arX)){//bitmapData.getWidth()/arX){
 			x = 0;
@@ -62,21 +60,38 @@ class MapLayout {
 			generateLayout(tArray, x+1, y, z+1, arX, arY, a, line);
 		}
 		return a;
-	}
-	public function gLayout(){
-		var a:Array<Array<Int>> = new Array<Array<Int>>;
+	}*/
+	public function gLayout(ta:Array<Tile>, w:Int, h:Int, arX:Int, arY:Int):IMap<Int>{
+		var a:IMap<Int> = new IMap<Int>();
 		var x:Int = 0;
 		var y:Int = 0;
-		while(x < Std.int(getWidth()/arX) && z < arY*arX){
-			a[x][y]
-			if(x+1 >= Std.int(getWidth()/arX)){
-				x = 0;
-				y += 1;
+		var z:Int = 0;
+		while(y < Std.int(getHeight()/arY)){
+			if(z >= arY*arX){
+				trace(a);
+				return a;
 			}
-			z++;
+			while(x < Std.int(getWidth()/arX)){
+				if(z >= arY*arX){
+					trace(a);
+					return a;
+				}
+				a.set((x+(y*x)), ta[z].getTileID());
+				z++;
+				x++;
+			}
+			if(x >= Std.int(getWidth()/arX)){
+				x = 0;
+			}
+			y++;
+			if(y >= Std.int(getHeight()/arY)){
+				y = 0;
+			}
 		}
+		trace(a);
+		return a;
 	}
-	public function getLayout():Array<Array<Int>>{
+	public function getLayout():IMap<Int>{
 		return layout;
 	}
 	public function getWidth():Int{
@@ -84,5 +99,8 @@ class MapLayout {
 	}
 	public function getHeight():Int{
 		return height;
+	}
+	public function getTileArray():Array<Tile>{
+		return ta;
 	}
 }

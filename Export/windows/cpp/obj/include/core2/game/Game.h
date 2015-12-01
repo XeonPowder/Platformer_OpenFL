@@ -18,12 +18,12 @@ class HXCPP_CLASS_ATTRIBUTES  Game_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef Game_obj OBJ_;
 		Game_obj();
-		Void __construct(int aRX,int aRY,::String playerName);
+		Void __construct(int aRX,int aRY,int width,int height,::String playerName);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="core2.game.Game")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
-		static hx::ObjectPtr< Game_obj > __new(int aRX,int aRY,::String playerName);
+		static hx::ObjectPtr< Game_obj > __new(int aRX,int aRY,int width,int height,::String playerName);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~Game_obj();
@@ -38,10 +38,13 @@ class HXCPP_CLASS_ATTRIBUTES  Game_obj : public hx::Object{
 		::String __ToString() const { return HX_HCSTRING("Game","\x12","\x20","\x38","\x2f"); }
 
 		::core2::game::world::World world;
-		Dynamic aspectRatio;
+		int aspectRatioX;
+		int aspectRatioY;
 		::core2::game::managers::Manager manager;
 		::core2::game::engine::Engine engine;
 		::core2::game::Game game;
+		int gameWindowWidth;
+		int gameWindowHeight;
 		virtual int hashCode( );
 		Dynamic hashCode_dyn();
 
@@ -59,6 +62,12 @@ class HXCPP_CLASS_ATTRIBUTES  Game_obj : public hx::Object{
 
 		virtual ::core2::game::engine::Engine getEngine( );
 		Dynamic getEngine_dyn();
+
+		virtual int getWidth( );
+		Dynamic getWidth_dyn();
+
+		virtual int getHeight( );
+		Dynamic getHeight_dyn();
 
 };
 

@@ -8,13 +8,13 @@ class Tile {
 	private var tileID:Int;
 	private var tileManager:TM;
 	private var id:Int;
-	public function new(tm:TM, name:String, tileid:Int, registerTile:Bool = true){
+	public function new(name:String, tileid:Int, registerTile:Bool = true){
 		tileName = name;
 		tileID = tileid;
-		tileManager = tm;
+		//tileManager = tm;
 		id = UUID.randomNum();
 		if(registerTile){
-			tm.getTileManager().getList().set(this, tileID);
+			//tm.getTileManager().getList().set(this, tileID);
 		}else{
 			Sys.println("Tile-ID: " +tileName+"-"+tileID+" was not added to the TileManager.");
 		}

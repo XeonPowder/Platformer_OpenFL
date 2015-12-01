@@ -1382,6 +1382,8 @@ HX_DEFINE_DYNAMIC_FUNC0(ByteArray_obj,ThrowEOFi,return )
 }
 
 
+HX_DEFINE_DYNAMIC_FUNC0(ByteArray_obj,toString,return )
+
 Void ByteArray_obj::uncompress( ::lime::utils::CompressionAlgorithm algorithm){
 {
 		HX_STACK_FRAME("lime.utils.ByteArray","uncompress",0x5340af0e,"lime.utils.ByteArray.uncompress","lime/utils/ByteArray.hx",592,0x2063a1e5)

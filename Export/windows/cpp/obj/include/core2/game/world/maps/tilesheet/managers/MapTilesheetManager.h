@@ -6,7 +6,8 @@
 #endif
 
 HX_DECLARE_CLASS6(core2,game,world,maps,tilesheet,managers,MapTilesheetManager)
-HX_DECLARE_CLASS3(haxe,ds,_HashMap,HashMapData)
+HX_DECLARE_CLASS1(haxe,IMap)
+HX_DECLARE_CLASS2(haxe,ds,StringMap)
 namespace core2{
 namespace game{
 namespace world{
@@ -39,12 +40,12 @@ class HXCPP_CLASS_ATTRIBUTES  MapTilesheetManager_obj : public hx::Object{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("MapTilesheetManager","\x58","\x28","\x73","\xaa"); }
 
-		::haxe::ds::_HashMap::HashMapData list;
+		::haxe::ds::StringMap list;
 		::core2::game::world::maps::tilesheet::managers::MapTilesheetManager mapTilesheetManager;
 		virtual ::core2::game::world::maps::tilesheet::managers::MapTilesheetManager getMapTilesheetManager( );
 		Dynamic getMapTilesheetManager_dyn();
 
-		virtual ::haxe::ds::_HashMap::HashMapData getList( );
+		virtual ::haxe::ds::StringMap getList( );
 		Dynamic getList_dyn();
 
 };

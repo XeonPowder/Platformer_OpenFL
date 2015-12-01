@@ -43,14 +43,9 @@ class HXCPP_CLASS_ATTRIBUTES  Sys_obj : public hx::Object{
 		static Array< ::String > args( );
 		static Dynamic args_dyn();
 
-		static ::String systemName( );
-		static Dynamic systemName_dyn();
-
 		static Void exit( int code);
 		static Dynamic exit_dyn();
 
-		static Dynamic sys_string;
-		static Dynamic &sys_string_dyn() { return sys_string;}
 		static Dynamic file_stdin;
 		static Dynamic &file_stdin_dyn() { return file_stdin;}
 };

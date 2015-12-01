@@ -115,15 +115,24 @@ class Engine{
 
 	private var world:World;
 	private var keyboardListener:KL;
-
+	private var firstRun:Bool;
 	public function new(w:World){
 		world = w;
 		keyboardListener = new KL();
+		firstRun = true;
 	}
 	public function tick(e:Event):Void{
+
 		if(e.type == "ENTER_FRAME"){
+			if(firstRun){
+				world.getStage().getStage().removeEventListener(E.ENTER_FRAME, engine.tick);
+				world.getStage().getStage().addEventListener(E.ENTER_FRAME, engine.tick);
+				windowStage.getStage().addEventListener(KE.KEY_DOWN, engine.tick);
+				windowStage.getStage().addEventListener(KE.KEY_UP, engine.tick);
+				firstRun = true;
+			}
 			world.getMap().update();
-			world.getPlayer().getPlayerManager().update();
+			world.getPlayer().update();
 		}else if(e.type == "KEY_DOWN"){
 			keyboardListener.keyDown(cast(e, KeyboardEvent));
 		}else if(e.type == "KEY_UP"){
@@ -134,7 +143,7 @@ class Engine{
 		return UUID.randomNum();
 	}
 	public function getKeyboardListener():KL{
-		return keyboardListener;
+		return keyboardListener.getKeyboardListener();
 	}
 	public function getWorld():World{
 		return world;

@@ -42,11 +42,7 @@ class HXCPP_CLASS_ATTRIBUTES  EReg_obj : public hx::Object{
 		static Dynamic regexp_matched_pos;
 		static Dynamic &regexp_matched_pos_dyn() { return regexp_matched_pos;}
 		Dynamic r;
-		::String last;
 		bool global;
-		virtual bool match( ::String s);
-		Dynamic match_dyn();
-
 		virtual ::String replace( ::String s,::String by);
 		Dynamic replace_dyn();
 

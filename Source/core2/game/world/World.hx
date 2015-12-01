@@ -3,6 +3,7 @@ package core2.game.world;
 import core2.game.GameWindow in GameWindow;
 import core2.game.GameStage in GameStage;
 import core2.game.world.maps.Map in Map;
+import core2.game.engine.Engine in Engine;
 import core2.game.Game in G;
 import core2.game.world.maps.managers.MapManager in MM;
 import core2.game.entity.type.player.Player in P;
@@ -18,19 +19,18 @@ class World{
 	private var player:P;
 	private var width:Int;
 	private var height:Int;
+	private var engine:Engine;
+
 	public function new(g:G, w:Int, h:Int, s:GameStage, aspectratiox:Int, aspectratioy:Int){
 		game = g;
+		engine = new Engine(this);
 		width = w;
 		height = h;
 		windowStage = s;
 		window = windowStage.getGameWindow();
 		mapManager = new MM();
 		map = new Map(this, width, height, mapManager, aspectratiox, aspectratioy, "NewWorld");
-		windowStage.addChild(map);
-		windowStage.addEventListener(E.ENTER_FRAME, getGame().getEngine().tick);
-		windowStage.addEventListener(KE.KEY_DOWN, getGame().getEngine().tick);
-		windowStage.addEventListener(KE.KEY_UP, getGame().getEngine().tick);
-		//newMap(mapList.getRandomMap());
+		windowStage.getStage().addChild(map);
 	}
 	public function hashCode():Int{
 		return UUID.randomNum();
@@ -53,7 +53,13 @@ class World{
 	public function getPlayer():P{
 		return player;
 	}
-	public function newPlayer(name:String){
+	public function newPlayer(name:String):Void{
 		player = new P(game, 0, 0, 64, 32, name);
+	}
+	public function getEngine():Engine{
+		return engine;
+	}
+	public function getStage():GameStage{
+		return windowStage;
 	}
 }

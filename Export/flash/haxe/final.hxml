@@ -11,9 +11,15 @@
 -D native-trace
 -D openfl-next
 -D tools=2.7.0
+-D flash-use-stage
 -D no-compilation
+-D native
 -D openfl-flash
+-D lime-native
+-D openfl-native
 -D web
+--remap flash:openfl
+-swf-lib Export/flash/obj/assets.swf
 -swf-version 11.2
 -swf Export/flash/bin/PlatformerOpenFL.swf
 -swf-header 800:600:30:FFFFFF

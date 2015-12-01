@@ -3,8 +3,11 @@
 #ifndef INCLUDED_core2_game_world_maps_tile_managers_TileManager
 #include <core2/game/world/maps/tile/managers/TileManager.h>
 #endif
-#ifndef INCLUDED_haxe_ds__HashMap_HashMapData
-#include <haxe/ds/_HashMap/HashMapData.h>
+#ifndef INCLUDED_haxe_IMap
+#include <haxe/IMap.h>
+#endif
+#ifndef INCLUDED_haxe_ds_ObjectMap
+#include <haxe/ds/ObjectMap.h>
 #endif
 namespace core2{
 namespace game{
@@ -21,7 +24,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(10)
 	this->tileManager = hx::ObjectPtr<OBJ_>(this);
 	HX_STACK_LINE(11)
-	::haxe::ds::_HashMap::HashMapData tmp = ::haxe::ds::_HashMap::HashMapData_obj::__new();		HX_STACK_VAR(tmp,"tmp");
+	::haxe::ds::ObjectMap tmp = ::haxe::ds::ObjectMap_obj::__new();		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(11)
 	this->list = tmp;
 }
@@ -54,11 +57,11 @@ Dynamic TileManager_obj::__Create(hx::DynamicArray inArgs)
 
 HX_DEFINE_DYNAMIC_FUNC0(TileManager_obj,getTileManager,return )
 
-::haxe::ds::_HashMap::HashMapData TileManager_obj::getList( ){
+::haxe::ds::ObjectMap TileManager_obj::getList( ){
 	HX_STACK_FRAME("core2.game.world.maps.tile.managers.TileManager","getList",0xeb959923,"core2.game.world.maps.tile.managers.TileManager.getList","core2/game/world/maps/tile/managers/TileManager.hx",16,0xe46ac441)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(17)
-	::haxe::ds::_HashMap::HashMapData tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
+	::haxe::ds::ObjectMap tmp = this->list;		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(17)
 	return tmp;
 }
@@ -107,7 +110,7 @@ Dynamic TileManager_obj::__SetField(const ::String &inName,const Dynamic &inValu
 {
 	switch(inName.length) {
 	case 4:
-		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::_HashMap::HashMapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"list") ) { list=inValue.Cast< ::haxe::ds::ObjectMap >(); return inValue; }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"tileManager") ) { tileManager=inValue.Cast< ::core2::game::world::maps::tile::managers::TileManager >(); return inValue; }
@@ -124,7 +127,7 @@ void TileManager_obj::__GetFields(Array< ::String> &outFields)
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::haxe::ds::_HashMap::HashMapData*/ ,(int)offsetof(TileManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
+	{hx::fsObject /*::haxe::ds::ObjectMap*/ ,(int)offsetof(TileManager_obj,list),HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47")},
 	{hx::fsObject /*::core2::game::world::maps::tile::managers::TileManager*/ ,(int)offsetof(TileManager_obj,tileManager),HX_HCSTRING("tileManager","\xdf","\xd0","\x25","\xb3")},
 	{ hx::fsUnknown, 0, null()}
 };

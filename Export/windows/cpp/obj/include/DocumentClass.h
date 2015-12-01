@@ -20,7 +20,7 @@ class HXCPP_CLASS_ATTRIBUTES  DocumentClass_obj : public ::Main_obj{
 		Void __construct();
 
 	public:
-		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="DocumentClass")
+		inline void *operator new( size_t inSize, bool inContainer=false,const char *inName="DocumentClass")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
 		static hx::ObjectPtr< DocumentClass_obj > __new();
 		static Dynamic __CreateEmpty();

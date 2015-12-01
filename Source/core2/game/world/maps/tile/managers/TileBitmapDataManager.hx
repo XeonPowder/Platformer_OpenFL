@@ -1,21 +1,21 @@
 package core2.game.world.maps.tile.managers;
 
 import core2.game.display.BMD in BMD;
-import haxe.ds.HashMap in HM;
+import haxe.ds.StringMap in SMap;
 
 class TileBitmapDataManager{
 	
-	private var list:HM<BMD, String>;
+	private var list:SMap<BMD>;
 	private var tileBitmapDataManager:TileBitmapDataManager;
 
 	public function new(){
-		list = new HM<BMD, String>();
+		list = new SMap<BMD>();
 		tileBitmapDataManager = this;
 	}
 	public function getTileBitmapDataManager():TileBitmapDataManager{
 		return tileBitmapDataManager;
 	}
-	public function getList():HM<BMD, String>{
+	public function getList():SMap<BMD>{
 		return list;
 	}
 

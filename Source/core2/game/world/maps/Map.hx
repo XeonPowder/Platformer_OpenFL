@@ -13,7 +13,6 @@ import core2.game.world.World in World;
 
 class Map extends Sprite{
 
-	private var map:Array<Array<Int>>;
 	private var mapName:String;
 	private var mapTilesheetCanvas:Sprite;
 	private var mapTilesheet:MTS;
@@ -24,9 +23,9 @@ class Map extends Sprite{
 	private var aspectRatioX:Int;
 	private var aspectRatioY:Int;
 	private var mapManager:MM;
-	private var mmHash:Int;
-	private var mtsmHash:Int;
-	private var tbmdmHash:Int;
+	//private var mmHash:Int;
+	//private var mtsmHash:Int;
+	//private var tbmdmHash:Int;
 	private var world:World;
 	private var wwidth:Int;
 	private var wheight:Int;
@@ -37,24 +36,25 @@ class Map extends Sprite{
 		wwidth = ww;
 		wheight = wh;
 		mapName = mn;
-		mmHash = hashCode();
-		mtsmHash = hashCode();
-		tbmdmHash = hashCode();
+		//mmHash = hashCode();
+		//mtsmHash = hashCode();
+		//tbmdmHash = hashCode();
 		aspectRatioX = ax;
 		aspectRatioY = ay;
 		mapManager = mm;
 		if(registerMap){
-			mm.getMapManager().set(this, mmHash);
+			//mm.getMapManager().set(mn, this);
 		}
 		var ar:String = ax+"x"+ay;
 		tileBMD = new BMD(Assets.getBitmapData(new String("assets/maps/"+mn+"/"+ar+".png")), getWorld().getGame().getWidth(), getWorld().getGame().getHeight());
 		openFLBMDtileBMD =  tileBMD.getData();
-		tileBitmapDataManager = new TBMDM();
-		tileBitmapDataManager.getList().set(tileBMD, ar);
+		//tileBitmapDataManager = new TBMDM();
+		//tileBitmapDataManager.getList().set(ar, tileBMD);
 		mapTilesheetCanvas = new Sprite();
 		addChild(mapTilesheetCanvas);
-		mapTilesheetManager = new MTSM();
+		//mapTilesheetManager = new MTSM();
 		mapTilesheet = new MTS(this, wwidth, wheight, tileBMD, mapName);
+		mapTilesheet.drawTiles(mapTilesheetCanvas.graphics, mapTilesheet.getTileData());
 	}
 	public function hashCode():Int{
 		return UUID.randomNum();
@@ -75,7 +75,6 @@ class Map extends Sprite{
 		return tileBitmapDataManager;
 	}
 	public function update():Void{
-		mapTilesheet.drawTiles(mapTilesheetCanvas.graphics, mapTilesheet.getTileData());
 	}
 	public function getAspectRatioY():Int{
 		return aspectRatioY;

@@ -13,6 +13,12 @@ class PlayerListener extends core2.game.entity.listeners.EntityListener{
 	private var keyDOWN:Int = 40;
 	private var keyLEFT:Int = 37;
 	private var keyRIGHT:Int = 39;
+
+	private var moveUp:Bool = false;
+	private var moveDown:Bool = false;
+	private var moveLeft:Bool = false;
+	private var moveRight:Bool = false;
+
 	public function new(p:P, kl:KL){
 		super();
 		player = p;
@@ -21,16 +27,31 @@ class PlayerListener extends core2.game.entity.listeners.EntityListener{
 	}
 	public override function update(){
 		checkKeyStates();
+		move();
 		checkDamageRecieved();
 		checkExperienceRecieved();
 		checkLevelUp();
 	}
 	public function checkKeyStates():Void{
-		var jump:Bool = keyboardListener.getKeyState(keyUP);
-		var duck:Bool = keyboardListener.getKeyState(keyDOWN);
-		var left:Bool = keyboardListener.getKeyState(keyLEFT);
-		var right:Bool = keyboardListener.getKeyState(keyRIGHT);
+		moveUp = keyboardListener.getKeyState(keyUP);
+		moveDown = keyboardListener.getKeyState(keyDOWN);
+		moveLeft = keyboardListener.getKeyState(keyLEFT);
+		moveRight = keyboardListener.getKeyState(keyRIGHT);
 
+	}
+	public function move():Void{
+		if(moveUp){
+			player.y++;
+		}
+		if(moveDown){
+			player.y--;
+		}
+		if(moveLeft){
+			player.x--;
+		}
+		if(moveRight){
+			player.x++;
+		}
 	}
 	public function checkDamageRecieved(){
 		pManager.setHealth(pManager.getHealth() - pManager.getDamageGivenToPlayer());

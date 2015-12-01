@@ -5,9 +5,6 @@
 #include <hxcpp.h>
 #endif
 
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
-#endif
 HX_DECLARE_CLASS3(core2,game,display,BMD)
 HX_DECLARE_CLASS2(openfl,display,BitmapData)
 HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
@@ -16,17 +13,17 @@ namespace game{
 namespace display{
 
 
-class HXCPP_CLASS_ATTRIBUTES  BMD_obj : public ::openfl::display::BitmapData_obj{
+class HXCPP_CLASS_ATTRIBUTES  BMD_obj : public hx::Object{
 	public:
-		typedef ::openfl::display::BitmapData_obj super;
+		typedef hx::Object super;
 		typedef BMD_obj OBJ_;
 		BMD_obj();
-		Void __construct(::openfl::display::BitmapData openFLBMD);
+		Void __construct(::openfl::display::BitmapData bmd,int w,int h);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="core2.game.display.BMD")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
-		static hx::ObjectPtr< BMD_obj > __new(::openfl::display::BitmapData openFLBMD);
+		static hx::ObjectPtr< BMD_obj > __new(::openfl::display::BitmapData bmd,int w,int h);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~BMD_obj();
@@ -41,12 +38,23 @@ class HXCPP_CLASS_ATTRIBUTES  BMD_obj : public ::openfl::display::BitmapData_obj
 		::String __ToString() const { return HX_HCSTRING("BMD","\x19","\x58","\x32","\x00"); }
 
 		int id;
-		::core2::game::display::BMD bmd;
+		::openfl::display::BitmapData bmd_copy;
+		int width;
+		int height;
 		virtual int hashCode( );
 		Dynamic hashCode_dyn();
 
 		virtual ::core2::game::display::BMD getBMD( );
 		Dynamic getBMD_dyn();
+
+		virtual ::openfl::display::BitmapData getData( );
+		Dynamic getData_dyn();
+
+		virtual int getHeight( );
+		Dynamic getHeight_dyn();
+
+		virtual int getWidth( );
+		Dynamic getWidth_dyn();
 
 };
 

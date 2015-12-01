@@ -10,14 +10,14 @@ import pgr.dconsole.DC in Console;
 
 class Game {
 	private var world:World;
-	private var aspectRatioX:Int;
-	private var aspectRatioY:Int;
+	private var tileX:Int;
+	private var tileY:Int;
 	private var manager:Manager;
 	private var engine:Engine;
 	private var game:Game;
 	private var gameWindowWidth:Int;
 	private var gameWindowHeight:Int;
-	public function new(aRX:Int, aRY:Int, width:Int, height:Int, playerName:String){
+	public function new(stage:openfl.display.Stage, aRX:Int, aRY:Int, width:Int, height:Int, playerName:String){
 		game = this;
 		gameWindowWidth = Std.int(width);
 		gameWindowHeight = Std.int(height);
@@ -25,14 +25,12 @@ class Game {
 		Console.log("Buff Console");
 		Console.registerObject(game, "game_console");
 		Console.registerClass(Game, "game");
-		manager = new Manager();
-		aspectRatioX = aRX;
-		aspectRatioY = aRY;
-		world = new World(game, gameWindowWidth, gameWindowHeight, new GameStage(game, new GameWindow(game)), aRX, aRY);
-		/*
+		//manager = new Manager();
+		tileX = aRX;
+		tileY = aRY;
+		world = new World(game, gameWindowWidth, gameWindowHeight, new GameStage(stage, new GameWindow(game)), aRX, aRY);
 		world.newPlayer(playerName);
-		engine = new Engine(world);
-		*/
+		engine = world.getEngine();
 	}
 	public function hashCode():Int{
 		return UUID.randomNum();

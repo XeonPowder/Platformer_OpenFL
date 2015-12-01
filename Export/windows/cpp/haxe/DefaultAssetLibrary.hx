@@ -63,10 +63,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
 		#end
 		
 		#if flash
 		
+		path.set ("assets/maps/NewWorld/16x9.png", "assets/maps/NewWorld/16x9.png");
+		type.set ("assets/maps/NewWorld/16x9.png", AssetType.IMAGE);
+		path.set ("assets/maps/NewWorld/NameArray.txt", "assets/maps/NewWorld/NameArray.txt");
+		type.set ("assets/maps/NewWorld/NameArray.txt", AssetType.TEXT);
+		path.set ("assets/maps/test/test_tilesheet.png", "assets/maps/test/test_tilesheet.png");
+		type.set ("assets/maps/test/test_tilesheet.png", AssetType.IMAGE);
 		path.set ("assets/Sprites/player/movement/left/left.png", "assets/Sprites/player/movement/left/left.png");
 		type.set ("assets/Sprites/player/movement/left/left.png", AssetType.IMAGE);
 		path.set ("assets/Sprites/player/movement/left/left_fall.png", "assets/Sprites/player/movement/left/left_fall.png");
@@ -92,6 +101,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/maps/NewWorld/16x9.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/maps/NewWorld/NameArray.txt";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/maps/test/test_tilesheet.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/Sprites/player/movement/left/left.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -139,6 +157,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -879,7 +900,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
 #elseif html5
+
+
+
 
 
 
