@@ -4,6 +4,7 @@ class Manager {
 	public static var ME : Manager;
 
 	static var fl_initDone = false;
+
 	
 	var kcodes:Array<Bool>;
 	var ktime = 0;
@@ -28,6 +29,10 @@ class Manager {
 	public function new(arX, arY, w, h, pName) {
 		ME = this;
 		kcodes = new Array();
+		pgr.dconsole.DC.init();
+		pgr.dconsole.DC.log("Buffy Console");
+		pgr.dconsole.DC.registerObject(this, "console");
+		pgr.dconsole.DC.registerClass(Manager, "manager");
 		stage = openfl.Lib.current.stage;
 		stage.addEventListener(openfl.events.Event.ENTER_FRAME, update);
 		stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN,keyDown);
@@ -103,7 +108,6 @@ class Manager {
 
 		// Adding the player entity
 		hero = new core3.Entity();
-		stage.addChild(hero.sprite);
 		map = new Map(tilesheetData, mapTS);
 
 		// Text Field

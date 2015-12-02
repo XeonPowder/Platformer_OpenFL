@@ -6,6 +6,7 @@ class Entity {
 	var man					: Manager;
 	
 	public var sprite		: Sprite;
+	public var healthbar 	: Sprite;
 	
 	public var cx			: Int;
 	public var cy			: Int;
@@ -20,13 +21,20 @@ class Entity {
 	public function new() {
 		man = core3.Manager.ME;
 		cx = 5;
-		cy = 0;
+		cy = 5;
 		xr = yr = 0.5;
 		dx = dy = 0;
 		
 		sprite = new Sprite();
 		sprite.graphics.beginFill(0xFFFF00,1);
 		sprite.graphics.drawCircle(0,0,core3.Const.GRID*0.5);
+
+		healthbar = new Sprite();
+		healthbar.graphics.beginFill(0x00FF00,1);
+		healthbar.graphics.drawRect(0, 0, 32, 5);
+
+		man.stage.addChild(sprite);
+		man.stage.addChild(healthbar);
 	}
 	
 	public function setCoordinates(x,y) {
@@ -102,18 +110,13 @@ class Entity {
 		*/
 		xx = Std.int((cx+xr)*core3.Const.GRID);
 		if(xx > 0 && xx < 320){
-			
+			healthbar.x = xx-16;
 			sprite.x = xx;
 		}
 		yy = Std.int((cy+yr)*core3.Const.GRID);
 		if(yy > 0 && yy < 320){
-			
+			healthbar.y = yy-(16*1.75);
 			sprite.y = yy;
 		}
-		
-		
-		
-		
 	}
-	
 }
