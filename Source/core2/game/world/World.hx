@@ -31,6 +31,7 @@ class World{
 		mapManager = new MM();
 		map = new Map(this, width, height, mapManager, aspectratiox, aspectratioy, "NewWorld");
 		windowStage.getStage().addChild(map);
+		windowStage.getStage().addEventListener(E.ENTER_FRAME, engine.tick);
 	}
 	public function hashCode():Int{
 		return UUID.randomNum();

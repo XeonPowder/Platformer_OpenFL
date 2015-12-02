@@ -1,6 +1,6 @@
 package core3;
 
-import flash.display.Sprite;
+import openfl.display.Sprite;
 
 class Entity {
 	var man					: Manager;
@@ -19,7 +19,6 @@ class Entity {
 	
 	public function new() {
 		man = core3.Manager.ME;
-		
 		cx = 5;
 		cy = 0;
 		xr = yr = 0.5;
@@ -82,7 +81,7 @@ class Entity {
 		//dy+=gravity;
 		yr+=dy;
 		dy*=frictY;
-		/*
+		
 		if( hasCollision(cx,cy-1) && yr<=0.4 ) {
 			dy = 0;
 			yr = 0.4;
@@ -91,6 +90,7 @@ class Entity {
 			dy  = 0;
 			yr = 0.5;
 		}
+		/*
 		while( yr<0 ) {
 			cy--;
 			yr++;
@@ -100,11 +100,20 @@ class Entity {
 			yr--;
 		}
 		*/
-			
 		xx = Std.int((cx+xr)*core3.Const.GRID);
+		if(xx > 0 && xx < 320){
+			
+			sprite.x = xx;
+		}
 		yy = Std.int((cy+yr)*core3.Const.GRID);
-		sprite.x = xx;
-		sprite.y = yy;
+		if(yy > 0 && yy < 320){
+			
+			sprite.y = yy;
+		}
+		
+		
+		
+		
 	}
 	
 }

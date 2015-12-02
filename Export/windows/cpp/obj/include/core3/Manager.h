@@ -8,13 +8,11 @@
 HX_DECLARE_CLASS1(core3,Entity)
 HX_DECLARE_CLASS1(core3,Manager)
 HX_DECLARE_CLASS1(core3,Map)
-HX_DECLARE_CLASS2(lime,app,IModule)
 HX_DECLARE_CLASS2(openfl,display,DisplayObject)
 HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
 HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
 HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
 HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,display,Stage)
 HX_DECLARE_CLASS2(openfl,display,Tilesheet)
 HX_DECLARE_CLASS2(openfl,events,Event)
 HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
@@ -27,12 +25,12 @@ class HXCPP_CLASS_ATTRIBUTES  Manager_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef Manager_obj OBJ_;
 		Manager_obj();
-		Void __construct(Dynamic r,int arX,int arY,int w,int h,::String pName);
+		Void __construct(int arX,int arY,int w,int h,::String pName);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="core3.Manager")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
-		static hx::ObjectPtr< Manager_obj > __new(Dynamic r,int arX,int arY,int w,int h,::String pName);
+		static hx::ObjectPtr< Manager_obj > __new(int arX,int arY,int w,int h,::String pName);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~Manager_obj();
@@ -49,7 +47,6 @@ class HXCPP_CLASS_ATTRIBUTES  Manager_obj : public hx::Object{
 		::String __ToString() const { return HX_HCSTRING("Manager","\x4d","\xba","\x12","\xe1"); }
 
 		static ::core3::Manager ME;
-		::openfl::display::Stage root;
 		::core3::Map map;
 		::openfl::display::Tilesheet mapTS;
 		::core3::Entity hero;

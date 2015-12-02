@@ -6,7 +6,6 @@
 #endif
 
 HX_DECLARE_CLASS0(Sys)
-HX_DECLARE_CLASS2(haxe,io,Input)
 
 
 class HXCPP_CLASS_ATTRIBUTES  Sys_obj : public hx::Object{
@@ -26,19 +25,14 @@ class HXCPP_CLASS_ATTRIBUTES  Sys_obj : public hx::Object{
 
 		HX_DO_RTTI_ALL;
 		static bool __GetStatic(const ::String &inString, Dynamic &outValue, hx::PropertyAccess inCallProp);
-		static bool __SetStatic(const ::String &inString, Dynamic &ioValue, hx::PropertyAccess inCallProp);
 		static void __register();
 		::String __ToString() const { return HX_HCSTRING("Sys","\xed","\x64","\x3f","\x00"); }
 
-		static void __boot();
 		static Void print( Dynamic v);
 		static Dynamic print_dyn();
 
 		static Void println( Dynamic v);
 		static Dynamic println_dyn();
-
-		static ::haxe::io::Input _stdin( );
-		static Dynamic _stdin_dyn();
 
 		static Array< ::String > args( );
 		static Dynamic args_dyn();
@@ -46,8 +40,6 @@ class HXCPP_CLASS_ATTRIBUTES  Sys_obj : public hx::Object{
 		static Void exit( int code);
 		static Dynamic exit_dyn();
 
-		static Dynamic file_stdin;
-		static Dynamic &file_stdin_dyn() { return file_stdin;}
 };
 
 

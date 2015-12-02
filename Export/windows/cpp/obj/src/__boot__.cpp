@@ -165,9 +165,6 @@
 #ifndef INCLUDED_sys_io_FileOutput
 #include <sys/io/FileOutput.h>
 #endif
-#ifndef INCLUDED_sys_io_FileInput
-#include <sys/io/FileInput.h>
-#endif
 #ifndef INCLUDED_sys_io_File
 #include <sys/io/File.h>
 #endif
@@ -503,9 +500,6 @@
 #endif
 #ifndef INCLUDED_core3_Const
 #include <core3/Const.h>
-#endif
-#ifndef INCLUDED_Sys
-#include <Sys.h>
 #endif
 #ifndef INCLUDED_openfl_display_DisplayObject
 #include <openfl/display/DisplayObject.h>
@@ -1242,6 +1236,9 @@
 #ifndef INCLUDED_Type
 #include <Type.h>
 #endif
+#ifndef INCLUDED_Sys
+#include <Sys.h>
+#endif
 #ifndef INCLUDED_StringTools
 #include <StringTools.h>
 #endif
@@ -1364,7 +1361,6 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::io::Error_obj::__register();
 ::haxe::StackItem_obj::__register();
 ::sys::io::FileOutput_obj::__register();
-::sys::io::FileInput_obj::__register();
 ::sys::io::File_obj::__register();
 ::sys::FileSystem_obj::__register();
 ::openfl::ui::Keyboard_obj::__register();
@@ -1477,7 +1473,6 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::Log_obj::__register();
 ::core3::Key_obj::__register();
 ::core3::Const_obj::__register();
-::Sys_obj::__register();
 ::openfl::display::DisplayObject_obj::__register();
 ::EReg_obj::__register();
 ::openfl::ui::GameInputControl_obj::__register();
@@ -1723,6 +1718,7 @@ hx::RegisterResources( hx::GetResources() );
 ::core3::Manager_obj::__register();
 ::core3::Entity_obj::__register();
 ::Type_obj::__register();
+::Sys_obj::__register();
 ::StringTools_obj::__register();
 ::StringBuf_obj::__register();
 ::Std_obj::__register();
@@ -1802,7 +1798,6 @@ hx::RegisterResources( hx::GetResources() );
 ::EReg_obj::__boot();
 ::haxe::Log_obj::__boot();
 ::openfl::display::DisplayObject_obj::__boot();
-::Sys_obj::__boot();
 ::core3::Const_obj::__boot();
 ::core3::Key_obj::__boot();
 ::haxe::Timer_obj::__boot();
@@ -1914,7 +1909,6 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::ui::Keyboard_obj::__boot();
 ::sys::FileSystem_obj::__boot();
 ::sys::io::File_obj::__boot();
-::sys::io::FileInput_obj::__boot();
 ::sys::io::FileOutput_obj::__boot();
 }
 

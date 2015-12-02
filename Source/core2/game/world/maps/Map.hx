@@ -46,7 +46,7 @@ class Map extends Sprite{
 			//mm.getMapManager().set(mn, this);
 		}
 		var ar:String = ax+"x"+ay;
-		tileBMD = new BMD(Assets.getBitmapData(new String("assets/maps/"+mn+"/"+ar+".png")), getWorld().getGame().getWidth(), getWorld().getGame().getHeight());
+		tileBMD = new BMD(), getWorld().getGame().getWidth(), getWorld().getGame().getHeight());
 		openFLBMDtileBMD =  tileBMD.getData();
 		//tileBitmapDataManager = new TBMDM();
 		//tileBitmapDataManager.getList().set(ar, tileBMD);
@@ -55,6 +55,9 @@ class Map extends Sprite{
 		//mapTilesheetManager = new MTSM();
 		mapTilesheet = new MTS(this, wwidth, wheight, tileBMD, mapName);
 		mapTilesheet.drawTiles(mapTilesheetCanvas.graphics, mapTilesheet.getTileData());
+		windowStage.getStage().addEventListener(E.ENTER_FRAME, engine.tick);
+		windowStage.getStage().addEventListener(KE.KEY_DOWN, engine.tick);
+		windowStage.getStage().addEventListener(KE.KEY_UP, engine.tick);
 	}
 	public function hashCode():Int{
 		return UUID.randomNum();

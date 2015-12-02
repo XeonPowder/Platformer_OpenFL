@@ -3,8 +3,8 @@
 #ifndef INCLUDED_core3_Key
 #include <core3/Key.h>
 #endif
-#ifndef INCLUDED_lime_app_IModule
-#include <lime/app/IModule.h>
+#ifndef INCLUDED_openfl_Lib
+#include <openfl/Lib.h>
 #endif
 #ifndef INCLUDED_openfl_display_DisplayObject
 #include <openfl/display/DisplayObject.h>
@@ -18,8 +18,11 @@
 #ifndef INCLUDED_openfl_display_InteractiveObject
 #include <openfl/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl_display_MovieClip
+#include <openfl/display/MovieClip.h>
+#endif
+#ifndef INCLUDED_openfl_display_Sprite
+#include <openfl/display/Sprite.h>
 #endif
 #ifndef INCLUDED_openfl_events_Event
 #include <openfl/events/Event.h>
@@ -59,41 +62,46 @@ Array< ::Dynamic > Key_obj::kcodes;
 
 int Key_obj::ktime;
 
-Void Key_obj::init( ::openfl::display::Stage stage){
+Void Key_obj::init( ){
 {
 		HX_STACK_FRAME("core3.Key","init",0x29cb6619,"core3.Key.init","core3/Key.hx",9,0xa3b7f89a)
-		HX_STACK_ARG(stage,"stage")
 		HX_STACK_LINE(10)
 		bool tmp = ::core3::Key_obj::fl_initDone;		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(10)
 		if ((tmp)){
 			HX_STACK_LINE(11)
-			::String tmp1 = ::openfl::events::Event_obj::ENTER_FRAME;		HX_STACK_VAR(tmp1,"tmp1");
+			::openfl::display::MovieClip tmp1 = ::openfl::Lib_obj::current;		HX_STACK_VAR(tmp1,"tmp1");
 			HX_STACK_LINE(11)
-			Dynamic tmp2 = ::core3::Key_obj::onEnterFrame_dyn();		HX_STACK_VAR(tmp2,"tmp2");
+			::String tmp2 = ::openfl::events::Event_obj::ENTER_FRAME;		HX_STACK_VAR(tmp2,"tmp2");
 			HX_STACK_LINE(11)
-			stage->removeEventListener(tmp1,tmp2,null());
+			Dynamic tmp3 = ::core3::Key_obj::onEnterFrame_dyn();		HX_STACK_VAR(tmp3,"tmp3");
+			HX_STACK_LINE(11)
+			tmp1->removeEventListener(tmp2,tmp3,null());
 			HX_STACK_LINE(12)
-			::String tmp3 = ::openfl::events::Event_obj::ENTER_FRAME;		HX_STACK_VAR(tmp3,"tmp3");
+			::openfl::display::MovieClip tmp4 = ::openfl::Lib_obj::current;		HX_STACK_VAR(tmp4,"tmp4");
 			HX_STACK_LINE(12)
-			Dynamic tmp4 = ::core3::Key_obj::onEnterFrame_dyn();		HX_STACK_VAR(tmp4,"tmp4");
+			::String tmp5 = ::openfl::events::Event_obj::ENTER_FRAME;		HX_STACK_VAR(tmp5,"tmp5");
 			HX_STACK_LINE(12)
-			stage->addEventListener(tmp3,tmp4,null(),null(),null());
+			Dynamic tmp6 = ::core3::Key_obj::onEnterFrame_dyn();		HX_STACK_VAR(tmp6,"tmp6");
+			HX_STACK_LINE(12)
+			tmp4->addEventListener(tmp5,tmp6,null(),null(),null());
 			HX_STACK_LINE(13)
 			return null();
 		}
 		HX_STACK_LINE(15)
 		::core3::Key_obj::fl_initDone = true;
 		HX_STACK_LINE(18)
-		::String tmp1 = ::openfl::events::KeyboardEvent_obj::KEY_DOWN;		HX_STACK_VAR(tmp1,"tmp1");
+		::openfl::display::MovieClip tmp1 = ::openfl::Lib_obj::current;		HX_STACK_VAR(tmp1,"tmp1");
 		HX_STACK_LINE(18)
-		Dynamic tmp2 = ::core3::Key_obj::onKey_dyn();		HX_STACK_VAR(tmp2,"tmp2");
+		::String tmp2 = ::openfl::events::KeyboardEvent_obj::KEY_DOWN;		HX_STACK_VAR(tmp2,"tmp2");
 		HX_STACK_LINE(18)
-		Dynamic tmp3;		HX_STACK_VAR(tmp3,"tmp3");
+		Dynamic tmp3 = ::core3::Key_obj::onKey_dyn();		HX_STACK_VAR(tmp3,"tmp3");
+		HX_STACK_LINE(18)
+		Dynamic tmp4;		HX_STACK_VAR(tmp4,"tmp4");
 		HX_STACK_LINE(18)
 		{
 			HX_STACK_LINE(18)
-			Dynamic f = tmp2;		HX_STACK_VAR(f,"f");
+			Dynamic f = tmp3;		HX_STACK_VAR(f,"f");
 
 			HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_Function_2_1,Dynamic,f)
 			int __ArgCount() const { return 1; }
@@ -102,31 +110,33 @@ Void Key_obj::init( ::openfl::display::Stage stage){
 				HX_STACK_ARG(e,"e")
 				{
 					HX_STACK_LINE(18)
-					bool tmp4 = true;		HX_STACK_VAR(tmp4,"tmp4");
+					bool tmp5 = true;		HX_STACK_VAR(tmp5,"tmp5");
 					HX_STACK_LINE(18)
-					::openfl::events::KeyboardEvent tmp5 = e;		HX_STACK_VAR(tmp5,"tmp5");
+					::openfl::events::KeyboardEvent tmp6 = e;		HX_STACK_VAR(tmp6,"tmp6");
 					HX_STACK_LINE(18)
-					f(tmp4,tmp5).Cast< Void >();
+					f(tmp5,tmp6).Cast< Void >();
 				}
 				return null();
 			}
 			HX_END_LOCAL_FUNC1((void))
 
 			HX_STACK_LINE(18)
-			tmp3 =  Dynamic(new _Function_2_1(f));
+			tmp4 =  Dynamic(new _Function_2_1(f));
 		}
 		HX_STACK_LINE(18)
-		stage->addEventListener(tmp1,tmp3,null(),null(),null());
+		tmp1->addEventListener(tmp2,tmp4,null(),null(),null());
 		HX_STACK_LINE(19)
-		::String tmp4 = ::openfl::events::KeyboardEvent_obj::KEY_UP;		HX_STACK_VAR(tmp4,"tmp4");
+		::openfl::display::MovieClip tmp5 = ::openfl::Lib_obj::current;		HX_STACK_VAR(tmp5,"tmp5");
 		HX_STACK_LINE(19)
-		Dynamic tmp5 = ::core3::Key_obj::onKey_dyn();		HX_STACK_VAR(tmp5,"tmp5");
+		::String tmp6 = ::openfl::events::KeyboardEvent_obj::KEY_UP;		HX_STACK_VAR(tmp6,"tmp6");
 		HX_STACK_LINE(19)
-		Dynamic tmp6;		HX_STACK_VAR(tmp6,"tmp6");
+		Dynamic tmp7 = ::core3::Key_obj::onKey_dyn();		HX_STACK_VAR(tmp7,"tmp7");
+		HX_STACK_LINE(19)
+		Dynamic tmp8;		HX_STACK_VAR(tmp8,"tmp8");
 		HX_STACK_LINE(19)
 		{
 			HX_STACK_LINE(19)
-			Dynamic f = tmp5;		HX_STACK_VAR(f,"f");
+			Dynamic f = tmp7;		HX_STACK_VAR(f,"f");
 
 			HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_Function_2_1,Dynamic,f)
 			int __ArgCount() const { return 1; }
@@ -135,23 +145,25 @@ Void Key_obj::init( ::openfl::display::Stage stage){
 				HX_STACK_ARG(e,"e")
 				{
 					HX_STACK_LINE(19)
-					bool tmp7 = false;		HX_STACK_VAR(tmp7,"tmp7");
+					bool tmp9 = false;		HX_STACK_VAR(tmp9,"tmp9");
 					HX_STACK_LINE(19)
-					::openfl::events::KeyboardEvent tmp8 = e;		HX_STACK_VAR(tmp8,"tmp8");
+					::openfl::events::KeyboardEvent tmp10 = e;		HX_STACK_VAR(tmp10,"tmp10");
 					HX_STACK_LINE(19)
-					f(tmp7,tmp8).Cast< Void >();
+					f(tmp9,tmp10).Cast< Void >();
 				}
 				return null();
 			}
 			HX_END_LOCAL_FUNC1((void))
 
 			HX_STACK_LINE(19)
-			tmp6 =  Dynamic(new _Function_2_1(f));
+			tmp8 =  Dynamic(new _Function_2_1(f));
 		}
 		HX_STACK_LINE(19)
-		stage->addEventListener(tmp4,tmp6,null(),null(),null());
+		tmp5->addEventListener(tmp6,tmp8,null(),null(),null());
 		HX_STACK_LINE(20)
-		::String tmp7 = ::openfl::events::Event_obj::DEACTIVATE;		HX_STACK_VAR(tmp7,"tmp7");
+		::openfl::display::MovieClip tmp9 = ::openfl::Lib_obj::current;		HX_STACK_VAR(tmp9,"tmp9");
+		HX_STACK_LINE(20)
+		::String tmp10 = ::openfl::events::Event_obj::DEACTIVATE;		HX_STACK_VAR(tmp10,"tmp10");
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		int __ArgCount() const { return 1; }
@@ -167,19 +179,21 @@ Void Key_obj::init( ::openfl::display::Stage stage){
 		HX_END_LOCAL_FUNC1((void))
 
 		HX_STACK_LINE(20)
-		stage->addEventListener(tmp7, Dynamic(new _Function_1_1()),null(),null(),null());
+		tmp9->addEventListener(tmp10, Dynamic(new _Function_1_1()),null(),null(),null());
 		HX_STACK_LINE(21)
-		::String tmp8 = ::openfl::events::Event_obj::ENTER_FRAME;		HX_STACK_VAR(tmp8,"tmp8");
+		::openfl::display::MovieClip tmp11 = ::openfl::Lib_obj::current;		HX_STACK_VAR(tmp11,"tmp11");
 		HX_STACK_LINE(21)
-		Dynamic tmp9 = ::core3::Key_obj::onEnterFrame_dyn();		HX_STACK_VAR(tmp9,"tmp9");
+		::String tmp12 = ::openfl::events::Event_obj::ENTER_FRAME;		HX_STACK_VAR(tmp12,"tmp12");
 		HX_STACK_LINE(21)
-		stage->addEventListener(tmp8,tmp9,null(),null(),null());
+		Dynamic tmp13 = ::core3::Key_obj::onEnterFrame_dyn();		HX_STACK_VAR(tmp13,"tmp13");
+		HX_STACK_LINE(21)
+		tmp11->addEventListener(tmp12,tmp13,null(),null(),null());
 	}
 return null();
 }
 
 
-STATIC_HX_DEFINE_DYNAMIC_FUNC1(Key_obj,init,(void))
+STATIC_HX_DEFINE_DYNAMIC_FUNC0(Key_obj,init,(void))
 
 Void Key_obj::onEnterFrame( Dynamic _){
 {

@@ -90,7 +90,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "561",
+			build: "570",
 			company: "Company Name",
 			file: "PlatformerOpenFL",
 			fps: 30,

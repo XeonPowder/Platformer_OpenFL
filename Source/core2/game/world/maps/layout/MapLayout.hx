@@ -63,33 +63,7 @@ class MapLayout {
 	}*/
 	public function gLayout(ta:Array<Tile>, w:Int, h:Int, arX:Int, arY:Int):IMap<Int>{
 		var a:IMap<Int> = new IMap<Int>();
-		var x:Int = 0;
-		var y:Int = 0;
-		var z:Int = 0;
-		while(y < Std.int(getHeight()/arY)){
-			if(z >= arY*arX){
-				trace(a);
-				return a;
-			}
-			while(x < Std.int(getWidth()/arX)){
-				if(z >= arY*arX){
-					trace(a);
-					return a;
-				}
-				a.set((x+(y*x)), ta[z].getTileID());
-				z++;
-				x++;
-			}
-			if(x >= Std.int(getWidth()/arX)){
-				x = 0;
-			}
-			y++;
-			if(y >= Std.int(getHeight()/arY)){
-				y = 0;
-			}
-		}
-		trace(a);
-		return a;
+		
 	}
 	public function getLayout():IMap<Int>{
 		return layout;

@@ -6,15 +6,7 @@
 #endif
 
 HX_DECLARE_CLASS1(core3,Key)
-HX_DECLARE_CLASS2(lime,app,IModule)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Stage)
 HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
 HX_DECLARE_CLASS2(openfl,events,KeyboardEvent)
 namespace core3{
 
@@ -44,7 +36,7 @@ class HXCPP_CLASS_ATTRIBUTES  Key_obj : public hx::Object{
 		static bool fl_initDone;
 		static Array< ::Dynamic > kcodes;
 		static int ktime;
-		static Void init( ::openfl::display::Stage stage);
+		static Void init( );
 		static Dynamic init_dyn();
 
 		static Void onEnterFrame( Dynamic _);

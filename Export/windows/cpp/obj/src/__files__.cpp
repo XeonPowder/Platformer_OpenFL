@@ -23,7 +23,6 @@ const char *__hxcpp_all_files[] = {
 "C:\\HaxeToolkit\\haxe\\std/cpp/_std/haxe/zip/Uncompress.hx",
 "C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/FileSystem.hx",
 "C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/io/File.hx",
-"C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/io/FileInput.hx",
 "C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/io/FileOutput.hx",
 "C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/io/Process.hx",
 "C:\\HaxeToolkit\\haxe\\std/cpp/vm/Deque.hx",
@@ -321,7 +320,6 @@ const char *__hxcpp_all_files_fullpath[] = {
 "C:\\HaxeToolkit\\haxe\\std\\cpp\\_std\\haxe\\zip\\Uncompress.hx",
 "C:\\HaxeToolkit\\haxe\\std\\cpp\\_std\\sys\\FileSystem.hx",
 "C:\\HaxeToolkit\\haxe\\std\\cpp\\_std\\sys\\io\\File.hx",
-"C:\\HaxeToolkit\\haxe\\std\\cpp\\_std\\sys\\io\\FileInput.hx",
 "C:\\HaxeToolkit\\haxe\\std\\cpp\\_std\\sys\\io\\FileOutput.hx",
 "C:\\HaxeToolkit\\haxe\\std\\cpp\\_std\\sys\\io\\Process.hx",
 "C:\\HaxeToolkit\\haxe\\std\\cpp\\vm\\Deque.hx",
@@ -966,7 +964,6 @@ const char *__hxcpp_all_classes[] = {
 "openfl.ui.Keyboard",
 "sys.FileSystem",
 "sys.io.File",
-"sys.io.FileInput",
 "sys.io.FileOutput",
 #endif
  0 };
