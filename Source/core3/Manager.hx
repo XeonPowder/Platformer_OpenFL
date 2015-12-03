@@ -12,7 +12,7 @@ class Manager {
 	public var map 						:		Map;
 	public var mapTS 					: 		openfl.display.Tilesheet;
 	public var stage 					: 		openfl.display.Stage;
-	public var hero						: 		Entity;
+	public var hero						: 		core3.entity.Hero;
 
 	public var level					: 		Array<Array<Int>>;
 	public var levelCollision			: 		Array<Array<Bool>>;
@@ -38,10 +38,10 @@ class Manager {
 		stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN,keyDown);
 		stage.addEventListener(openfl.events.KeyboardEvent.KEY_UP,keyUp);
 		// Background
-		var bg = new openfl.display.Sprite();
+		//var bg = new openfl.display.Sprite();
 		//openfl.Lib.current.addChild(bg);
-		bg.graphics.beginFill(0x000000, 1);
-		bg.graphics.drawRect(0,0, stage.stageWidth, stage.stageHeight);
+		//bg.graphics.beginFill(0x000000, 1);
+		//bg.graphics.drawRect(0,0, stage.stageWidth, stage.stageHeight);
 
 
 		//Map and Tilesheet
@@ -107,12 +107,12 @@ class Manager {
 		
 
 		// Adding the player entity
-		hero = new core3.Entity();
+		hero = new core3.entity.Hero();
 		map = new Map(tilesheetData, mapTS);
 
 		// Text Field
 		var tf = new openfl.text.TextField();
-		//openfl.Lib.current.addChild(tf);
+		stage.addChild(tf);
 		tf.text = "Platformer "+Const.VERSION;
 		tf.width = openfl.Lib.current.stage.stageWidth;
 		tf.textColor = 0x000000;
@@ -122,46 +122,31 @@ class Manager {
 	
 	// Main loop (called onEnterFrame)
 	public function update(e:openfl.events.Event):Void {
-		
-		Key.onEnterFrame;
-		var speed = 0.04;
-		
-		if( getKeyState(openfl.ui.Keyboard.LEFT)){
-			hero.dx -= speed;
-		}
-		if( getKeyState(openfl.ui.Keyboard.RIGHT)){
-			hero.dx += speed;
-		}
-			
-		if( getKeyState(openfl.ui.Keyboard.UP)){
-			hero.dy -= speed;
-		}
-
-		if( getKeyState(openfl.ui.Keyboard.DOWN)){
-			hero.dy += speed;
-		}
-		map.update();
+		//trace("key++");
+		Key.onEnterFrame();
+		//trace("hero update");
 		hero.update();
-		
+		//trace("map update");
+		map.update();
 	}
-	function getMap():openfl.display.Sprite{
+	public function getMap():openfl.display.Sprite{
 		return map;
 	}
-	function getMapTS():openfl.display.Tilesheet{
+	public function getMapTS():openfl.display.Tilesheet{
 		return mapTS;
 	}
-	function onEnterFrame():Void {
-				ktime++;
+	public function onEnterFrame():Void {
+		ktime++;
 	}
-	function keyDown(e:openfl.events.KeyboardEvent){
-		trace("keydown"+e.keyCode);
+	public function keyDown(e:openfl.events.KeyboardEvent){
+		//trace("keydown"+e.keyCode);
 		kcodes[e.keyCode] = true;
 	}
-	function keyUp(e:openfl.events.KeyboardEvent){
-		trace("keyUp"+e.keyCode);
+	public function keyUp(e:openfl.events.KeyboardEvent){
+		//trace("keyUp"+e.keyCode);
 		kcodes[e.keyCode] = false;
 	}
-	function getKeyState(x:Int):Bool{
+	public function getKeyState(x:Int):Bool{
 		return kcodes[x];
 	}
 }
