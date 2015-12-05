@@ -12,7 +12,8 @@ class Manager {
 	public var map 						:		Map;
 	public var mapTS 					: 		openfl.display.Tilesheet;
 	public var stage 					: 		openfl.display.Stage;
-	public var hero						: 		core3.entity.Hero;
+	public var hero						: 		core3.entity.hero.Hero;
+	public var card 					: 		core3.entity.card.Card;
 
 	public var level					: 		Array<Array<Int>>;
 	public var levelCollision			: 		Array<Array<Bool>>;
@@ -45,7 +46,7 @@ class Manager {
 
 
 		//Map and Tilesheet
-		var bmd:openfl.display.BitmapData = openfl.Assets.getBitmapData(new String("assets/maps/test/test_tilesheet.png"));
+		var bmd:openfl.display.BitmapData = openfl.Assets.getBitmapData(new String("assets/maps/test/test_tilesheet640x640.png"));
 		mapTS = new openfl.display.Tilesheet(bmd);
 
 
@@ -107,15 +108,16 @@ class Manager {
 		
 
 		// Adding the player entity
-		hero = new core3.entity.Hero();
+		hero = new core3.entity.hero.Hero();
+		card = new core3.entity.card.Card();
 		map = new Map(tilesheetData, mapTS);
 
 		// Text Field
 		var tf = new openfl.text.TextField();
 		stage.addChild(tf);
-		tf.text = "Platformer "+Const.VERSION;
+		tf.text = "Buffy "+Const.VERSION;
 		tf.width = openfl.Lib.current.stage.stageWidth;
-		tf.textColor = 0x000000;
+		tf.textColor = 0xFFFFFF;
 		tf.mouseEnabled = tf.selectable = false;
 	}
 	
@@ -123,11 +125,13 @@ class Manager {
 	// Main loop (called onEnterFrame)
 	public function update(e:openfl.events.Event):Void {
 		//trace("key++");
-		Key.onEnterFrame();
+		onEnterFrame();
 		//trace("hero update");
 		hero.update();
 		//trace("map update");
 		map.update();
+		//trace("card update");
+		card.update();
 	}
 	public function getMap():openfl.display.Sprite{
 		return map;
@@ -148,5 +152,8 @@ class Manager {
 	}
 	public function getKeyState(x:Int):Bool{
 		return kcodes[x];
+	}
+	public function getKTime():Int{
+		return ktime;
 	}
 }

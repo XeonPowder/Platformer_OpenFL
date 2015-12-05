@@ -6,12 +6,12 @@ class Main{
 	public static function main(){
 		//variables
 		var pName:String = "NewPlayer";
-		var wString:String = "320";
-		var hString:String = "320";
+		var wString:String = "640";
+		var hString:String = "640";
 		var arX:Int = 32;
 		var arY:Int = 32;
-		var w:Int = 320;
-		var h:Int = 320;
+		var w:Int = 640;
+		var h:Int = 640;
 		//print String
 		Sys.print("player name?: ");
 		//read input to String

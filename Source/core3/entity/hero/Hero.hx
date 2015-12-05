@@ -1,4 +1,4 @@
-package core3.entity;
+package core3.entity.hero;
 
 class Hero extends Entity{
 
@@ -9,22 +9,24 @@ class Hero extends Entity{
 	private var heroBMDup 						: 				openfl.display.Bitmap;
 	private var heroBMDdown 					: 				openfl.display.Bitmap;
 	private var currentHeroBMD 					: 				openfl.display.Bitmap;
-	public var heroproperties 					: 				core3.entity.EntityProperties;
+	public var heroProperties 					: 				core3.entity.EntityProperties;
 	public var herohealthbar 					:				openfl.display.Sprite;
 	private var init 							: 				Bool;
+	public var heroMultiplier 					:		 		core3.entity.hero.HeroMultiplier;
 
 	public function new(){
 		init = true;
 		super();
+		type = "player";
 		hero = new openfl.display.Sprite();
-		heroproperties = new EntityProperties(this, hero);
+		heroMultiplier = new HeroMultiplier(this, hero);
+		heroProperties = new HeroProperties(this);
 		heroBMDright = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/player/movement/right/right.png"));
 		heroBMDleft = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/player/movement/left/left.png"));
 		heroBMDup = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/player/movement/left/left_jump.png"));
 		heroBMDdown = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/player/movement/right/right_jump.png"));
 		currentHeroBMD = heroBMDright;
 		hero.addChild(currentHeroBMD);
-
 
 		hero.x = Std.int(man.stage.stageWidth/2);
 		hero.y = Std.int(man.stage.stageHeight/2);
@@ -75,5 +77,8 @@ class Hero extends Entity{
 				hero.y += Std.int(Const.GRID/3);
 			}
 		}
+	}
+	public override function getMultiplier():core3.entity.hero.HeroMultiplier{
+		return heroMultiplier;
 	}
 }
