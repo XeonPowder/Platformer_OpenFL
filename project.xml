@@ -7,8 +7,9 @@
 	<source path="Source" />
 	
 	<haxelib name="openfl" />
-	<haxelib name="dconsole" source="haxelib" />
+	<haxelib name="dconsole" />
+	<haxelib name="haxeui" />
 	<assets path="Assets" rename="assets" />
-	<window width="640" height="640" resizable="false" />
+	<window width="1920" height="1080" resizable="true"/>
 	
 </project>

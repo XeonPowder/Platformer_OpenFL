@@ -17,4 +17,6 @@ class Entity {
 	public function getMultiplier():core3.entity.EntityMultiplier{
 		return entityMiltiplier;
 	}
+	public function entityTouchingEntity(){
+	}
 }

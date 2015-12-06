@@ -19,7 +19,7 @@ class Manager {
 	public var levelCollision			: 		Array<Array<Bool>>;
 	public var tileIDList 				: 		Array<Int>;
 	public var tilesheetData 			: 		Array<Float>;
-
+	public var itemDatabase 			: 		Array<core3.Item>;
 
 	// new manager instance
 	// arX = tile pixel width
@@ -30,6 +30,7 @@ class Manager {
 	public function new(arX, arY, w, h, pName) {
 		ME = this;
 		kcodes = new Array();
+		itemDatabase = new Array();
 		pgr.dconsole.DC.init();
 		pgr.dconsole.DC.log("Buffy Console");
 		pgr.dconsole.DC.registerObject(this, "console");
@@ -46,7 +47,7 @@ class Manager {
 
 
 		//Map and Tilesheet
-		var bmd:openfl.display.BitmapData = openfl.Assets.getBitmapData(new String("assets/maps/test/test_tilesheet640x640.png"));
+		var bmd:openfl.display.BitmapData = openfl.Assets.getBitmapData(new String("assets/maps/NewWorld/16x9.png"));
 		mapTS = new openfl.display.Tilesheet(bmd);
 
 
@@ -101,7 +102,7 @@ class Manager {
 		tilesheetData = new Array();
 		for (row in 0...level.length) {
 			for (cell in 0...level[row].length) {
-				tilesheetData = tilesheetData.concat([Const.GRID*row, Const.GRID*cell, level[row][cell]]);
+				tilesheetData = tilesheetData.concat([arX*row, arY*cell, level[row][cell]]);
 			}
 		}
 		trace(level);
@@ -109,8 +110,8 @@ class Manager {
 
 		// Adding the player entity
 		hero = new core3.entity.hero.Hero();
-		card = new core3.entity.card.Card();
-		map = new Map(tilesheetData, mapTS);
+		card = new core3.entity.card.Card(Const._HEALTH, "Health x10", true, Const._HEALTH, hero.heroProperties.c_hp*.10);
+		map = new Map(tilesheetData, mapTS, this);
 
 		// Text Field
 		var tf = new openfl.text.TextField();
@@ -124,16 +125,14 @@ class Manager {
 	
 	// Main loop (called onEnterFrame)
 	public function update(e:openfl.events.Event):Void {
-		//trace("key++");
 		onEnterFrame();
-		//trace("hero update");
-		hero.update();
-		//trace("map update");
-		map.update();
-		//trace("card update");
-		card.update();
+		if(map.update() == false){
+			hero.update();
+			card.update();
+		}
+		
 	}
-	public function getMap():openfl.display.Sprite{
+	public function getMap():core3.Map{
 		return map;
 	}
 	public function getMapTS():openfl.display.Tilesheet{
@@ -155,5 +154,42 @@ class Manager {
 	}
 	public function getKTime():Int{
 		return ktime;
+	}
+	public function gameOver(s:String){
+
+	}
+	public function getItemDB():Array<core3.Item>{
+		return itemDatabase;
+	}
+	public function getItemByID(_id:Int):core3.Item{
+		for(x in 0 ... getItemDB().length){
+			if(getItemDB()[x].getItemID() == _id){
+				return getItemDB()[x];
+			}
+		}
+		return null;
+	}
+	public function addItemToDB(item:core3.Item):Int{
+		var alreadyInDB:Bool = true;
+		var index:Int = -1;
+		var x:Int = 0;
+		while(x < getItemDB().length){
+			if(alreadyInDB){
+				if(getItemDB()[x] == item){
+					trace("item already in DB: "+item.getItemName());
+					index = x;
+				}
+				if(x == getItemDB().length-1){
+					alreadyInDB = false;
+					x = 0;
+				}
+			}else{
+				getItemDB()[getItemDB().length] = item;
+				index = getItemDB().length-1;
+				return index;
+			}
+			x++;
+		}
+		return index;
 	}
 }

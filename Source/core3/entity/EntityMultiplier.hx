@@ -11,42 +11,63 @@ class EntityMultiplier extends core3.Multiplier{
 	public function getMultiplier(s:String):Float{
 		if(Const.compareString(s, Const._MOVEMENTSPEED) == 0){
 			var movementspeed:Float = 1.0;
+			if(movementSpeedMultipliers.length == 0){
+				return movementspeed;
+			}
 			for(x in 0 ... movementSpeedMultipliers.length){
 				movementspeed*=movementSpeedMultipliers[x];
 			}
 			return movementspeed;
 		}else if(Const.compareString(s, Const._ATTACKDAMAGE) == 0){
 			var attackdamage:Float = 1.0;
+			if(attackDamageMultipliers.length == 0){
+				return attackdamage;
+			}
 			for(x in 0 ... attackDamageMultipliers.length){
 				attackdamage*=attackDamageMultipliers[x];
 			}
 			return attackdamage;
 		}else if(Const.compareString(s, Const._ATTACKSPEED) == 0){
 			var attackspeed:Float = 1.0;
+			if(attackSpeedMultipliers.length == 0){
+				return attackspeed;
+			}
 			for(x in 0 ... attackSpeedMultipliers.length){
 				attackspeed*=attackSpeedMultipliers[x];
 			}
 			return attackspeed;
 		}else if(Const.compareString(s, Const._ENERGY) == 0){
 			var energy:Float = 1.0;
+			if(energyMultipliers.length == 0){
+				return energy;
+			}
 			for(x in 0 ... energyMultipliers.length){
 				energy*=energyMultipliers[x];
 			}
 			return energy;
 		}else if(Const.compareString(s, Const._DEFENSE) == 0){
 			var defense:Float = 1.0;
+			if(defenseMultipliers.length == 0){
+				return defense;
+			}
 			for(x in 0 ... defenseMultipliers.length){
 				defense*=defenseMultipliers[x];
 			}
 			return defense;
 		}else if(Const.compareString(s, Const._EXPERIENCE) == 0){
 			var experience:Float = 1.0;
+			if(experienceMultipliers.length == 0){
+				return experience;
+			}
 			for(x in 0 ... experienceMultipliers.length){
 				experience*=experienceMultipliers[x];
 			}
 			return experience;
 		}else if(Const.compareString(s, Const._HEALTH) == 0){
 			var health:Float = 1.0;
+			if(healthMultipliers.length == 0){
+				return health;
+			}
 			for(x in 0 ... healthMultipliers.length){
 				health*=healthMultipliers[x];
 			}

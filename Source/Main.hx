@@ -6,18 +6,15 @@ class Main{
 	public static function main(){
 		//variables
 		var pName:String = "NewPlayer";
-		var wString:String = "640";
-		var hString:String = "640";
-		var arX:Int = 32;
-		var arY:Int = 32;
-		var w:Int = 640;
-		var h:Int = 640;
-		//print String
-		Sys.print("player name?: ");
-		//read input to String
-		pName = Sys.stdin().readLine();
-		//output the read input (debug)
-		trace("player name changed!: " + pName);
+		var wString:String = "1920";
+		var hString:String = "1080";
+		var arX:Int = 160;
+		var arY:Int = 135;
+		var w:Int = 1920;
+		var h:Int = 1080;
+		//print StringSys.print("player name?: ");
+		//read input to StringpName = Sys.stdin().readLine();
+		//output the read input (debug)trace("player name changed!: " + pName);
 		
 
 		//print String
