@@ -100,12 +100,21 @@ class Hero extends Entity{
 				}
 				hero.y += Std.int(Const.GRIDY/3);
 			}
-			if( man.getKeyState(openfl.ui.Keyboard.SPACE)){
-				trace(heroProperties.getEnergy());
+			if( man.getKeyState(openfl.ui.Keyboard.SPACE) && ((man.getKTime() - timeSinceLastShot()) > heroProperties.getAttackSpeed()*60)){
+				tsls = man.getKTime();
 				if(heroProperties.getEnergy() > heroProperties.getRequiredEnergy(Const._SHOOTENERGY)){
+					newProjectile(new core3.entity.projectile.Projectile(this, heroProperties.getFacingDirection(), "assets/projectile/fireball.png"));
 					heroProperties.setEnergy(heroProperties.getEnergy() - heroProperties.getRequiredEnergy(Const._SHOOTENERGY));
-					shoot(heroProperties.getFacingDirection());
 				}
+			}
+			if( projectileAirborn() && projectileList.length > 0){
+				for(x in 0 ... projectileList.length){
+					projectileList[x].update();
+				}
+			}
+			if( man.getKeyState(openfl.ui.Keyboard.E)){
+				heroProperties.setEnergy(100);
+				trace(heroProperties.getEnergy());
 			}
 		}else{
 			man.stage.addChild(heroOverlay);
@@ -117,53 +126,6 @@ class Hero extends Entity{
 	}
 	public override function getMultiplier():core3.entity.hero.HeroMultiplier{
 		return heroMultiplier;
-	}
-	public function shoot(direction:Int, ?a:Array<openfl.geom.Point> = null){
-		var projectile:openfl.display.Sprite = new openfl.display.Sprite();
-		var projectileBMD:openfl.display.Bitmap = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/projectile/fireball.png"));
-		var heroLocationX = hero.x;
-		var heroLocationY = hero.y;
-		if(a == null){
-			a = new Array();
-		}
-		if(direction == 90){
-			projectile.rotation = direction;
-			for(x in 0 ... Std.int(heroLocationX)){
-				a[x] = new openfl.geom.Point(heroLocationX-x, heroLocationY);
-			}
-		}else if(direction == 270){
-			projectile.rotation = direction;
-			for(x in 0 ... Std.int(man.stage.stageWidth-heroLocationX)){
-				a[x] = new openfl.geom.Point(heroLocationX+x, heroLocationY);
-			}
-		}else if(direction == 0){
-			projectile.rotation = direction;
-			for(y in 0 ... Std.int(heroLocationY)){
-				a[y] = new openfl.geom.Point(heroLocationX, heroLocationY-y);
-			}
-		}else if(direction == 180){
-			projectile.rotation = direction;
-			for(y in 0 ... Std.int(man.stage.stageHeight-heroLocationY)){
-				a[y] = new openfl.geom.Point(heroLocationX, heroLocationY+y);
-			}
-		}
-		projectile.addChild(projectileBMD);
-		man.stage.addChild(projectile);
-		h_shoot(direction, projectile, a, 0);
-	}
-	public function h_shoot(direction:Int, projectile:openfl.display.Sprite, a:Array<openfl.geom.Point>, i:Int){
-		if(i >= a.length){
-			man.stage.removeChildAt(man.stage.getChildIndex(projectile));
-			return;
-		}else{
-			if(direction == 90 || direction == 270){
-				projectile.x = a[i].x;
-			}else if(direction == 0 || direction == 180){
-				projectile.y = a[i].y;
-			}
-			h_shoot(direction, projectile, a, i++);
-		}
-		return;
 	}
 	public function updateStats(){
 
@@ -183,5 +145,21 @@ class Hero extends Entity{
 		}else{
 			return;
 		}
+	}
+	public function projectileAirborn():Bool{
+		for(x in 0 ... projectileList.length){
+			if(projectileList[x].airborn()){
+				return true;
+			}
+		
+}		return false;
+	}
+	public function newProjectile(projectile:core3.entity.projectile.Projectile){
+		projectileList.push(projectile);
+		projectile.x = hero.x;
+		projectile.y = hero.y;
+	}
+	public function timeSinceLastShot():Float{
+		return tsls;
 	}
 }
