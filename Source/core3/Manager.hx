@@ -31,10 +31,6 @@ class Manager {
 		ME = this;
 		kcodes = new Array();
 		itemDatabase = new Array();
-		pgr.dconsole.DC.init();
-		pgr.dconsole.DC.log("Buffy Console");
-		pgr.dconsole.DC.registerObject(this, "console");
-		pgr.dconsole.DC.registerClass(Manager, "manager");
 		stage = openfl.Lib.current.stage;
 		stage.addEventListener(openfl.events.Event.ENTER_FRAME, update);
 		stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN,keyDown);

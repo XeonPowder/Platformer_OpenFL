@@ -113,7 +113,7 @@ class Hero extends Entity{
 				}
 			}
 			if( man.getKeyState(openfl.ui.Keyboard.E)){
-				heroProperties.setEnergy(100);
+				heroProperties.setEnergy(heroProperties.getEnergy()*2);
 				trace(heroProperties.getEnergy());
 			}
 		}else{
