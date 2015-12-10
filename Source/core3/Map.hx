@@ -83,7 +83,7 @@ class Map{
                                 }
                                 return animatingNewMap;
                         }
-                        trace(counter);
+                        if(man._debug())trace(counter);
                         return animatingNewMap;
                 }
         }

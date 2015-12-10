@@ -6,14 +6,17 @@ class Entity {
 	public var entityMiltiplier : core3.entity.EntityMultiplier;
 	public var projectileList 					: 				Array<core3.entity.projectile.Projectile>;
 	public var tsls 							: 				Float;
-	public function new() {
+	private var sprite 							: 				openfl.display.Sprite;
+
+	public function new(s:openfl.display.Sprite) {
+		sprite = s;
 		man = core3.Manager.ME;
+		man.getEntityList().push(this);
 		type = "none";
 		entityMiltiplier = new core3.entity.EntityMultiplier(this);
 		projectileList = new Array();
 		tsls = 0;
 	}
-	
 	public function update(){
 
 	}
@@ -21,5 +24,21 @@ class Entity {
 		return entityMiltiplier;
 	}
 	public function entityTouchingEntity(){
+	}
+	public function removeFromStage(){
+		man.stage.removeChild(sprite);
+	}
+	public function getSpriteX():Float{
+		return sprite.x;
+	}
+	public function getSpriteY():Float{
+		return sprite.y;
+	}
+	public function setLocation(p:openfl.geom.Point){
+		sprite.x = p.x;
+		sprite.y = p.y;
+	}
+	public function getLocation():openfl.geom.Point{
+		return new openfl.geom.Point(getSpriteX(), getSpriteY());
 	}
 }

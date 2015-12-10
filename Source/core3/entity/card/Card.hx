@@ -12,12 +12,16 @@ class Card extends Entity{
 	private var bob 							: 				Int;
 	private var up 								: 				Bool;
 	private var item 							: 				core3.Item;
-	public function new(_type:String, ?_cardName:String = "NONE", ?hasMultiplierEffect:Bool = false, ?multiplierEffectType:String = "NONE", ?multiplier:Float = 0){
+	private var itemDBIndex 					:				Int;
+	public function new(_type:String, ?_cardName:String = "NONE", ?hasMultiplierEffect:Bool = false, ?multiplierEffectType:String = "NONE", ?multiplier:Float = 0, ?location:openfl.geom.Point = null){
 		init = true;
-		super();
 		type = _type;
 		card = new openfl.display.Sprite();
+		super(card);
 		item = new core3.Item(this, _cardName, hasMultiplierEffect, multiplierEffectType);
+		itemDBIndex = man.addItemToDB(item);
+		man.addItemToFloor(item);
+		trace(""+item.getItemID());
 		if(Const.compareString(_type, Const._HEALTH) == 0){
 			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/card/healthboostcard.png"));
 		}else if(Const.compareString(_type, Const._ATTACKDAMAGE) == 0){
@@ -35,16 +39,20 @@ class Card extends Entity{
 		maxbob = 20;
 		bob = 0;
 		up = true;
-		card.x = 100;
-		card.y = 100;
+		if(location != null){
+			setLocation(location);
+		}else{
+			setLocation(new openfl.geom.Point(0, 0));
+		}
+		
 	}
 	public override function update(){
 		if(!init){
 			if(bob < maxbob){
 				if(up){
-					card.y++;
+					setLocation(new openfl.geom.Point(getLocation().x, getLocation().y + 1));
 				}else if(!up){
-					card.y--;
+					setLocation(new openfl.geom.Point(getLocation().x, getLocation().y - 1));
 				}
 				bob++;
 			}else{

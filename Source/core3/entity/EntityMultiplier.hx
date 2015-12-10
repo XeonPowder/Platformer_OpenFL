@@ -8,139 +8,64 @@ class EntityMultiplier extends core3.Multiplier{
 		entity = e;
 		super();
 	}
-	public function getMultiplier(s:String):Float{
+	public function getMultiplierArray(s:String):Array<Float>{
 		if(Const.compareString(s, Const._MOVEMENTSPEED) == 0){
-			var movementspeed:Float = 1.0;
-			if(movementSpeedMultipliers.length == 0){
-				return movementspeed;
-			}
-			for(x in 0 ... movementSpeedMultipliers.length){
-				movementspeed*=movementSpeedMultipliers[x];
-			}
-			return movementspeed;
+			return movementSpeedMultipliers;
 		}else if(Const.compareString(s, Const._ATTACKDAMAGE) == 0){
-			var attackdamage:Float = 1.0;
-			if(attackDamageMultipliers.length == 0){
-				return attackdamage;
-			}
-			for(x in 0 ... attackDamageMultipliers.length){
-				attackdamage*=attackDamageMultipliers[x];
-			}
-			return attackdamage;
+			return attackDamageMultipliers;
 		}else if(Const.compareString(s, Const._ATTACKSPEED) == 0){
-			var attackspeed:Float = 1.0;
-			if(attackSpeedMultipliers.length == 0){
-				return attackspeed;
-			}
-			for(x in 0 ... attackSpeedMultipliers.length){
-				attackspeed*=attackSpeedMultipliers[x];
-			}
-			return attackspeed;
+			return attackSpeedMultipliers;
 		}else if(Const.compareString(s, Const._ENERGY) == 0){
-			var energy:Float = 1.0;
-			if(energyMultipliers.length == 0){
-				return energy;
-			}
-			for(x in 0 ... energyMultipliers.length){
-				energy*=energyMultipliers[x];
-			}
-			return energy;
+			return energyMultipliers;
 		}else if(Const.compareString(s, Const._DEFENSE) == 0){
-			var defense:Float = 1.0;
-			if(defenseMultipliers.length == 0){
-				return defense;
-			}
-			for(x in 0 ... defenseMultipliers.length){
-				defense*=defenseMultipliers[x];
-			}
-			return defense;
+			return defenseMultipliers;
 		}else if(Const.compareString(s, Const._EXPERIENCE) == 0){
-			var experience:Float = 1.0;
-			if(experienceMultipliers.length == 0){
-				return experience;
-			}
-			for(x in 0 ... experienceMultipliers.length){
-				experience*=experienceMultipliers[x];
-			}
-			return experience;
+			return experienceMultipliers;
 		}else if(Const.compareString(s, Const._HEALTH) == 0){
-			var health:Float = 1.0;
-			if(healthMultipliers.length == 0){
-				return health;
-			}
-			for(x in 0 ... healthMultipliers.length){
-				health*=healthMultipliers[x];
-			}
-			return health;
+			return healthMultipliers;
 		}
-		return -2.0;
+		return null;
+	}
+	public function getTotalMultiplier(s:String):Float{
+		var multiplier:Float = 1.0;
+		if(getMultiplierArray(s) != null){
+			if(getMultiplierArray(s).length == 0){
+				return multiplier;
+			}
+			for(x in 0 ... getMultiplierArray(s).length){
+				if(getMultiplierArray(s)[x] != 0){
+					multiplier*=getMultiplierArray(s)[x];
+				}
+			}
+			return multiplier;
+		}
+		return -2;
 	}
 	public function addMultiplier(s:String, f:Float, ?i:Int = -1):Int{
-		if(Const.compareString(s, Const._MOVEMENTSPEED) == 0){
+		var index = 0;
+		if(getMultiplierArray(s) != null){
 			if(i != -1){
-				var aLength = movementSpeedMultipliers.length;
-				movementSpeedMultipliers[aLength] = f;
-				return aLength;
+				return getMultiplierArray(s).push(f);
 			}else{
-				movementSpeedMultipliers[i] = f;
+				getMultiplierArray(s)[i] = f;
 				return i;
 			}
-		}else if(Const.compareString(s, Const._ATTACKDAMAGE) == 0){
-			if(i != -1){
-				var aLength = attackDamageMultipliers.length;
-				attackDamageMultipliers[aLength] = f;
-				return aLength;
-			}else{
-				attackDamageMultipliers[i] = f;
-				return i;
-			}
-		}else if(Const.compareString(s, Const._ATTACKSPEED) == 0){
-			if(i != -1){
-				var aLength = attackSpeedMultipliers.length;
-				attackSpeedMultipliers[aLength] = f;
-				return aLength;
-			}else{
-				attackSpeedMultipliers[i] = f;
-				return i;
-			}
-		}else if(Const.compareString(s, Const._ENERGY) == 0){
-			if(i != -1){
-				var aLength = energyMultipliers.length;
-				energyMultipliers[aLength] = f;
-				return aLength;
-			}else{
-				energyMultipliers[i] = f;
-				return i;
-			}
-		}else if(Const.compareString(s, Const._DEFENSE) == 0){
-			if(i != -1){
-				var aLength = defenseMultipliers.length;
-				defenseMultipliers[aLength] = f;
-				return aLength;
-			}else{
-				defenseMultipliers[i] = f;
-				return i;
-			}
-		}else if(Const.compareString(s, Const._EXPERIENCE) == 0){
-			if(i != -1){
-				var aLength = experienceMultipliers.length;
-				experienceMultipliers[aLength] = f;
-				return aLength;
-			}else{
-				experienceMultipliers[i] = f;
-				return i;
-			}
-		}else if(Const.compareString(s, Const._HEALTH) == 0){
-			if(i != -1){
-				var aLength = healthMultipliers.length;
-				healthMultipliers[aLength] = f;
-				return aLength;
-			}else{
-				healthMultipliers[i] = f;
-				return i;
-			}
-		}else{
-			return -2;
 		}
+		return -2;
+	}
+	public function removeMultiplier(s:String, f:Float, ?i:Int = -1){
+		var index = 0;
+		if(getMultiplierArray(s) != null){
+			if(i != -1){
+				for(x in 0 ... getMultiplierArray(s).length){
+					if(getMultiplierArray(s)[x] == f){
+						getMultiplierArray(s)[x] = 0;
+					}
+				}
+			}else{
+				getMultiplierArray(s)[i] = 0;
+			}
+		}
+		return -2;
 	}
 }

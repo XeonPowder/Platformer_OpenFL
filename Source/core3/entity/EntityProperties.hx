@@ -11,6 +11,15 @@ class EntityProperties {
 	public var base_level 				: 		Int;
 	public var base_shootenergy 		: 		Float;
 
+	public var max_hp 					: 		Float;
+	public var max_attackDamage 		: 		Float;
+	public var max_attackSpeed 			: 		Float;
+	public var max_movementspeed 		: 		Float;
+	public var max_energy 				: 		Float;
+	public var max_defense 				:  		Float;
+	public var max_experience 			: 		Float;
+	public var max_level 				: 		Int;
+
 	public var c_hp 					: 		Float;
 	public var c_attackDamage 			: 		Float;
 	public var c_attackSpeed 			: 		Float;
@@ -44,7 +53,7 @@ class EntityProperties {
 	}
 	public function setExperience(_exp:Float, ?factorInMultiplier:Bool = true):Float{
 		if(factorInMultiplier){
-			c_experience = _exp*entity.getMultiplier().getMultiplier(Const._EXPERIENCE);
+			c_experience = _exp*entity.getMultiplier().getTotalMultiplier(Const._EXPERIENCE);
 		}else{
 			c_experience = _exp;
 		}
@@ -52,7 +61,7 @@ class EntityProperties {
 	}
 	public function setHealth(_hp:Float, ?factorInMultiplier:Bool = true):Float{
 		if(factorInMultiplier){
-			c_hp = _hp*entity.getMultiplier().getMultiplier(Const._HEALTH);
+			c_hp = _hp*entity.getMultiplier().getTotalMultiplier(Const._HEALTH);
 		}else{
 			c_hp = _hp;
 		}
@@ -60,7 +69,7 @@ class EntityProperties {
 	}
 	public function setDefense(_defense:Float, ?factorInMultiplier:Bool = true):Float{
 		if(factorInMultiplier){
-			c_defense = _defense*entity.getMultiplier().getMultiplier(Const._DEFENSE);
+			c_defense = _defense*entity.getMultiplier().getTotalMultiplier(Const._DEFENSE);
 		}else{
 			c_defense = _defense;
 		}
@@ -68,7 +77,7 @@ class EntityProperties {
 	}
 	public function setMovementSpeed(_speed:Float, ?factorInMultiplier:Bool = true):Float{
 		if(factorInMultiplier){
-			c_movementspeed = _speed*entity.getMultiplier().getMultiplier(Const._EXPERIENCE);
+			c_movementspeed = _speed*entity.getMultiplier().getTotalMultiplier(Const._EXPERIENCE);
 		}else{
 			c_movementspeed = _speed;
 		}
@@ -76,7 +85,7 @@ class EntityProperties {
 	}
 	public function setAttackDamage(_attackDamage:Float, ?factorInMultiplier:Bool = true):Float{
 		if(factorInMultiplier){
-			c_attackDamage = _attackDamage*entity.getMultiplier().getMultiplier(Const._ATTACKDAMAGE);
+			c_attackDamage = _attackDamage*entity.getMultiplier().getTotalMultiplier(Const._ATTACKDAMAGE);
 		}else{
 			c_attackDamage = _attackDamage;
 		}
@@ -84,7 +93,7 @@ class EntityProperties {
 	}
 	public function setAttackSpeed(_attackSpeed:Float, ?factorInMultiplier:Bool = true):Float{
 		if(factorInMultiplier){
-			c_attackSpeed = _attackSpeed*entity.getMultiplier().getMultiplier(Const._ATTACKSPEED);
+			c_attackSpeed = _attackSpeed*entity.getMultiplier().getTotalMultiplier(Const._ATTACKSPEED);
 		}else{
 			c_attackSpeed = _attackSpeed;
 		}
@@ -93,12 +102,13 @@ class EntityProperties {
 	
 	public function setEnergy(_energy:Float, ?factorInMultiplier:Bool = true):Float{
 		if(factorInMultiplier){
-			c_energy = _energy*entity.getMultiplier().getMultiplier(Const._ENERGY);
+			c_energy = _energy*entity.getMultiplier().getTotalMultiplier(Const._ENERGY);
 		}else{
 			c_energy = _energy;
 		}
 		return c_energy;
 	}
+
 	public function getRequiredEnergy(a:String):Float{
 		if(Const.compareString(a, Const._SHOOTENERGY) == 0){
 			return c_shootenergy;
@@ -108,7 +118,7 @@ class EntityProperties {
 	public function setRequiredEnergy(_e:Float, a:String, ?factorInMultiplier:Bool = true):Float{
 		if(Const.compareString(a, Const._SHOOTENERGY) == 0){
 				if(factorInMultiplier){
-					c_shootenergy = _e*entity.getMultiplier().getMultiplier(Const._SHOOTENERGY);
+					c_shootenergy = _e*entity.getMultiplier().getTotalMultiplier(Const._SHOOTENERGY);
 				}else{
 					c_shootenergy = _e;
 				}
@@ -164,5 +174,22 @@ class EntityProperties {
 	public function setFacingDirection(_i:Int):Int{
 		c_facing = _i;
 		return c_facing;
+	}
+	public function multiplyStat(s:String){
+		if(Const.compareString(s, Const._MOVEMENTSPEED) == 0){
+			setMovementSpeed(base_movementspeed); 
+		}else if(Const.compareString(s, Const._ATTACKDAMAGE) == 0){
+			setAttackDamage(base_attackDamage); 
+		}else if(Const.compareString(s, Const._ATTACKSPEED) == 0){
+			setAttackSpeed(base_attackDamage); 
+		}else if(Const.compareString(s, Const._ENERGY) == 0){
+			setEnergy(base_energy); 
+		}else if(Const.compareString(s, Const._DEFENSE) == 0){
+			setDefense(base_defense); 
+		}else if(Const.compareString(s, Const._EXPERIENCE) == 0){
+			setExperience(base_experience); 
+		}else if(Const.compareString(s, Const._HEALTH) == 0){
+			setHealth(base_hp);
+		}
 	}
 }

@@ -12,6 +12,7 @@ class Main{
 		var arY:Int = 135;
 		var w:Int = 1920;
 		var h:Int = 1080;
+		var debug = true;
 		//print StringSys.print("player name?: ");
 		//read input to StringpName = Sys.stdin().readLine();
 		//output the read input (debug)trace("player name changed!: " + pName);
@@ -52,7 +53,7 @@ class Main{
 		//parse input from string to integer
 		//h = Std.parseInt(hString);
 		//create a new game instance Game = core3.Manager we assigned this import to Game
-		new Game(arX, arY, w, h, pName);
+		new Game(arX, arY, w, h, pName, debug);
 	}
 
 }

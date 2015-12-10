@@ -9,28 +9,34 @@ class Manager {
 	var kcodes:Array<Bool>;
 	var ktime = 0;
 	
-	public var map 						:		Map;
-	public var mapTS 					: 		openfl.display.Tilesheet;
+	private var map 						:		Map;
+	private var hero 					: 		core3.entity.hero.Hero;
+	private var mapTS 					: 		openfl.display.Tilesheet;
 	public var stage 					: 		openfl.display.Stage;
-	public var hero						: 		core3.entity.hero.Hero;
-	public var card 					: 		core3.entity.card.Card;
 
 	public var level					: 		Array<Array<Int>>;
 	public var levelCollision			: 		Array<Array<Bool>>;
-	public var tileIDList 				: 		Array<Int>;
-	public var tilesheetData 			: 		Array<Float>;
-	public var itemDatabase 			: 		Array<core3.Item>;
-
+	private var tileIDList 				: 		Array<Int>;
+	private var tilesheetData 			: 		Array<Float>;
+	private var itemDatabase 			: 		Array<core3.Item>;
+	private var itemsOnFloor 			: 		Array<core3.Item>;
+	private var notificationManager 	: 		core3.notification.NotificationManager;
+	private var debug 					: 		Bool;
+	private var entityList 				: 		Array<core3.entity.Entity>;
 	// new manager instance
 	// arX = tile pixel width
 	// arY = tile pixel heigh
 	// w = requested window width
 	// h = requested window height
 	// pName = player requested name
-	public function new(arX, arY, w, h, pName) {
+	public function new(arX, arY, w, h, pName, _d) {
 		ME = this;
 		kcodes = new Array();
 		itemDatabase = new Array();
+		itemsOnFloor = new Array();
+		debug = _d;
+		notificationManager = new core3.notification.NotificationManager(this);
+		entityList = new Array();
 		stage = openfl.Lib.current.stage;
 		stage.addEventListener(openfl.events.Event.ENTER_FRAME, update);
 		stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN,keyDown);
@@ -49,8 +55,8 @@ class Manager {
 
 		tileIDList = new Array();
 		var z = 0;
-		trace(Std.int(bmd.width/arX));
-		trace(Std.int(bmd.height/arY));
+		//trace(Std.int(bmd.width/arX));
+		//trace(Std.int(bmd.height/arY));
 		for(x in 0 ... Std.int(bmd.width/arX)){
 			for(y in 0 ... Std.int(bmd.height/arY)){
 				tileIDList[z] = mapTS.addTileRect(new openfl.geom.Rectangle(x*arX, y*arY, arX, arY));
@@ -81,14 +87,14 @@ class Manager {
 						//z = Std.parseInt(Sys.stdin().readLine());
 						//Sys.print("entity collision? (y or n): ");
 						//collision = Sys.stdin().readLine();
-						trace(collision);
+						if(_debug())trace(collision);
 						if(Const.compareString(collision, "y") == 0){
 							levelCollision[x][y] = true;
-							trace(levelCollision[x][y]);
 						}else if(Const.compareString(collision, "n") == 0){
 							levelCollision[x][y] = false;
-							trace(levelCollision[x][y]);
+							
 						}
+						if(_debug())trace(levelCollision[x][y]);
 					}
 					level[x][y] = tileIDList[z];
 					z++;
@@ -101,19 +107,22 @@ class Manager {
 				tilesheetData = tilesheetData.concat([arX*row, arY*cell, level[row][cell]]);
 			}
 		}
-		trace(level);
+		//trace(level);
 		
 
-		// Adding the player entity
-		hero = new core3.entity.hero.Hero();
-		card = new core3.entity.card.Card(Const._HEALTH, "Health x10", true, Const._HEALTH, hero.heroProperties.c_hp*.10);
+		// Creating the hero
 		map = new Map(tilesheetData, mapTS, this);
+		hero = new core3.entity.hero.Hero();
+		new core3.entity.card.Card(Const._HEALTH, "Health x10", true, Const._HEALTH, hero.heroProperties.c_hp*.10, new openfl.geom.Point(100, 100));
+		new core3.entity.card.Card(Const._HEALTH, "Health x10", true, Const._HEALTH, hero.heroProperties.c_hp*.10, new openfl.geom.Point(300, 300));
+
+		
 
 		// Text Field
 		var tf = new openfl.text.TextField();
 		stage.addChild(tf);
 		tf.text = "Buffy "+Const.VERSION;
-		tf.width = openfl.Lib.current.stage.stageWidth;
+		tf.width = stage.stageWidth;
 		tf.textColor = 0xFFFFFF;
 		tf.mouseEnabled = tf.selectable = false;
 	}
@@ -122,9 +131,11 @@ class Manager {
 	// Main loop (called onEnterFrame)
 	public function update(e:openfl.events.Event):Void {
 		onEnterFrame();
-		if(map.update() == false){
-			hero.update();
-			card.update();
+		if(updateMap() == false){
+			updateEntities();
+			//hero.update();
+			//card.update();
+			updateNotifications();
 		}
 		
 	}
@@ -172,7 +183,7 @@ class Manager {
 		while(x < getItemDB().length){
 			if(alreadyInDB){
 				if(getItemDB()[x] == item){
-					trace("item already in DB: "+item.getItemName());
+					if(_debug())trace("item already in DB: "+item.getItemName());
 					index = x;
 				}
 				if(x == getItemDB().length-1){
@@ -187,5 +198,34 @@ class Manager {
 			x++;
 		}
 		return index;
+	}
+	public function getItemsOnFloor():Array<core3.Item>{
+		return itemsOnFloor;
+	}
+	public function removeItemFromFloor(item:core3.Item){
+		itemsOnFloor.remove(item);
+	}
+	public function addItemToFloor(item:core3.Item){
+		itemsOnFloor.push(item);
+	}
+	public function getNotificationManager():core3.notification.NotificationManager{
+		return notificationManager;
+	}
+	public function _debug():Bool{
+		return debug;
+	}
+	public function updateMap():Bool{
+		return map.update();
+	}
+	public function updateNotifications(){
+		notificationManager.update();
+	}
+	public function updateEntities(){
+		for(x in 0 ... entityList.length){
+			entityList[x].update();
+		}
+	}
+	public function getEntityList():Array<core3.entity.Entity>{
+		return entityList;
 	}
 }
