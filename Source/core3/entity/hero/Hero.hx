@@ -2,21 +2,21 @@ package core3.entity.hero;
 
 class Hero extends Entity{
 
-	public var hero 							:				openfl.display.Sprite;
+	private var hero 							:				openfl.display.Sprite;
 	private var heroBMD 						: 				openfl.display.Bitmap;
 	private var heroBMDright 					: 				openfl.display.Bitmap;
 	private var heroBMDleft 					: 				openfl.display.Bitmap;
 	private var heroBMDup 						: 				openfl.display.Bitmap;
 	private var heroBMDdown 					: 				openfl.display.Bitmap;
 	private var currentHeroBMD 					: 				openfl.display.Bitmap;
-	public var heroProperties 					: 				core3.entity.EntityProperties;
-	public var herohealthbar 					:				openfl.display.Sprite;
-	public var heroInventory 					: 				core3.entity.Inventory;
+	private var heroProperties 					: 				core3.entity.EntityProperties;
+	private var herohealthbar 					:				openfl.display.Sprite;
+	private var heroInventory 					: 				core3.entity.Inventory;
 	private var cachedInventory 				: 				Array<Int>;
 	private var init 							: 				Bool;
-	public var heroMultiplier 					:		 		core3.entity.hero.HeroMultiplier;
-	public var heroOverlay 						: 				openfl.display.Sprite;
-	public var heroenergybar 					: 				openfl.display.Sprite;
+	private var heroMultiplier 					:		 		core3.entity.hero.HeroMultiplier;
+	private var heroOverlay 					: 				openfl.display.Sprite;
+	private var heroenergybar 					: 				openfl.display.Sprite;
 	private var cachedEnergy 					:				Float;
 	private var cachedHealth 					: 				Float;
 	
@@ -24,43 +24,50 @@ class Hero extends Entity{
 		init = true;
 		type = "player";
 		hero = new openfl.display.Sprite();
-		super(hero);
+		heroBMDright = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/hero/movement/right/right.png"));
+		heroBMDleft = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/hero/movement/left/left.png"));
+		heroBMDup = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/hero/movement/up/up.png"));
+		heroBMDdown = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/hero/movement/down/down.png"));
+		currentHeroBMD = heroBMDright;
+		hero.addChild(currentHeroBMD);
+		hero.x = Std.int(man.stage.stageWidth/2);
+		hero.y = Std.int(man.stage.stageHeight/2);
+		super(hero, currentHeroBMD.width, currentHeroBMD.height);
+
 		heroInventory = new core3.entity.Inventory(man);
 		cachedInventory = heroInventory.getInventory();
-		heroMultiplier = new HeroMultiplier(this, hero);
+		heroMultiplier = new HeroMultiplier(this);
 		heroProperties = new HeroProperties(this);
 
 		cachedEnergy = heroProperties.getEnergy();
 		cachedHealth = heroProperties.getHealth();
-		heroBMDright = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/player/movement/right/right.png"));
-		heroBMDleft = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/player/movement/left/left.png"));
-		heroBMDup = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/player/movement/left/left_jump.png"));
-		heroBMDdown = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/player/movement/right/right_jump.png"));
-		currentHeroBMD = heroBMDright;
-		hero.addChild(currentHeroBMD);
+		
 
 		heroOverlay = new openfl.display.Sprite();
 		var heroOverlayBMD:openfl.display.Bitmap = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/overlay/game/gameoverlay.png"));
 		heroOverlay.addChild(heroOverlayBMD);
 
-		hero.x = Std.int(man.stage.stageWidth/2);
-		hero.y = Std.int(man.stage.stageHeight/2);
-
-		herohealthbar = new openfl.display.Sprite();
-		herohealthbar.graphics.beginFill(0x00FF00,1);
-		herohealthbar.graphics.drawRect(5, 30, cachedHealth, 15);
-		herohealthbar.graphics.endFill();
-		heroenergybar = new openfl.display.Sprite();
-		heroenergybar.graphics.beginFill(0x00FFFF,1);
-		heroenergybar.graphics.drawRect(5, 50, cachedEnergy, 15);
-		heroenergybar.graphics.endFill();
+		
+		if(!man.hardcore()){
+			herohealthbar = new openfl.display.Sprite();
+			herohealthbar.graphics.beginFill(0x00FF00,1);
+			herohealthbar.graphics.drawRect(5, 30, cachedHealth, 15);
+			herohealthbar.graphics.endFill();
+			heroenergybar = new openfl.display.Sprite();
+			heroenergybar.graphics.beginFill(0x00FFFF,1);
+			heroenergybar.graphics.drawRect(5, 50, cachedEnergy, 15);
+			heroenergybar.graphics.endFill();
+		}
 
 	}
 	public override function update(){
 		if(init){
+
 			man.stage.addChild(heroOverlay);
-			man.stage.addChild(herohealthbar);
-			man.stage.addChild(heroenergybar);
+			if(!man.hardcore()){
+				man.stage.addChild(herohealthbar);
+				man.stage.addChild(heroenergybar);
+			}
 			man.stage.addChild(hero);
 			init = false;
 		}
@@ -231,7 +238,7 @@ class Hero extends Entity{
 		var a:Array<Item> = new Array();
 		for(x in 0 ... man.getItemsOnFloor().length){
 			var itemOnFloor:core3.Item = man.getItemsOnFloor()[x];
-			if(core3.Const.distanceBetween(new openfl.geom.Point(itemOnFloor.getLinkedEntity().getSpriteX(), itemOnFloor.getLinkedEntity().getSpriteY()), new openfl.geom.Point(hero.x, hero.y)) < core3.Const._PICKUPDISTANCE){
+			if(core3.Const.distanceBetween(new openfl.geom.Point(itemOnFloor.getLinkedEntity().getSpriteOrigin()), new openfl.geom.Point(hero.getSpriteOrigin())) < core3.Const._PICKUPDISTANCE){
 				a.push(itemOnFloor);
 			}
 		}

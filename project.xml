@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	
-	<meta title="PlatformerOpenFL" package="com.sample.platformeropenfl" version="1.0.0" company="Company Name" />
-	<app main="Main" path="Export" file="PlatformerOpenFL" />
+	<meta title="PlatformerOpenFL" package="fiveamigos.platformer" version="1.0.0" company="FiveAmigos" />
+	<app main="Main" path="Game" file="Buffy" />
 	
 	<source path="Source" />
-	
 	<haxelib name="openfl" />
-	<haxelib name="dconsole" />
-	<haxelib name="haxeui" />
 	<assets path="Assets" rename="assets" />
 	<window width="1920" height="1080" resizable="true"/>
 	

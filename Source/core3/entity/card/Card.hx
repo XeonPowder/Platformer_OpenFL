@@ -23,17 +23,17 @@ class Card extends Entity{
 		man.addItemToFloor(item);
 		trace(""+item.getItemID());
 		if(Const.compareString(_type, Const._HEALTH) == 0){
-			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/card/healthboostcard.png"));
+			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/card/healthboostcard.png"));
 		}else if(Const.compareString(_type, Const._ATTACKDAMAGE) == 0){
-			currentCardBMD =  cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/card/attackdamageboostcard.png"));
+			currentCardBMD =  cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/card/attackdamageboostcard.png"));
 		}else if(Const.compareString(_type, Const._ATTACKSPEED) == 0){
-			currentCardBMD =  cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/card/attackspeedboostcard.png"));
+			currentCardBMD =  cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/card/attackspeedboostcard.png"));
 		}else if(Const.compareString(_type, Const._ENERGY) == 0){
-			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/card/energyboostcard.png"));
+			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/card/energyboostcard.png"));
 		}else if(Const.compareString(_type, Const._EXPERIENCE) == 0){
-			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/card/experienceboostcard.png"));
+			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/card/experienceboostcard.png"));
 		}else if(Const.compareString(_type, Const._MOVEMENTSPEED) == 0){
-			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/card/movementboostcard.png"));
+			currentCardBMD = cardBMD1 = cardBMD2 = cardBMD3 = cardBMD4 = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/sprites/entity/card/movementboostcard.png"));
 		}
 		card.addChild(currentCardBMD);
 		maxbob = 20;

@@ -1,12 +1,11 @@
 package core3.entity.hero;
 
-class HeroMultiplier extends EntityMultiplier{
-	
+class HeroProperties extends EntityProperties{
+
 	public var hero:core3.entity.hero.Hero;
 	
 	public function new(h:core3.entity.hero.Hero){
 		hero = h;
-		entity = cast(h, core3.entity.Entity);
-		super(entity);
+		super(cast(h, core3.entity.Entity));
 	}
 }
