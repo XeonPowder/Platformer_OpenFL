@@ -95,8 +95,8 @@ class Constants {
 	public static var _I_PROJECTILE_BULLET:Int = _L_ITEM.push(new core4.Item("Bullet", true, "AMMO", "ATTACKDAMAGE", 2));
 
 	public static var _INVENTORY_HERO = new core4.Inventory(_L_ITEM[0], 1, _L_ITEM[1], 1,_L_ITEM[2], 1,_L_ITEM[3], 1,_L_ITEM[4], 1,_L_ITEM[5], 1,_L_ITEM[7], 50);
-	public static var _INVENTORY_WITCH = new core4.Inventory();
-	public static var _INVENTORY_QUEEN = new core4.Inventory();
+	public static var _INVENTORY_WITCH = new core4.Inventory(_L_ITEM[0], 1, _L_ITEM[1], 1,_L_ITEM[2], 1,_L_ITEM[3], 1,_L_ITEM[4], 1,_L_ITEM[5], 1,_L_ITEM[7], 50);
+	public static var _INVENTORY_QUEEN = new core4.Inventory(_L_ITEM[0], 1, _L_ITEM[1], 1,_L_ITEM[2], 1,_L_ITEM[3], 1,_L_ITEM[4], 1,_L_ITEM[5], 1,_L_ITEM[7], 50);
 
 	public static var _WEAPONSLOT = 0;
 	public static var _AMMOSLOT = 1;
