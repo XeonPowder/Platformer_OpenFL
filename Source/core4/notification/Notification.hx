@@ -14,22 +14,22 @@ class Notification{
         counter = 0;
         endNotification = false;
     }
-    private function createNotification(fontsize:Int, nTitle:String,){
-        nContainer = new openfl.text.Sprite();
-        nContainer.x = _main()._engine()._stage().stageWidth/2;
-        nContainer.y = _main()._engine()._stage().stageHeight/6;
+    private function createNotification(fontsize:Int, nTitle:String){
+        nContainer = new openfl.display.Sprite();
+        nContainer.x = Main._main()._engine()._engine()._stage().stageWidth/2;
+        nContainer.y = Main._main()._engine()._engine()._stage().stageHeight/6;
         nContainer.addChild(core4.Constants.getNotificationBitmap(nTitle));
-        _main()._engine()._stage().addChild(nContainer);
+        Main._main()._engine()._stage().addChild(nContainer);
     }
     public function update(){
         if(endNotification){
-            _main()._engine().getNotificationManager()._remove(this);
-            _main()._engine()._stage().removeChild(nContainer);
+            Main._main()._engine().getNotificationManager()._remove(this);
+            Main._main()._engine()._stage().removeChild(nContainer);
         }
         if(counter < _NOTIFICATION_TIME){
-            nContainer.x = _main()._engine()._stage().stageWidth/2 - nTContainer.text.length;
-            nContainer.y = _main()._engine()._stage().stageHeight/6;
-            if(manager.getKTime() % 10 == 0){
+            nContainer.x =  Main._main()._engine()._stage().stageWidth/2 - Std.int(nContainer.bitmapData.width/2);
+            nContainer.y =  Main._main()._engine()._stage().stageHeight/6;
+            if(core4.Constants.getKTime() % 10 == 0){
                 counter++;
             }
         }else{
