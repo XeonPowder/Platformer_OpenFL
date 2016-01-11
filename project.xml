@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-
+	
 	<meta title="PlatformerOpenFL" package="fiveamigos.platformer" version="1.0.0" company="FiveAmigos" />
-	<app main="Main" path="FinalGame" file="Buffy" />
-
+	<app main="Main" path="Game" file="Buffy" />
+	
 	<source path="Source" />
 	<haxelib name="openfl" />
 	<assets path="Assets" rename="assets" />
-	<window width="640" height="640" resizable="true"/>
-
+	<window width="1920" height="1080" resizable="true"/>
+	
 </project>

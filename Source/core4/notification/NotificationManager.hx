@@ -1,7 +1,7 @@
-package core4.notification;
+package core3.notification;
 
 class NotificationManager{
-        private var notificationList:Array<core4.notification.Notification>;
+        private var notificationList:Array<core3.notification.Notification>;
         private var notificationListNames:Array<String>;
 
         public function new(){
@@ -15,14 +15,14 @@ class NotificationManager{
                     }
                 }
         }
-        public function getNotificationList():Array<core4.notification.Notification>{
+        public function getNotificationList():Array<core3.notification.Notification>{
             return notificationList;
         }
-        public function _new(n:core4.notification.Notification):Int{
+        public function _new(n:core3.notification.Notification):Int{
             notificationListNames.push(n.getIdentifier());
             return notificationList.push(n);
         }
-        public function _remove(n:core4.notification.Notification){
+        public function _remove(n:core3.notification.Notification){
             notificationListNames.remove(n.getIdentifier());
             notificationList.remove(n);
         }
