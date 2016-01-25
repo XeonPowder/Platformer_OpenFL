@@ -14,6 +14,7 @@ class Engine{
 		loadAssets();
 		if(Main._main()._debug()){
 			core4.Constants.checkPreloadedInventories();
+			trace("\n");
 		}
 		stage.addEventListener(openfl.events.Event.ENTER_FRAME, update);
 		stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN,core4.Constants.keyDown);
@@ -28,14 +29,26 @@ class Engine{
 	public function update(e:openfl.events.Event){
 		core4.Constants.onEnterFrame();
 		if(!init){
+			if(core4.Constants._E_NPC_BOSS_BEAR == null && core4.Constants._E_NPC_NORMAL_WITCH1.getHealth() <= 0 && core4.Constants._E_NPC_NORMAL_WITCH2.getHealth() <= 0 && core4.Constants._E_NPC_NORMAL_WITCH3.getHealth() <= 0){
+				core4.Constants._E_NPC_BOSS_BEAR = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, false, true, false, true, 200, 1, new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/up.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/down.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/left.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/right.png")));
+				core4.Constants._E_NPC_BOSS_BEAR.setHealth(1000);
+				core4.Constants._E_NPC_BOSS_BEAR._moveTo(300, 300);
+			}
 			core4.Constants.updateAll();
+			//if(core4.Constants._E_NPC_BOSS_BEAR != null && core4.Constants._E_NPC_BOSS_BEAR.getHealth() > 0)trace("Boss Health: " + core4.Constants._E_NPC_BOSS_BEAR.getHealth());
 		}else{
-			trace("begin init");
 			core4.Constants._D_MAP = new core4.map.Map(core4.Constants._A_M1);
-			trace("map added");
 			core4.Constants._E_HERO = new core4.entity.hero.Hero();
-			trace("hero added");
-			//core4.Constants._E_NPC_BOSS_BEAR = new core4.entity.npc.NPC("Bear", "boss", true, true, true, true, true, true, 200, core4.Constants._A_NPC_BOSS_BEAR_UP, core4.Constants._A_NPC_BOSS_BEAR_DOWN, core4.Constants._A_NPC_BOSS_BEAR_LEFT, core4.Constants._A_NPC_BOSS_BEAR_RIGHT);
+			core4.Constants._E_NPC_NORMAL_WITCH1 = new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1, new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")));
+			core4.Constants._E_NPC_NORMAL_WITCH1._moveTo(500, 100);
+
+			core4.Constants._E_NPC_NORMAL_WITCH2 = new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1, new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")));
+			core4.Constants._E_NPC_NORMAL_WITCH2._moveTo(500, 250);
+
+			core4.Constants._E_NPC_NORMAL_WITCH3 = new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1, new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")));
+			core4.Constants._E_NPC_NORMAL_WITCH3._moveTo(500, 400);
+
+			core4.Constants._E_HERO._moveTo(50, 320);
 			//fillMapWithItems();
 			init = false;
 		}
@@ -54,7 +67,6 @@ class Engine{
 		//
 	}
 	public function loadAssets():Void{
-			trace("yes");
 			core4.Constants._A_C_BACK = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/card/back.png"));
 				//Map
 			core4.Constants._A_M1 = openfl.Assets.getBitmapData("assets/map/map1.png");
@@ -77,10 +89,10 @@ class Engine{
 			core4.Constants._A_NPC_BOSS_BEAR_RIGHT = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/right.png"));
 						//Normal
 							//Witch
-							/*
-
-
-							*/
+			core4.Constants._A_NPC_NORMAL_WITCH_DOWN = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png"));
+			core4.Constants._A_NPC_NORMAL_WITCH_UP = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png"));
+			core4.Constants._A_NPC_NORMAL_WITCH_LEFT = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png"));
+			core4.Constants._A_NPC_NORMAL_WITCH_RIGHT = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png"));
 						//Elite
 							//Witch
 							/*

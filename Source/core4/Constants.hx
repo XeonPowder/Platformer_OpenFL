@@ -8,12 +8,13 @@ class Constants {
 		//Lists
 	public static var _L_ENTITY:Array<core4.entity.Entity> = new Array();
 	public static var _L_ITEM:Array<core4.item.Item>  = new Array();
-
 	public static var _L_WORLD_ITEMS_ON_STAGE:Array<core4.item.Item> = new Array();
-	public static var _L_WORLD_NPC:Array<core4.entity.npc.NPC> = new Array();
 		//Entity
 			//NPC
 	public static var _E_NPC_BOSS_BEAR:core4.entity.npc.NPC = null;
+	public static var _E_NPC_NORMAL_WITCH1:core4.entity.npc.NPC = null;
+	public static var _E_NPC_NORMAL_WITCH2:core4.entity.npc.NPC = null;
+	public static var _E_NPC_NORMAL_WITCH3:core4.entity.npc.NPC = null;
 			//Hero
 	public static var _E_HERO:core4.entity.hero.Hero = null;
 			//Hero Properties
@@ -72,10 +73,10 @@ class Constants {
 	public static var _A_NPC_BOSS_BEAR_RIGHT:openfl.display.Bitmap;
 				//Normal
 					//Witch
-					/*
-
-
-					*/
+	public static var _A_NPC_NORMAL_WITCH_DOWN:openfl.display.Bitmap;
+	public static var _A_NPC_NORMAL_WITCH_UP:openfl.display.Bitmap;
+	public static var _A_NPC_NORMAL_WITCH_LEFT:openfl.display.Bitmap;
+	public static var _A_NPC_NORMAL_WITCH_RIGHT:openfl.display.Bitmap;
 				//Elite
 					//Witch
 					/*
@@ -254,12 +255,21 @@ class Constants {
 	public static function updateAll(){
 		if(!Main._main()._engine()._readyToUpdate()){
 			core4.Constants._D_MAP.update();
-			core4.Constants._E_HERO.update();
-			for(x in 0 ... _L_WORLD_ITEMS_ON_STAGE.length){
-				_L_WORLD_ITEMS_ON_STAGE[x].update();
+			if(_L_WORLD_ITEMS_ON_STAGE.length > 0){
+				for(x in 0 ... _L_WORLD_ITEMS_ON_STAGE.length){
+					if(_L_WORLD_ITEMS_ON_STAGE[x] != null){
+						_L_WORLD_ITEMS_ON_STAGE[x].update();
+					}
+					
+				}
 			}
-			for(x in 0 ... _L_WORLD_NPC.length){
-				_L_WORLD_NPC[x].update();
+			if(_L_ENTITY.length > 0){
+				for(x in 0 ... _L_ENTITY.length){
+					if(_L_ENTITY[x] != null){
+						_L_ENTITY[x].update();
+					}
+					
+				}
 			}
 		}
 	}

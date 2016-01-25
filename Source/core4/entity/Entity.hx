@@ -5,12 +5,14 @@ class Entity {
 	private var entityName 						: 				String = "";
 	private var entityInventory 				: 				core4.inventory.Inventory = null;
 	private var cachedInventory 				: 				Array<core4.item.Item> = null;
-	private var sprite 							: 				openfl.display.Sprite  = null;
-	private var spriteOrigin 					: 				openfl.geom.Point  = null;
+	private var sprite 							: 				openfl.display.Sprite = null;
+	private var spriteOrigin 					: 				openfl.geom.Point = null;
 	private var keyEventList 					: 				Array<core4.entity.EntityEvent> = null;
 	private var projectileList 					: 				Array<core4.entity.projectile.Projectile> = null;
-
-
+	private var hitboxTL 						: 				openfl.geom.Point = null;
+	private var hitboxTR 						: 				openfl.geom.Point = null;
+	private var hitboxBL 						: 				openfl.geom.Point = null;
+	private var hitboxBR 						: 				openfl.geom.Point = null;
 
 	private var canLoot 						: 				Bool;
 	private var canShoot						: 				Bool;
@@ -21,17 +23,18 @@ class Entity {
 	private var init 							: 				Bool;
 	private var inventoryState 					: 				Bool;
 
-	private var health 							: 				Float = 0;
-	private var energy 							: 				Float = 0;
+	private var health 							: 				Float = 100;
+	private var energy 							: 				Float = 100;
 	private var tsls 							: 				Float = 0;
 	private var experience 						: 				Float = 0;
 	private var armor 					 		: 				Float = 0;
-	private var movementSpeed 					: 				Float = 0;
-	private var attackDamage 					: 				Float = 0;
-	private var attackSpeed 					: 				Float = 0;
-	private var level 							: 				Int = 0;
+	private var movementSpeed 					: 				Float = 3;
+	private var attackDamage 					: 				Float = 25;
+	private var attackSpeed 					: 				Float = .50;
+	private var level 							: 				Int = 30;
 	private var experienceGained 				: 				Float = 0;
 	private var damageTaken 					: 				Float = 0;
+	private var hostility 						: 				Float = 0;
 
 	private var facing 							: 				Int = 0;
 	private var cachedFacing 					: 				Int = 0;
@@ -42,14 +45,17 @@ class Entity {
 	private var up 								: 				openfl.display.Bitmap = null;
 	private var down 							: 				openfl.display.Bitmap = null;
 
-	public function new(?bitmap:openfl.display.Bitmap = null, ?name:String = "<Unknown>", ?type:String = "<Unknown>", ?inventory:Bool = true, ?loot:Bool = true, ?shoot:Bool = true, ?move:Bool = true, ?god:Bool = true, ?use:Bool = true, ?bUP:openfl.display.Bitmap = null, ?bDOWN:openfl.display.Bitmap = null, ?bLEFT:openfl.display.Bitmap = null, ?bRIGHT:openfl.display.Bitmap = null){
+	public function new(?bitmap:openfl.display.Bitmap = null, ?name:String = "<Unknown>", ?type:String = "<Unknown>", ?inventory:Bool = true, ?loot:Bool = true, ?shoot:Bool = true, ?move:Bool = true, ?god:Bool = true, ?use:Bool = true, ?_hostility:Float = 0, ?bUP:openfl.display.Bitmap = null, ?bDOWN:openfl.display.Bitmap = null, ?bLEFT:openfl.display.Bitmap = null, ?bRIGHT:openfl.display.Bitmap = null){
 		init = true;
+		trace("new entity "+name+", in creation");
 		sprite = new openfl.display.Sprite();
 		bitMap = bitmap;
 		if(bitMap != null){
+			trace("bitmap for "+name+ ", is okay!");
 			sprite.addChild(bitMap);
 			spriteOrigin = getSpriteOrigin();
 		}else{
+			trace("bitmap for "+name+", is null!");
 			spriteOrigin = getSpriteOrigin(false);
 		}
 
@@ -66,20 +72,27 @@ class Entity {
 		right = bRIGHT;
 		up = bUP;
 		down = bDOWN;
+
+		hostility = _hostility;
+
+		core4.Constants._L_ENTITY.push(this);
 	}
 	public function update(){
 		if(!init){
 			//trace(keyEventList.length);
-			if(keyEventList.length > 0){
+			if(keyEventList != null && keyEventList.length > 0){
 				for(x in 0 ... keyEventList.length){
 					//keyEventList[x].readArgs();
 					keyEventList[x].update();
 				}
 			}
+			_updateHitbox();
 			//trace("updating stats");
 			_updateStats();
 			//trace("updating projectiles");
-			_updateProjectiles();
+			if(_shootEnabled()){
+				_updateProjectiles();
+			}
 		}else{
 			_add();
 			if(_lootEnabled() || _hasInventory()){
@@ -95,22 +108,28 @@ class Entity {
 			if(_godmodeEnabled()){
 				health = 99999;
 				energy = 99999;
-			}else{
-				health = 10;
-				energy = 100;
 			}
-			experience = 0;
-			armor = 0;
-			movementSpeed = 10;
-			attackDamage = 0;
-			attackSpeed = 1;
 			level = 1;
-			experienceGained = 0;
-			damageTaken = 0;
-			facing = 0;
-			tsls = 0;
 			init = false;
 		}
+	}
+	public function getHitboxTR():openfl.geom.Point{
+		return hitboxTR;
+	}
+	public function getHitboxBL():openfl.geom.Point{
+		return hitboxBL;	
+	}
+	public function getHitboxTL():openfl.geom.Point{
+		return hitboxTL;
+	}
+	public function getHitboxBR():openfl.geom.Point{
+		return hitboxBR;
+	}
+	public function _updateHitbox(){
+		hitboxTL = new openfl.geom.Point(getSpriteOrigin().x - (bitMap.width/2), getSpriteOrigin().y - (bitMap.height/2));
+		hitboxTR = new openfl.geom.Point(getSpriteOrigin().x + (bitMap.width/2), getSpriteOrigin().y - (bitMap.height/2));
+		hitboxBL = new openfl.geom.Point(getSpriteOrigin().x - (bitMap.width/2), getSpriteOrigin().y + (bitMap.height/2));
+		hitboxBR = new openfl.geom.Point(getSpriteOrigin().x + (bitMap.width/2), getSpriteOrigin().y + (bitMap.height/2));
 	}
 	public function _updateStats(){
 		if(damageTaken != 0){
@@ -124,6 +143,9 @@ class Entity {
 		if(experience >= 100 * level){
 			level += 1;
 			experience = 0;
+		}
+		if(health <= 0){
+			_delete();
 		}
 	}
 	public function _moveBy(_x:Int, _y:Int){
@@ -252,12 +274,13 @@ class Entity {
 		}
 	}
 	public function _delete(){
+		trace("removing "+ entityName + " from the stage");
 		Main._main()._engine()._stage().removeChild(sprite);
 		core4.Constants._L_ENTITY.remove(this);
 	}
 	public function _add(){
+		trace("adding "+ entityName + " to the stage");
 		Main._main()._engine()._stage().addChild(sprite);
-		core4.Constants._L_ENTITY.push(this);
 	}
 	public function getSpriteX():Float{
 		return sprite.x;
@@ -351,7 +374,7 @@ class Entity {
 		return experienceGained;
 	}
 
-	public function setDamageRecieved(_dRecieved:Float):Float{
+	public function setDamageRecieved(_dRecieved:Float, ?attachedEntity:core4.entity.Entity):Float{
 		damageTaken = _dRecieved;
 		return damageTaken;
 	}
@@ -441,5 +464,28 @@ class Entity {
 	}
 	public function _hasInventory():Bool{
 		return hasInventory;
+	}
+	public function getClosestEntity():core4.entity.Entity{
+		var entity:core4.entity.Entity = null;
+		var distance:Float = Math.POSITIVE_INFINITY;
+		for(x in 0 ... core4.Constants._L_ENTITY.length){
+			if(core4.Constants._L_ENTITY[x] != this && distance > getDistanceBetween2Entities(this, core4.Constants._L_ENTITY[x])){
+				entity = core4.Constants._L_ENTITY[x];
+				distance = getDistanceBetween2Entities(this, core4.Constants._L_ENTITY[x]);
+			}
+		}
+		return entity;
+	}
+	public function getDistanceBetween2Entities(a:core4.entity.Entity, b:core4.entity.Entity):Float{
+		return core4.Constants.d2p(a.getSpriteOrigin(), b.getSpriteOrigin());
+	}
+	public function checkHostility(e:core4.entity.Entity):Bool{
+		if(e.getHostility() != getHostility()){
+			return true;
+		}
+		return false;
+	}
+	public function getHostility():Float{
+		return hostility;
 	}
 }

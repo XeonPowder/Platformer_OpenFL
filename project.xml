@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 
-	<meta title="PlatformerOpenFL" package="fiveamigos.platformer" version="1.0.0" company="FiveAmigos" />
-	<app main="Main" path="FinalGame" file="Buffy" />
+	<meta title="Cheeky" package="hardcoders.platformer" version="1.0.0" company="Hardcoders" />
+	<app main="Main" path="Harccoders/game" file="Cheeky" />
 
 	<source path="Source" />
 	<haxelib name="openfl" />
