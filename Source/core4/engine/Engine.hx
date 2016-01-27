@@ -6,19 +6,42 @@ class Engine{
 	private var root : openfl.display.MovieClip;
 	private var notificationManager : core4.notification.NotificationManager;
 	private var init : Bool = true;
+	private var currentState : core4.state.State;
+	private var roomUnlocked : Bool;
+
+	//Johan did this
+	private var backgroundMusic:openfl.media.Sound;
+	private var backgroundMusicTransformer:openfl.media.SoundTransform;
+	//Anthony did this
+	private var title:openfl.display.Sprite;
+	private var	start:openfl.display.Sprite;
+	private var	exit:openfl.display.Sprite;
+
 	public function new(_root:openfl.display.MovieClip){
+		//Johan did this
+		backgroundMusic = openfl.Assets.getMusic("assets/sound/bensound-actionable.ogg");
+		backgroundMusicTransformer = new openfl.media.SoundTransform(1, 0);
+
 		engine = this;
 		root = _root;
 		stage = root.stage;
 		notificationManager = new core4.notification.NotificationManager();
 		loadAssets();
+		//Anthony did this
+		title = new openfl.display.Sprite();
+		start = new openfl.display.Sprite();
+		exit = new openfl.display.Sprite();
+		//debug check if the preloaded inventories correctly loaded
 		if(Main._main()._debug()){
 			core4.Constants.checkPreloadedInventories();
 			trace("\n");
 		}
+		//add event listeners for updating the game, key down, key up, mouse down, and mouse up
 		stage.addEventListener(openfl.events.Event.ENTER_FRAME, update);
 		stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN,core4.Constants.keyDown);
 		stage.addEventListener(openfl.events.KeyboardEvent.KEY_UP,core4.Constants.keyUp);
+		stage.addEventListener(openfl.events.MouseEvent.MOUSE_DOWN, core4.Constants.mouseDown);
+		stage.addEventListener(openfl.events.MouseEvent.MOUSE_UP, core4.Constants.mouseUp);
 	}
 	public function _engine():Engine{
 		return engine;
@@ -29,31 +52,74 @@ class Engine{
 	public function update(e:openfl.events.Event){
 		core4.Constants.onEnterFrame();
 		if(!init){
+			if(currentState != core4.Constants._STATE_0){
+				if(currentState.getPreviousState() == core4.Constants._STATE_0){
+					//Anthony did this
+					stage.removeChild(title);
+					stage.removeChild(start);
+					stage.removeChild(exit);
+				}
+				if(core4.Constants._E_HERO == null){
+					core4.Constants._E_HERO = new core4.entity.hero.Hero();
+					core4.Constants._E_HERO._moveTo(5, 160);
+				}else if(core4.Constants._E_HERO.getHealth() <= 0){
+					core4.Constants._STATE_GAMEOVER.load();
+					currentState = core4.Constants._STATE_GAMEOVER;
+				}
+				if(currentState.enemiesAlive() == 0 && !roomUnlocked){
+					unlockRoom();
+				}
+				if(roomUnlocked){
+					var state = getNextLevel();
+					if(state != null){
+						state.load();
+						currentState = state;
+					}
+					core4.Constants._E_HERO._moveTo(10, Std.int(core4.Constants._E_HERO.getSpriteY()));
+					roomUnlocked = !roomUnlocked;
+				}
+			}else{
+				//Anthony did this
+				title.addChild(core4.Constants._A_MAINMENU_TITLE);
+				start.addChild(core4.Constants._A_MAINMENU_STARTBUTTON);
+				exit.addChild(core4.Constants._A_MAINMENU_EXITBUTTON);
+
+				title.x = 20;
+				title.y = 20;
+
+				start.x = 110;
+				start.y = 160;
+
+				exit.x = 110;
+				exit.y = 210;
+
+				stage.addChild(title);
+				stage.addChild(start);
+				stage.addChild(exit);
+			}/*
 			if(core4.Constants._E_NPC_BOSS_BEAR == null && core4.Constants._E_NPC_NORMAL_WITCH1.getHealth() <= 0 && core4.Constants._E_NPC_NORMAL_WITCH2.getHealth() <= 0 && core4.Constants._E_NPC_NORMAL_WITCH3.getHealth() <= 0){
 				core4.Constants._E_NPC_BOSS_BEAR = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, false, true, false, true, 200, 1, new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/up.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/down.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/left.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/right.png")));
 				core4.Constants._E_NPC_BOSS_BEAR.setHealth(1000);
 				core4.Constants._E_NPC_BOSS_BEAR._moveTo(300, 300);
-			}
+			}*/
 			core4.Constants.updateAll();
 			//if(core4.Constants._E_NPC_BOSS_BEAR != null && core4.Constants._E_NPC_BOSS_BEAR.getHealth() > 0)trace("Boss Health: " + core4.Constants._E_NPC_BOSS_BEAR.getHealth());
 		}else{
+			if(currentState == null){
+				core4.Constants._STATE_0.load();
+				currentState = core4.Constants._STATE_0;
+			}
+			//Johan did this
+			backgroundMusic.play(0, 10000, backgroundMusicTransformer);
+
+
 			core4.Constants._D_MAP = new core4.map.Map(core4.Constants._A_M1);
-			core4.Constants._E_HERO = new core4.entity.hero.Hero();
-			core4.Constants._E_NPC_NORMAL_WITCH1 = new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1, new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")));
-			core4.Constants._E_NPC_NORMAL_WITCH1._moveTo(500, 100);
-
-			core4.Constants._E_NPC_NORMAL_WITCH2 = new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1, new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")));
-			core4.Constants._E_NPC_NORMAL_WITCH2._moveTo(500, 250);
-
-			core4.Constants._E_NPC_NORMAL_WITCH3 = new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1, new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")), new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")));
-			core4.Constants._E_NPC_NORMAL_WITCH3._moveTo(500, 400);
-
-			core4.Constants._E_HERO._moveTo(50, 320);
+			//
+			//
 			//fillMapWithItems();
 			init = false;
 		}
 	}
-
 	public function getNotificationManager():core4.notification.NotificationManager{
 		return notificationManager;
 	}
@@ -65,6 +131,23 @@ class Engine{
 	}
 	public function fillMapWithItem():Void{
 		//
+	}
+	public function getNextLevel():core4.state.State{
+		if(core4.Constants._E_HERO != null){
+			var levelStateID = 0;
+			if(core4.Constants.entityIsTouchingEdge("RIGHT", core4.Constants._E_HERO)){
+				levelStateID = currentState.getIdentificationNumber() + 1;
+				if(core4.Constants._L_STATES[levelStateID] != null){
+					return core4.Constants._L_STATES[levelStateID];
+				}
+			}else if(core4.Constants.entityIsTouchingEdge("LEFT", core4.Constants._E_HERO)){
+				levelStateID = currentState.getIdentificationNumber() - 1;
+				if(core4.Constants._L_STATES[levelStateID] != null){
+					return core4.Constants._L_STATES[levelStateID];
+				}
+			}
+		}
+		return null;
 	}
 	public function loadAssets():Void{
 			core4.Constants._A_C_BACK = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/card/back.png"));
@@ -164,5 +247,60 @@ class Engine{
 			core4.Constants._INVENTORY_ELITE_WITCH = new core4.inventory.Inventory(null, [core4.Constants._L_ITEM[core4.Constants._I_WEAPON_BOW-1], 1, core4.Constants._L_ITEM[core4.Constants._I_PROJECTILE_ARROW-1], 50]);
 			core4.Constants._INVENTORY_BOSS_QUEEN = new core4.inventory.Inventory(null, [core4.Constants._L_ITEM[core4.Constants._I_WEAPON_BOW-1], 1, core4.Constants._L_ITEM[core4.Constants._I_PROJECTILE_ARROW-1], 50]);
 
+			core4.Constants._A_MAINMENU_TITLE = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/mainmenu/text/title.png"));
+			core4.Constants._A_MAINMENU_STARTBUTTON = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/mainmenu/button/start.png"));
+			core4.Constants._A_MAINMENU_EXITBUTTON = new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/mainmenu/button/exit.png"));
+
+			core4.Constants._STATE_0 = new core4.state.State(0, false, [this, "main menu", "first state", new core4.map.Map(core4.Constants._A_M1)]);
+			core4.Constants._STATE_1 = new core4.state.State(1, false, [this, "level 1", "first level", new core4.map.Map(core4.Constants._A_M2),
+				new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1,
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png"))),
+				new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1,
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
+				    new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")),
+				    new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png"))),
+				new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1,
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")))]);
+			core4.Constants._STATE_2 = new core4.state.State(2, false, [this, "level 2", "second level", new core4.map.Map(core4.Constants._A_M3),
+				new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1,
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png"))),
+				new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1,
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png"))),
+				new core4.entity.npc.NPC("Witch", "Normal", false, false, true, true, false, true, 200, 1,
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")),
+					new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")))]);
+
+			core4.Constants._STATE_LOADING = new core4.state.State(-1, false, [this, "loading screen", "use when loading lots of data"]);
+			core4.Constants._STATE_GAMEOVER = new core4.state.State(-2, false, [this, "game over", "you lost, gg no re"]);
+	}
+	public function dumpState():core4.state.State{
+		return currentState;
+	}
+	public function setCurrentState(s:core4.state.State){
+		currentState = s;
+	}
+	public function unlockRoom(){
+		roomUnlocked = true;
+	}
+	public function lockRoom(){
+		roomUnlocked = false;
+	}
+	public function getMainMenuStartButton():openfl.display.Sprite{
+		return start;
 	}
 }

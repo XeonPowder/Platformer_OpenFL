@@ -1,14 +1,24 @@
 package core4;
 
 class Constants {
-
 	//Default
 	public static var _GAME : Main;
 	public static var _PICKUPDISTANCE:Int = 64;
 		//Lists
 	public static var _L_ENTITY:Array<core4.entity.Entity> = new Array();
-	public static var _L_ITEM:Array<core4.item.Item>  = new Array();
+	public static var _L_ITEM:Array<core4.item.Item> = new Array();
 	public static var _L_WORLD_ITEMS_ON_STAGE:Array<core4.item.Item> = new Array();
+	public static var _L_STATES:Array<core4.state.State> = new Array();
+		//Game States
+	public static var _STATE_0:core4.state.State = null;
+	public static var _STATE_1:core4.state.State = null;
+	public static var _STATE_2:core4.state.State = null;
+	public static var _STATE_LOADING:core4.state.State = null;
+	public static var _STATE_GAMEOVER:core4.state.State = null;
+		//MainMenu
+	public static var _A_MAINMENU_TITLE:openfl.display.Bitmap = null;
+	public static var _A_MAINMENU_STARTBUTTON:openfl.display.Bitmap = null;
+	public static var _A_MAINMENU_EXITBUTTON:openfl.display.Bitmap = null;
 		//Entity
 			//NPC
 	public static var _E_NPC_BOSS_BEAR:core4.entity.npc.NPC = null;
@@ -80,7 +90,7 @@ class Constants {
 				//Elite
 					//Witch
 					/*
-
+				//
 
 					*/
 			//Armor
@@ -204,6 +214,27 @@ class Constants {
 	public static function onEnterFrame():Void {
 		_D_KEYBOARD_TIMER++;
 	}
+	public static function mouseDown(e:openfl.events.MouseEvent){
+		if(Main._main()._engine() != null){
+			trace(Main._main()._engine().dumpState().getStateName());
+			if(Main._main()._engine().dumpState() == core4.Constants._STATE_0){
+				trace(e.target.toString());
+				if(e.target == Main._main()._engine().getMainMenuStartButton()){
+					trace("is start button");
+					core4.Constants._STATE_1.load;
+					Main._main()._engine().setCurrentState(core4.Constants._STATE_1);
+				}else if(e.target == core4.Constants._A_MAINMENU_EXITBUTTON){
+					Sys.exit(1);
+				}
+		  //}else if(){
+			}else{
+				Main._main()._engine()._stage().removeEventListener(openfl.events.MouseEvent.MOUSE_DOWN, mouseDown);
+				Main._main()._engine()._stage().removeEventListener(openfl.events.MouseEvent.MOUSE_UP, mouseUp);
+			}
+		}
+	}
+	public static function mouseUp(e:openfl.events.MouseEvent){
+	}
 	public static function keyDown(e:openfl.events.KeyboardEvent){
 		if(Main._main()._debug()){
 			trace("Key Down : "+e.keyCode);
@@ -260,7 +291,7 @@ class Constants {
 					if(_L_WORLD_ITEMS_ON_STAGE[x] != null){
 						_L_WORLD_ITEMS_ON_STAGE[x].update();
 					}
-					
+
 				}
 			}
 			if(_L_ENTITY.length > 0){
@@ -268,7 +299,7 @@ class Constants {
 					if(_L_ENTITY[x] != null){
 						_L_ENTITY[x].update();
 					}
-					
+
 				}
 			}
 		}
@@ -278,6 +309,21 @@ class Constants {
 		trace(_INVENTORY_BOSS_BEAR);
 		trace(_INVENTORY_ELITE_WITCH);
 		trace(_INVENTORY_BOSS_QUEEN);
+	}
+	public static function entityIsTouchingEdge(side:String, entity:core4.entity.Entity):Bool{
+		if(entity != null){
+			entity._updateHitbox();
+			if((compareString(side, "RIGHT") == 0) && (320 - entity.getHitboxTR().x <= 5)){
+				return true;
+			}else if((compareString(side, "LEFT") == 0) && (entity.getHitboxTL().x <= 5)){
+				return true;
+			}else if((compareString(side, "TOP") == 0) && (entity.getHitboxTL().y <= 5)){
+				return true;
+			}else if((compareString(side, "BOTTOM") == 0) && (320 - entity.getHitboxBL().y <= 5)){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

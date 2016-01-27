@@ -30,6 +30,7 @@ class NPC extends Entity{
 		if(canMove){
 			aiMove();
 		}
+		_redraw();
 	}
 	public function aiMove():Void{
 		if(aggro && aggroedEntity != null){
