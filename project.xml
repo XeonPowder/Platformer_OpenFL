@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 
-	<meta title="Cheeky" package="hardcoders.platformer" version="1.0.0" company="Hardcoders" />
-	<app main="Main" path="Harccoders/game" file="Cheeky" />
+	<meta title="Manly Mayhem" package="hardcoders.platformer" version="0.3.3" company="Hardcoders" />
+	<app main="Main" path="Hardcoders/game" file="Manly Mayhem" />
 
 	<source path="Source" />
 	<haxelib name="openfl" />
 	<assets path="Assets" rename="assets" />
-	<window width="640" height="640" resizable="true"/>
+    <assets path="Assets/sound" rename="sound" type="music" />
+	<window width="320" height="320" resizable="false"/>
 
 </project>
