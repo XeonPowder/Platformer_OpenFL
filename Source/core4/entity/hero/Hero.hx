@@ -7,6 +7,7 @@ class Hero extends Entity{
 
 	public function new(?name:String = "HERO", ?type:String = "PLAYER", ?inventory:Bool = true, ?loot:Bool = true, ?shoot:Bool = true, ?move:Bool = true, ?god:Bool = false, ?use:Bool = true, ?hostility:Float = 0){
 		super(core4.Constants._A_HERO_DOWN, true, name, type, inventory, loot, shoot, move, god, use, hostility, core4.Constants._A_HERO_UP, core4.Constants._A_HERO_DOWN, core4.Constants._A_HERO_LEFT, core4.Constants._A_HERO_RIGHT);
+		attackSpeed = .75;
 		if(core4.Constants.compareString(Main._main().getDifficulty(), "HARDCORE") == 0){
 
 		}else{

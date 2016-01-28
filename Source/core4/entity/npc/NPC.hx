@@ -78,7 +78,7 @@ class NPC extends Entity{
 				}
 				if(shoot){
 					trace(entityName + " has shot!");
-					var p:core4.entity.projectile.Projectile = new core4.entity.projectile.Projectile(this, d, openfl.Assets.getBitmapData("assets/weapon/gun/gun.png"), "gun", "thrown", 5);
+					var p:core4.entity.projectile.Projectile = new core4.entity.projectile.Projectile(this, d, openfl.Assets.getBitmapData("assets/weapon/gun/gun.png"), "gun", "thrown", getAttackDamage());
 					setFacingDirection(d);
 					projectileList.push(p);
 					tsls = core4.Constants.getKTime();
@@ -91,13 +91,21 @@ class NPC extends Entity{
 	public function randomMove(){
 		var r:Int = Std.int(Math.random() * 50);
 		if(r % 5 == 0){
-			sprite.x -= movementSpeed;
+			if(sprite.x - movementSpeed > Std.int(bitMap.width)){
+				sprite.x -= movementSpeed;				
+			}
 		}else if (r % 5 == 1){
-			sprite.x += movementSpeed;
+			if(sprite.x + movementSpeed < Std.int(320 - bitMap.width)){
+				sprite.x += movementSpeed;
+			}
 		}else if(r % 5 == 2){
-			sprite.y -= movementSpeed;
+			if(sprite.y - movementSpeed > Std.int(bitMap.height)){
+				sprite.y -= movementSpeed;
+			}
 		}else if(r % 5 == 3){
-			sprite.y += movementSpeed;
+			if(sprite.y + movementSpeed < Std.int(320 - bitMap.height)){
+				sprite.y += movementSpeed;
+			}
 		}
 	}
 	public function checkForAggression():Void{
@@ -116,6 +124,7 @@ class NPC extends Entity{
 			aggroedEntity = attachedEntity;
 			aggro = true;
 		}
+		attachedEntity.setHealth(attachedEntity.getHealth() + 10);
 		damageTaken = _dRecieved;
 		return damageTaken;
 	}

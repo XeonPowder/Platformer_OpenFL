@@ -72,7 +72,8 @@ class Projectile{
 			for(x in 0 ... core4.Constants._L_ENTITY.length){
 				if(parentEntity != null && core4.Constants._L_ENTITY[x] != null && core4.Constants._L_ENTITY[x] != parentEntity && parentEntity.checkHostility(core4.Constants._L_ENTITY[x])){
 					var e = core4.Constants._L_ENTITY[x];
-					if(hitboxTL != null && hitboxTR != null && hitboxBL != null && hitboxBR != null){
+					core4.Constants._L_ENTITY[x]._updateHitbox();
+					if((hitboxTL.x != null && hitboxTR.x != null && hitboxBL.x != null && hitboxBR.x != null) && (hitboxTL.y != null && hitboxTR.y != null && hitboxBL.y != null && hitboxBR.y != null)){
 						if((hitboxTL.x < e.getHitboxTR().x && hitboxTL.y > e.getHitboxTR().y && hitboxTL.x > e.getHitboxBL().x && hitboxTL.y < e.getHitboxBL().y) || 
 							(hitboxTR.x < e.getHitboxTR().x && hitboxTR.y > e.getHitboxTR().y && hitboxTR.x > e.getHitboxBL().x && hitboxTR.y < e.getHitboxBL().y) ||
 							(hitboxBL.x < e.getHitboxTR().x && hitboxBL.y > e.getHitboxTR().y && hitboxBL.x > e.getHitboxBL().x && hitboxBL.y < e.getHitboxBL().y) ||

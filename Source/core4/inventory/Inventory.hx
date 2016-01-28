@@ -55,18 +55,17 @@ class Inventory {
 		}
 		if(changeEntityValues(index)){
 			var modifiers:Array<Dynamic> = _item.getModifiers();
-			for(y in 0 ... modifiers.length){
-				if(modifiers[y] == String){
-					if(core4.Constants.compareString(modifiers[y],"ARMOR") == 0){
-						entity.setArmor(entity.getArmor()-modifiers[y+1]);
-					}else if(core4.Constants.compareString(modifiers[y], "ATTACKDAMAGE") == 0){
-						entity.setAttackDamage(entity.getAttackDamage()-modifiers[y+1]);
-					}else if(core4.Constants.compareString(modifiers[y], "ATTACKSPEEDPERCENTAGE") == 0){
-						entity.setAttackSpeed(entity.getAttackSpeed()*modifiers[y+1]);
-					}else if(core4.Constants.compareString(modifiers[y], "HEALTH") == 0){
-						entity.setHealth(entity.getHealth()*(1 + (modifiers[y+1]/100)));
-						if(entity.getHealth() < 0){
-							entity.setHealth(1);
+			if(modifiers != null){
+				for(y in 0 ... modifiers.length){
+					if(modifiers[y] == String){
+						if(core4.Constants.compareString(modifiers[y],"ARMOR") == 0){
+							entity.setArmor(entity.getArmor()-modifiers[y+1]);
+						}else if(core4.Constants.compareString(modifiers[y], "ATTACKDAMAGE") == 0){
+							entity.setAttackDamage(entity.getAttackDamage()-modifiers[y+1]);
+						}else if(core4.Constants.compareString(modifiers[y], "ATTACKSPEEDPERCENTAGE") == 0){
+							entity.setAttackSpeed(entity.getAttackSpeed()*modifiers[y+1]);
+						}else if(core4.Constants.compareString(modifiers[y], "HEALTH") == 0){
+							entity.setHealth(entity.getHealth()*(1 + (modifiers[y+1]/100)));
 						}
 					}
 				}
@@ -92,20 +91,25 @@ class Inventory {
 			inventoryNames[index-1] = _item.getItemName();
 		}
 		if(changeEntityValues(index)){
-			var modifiers:Array<Dynamic> = getInventory()[index].getModifiers();
-			for(y in 0 ... modifiers.length){
-				if(modifiers[y] == String){
-					if(core4.Constants.compareString(modifiers[y],"ARMOR") == 0){
-						entity.setArmor(entity.getArmor()+modifiers[y+1]);
-					}else if(core4.Constants.compareString(modifiers[y], "ATTACKDAMAGE") == 0){
-						entity.setAttackDamage(entity.getAttackDamage()+modifiers[y+1]);
-					}else if(core4.Constants.compareString(modifiers[y], "ATTACKSPEEDPERCENTAGE") == 0){
-						entity.setAttackSpeed(entity.getAttackSpeed()/modifiers[y+1]);
-					}else if(core4.Constants.compareString(modifiers[y], "HEALTH") == 0){
-						entity.setHealth(entity.getHealth()+modifiers[y+1]);
+			if(getInventory()[index] != null){
+				var modifiers:Array<Dynamic> = getInventory()[index].getModifiers();
+				if(modifiers != null){
+					for(y in 0 ... modifiers.length){
+						if(modifiers[y] == String){
+							if(core4.Constants.compareString(modifiers[y],"ARMOR") == 0){
+								entity.setArmor(entity.getArmor()+modifiers[y+1]);
+							}else if(core4.Constants.compareString(modifiers[y], "ATTACKDAMAGE") == 0){
+								entity.setAttackDamage(entity.getAttackDamage()+modifiers[y+1]);
+							}else if(core4.Constants.compareString(modifiers[y], "ATTACKSPEEDPERCENTAGE") == 0){
+								entity.setAttackSpeed(entity.getAttackSpeed()/modifiers[y+1]);
+							}else if(core4.Constants.compareString(modifiers[y], "HEALTH") == 0){
+								entity.setHealth(entity.getHealth()+modifiers[y+1]);
+							}
+						}
 					}
 				}
 			}
+			
 		}
 	}
 	public function inventoryContains(_item:core4.item.Item):Int{

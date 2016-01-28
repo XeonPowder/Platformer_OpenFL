@@ -153,7 +153,9 @@ class Entity {
 	}
 	public function _moveBy(_x:Int, _y:Int){
 		if(canMove){
+			if(sprite.x + _x < 320 - bitMap.width && sprite.x + _x > 0)
 			sprite.x += _x;
+			if(sprite.y + _y < 320 - bitMap.height && sprite.y + _y > 0)
 			sprite.y += _y;
 		}
 
@@ -340,6 +342,7 @@ class Entity {
 	public function collectItem(item:core4.item.Item){
 		core4.Constants._L_WORLD_ITEMS_ON_STAGE.remove(item);
 		item._removeFromStage();
+		entityInventory.addToInventory(item);
 	}
 
 	public function setExperience(_exp:Float):Float{
@@ -381,8 +384,10 @@ class Entity {
 		return experienceGained;
 	}
 
-	public function setDamageRecieved(_dRecieved:Float, ?attachedEntity:core4.entity.Entity):Float{
+	public function setDamageRecieved(_dRecieved:Float, ?attachedEntity:core4.entity.Entity = null):Float{
 		damageTaken = _dRecieved;
+		if(attachedEntity != null)
+		attachedEntity.setHealth(attachedEntity.getHealth() + 10);
 		return damageTaken;
 	}
 	public function setFacingDirection(_i:Int):Int{

@@ -8,9 +8,16 @@ class Engine{
 	private var init : Bool = true;
 	private var currentState : String;
 	private var level : Int;
+	private var l1c : Bool;
+	private var l2c : Bool;
+	private var l3c : Bool;
+	private var l4c : Bool;
+	private var l5c : Bool;
+
 	private var roomUnlocked : Bool;
 
 	private var treasureChest : openfl.display.Sprite;
+	private var card 		 : core4.item.Item;
 	//level 1
 	private var w1:core4.entity.npc.NPC;
 	private var w2:core4.entity.npc.NPC;
@@ -34,16 +41,17 @@ class Engine{
 	//Johan did this
 	private var backgroundMusic:openfl.media.Sound;
 	private var backgroundMusicTransformer:openfl.media.SoundTransform;
+	private var soundChannel:openfl.media.SoundChannel;
 	//Anthony did this
 	private var title:openfl.display.Sprite;
 	private var	start:openfl.display.Sprite;
 	private var	exit:openfl.display.Sprite;
 
-	public function new(_root:openfl.display.MovieClip){
-		//Johan did this
-		backgroundMusic = openfl.Assets.getMusic("assets/sound/bensound-actionable.ogg");
-		backgroundMusicTransformer = new openfl.media.SoundTransform(1, 0);
-
+	public function new(_root:openfl.display.MovieClip, first:Bool){
+		if(!first){
+			stage.removeEventListener(openfl.events.Event.ENTER_FRAME, update);
+		}
+		init = true;
 		engine = this;
 		root = _root;
 		stage = root.stage;
@@ -55,10 +63,6 @@ class Engine{
 		}
 		//add event listeners for updating the game, key down, key up, mouse down, and mouse up
 		stage.addEventListener(openfl.events.Event.ENTER_FRAME, update);
-		stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN,core4.Constants.keyDown);
-		stage.addEventListener(openfl.events.KeyboardEvent.KEY_UP,core4.Constants.keyUp);
-		stage.addEventListener(openfl.events.MouseEvent.MOUSE_DOWN, core4.Constants.mouseDown);
-		stage.addEventListener(openfl.events.MouseEvent.MOUSE_UP, core4.Constants.mouseUp);
 	}
 	public function _engine():Engine{
 		return engine;
@@ -67,12 +71,28 @@ class Engine{
 		return stage;
 	}
 	public function update(e:openfl.events.Event){
-		core4.Constants.onEnterFrame();
 		trace(currentState);
+		core4.Constants.onEnterFrame();
 		if(init){
+			stage.removeEventListener(openfl.events.MouseEvent.MOUSE_DOWN, core4.Constants.mouseDown);
+			stage.removeEventListener(openfl.events.MouseEvent.MOUSE_UP, core4.Constants.mouseUp);
+
+			stage.addEventListener(openfl.events.MouseEvent.MOUSE_DOWN, core4.Constants.mouseDown);
+			stage.addEventListener(openfl.events.MouseEvent.MOUSE_UP, core4.Constants.mouseUp);
 			core4.Constants._D_MAP = new core4.map.Map(core4.Constants._A_M1);
 			level = 0;
 			currentState = "main menu";
+			if(soundChannel != null){
+				soundChannel.stop();
+			}
+			backgroundMusic = openfl.Assets.getMusic("sound/bensound-actionable.ogg");
+			backgroundMusicTransformer = new openfl.media.SoundTransform(1, 0);
+			soundChannel = backgroundMusic.play(0, 10000, backgroundMusicTransformer);
+			l1c = false;
+			l2c = false;
+			l3c = false;
+			l4c = false;
+			l5c = false;
 			init = false;
 		}else{
 			if(core4.Constants.compareString(currentState, "main menu") == 0){
@@ -99,7 +119,16 @@ class Engine{
 					stage.addChild(exit);
 				}
 			}else if(core4.Constants.compareString(currentState, "level1") == 0){
+				stage.removeEventListener(openfl.events.KeyboardEvent.KEY_DOWN,core4.Constants.keyDown);
+				stage.removeEventListener(openfl.events.KeyboardEvent.KEY_UP,core4.Constants.keyUp);
+				stage.addEventListener(openfl.events.KeyboardEvent.KEY_DOWN,core4.Constants.keyDown);
+				stage.addEventListener(openfl.events.KeyboardEvent.KEY_UP,core4.Constants.keyUp);
 				level = 1;
+				if(l1c){
+					roomUnlocked = true;
+				}else{
+					roomUnlocked = false;
+				}
 				if(title != null && start != null && exit != null){
 					stage.removeChild(title);
 					stage.removeChild(start);
@@ -108,7 +137,7 @@ class Engine{
 					start = null;
 					exit = null;
 				}
-				if(core4.Constants._E_HERO == null){
+				if(!l1c && core4.Constants._E_HERO == null){
 					core4.Constants._E_HERO = new core4.entity.hero.Hero();
 					core4.Constants._E_HERO._moveTo(5, 160);
 
@@ -132,15 +161,21 @@ class Engine{
 					w2.setLocation(new openfl.geom.Point(250, 100));
 					w3.setLocation(new openfl.geom.Point(250, 150));
 				}
-				if((w1 == null || w1.getHealth() == 0) && (w2 == null || w2.getHealth() == 0) && (w3 == null || w3.getHealth() == 0)){
+				if((w1 == null || w1.getHealth() <= 0) && (w2 == null || w2.getHealth() <= 0) && (w3 == null || w3.getHealth() <= 0)){
 					roomUnlocked = true;
 					w1 = null;
 					w2 = null;
 					w3 = null;
+					l1c = true;
 				}
 			}else if(core4.Constants.compareString(currentState, "level2") == 0){
 				level = 2;
-				if(c1 == null && c2 == null && c3 == null && c4 == null && !roomUnlocked){
+				if(l2c){
+					roomUnlocked = true;
+				}else{
+					roomUnlocked = false;
+				}
+				if(!l2c && c1 == null && c2 == null && c3 == null && c4 == null && !roomUnlocked){
 					c1 = new core4.entity.npc.NPC(true, "Witch", "Normal", false, false, true, true, false, true, 200, 1,
 						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")),
 						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
@@ -166,54 +201,75 @@ class Engine{
 					c3.setLocation(new openfl.geom.Point(200, 150));
 					c4.setLocation(new openfl.geom.Point(200, 200));
 				}
-				if((c1 == null || c1.getHealth() == 0) && (c2 == null || c2.getHealth() == 0) && (c3 == null || c3.getHealth() == 0) && (c4 == null || c4.getHealth() == 0)){
+				if((c1 == null || c1.getHealth() <= 0) && (c2 == null || c2.getHealth() <= 0) && (c3 == null || c3.getHealth() <= 0) && (c4 == null || c4.getHealth() <= 0)){
 					roomUnlocked = true;
 					c1 = null;
 					c2 = null;
 					c3 = null;
 					c4 = null;
+					l2c = true;
 				}
 			}else if(core4.Constants.compareString(currentState, "level3") == 0){
 				level = 3;
-				if(b1 == null && !roomUnlocked){
-					b1 = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, false, true, false, true, 200, 1, 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/up.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/down.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/left.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/right.png")));
+				if(l3c){
+					roomUnlocked = true;
+				}else{
+					roomUnlocked = false;
+				}
+				if(!l3c && b1 == null && !roomUnlocked){
+					b1 = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, true, true, false, true, 200, 1, 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearL.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearR.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearL.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearR.png")));
 					b1.setHealth(500);
+					b1.setAttackDamage(50);
 					b1.setLocation(new openfl.geom.Point(200, 160));				
 				}
-				if(b1 == null || b1.getHealth() == 0){
+				if(b1 == null || b1.getHealth()<= 0){
 					roomUnlocked = true;
 					b1 = null;
+					l3c = true;
 				}
 			}else if(core4.Constants.compareString(currentState, "level4") == 0){
 				level = 4;
-				if(b2 == null && b3 == null && !roomUnlocked){
-					b2 = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, false, true, false, true, 200, 1, 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/up.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/down.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/left.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/right.png")));
-					b3 = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, false, true, false, true, 200, 1, 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/up.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/down.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/left.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/right.png")));
+				if(l4c){
+					roomUnlocked = true;
+				}else{
+					roomUnlocked = false;
+				}
+				if(!l4c && b2 == null && b3 == null && !roomUnlocked){
+					b2 = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, true, true, false, true, 200, 1, 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearL.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearR.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearL.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearR.png")));
+					b3 = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, true, true, false, true, 200, 1, 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearL.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearR.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearL.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearR.png")));
 					b2.setHealth(500);
+					b2.setAttackDamage(75);
 					b2.setLocation(new openfl.geom.Point(200, 100));
 					b3.setHealth(500);
+					b3.setAttackDamage(75);
 					b3.setLocation(new openfl.geom.Point(200, 200));
 				}
-				if((b2 == null || b2.getHealth() == 0) && (b3 == null || b3.getHealth() == 0)){
+				if((b2 == null || b2.getHealth() <=0) && (b3 == null || b3.getHealth()<= 0)){
 					roomUnlocked = true;
 					b2 = null;
 					b3 = null;
+					l4c = true;
 				}
 			}else if(core4.Constants.compareString(currentState, "level5") == 0){
 				level = 5;
-				if(w4 == null && w5 == null && w6 == null && b4 == null && !roomUnlocked){
+				if(l5c){
+					roomUnlocked = true;
+				}else{
+					roomUnlocked = false;
+				}
+				if(!l5c && w4 == null && w5 == null && w6 == null && b4 == null && !roomUnlocked){
 					w4 = new core4.entity.npc.NPC(true, "Witch", "Normal", false, false, true, true, false, true, 200, 1,
 						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/up.png")),
 						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
@@ -229,27 +285,29 @@ class Engine{
 						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/down.png")),
 						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/left.png")),
 						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/normal/witch/right.png")));
-					b4 = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, false, true, false, true, 200, 1, 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/up.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/down.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/left.png")), 
-						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/right.png")));
+					b4 = new core4.entity.npc.NPC("Grizzly Bear", "Boss", false, false, true, true, false, true, 200, 1, 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearL.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearR.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearL.png")), 
+						new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/entity/npc/boss/bear/BearR.png")));
 					b4.setHealth(500);
+					b4.setAttackDamage(100);
 					b4.setLocation(new openfl.geom.Point(175, 160));
 					w4.setLocation(new openfl.geom.Point(200, 130));
 					w5.setLocation(new openfl.geom.Point(200, 160));
 					w6.setLocation(new openfl.geom.Point(200, 190));
 				}
-				if((b4 == null || b4.getHealth() == 0) 
-					&& (w4 == null || w4.getHealth() == 0) 
-					&& (w5 == null || w5.getHealth() == 0) 
-					&& (w6 == null || w6.getHealth() == 0)){
+				if((b4 == null || b4.getHealth() <= 0) 
+					&& (w4 == null || w4.getHealth() <= 0) 
+					&& (w5 == null || w5.getHealth() <= 0) 
+					&& (w6 == null || w6.getHealth() <= 0)){
 					roomUnlocked = true;
 
 					b4 = null;
 					w4 = null;
 					w5 = null;
 					w6 = null;
+					l5c = true;
 					if(treasureChest == null){
 						treasureChest = new openfl.display.Sprite();
 						treasureChest.addChild(new openfl.display.Bitmap(openfl.Assets.getBitmapData("assets/container/treasurechest/small.png")));
@@ -261,18 +319,27 @@ class Engine{
 				if(core4.Constants._E_HERO.getSpriteX() <= 170 
 					&& core4.Constants._E_HERO.getSpriteX() >= 150 
 					&& core4.Constants._E_HERO.getSpriteY() <= 170 
-					&& core4.Constants._E_HERO.getSpriteY() >= 150){
-					stage.removeChild(treasureChest);
-					var card:core4.item.Item = new core4.item.Item("5 % Health", true, "CARD", core4.Constants._A_C_BOOST_HEALTH5_POSITIVE, 8, ["HEALTH", 5]);
+					&& core4.Constants._E_HERO.getSpriteY() >= 150 && treasureChest != null && card == null){
+					card = new core4.item.Item("5 % Health", true, "CARD", core4.Constants._A_C_BOOST_HEALTH5_POSITIVE, 8, ["HEALTH", 5]);
 					card._addToStage();
 					card.setLocation(new openfl.geom.Point((160 - card.getBMD().width/2), (160 - card.getBMD().height/2)));
+					treasureChest.removeChildren();
+					stage.removeChild(treasureChest);
+					treasureChest = null;
 				}
 			}else if(core4.Constants.compareString(currentState, "game over") == 0){
-				init = true;
-				stage.removeChildren();
-				currentState = "main menu";
+				Sys.exit(1);
+			}else if(core4.Constants.compareString(currentState, "end game") == 0){
+				Sys.exit(1);
 			}
-			if(core4.Constants._E_HERO != null && core4.Constants._E_HERO.getHealth() <= 0){
+			if(core4.Constants._E_HERO != null && core4.Constants._E_HERO.getInventory() != null && core4.Constants._E_HERO.getInventory().getInventory() != null && core4.Constants.compareString(currentState, "main menu") != 0){
+				for(x in 0 ... core4.Constants._E_HERO.getInventory().getInventory().length){
+					if(core4.Constants._E_HERO.getInventory().getInventory()[x] == card){
+						currentState = "end game";
+					}
+				}
+			}
+			if(core4.Constants._E_HERO != null && core4.Constants._E_HERO.getHealth() <= 0 && core4.Constants.compareString(currentState, "main menu") != 0){
 				currentState = "game over";
 			}
 			if(roomUnlocked){
@@ -280,26 +347,25 @@ class Engine{
 				if(core4.Constants.compareString(s, "right") == 0 || core4.Constants.compareString(s, "left") == 0){
 					if(core4.Constants.compareString(currentState, "level1") == 0){
 						core4.Constants._D_MAP.change(core4.Constants._A_M2);
-						roomUnlocked = !roomUnlocked;
 					}else if(core4.Constants.compareString(currentState, "level2") == 0){
 						core4.Constants._D_MAP.change(core4.Constants._A_M3);
-						roomUnlocked = !roomUnlocked;
 					}else if(core4.Constants.compareString(currentState, "level3") == 0){
 						core4.Constants._D_MAP.change(core4.Constants._A_M4);
-						roomUnlocked = !roomUnlocked;
 					}else if(core4.Constants.compareString(currentState, "level4") == 0){
 						core4.Constants._D_MAP.change(core4.Constants._A_M5);
-						roomUnlocked = !roomUnlocked;
 					}else if(core4.Constants.compareString(currentState, "level5") == 0){
 						core4.Constants._D_MAP.change(core4.Constants._A_M6);
-						roomUnlocked = !roomUnlocked;
 					}
 					if(core4.Constants.compareString(s, "right") == 0){
-						core4.Constants._E_HERO._moveTo(15, Std.int(core4.Constants._E_HERO.getSpriteY()));
+						core4.Constants._E_HERO._moveTo(64, Std.int(core4.Constants._E_HERO.getSpriteY()));
 					}
 					if(core4.Constants.compareString(s, "left") == 0){
-						core4.Constants._E_HERO._moveTo(305, Std.int(core4.Constants._E_HERO.getSpriteY()));
+						core4.Constants._E_HERO._moveTo(250, Std.int(core4.Constants._E_HERO.getSpriteY()));
 					}
+				}else if(core4.Constants.compareString(s, "false") == 0){
+					trace("error false");
+				}else if(core4.Constants.compareString(s, "hero null") == 0){
+					trace("hero null in get next level");
 				}
 			}
 		}
@@ -350,7 +416,7 @@ class Engine{
 				currentState = core4.Constants._STATE_0;
 			}
 			//Johan did this
-			backgroundMusic.play(0, 10000, backgroundMusicTransformer);
+			
 
 
 			core4.Constants._D_MAP = new core4.map.Map(core4.Constants._A_M1);
@@ -387,7 +453,11 @@ class Engine{
 					currentState = "level"+levelStateID;
 					return "left";
 				}
+			}else{
+				return "unknown";
 			}
+		}else{
+			return "hero null";
 		}
 		return "false";
 	}
@@ -516,7 +586,13 @@ class Engine{
 	public function lockRoom(){
 		roomUnlocked = false;
 	}
+	public function roomlockstate():Bool{
+		return roomUnlocked;
+	}
 	public function getMainMenuStartButton():openfl.display.Sprite{
 		return start;
+	}
+	public function getMainMenuExitButton():openfl.display.Sprite{
+		return exit;
 	}
 }

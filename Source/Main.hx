@@ -8,7 +8,7 @@ class Main{
 		// does not save all lines.
 		//core4.ConsoleTrace.setRedirection();
 		core4.Constants._GAME = this;
-		engine = new core4.engine.Engine(openfl.Lib.current);
+		newGame();
 	}
 	public static function _main(){
 		return core4.Constants._GAME;
@@ -21,5 +21,8 @@ class Main{
 	}
 	public function getDifficulty():String{
 		return difficulty;
+	}
+	public function newGame(){
+		engine = new core4.engine.Engine(openfl.Lib.current);
 	}
 }

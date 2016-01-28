@@ -224,7 +224,7 @@ class Constants {
 				if(e.target == Main._main()._engine().getMainMenuStartButton()){
 					core4.Constants._D_MAP.change(core4.Constants._A_M2);
 					Main._main()._engine().setCurrentState("level1");
-				}else if(e.target == core4.Constants._A_MAINMENU_EXITBUTTON){
+				}else if(e.target == Main._main()._engine().getMainMenuExitButton()){
 					Sys.exit(1);
 				}
 		  //}else if(){
@@ -314,13 +314,13 @@ class Constants {
 	public static function entityIsTouchingEdge(side:String, entity:core4.entity.Entity):Bool{
 		if(entity != null){
 			entity._updateHitbox();
-			if((compareString(side, "RIGHT") == 0) && (320 - entity.getHitboxTR().x <= 5)){
+			if((compareString(side, "RIGHT") == 0) && (320 - entity.getHitboxTR().x <= 10)){
 				return true;
-			}else if((compareString(side, "LEFT") == 0) && (entity.getHitboxTL().x <= 5)){
+			}else if((compareString(side, "LEFT") == 0) && (entity.getHitboxTL().x <= 10)){
 				return true;
-			}else if((compareString(side, "TOP") == 0) && (entity.getHitboxTL().y <= 5)){
+			}else if((compareString(side, "TOP") == 0) && (entity.getHitboxTL().y <= 10)){
 				return true;
-			}else if((compareString(side, "BOTTOM") == 0) && (320 - entity.getHitboxBL().y <= 5)){
+			}else if((compareString(side, "BOTTOM") == 0) && (320 - entity.getHitboxBL().y <= 10)){
 				return true;
 			}
 		}
