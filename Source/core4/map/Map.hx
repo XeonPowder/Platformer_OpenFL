@@ -24,10 +24,22 @@ class Map{
             trace("generating map");
             genMapData();
             trace("adding map to screen");
-            Main._main()._engine()._stage().addChild(sprite);
+            add();
             init = false;
         }
         return animatingNewMap;
+    }
+    public function remove(){
+        Main._main()._engine()._stage().removeChild(sprite);
+    }
+    public function add(){
+        Main._main()._engine()._stage().addChild(sprite);
+    }
+    public function change(map:openfl.display.BitmapData){
+        bitmapData = map;
+        genMapData();
+        sprite.graphics.clear();
+        sheet.drawTiles(sprite.graphics, tileData, false);
     }
     public function genMapData():Void{
         var bmd:openfl.display.BitmapData = bitmapData;

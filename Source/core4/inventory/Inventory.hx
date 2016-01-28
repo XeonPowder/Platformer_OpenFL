@@ -64,7 +64,7 @@ class Inventory {
 					}else if(core4.Constants.compareString(modifiers[y], "ATTACKSPEEDPERCENTAGE") == 0){
 						entity.setAttackSpeed(entity.getAttackSpeed()*modifiers[y+1]);
 					}else if(core4.Constants.compareString(modifiers[y], "HEALTH") == 0){
-						entity.setHealth(entity.getHealth()-modifiers[y+1]);
+						entity.setHealth(entity.getHealth()*(1 + (modifiers[y+1]/100)));
 						if(entity.getHealth() < 0){
 							entity.setHealth(1);
 						}

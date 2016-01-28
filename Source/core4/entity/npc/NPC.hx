@@ -5,8 +5,8 @@ class NPC extends Entity{
 	private var aggroable:Bool;
 	private var aggroRange:Int;
 	private var aggroedEntity:core4.entity.Entity = null;
-	public function new(?name:String = "<Unknown>", ?type:String = "NPC", ?inventory:Bool = true, ?loot:Bool = true, ?shoot:Bool = true, ?move:Bool = true, ?god:Bool = false, ?use:Bool = true, ?canAggro:Bool = true, ?aRange:Int = 100, ?hostility:Float = 0, ?bUP:openfl.display.Bitmap = null, ?bDOWN:openfl.display.Bitmap = null, ?bLEFT:openfl.display.Bitmap = null, ?bRIGHT:openfl.display.Bitmap = null){
-		super(bLEFT, name, type, inventory, loot, shoot, move, god, use, hostility, bUP, bDOWN, bLEFT, bRIGHT);
+	public function new(?spawn:Bool = true, ?name:String = "<Unknown>", ?type:String = "NPC", ?inventory:Bool = true, ?loot:Bool = true, ?shoot:Bool = true, ?move:Bool = true, ?god:Bool = false, ?use:Bool = true, ?canAggro:Bool = true, ?aRange:Int = 100, ?hostility:Float = 0, ?bUP:openfl.display.Bitmap = null, ?bDOWN:openfl.display.Bitmap = null, ?bLEFT:openfl.display.Bitmap = null, ?bRIGHT:openfl.display.Bitmap = null){
+		super(bLEFT, spawn, name, type, inventory, loot, shoot, move, god, use, hostility, bUP, bDOWN, bLEFT, bRIGHT);
 		aggroable = canAggro;
 		aggroRange = aRange;
 	}

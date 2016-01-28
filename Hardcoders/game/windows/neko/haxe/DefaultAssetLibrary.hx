@@ -210,6 +210,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		#end
 		
 		#if flash
@@ -448,6 +449,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/map/NewWorld/16x9.png", AssetType.IMAGE);
 		path.set ("assets/map/NewWorld/NameArray.txt", "assets/map/NewWorld/NameArray.txt");
 		type.set ("assets/map/NewWorld/NameArray.txt", AssetType.TEXT);
+		path.set ("assets/map/test/map1.png", "assets/map/test/map1.png");
+		type.set ("assets/map/test/map1.png", AssetType.IMAGE);
 		path.set ("assets/map/test/test_tilesheet.png", "assets/map/test/test_tilesheet.png");
 		type.set ("assets/map/test/test_tilesheet.png", AssetType.IMAGE);
 		path.set ("assets/map/test/test_tilesheet640x640.png", "assets/map/test/test_tilesheet640x640.png");
@@ -884,6 +887,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/map/NewWorld/NameArray.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/map/test/map1.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/map/test/test_tilesheet.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -1021,6 +1027,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -2055,7 +2062,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 

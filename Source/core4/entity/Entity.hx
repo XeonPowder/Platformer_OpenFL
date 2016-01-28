@@ -22,6 +22,7 @@ class Entity {
 	private var hasInventory 					: 				Bool;
 	private var init 							: 				Bool;
 	private var inventoryState 					: 				Bool;
+	private var spawn 							: 				Bool;
 
 	private var health 							: 				Float = 100;
 	private var energy 							: 				Float = 100;
@@ -45,7 +46,7 @@ class Entity {
 	private var up 								: 				openfl.display.Bitmap = null;
 	private var down 							: 				openfl.display.Bitmap = null;
 
-	public function new(?bitmap:openfl.display.Bitmap = null, ?name:String = "<Unknown>", ?type:String = "<Unknown>", ?inventory:Bool = true, ?loot:Bool = true, ?shoot:Bool = true, ?move:Bool = true, ?god:Bool = true, ?use:Bool = true, ?_hostility:Float = 0, ?bUP:openfl.display.Bitmap = null, ?bDOWN:openfl.display.Bitmap = null, ?bLEFT:openfl.display.Bitmap = null, ?bRIGHT:openfl.display.Bitmap = null){
+	public function new(?bitmap:openfl.display.Bitmap = null, ?spawn_:Bool = true, ?name:String = "<Unknown>", ?type:String = "<Unknown>", ?inventory:Bool = true, ?loot:Bool = true, ?shoot:Bool = true, ?move:Bool = true, ?god:Bool = true, ?use:Bool = true, ?_hostility:Float = 0, ?bUP:openfl.display.Bitmap = null, ?bDOWN:openfl.display.Bitmap = null, ?bLEFT:openfl.display.Bitmap = null, ?bRIGHT:openfl.display.Bitmap = null){
 		init = true;
 		trace("new entity "+name+", in creation");
 		sprite = new openfl.display.Sprite();
@@ -67,7 +68,7 @@ class Entity {
 		canMove = move;
 		godmode = god;
 		canUse = use;
-
+		spawn = spawn_;
 		left = bLEFT;
 		right = bRIGHT;
 		up = bUP;
@@ -94,7 +95,9 @@ class Entity {
 				_updateProjectiles();
 			}
 		}else{
-			_add();
+			if(spawn){
+				_add();
+			}
 			if(_lootEnabled() || _hasInventory()){
 				entityInventory = new core4.inventory.Inventory();
 				if(_hasInventory()){
@@ -276,6 +279,10 @@ class Entity {
 	public function _delete(){
 		trace("removing "+ entityName + " from the stage");
 		Main._main()._engine()._stage().removeChild(sprite);
+		for(x in 0 ... projectileList.length){
+			projectileList.pop();
+		}
+		
 		core4.Constants._L_ENTITY.remove(this);
 	}
 	public function _add(){

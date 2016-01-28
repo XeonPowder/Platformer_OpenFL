@@ -76,7 +76,7 @@ class State {
 		}
 	}
 	private function prepare(){
-		oldStateConfig = engineLink.dumpState();
+		oldStateConfig = null;
 		if(oldStateConfig != null){
 			if(oldStateConfigList == null){
 				oldStateConfigList = new Array();
@@ -118,7 +118,7 @@ class State {
 	}
 	private function render(){
 		if(mapBitmap != null){
-			core4.Constants._D_MAP = new core4.map.Map(mapBitmap);
+			core4.Constants._D_MAP.change(mapBitmap);
 		}
 		for(x in 0 ... spriteList.length){
 			if(spriteList[x] != null){
@@ -141,6 +141,7 @@ class State {
 		for(x in 0 ... entityList.length){
 			if(entityList[x] != null){
 				entityList[x]._add();
+				entityList[x].setLocation(new openfl.geom.Point(200, (50 + Std.int(x*10))));
 			}else{
 				if(Main._main()._debug()){
 					trace("error: entity null");

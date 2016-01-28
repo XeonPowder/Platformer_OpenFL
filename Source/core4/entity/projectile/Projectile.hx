@@ -70,17 +70,18 @@ class Projectile{
 			isAirborn = false;
 		}else{
 			for(x in 0 ... core4.Constants._L_ENTITY.length){
-				if(core4.Constants._L_ENTITY[x] != null && core4.Constants._L_ENTITY[x] != parentEntity && parentEntity.checkHostility(core4.Constants._L_ENTITY[x])){
+				if(parentEntity != null && core4.Constants._L_ENTITY[x] != null && core4.Constants._L_ENTITY[x] != parentEntity && parentEntity.checkHostility(core4.Constants._L_ENTITY[x])){
 					var e = core4.Constants._L_ENTITY[x];
-					if((hitboxTL.x < e.getHitboxTR().x && hitboxTL.y > e.getHitboxTR().y && hitboxTL.x > e.getHitboxBL().x && hitboxTL.y < e.getHitboxBL().y) || 
-						(hitboxTR.x < e.getHitboxTR().x && hitboxTR.y > e.getHitboxTR().y && hitboxTR.x > e.getHitboxBL().x && hitboxTR.y < e.getHitboxBL().y) ||
-						(hitboxBL.x < e.getHitboxTR().x && hitboxBL.y > e.getHitboxTR().y && hitboxBL.x > e.getHitboxBL().x && hitboxBL.y < e.getHitboxBL().y) ||
-						(hitboxBR.x < e.getHitboxTR().x && hitboxBR.y > e.getHitboxTR().y && hitboxBR.x > e.getHitboxBL().x && hitboxBR.y < e.getHitboxBL().y)) {
+					if(hitboxTL != null && hitboxTR != null && hitboxBL != null && hitboxBR != null){
+						if((hitboxTL.x < e.getHitboxTR().x && hitboxTL.y > e.getHitboxTR().y && hitboxTL.x > e.getHitboxBL().x && hitboxTL.y < e.getHitboxBL().y) || 
+							(hitboxTR.x < e.getHitboxTR().x && hitboxTR.y > e.getHitboxTR().y && hitboxTR.x > e.getHitboxBL().x && hitboxTR.y < e.getHitboxBL().y) ||
+							(hitboxBL.x < e.getHitboxTR().x && hitboxBL.y > e.getHitboxTR().y && hitboxBL.x > e.getHitboxBL().x && hitboxBL.y < e.getHitboxBL().y) ||
+							(hitboxBR.x < e.getHitboxTR().x && hitboxBR.y > e.getHitboxTR().y && hitboxBR.x > e.getHitboxBL().x && hitboxBR.y < e.getHitboxBL().y)) {
 
-						isAirborn = false;
-						core4.Constants._L_ENTITY[x].setDamageRecieved(core4.Constants._L_ENTITY[x].getDamageRecieved()+dmg, parentEntity);
+							isAirborn = false;
+							core4.Constants._L_ENTITY[x].setDamageRecieved(core4.Constants._L_ENTITY[x].getDamageRecieved()+dmg, parentEntity);
+						}
 					}
-					
 				}
 			}
 		}

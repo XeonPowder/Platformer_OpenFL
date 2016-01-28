@@ -9,9 +9,11 @@ class Item {
 	private var sprite:openfl.display.Sprite;
 	private var bitMap:openfl.display.Bitmap;
 	private var inventorySlotID:Int;
+	private var bmd:openfl.display.BitmapData;
 	public function new(name:String, hasMultiplierEffect:Bool, type:String, bitmap:openfl.display.Bitmap, defaultSlotID:Int, ?args:Array<Dynamic>){
 		itemName = name;
 		bitMap = bitmap;
+		bmd = bitmap.bitmapData;
 		sprite = new openfl.display.Sprite();
 		sprite.addChild(bitMap);
 		me = hasMultiplierEffect;
@@ -39,8 +41,15 @@ class Item {
 	public function getBitmap():openfl.display.Bitmap{
 		return bitMap;
 	}
+	public function getBMD():openfl.display.BitmapData{
+		return bmd;
+	}
 	public function getInventorySlotID():Int{
 		return inventorySlotID;
+	}
+	public function setLocation(p:openfl.geom.Point){
+		sprite.x = p.x;
+		sprite.y = p.y;
 	}
 	public function _addToStage():Void{
 		core4.Constants._L_WORLD_ITEMS_ON_STAGE.push(this);

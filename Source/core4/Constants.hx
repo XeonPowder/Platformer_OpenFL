@@ -13,6 +13,9 @@ class Constants {
 	public static var _STATE_0:core4.state.State = null;
 	public static var _STATE_1:core4.state.State = null;
 	public static var _STATE_2:core4.state.State = null;
+	public static var _STATE_3:core4.state.State = null;
+	public static var _STATE_4:core4.state.State = null;
+	public static var _STATE_5:core4.state.State = null;
 	public static var _STATE_LOADING:core4.state.State = null;
 	public static var _STATE_GAMEOVER:core4.state.State = null;
 		//MainMenu
@@ -153,6 +156,7 @@ class Constants {
 	public static var _I_WEAPON_BOW:Int;
 	public static var _I_PROJECTILE_ARROW:Int;
 	public static var _I_PROJECTILE_BULLET:Int;
+	public static var _I_CARD:Int;
 
 	public static var _INVENTORY_HERO:core4.inventory.Inventory;
 	public static var _INVENTORY_BOSS_BEAR:core4.inventory.Inventory;
@@ -216,13 +220,10 @@ class Constants {
 	}
 	public static function mouseDown(e:openfl.events.MouseEvent){
 		if(Main._main()._engine() != null){
-			trace(Main._main()._engine().dumpState().getStateName());
-			if(Main._main()._engine().dumpState() == core4.Constants._STATE_0){
-				trace(e.target.toString());
+			if(Main._main()._engine().dumpState() == "main menu"){
 				if(e.target == Main._main()._engine().getMainMenuStartButton()){
-					trace("is start button");
-					core4.Constants._STATE_1.load;
-					Main._main()._engine().setCurrentState(core4.Constants._STATE_1);
+					core4.Constants._D_MAP.change(core4.Constants._A_M2);
+					Main._main()._engine().setCurrentState("level1");
 				}else if(e.target == core4.Constants._A_MAINMENU_EXITBUTTON){
 					Sys.exit(1);
 				}
